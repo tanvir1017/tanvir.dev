@@ -1,5 +1,6 @@
 import Head from "next/head";
 import HeaderSection from "../components/header/headerSection";
+import SelfHighlighter from "../components/selfHighlighter/selfHighlighter";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
 
       <main>
         <HeaderSection />
+        <SelfHighlighter />
       </main>
     </div>
   );

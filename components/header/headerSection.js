@@ -1,13 +1,11 @@
 import Image from "next/image";
 import React from "react";
-import homeStyle from "../../styles/Home.module.css";
 import style from "./heading.module.css";
 
 function HeaderSection() {
   return (
     <>
-      {/* <div className={`mt-7 rounded-t-lg ${style.headingSection}`}> */}
-      <div className={`${style.headingSection} ${homeStyle.container}`}>
+      <div className={`${style.headingSection} `}>
         <div className="flex justify-between items-center">
           <div className="space-y-2 ">
             <p>Hi there beautiful people on the internet</p>
@@ -17,7 +15,7 @@ function HeaderSection() {
               <span className={`${style.animatedText} font-black`}>
                 Frontend
               </span>
-              Developer
+              <span className={`${style.textHighlighter}`}>Developer</span>
             </h1>
             <p className="pt-5">
               Mainly i am play with javascript and explore with this language
