@@ -13,6 +13,13 @@
       #ffc75f,
       #f9f871
     );
+    --mesh-gradient: linear-gradient(
+      90deg,
+      rgb(26, 199, 55),
+      rgb(253, 255, 128),
+      rgb(24, 214, 251),
+      rgb(0, 143, 88)
+    );
     /* ... */
   }
 }
@@ -49,4 +56,11 @@ a {
   body {
     color: white;
   }
+}
+
+/* own css */
+.headingSection {
+  background-color: rgba(210, 148, 239, 0.1);
+  backdrop-filter: blur(2px);
+  padding: 6.9rem;
 }

@@ -1,9 +1,3 @@
-.headingSection {
-  background-color: rgba(210, 148, 239, 0.1);
-  backdrop-filter: blur(2px);
-  padding: 6.9rem;
-}
-
 .animatedText {
   margin: 0 0 0.5em;
   line-height: 0.8;

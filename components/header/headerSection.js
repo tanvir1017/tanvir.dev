@@ -5,17 +5,19 @@ import style from "./heading.module.css";
 function HeaderSection() {
   return (
     <>
-      <div className={`${style.headingSection} `}>
+      <div className={`headingSection`}>
         <div className="flex justify-between items-center">
           <div className="space-y-2 ">
             <p>Hi there beautiful people on the internet</p>
             <h4 className="font-semibold text-2xl">Tanvir here</h4>
-            <h1 className="text-6xl  font-bold">
+            <h1 className="text-6xl font-bold">
               {" "}
               <span className={`${style.animatedText} font-black`}>
                 Frontend
               </span>
-              <span className={`${style.textHighlighter}`}>Developer</span>
+              <span className={`${style.textHighlighter} text-white`}>
+                Developer
+              </span>
             </h1>
             <p className="pt-5">
               Mainly i am play with javascript and explore with this language
@@ -27,7 +29,10 @@ function HeaderSection() {
               <button className="p-3 rounded-lg backdrop-blur-0 bg-white/5 border-t-purple-500 border border-b-white/5 border-r-purple-500 border-l-white/5 active:-translate-y-2 transition duration-150">
                 Get my resume
               </button>
-              <button className="p-3 rounded-lg backdrop-blur-0 bg-white/5 border-b-purple-500 border border-t-white/5 border-l-purple-500 border-r-white/5 active:-translate-y-2 transition duration-150">
+              <button
+                className="p-3 rounded-lg backdrop-blur-0 bg-white/5 border-b-purple-500 border border-t-white/5 
+              border-l-purple-500 border-r-white/5 active:-translate-y-2 transition duration-150"
+              >
                 Read blogs
               </button>
             </div>
