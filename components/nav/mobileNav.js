@@ -12,7 +12,7 @@ const pacifico = Pacifico({
 const jost = Jost({
   subsets: ["latin"],
 });
-function Navbar() {
+function MobileNav() {
   return (
     <div className={`${style.navBg} px-12 py-2`}>
       <div className="flex justify-between items-center">
@@ -43,4 +43,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default MobileNav;

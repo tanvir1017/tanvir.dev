@@ -1,16 +1,31 @@
-import React from "react";
 import { cardData } from "./data";
 import style from "./selfHighlighter.module.css";
 
+import { Pacifico } from "@next/font/google";
+const pacifico = Pacifico({
+  subsets: ["latin"],
+  weight: "400",
+});
+
+import { Jost } from "@next/font/google";
+const jost = Jost({
+  subsets: ["latin"],
+});
 function SelfHighlighter() {
   return (
     <>
-      <div className="headingSection">
+      <div className={`headingSection ${jost.className}`}>
         <div>
-          <h2 className="highLighter_title flex justify-center font-black text-5xl mb-16">
-            Dividing myself into
-            <span className={`${style.textHighlighter} mx-2`}> three </span>
-            sentence
+          <h2
+            className={`${jost.className} highLighter_title flex justify-center font-[600] text-4xl mb-16 uppercase`}
+          >
+            Describing
+            <span
+              className={`${style.textHighlighter}  ${pacifico.className} lowercase mr-4 ml-2`}
+            >
+              myself
+            </span>{" "}
+            into three sentence
           </h2>
         </div>
         <div className="px-16">

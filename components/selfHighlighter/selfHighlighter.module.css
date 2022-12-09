@@ -37,10 +37,10 @@
   left: 80px;
   background-size: 400%;
   background-position: right;
-  animation: cardChild2 infinite alternate 25s;
+  /* animation: cardChild2 infinite alternate 25s; */
 }
 
-@keyframes cardChild2 {
+/* @keyframes cardChild2 {
   0% {
     background-position: left;
   }
@@ -53,4 +53,4 @@
   100% {
     background-position: right;
   }
-}
+} */

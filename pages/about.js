@@ -1,7 +1,13 @@
-import React from "react";
+import { metaTagAbout as metaTag } from "../components/localData/localData";
+import Meta from "../components/meta/meta";
 
 function About() {
-  return <div>about</div>;
+  return (
+    <>
+      <Meta metaTag={metaTag} />
+      <div>This is about page</div>
+    </>
+  );
 }
 
 export default About;

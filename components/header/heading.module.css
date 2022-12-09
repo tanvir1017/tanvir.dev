@@ -10,14 +10,14 @@
   animation: bg-animation 15s infinite alternate;
 }
 
-@keyframes bg-animation {
+/* @keyframes bg-animation {
   0% {
     background-position: right;
   }
   100% {
     background-position: left;
   }
-}
+} */
 .textHighlighter {
   position: relative;
 }

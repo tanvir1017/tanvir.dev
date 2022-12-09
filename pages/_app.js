@@ -1,10 +1,15 @@
 import Navbar from "../components/nav/navbar";
 import "../styles/globals.css";
 
+import { Jost } from "@next/font/google";
+
+const jost = Jost({
+  subsets: ["latin"],
+});
+
 function MyApp({ Component, pageProps }) {
   let calcScrollValue = () => {
     let progress = document.getElementById("progress");
-    let progressValue = document.getElementById("progress-value");
     let pos = document.documentElement.scrollTop;
 
     let calcHeight =
@@ -32,11 +37,11 @@ function MyApp({ Component, pageProps }) {
     width: "calc(100% - 15px)",
   };
   return (
-    <>
+    <main className={`${jost.variable}`}>
       <div
         onClick={() => (document.documentElement.scrollTop = 0)}
         id="progress"
-        className={`rounded-full backdrop-blur-0 bg-white/5  active:-translate-y-2 cursor-pointer  fixed   grid place-items-center z-[2] h-[70px] w-[70px]`}
+        className={`rounded-full backdrop-blur-0 bg-white/5  active:-translate-y-2 cursor-pointer fixed grid right-5 place-items-center z-[2] h-[70px] w-[70px]`}
       >
         <span
           id="progress-value"
@@ -48,7 +53,7 @@ function MyApp({ Component, pageProps }) {
       </div>
       <Navbar />
       <Component {...pageProps} />
-    </>
+    </main>
   );
 }
 

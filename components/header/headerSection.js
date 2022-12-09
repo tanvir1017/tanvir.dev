@@ -1,11 +1,16 @@
 import Image from "next/image";
-import React from "react";
+
 import style from "./heading.module.css";
+
+import { Jost } from "@next/font/google";
+const jost = Jost({
+  subsets: ["latin"],
+});
 
 function HeaderSection() {
   return (
     <>
-      <div className={`headingSection`}>
+      <div className={`headingSection ${jost.className}`}>
         <div className="flex justify-between items-center">
           <div className="space-y-2 ">
             <p>Hi there beautiful people on the internet</p>
