@@ -13,19 +13,13 @@
       #ffc75f,
       #f9f871
     );
-    --mesh-gradient: linear-gradient(
-      90deg,
-      rgb(26, 199, 55),
-      rgb(253, 255, 128),
-      rgb(24, 214, 251),
-      rgb(0, 143, 88)
-    );
-    /* ... */
+    --mesh-gradient: linear-gradient(90deg, #1ac737, #fdff80, #18d6fb, #008f58);
   }
 }
 
 html,
 body {
+  scroll-behavior: smooth;
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
@@ -45,10 +39,6 @@ a {
   box-sizing: border-box;
 }
 
-.navbar-ul {
-  display: flex;
-}
-
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
@@ -63,4 +53,5 @@ a {
   background-color: rgba(210, 148, 239, 0.1);
   backdrop-filter: blur(2px);
   padding: 6.9rem;
+  z-index: 1 !important;
 }
