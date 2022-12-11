@@ -4,7 +4,7 @@ import style from "./selfHighlighter.module.css";
 function SelfHighlighter() {
   return (
     <>
-      <div className={`headingSection `}>
+      <div className={`container `}>
         <div className="grid place-items-center">
           <h1 className="font-[600] uppercase text-4xl">Describing myself</h1>
           <p className="">

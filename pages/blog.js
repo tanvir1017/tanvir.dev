@@ -4,7 +4,7 @@ import { blogLocData } from "../components/localData/localData";
 function Blog() {
   return (
     <>
-      <div className={` headingSection`}>
+      <div className={` container`}>
         <div className="grid place-items-center">
           {/* <h1 className="font-[600] uppercase text-4xl">&#x3E;_ Latest blog</h1> */}
           <h1 className="font-[600] uppercase text-4xl">Latest blog</h1>

@@ -5,7 +5,7 @@ import SecondeProjectsRow from "./SecondeProjectsRow/SecondeProjectsRow";
 function Projects() {
   return (
     <>
-      <div className={`headingSection`}>
+      <div className={`container`}>
         <div className="grid place-items-center">
           <h1 className="font-[600] uppercase text-4xl">Projects</h1>
           <p className="">

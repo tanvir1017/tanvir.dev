@@ -1,7 +1,7 @@
 import HeaderSection from "../components/header/headerSection";
 import { metaTagHome as metaTag } from "../components/localData/localData";
 import Meta from "../components/meta/meta";
-import Projects from "../components/projects/projects";
+import Projects from "../components/projects/Projects";
 import SelfHighlighter from "../components/selfHighlighter/selfHighlighter";
 import Blog from "./blog";
 

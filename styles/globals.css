@@ -67,6 +67,7 @@ body {
   scroll-behavior: smooth;
   padding: 0;
   margin: 0;
+  /* overflow: hidden; */
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   /* background-image: url("/bg.jpg"); */
@@ -92,9 +93,9 @@ a {
 }
 
 /* own css */
-.headingSection {
+.container {
   /* background-color: rgba(210, 148, 239, 0.1);
   backdrop-filter: blur(2px); */
-  padding: 6.9rem;
+  padding: 6.9rem 4rem;
   z-index: 1 !important;
 }

@@ -4,44 +4,57 @@ import style from "./heading.module.css";
 
 function HeaderSection() {
   return (
-    <m.div>
-      <div className={`headingSection font-jostRegular`}>
+    <m.div
+    // initial={{ scale: 1.138 }}
+    // animate={{ scale: 0.95 }}
+    // transition={{ duration: 0.8 }}
+    >
+      <div className={`container font-jostRegular`}>
         <div className="flex justify-between items-center">
-          <m.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.85 }}
-            className="space-y-2"
-          >
+          <m.div transition={{ duration: 0.85 }} className="space-y-2">
             <p>Hi there beautiful people on the internet</p>
             <h4 className="font-semibold text-2xl ">Tanvir here</h4>
-            <h1 className="text-6xl font-bold">
-              {" "}
-              <span className={`${style.animatedText} font-jostBlack`}>
-                Frontend
-              </span>
-              <span
-                className={`${style.textHighlighter} text-white font-jostBlack`}
+            <m.div className="overflow-hidden">
+              <m.h1
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="text-6xl font-bold"
               >
-                Developer
-              </span>
-            </h1>
+                {" "}
+                <span className={`${style.animatedText} font-jostBlack`}>
+                  Frontend
+                </span>
+                <span
+                  className={`${style.textHighlighter} text-white font-jostBlack`}
+                >
+                  Developer
+                </span>
+              </m.h1>
+            </m.div>
+
             <p className="pt-5">
               Mainly i am play with javascript and explore with this language
               some
               <br />
               frontend framework as like as React
             </p>
-            <div className="space-x-2 pt-12">
-              <button className="p-3 rounded-lg backdrop-blur-0 bg-white/5 border-t-purple-500 border border-b-white/5 border-r-purple-500 border-l-white/5 active:-translate-y-2 transition duration-150">
+            <div className="space-x-3 pt-12">
+              <m.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+                className="p-3 rounded-lg backdrop-blur-0 bg-white/5 border-t-purple-500 border border-b-white/5 border-r-purple-500 border-l-white/5"
+              >
                 Get my resume
-              </button>
-              <button
+              </m.button>
+              <m.button
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
                 className="p-3 rounded-lg backdrop-blur-0 bg-white/5 border-b-purple-500 border border-t-white/5 
-              border-l-purple-500 border-r-white/5 active:-translate-y-2 transition duration-150"
+              border-l-purple-500 border-r-white/5"
               >
                 Read blogs
-              </button>
+              </m.button>
             </div>
           </m.div>
           <div className="profile-image">
