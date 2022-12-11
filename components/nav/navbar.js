@@ -3,29 +3,20 @@ import Link from "next/link";
 import style from "./navbar.module.css";
 import { data } from "./navLink";
 
-import { Jost, Pacifico } from "@next/font/google";
-const pacifico = Pacifico({
-  subsets: ["latin"],
-  weight: "400",
-});
-
-const jost = Jost({
-  subsets: ["latin"],
-});
 function Navbar() {
   return (
-    <div className={`${style.navBg} px-12 py-2`}>
+    <div className={`${style.navBg} font-jostRegular px-12 py-2`}>
       <div className="flex justify-between items-center">
         <ul>
           <li className={``}>
             <Link href={"/"}>
               <span
-                className={`${style.animatedText} ${jost.className} text-4xl`}
+                className={`${style.animatedText} font-jostBold  text-4xl`}
                 style={{ fontWeight: "900" }}
               >
                 Tanvir
               </span>
-              <span className={`${pacifico.className} text-white`}>.dev</span>{" "}
+              <span className={`font-caveatMedium text-white`}>.dev</span>{" "}
             </Link>
           </li>
         </ul>

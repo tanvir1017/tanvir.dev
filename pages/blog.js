@@ -1,26 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
-import { Jost, Pacifico } from "@next/font/google";
 import { blogLocData } from "../components/localData/localData";
-const jost = Jost({
-  subsets: ["latin"],
-});
-const pacifico = Pacifico({
-  subsets: ["latin"],
-  weight: "400",
-});
 
 function Blog() {
   return (
     <>
-      <div className={`${jost.className} headingSection`}>
+      <div className={` headingSection`}>
         <div className="grid place-items-center">
           {/* <h1 className="font-[600] uppercase text-4xl">&#x3E;_ Latest blog</h1> */}
           <h1 className="font-[600] uppercase text-4xl">Latest blog</h1>
           <p className="">
-            <span className={`${jost.className} text-green-700 font-semibold`}>
-              MY
-            </span>{" "}
-            <span className={`${pacifico.className}`}>Articles & Advices</span>{" "}
+            <span className={` text-green-700 font-semibold`}>MY</span>{" "}
+            <span className={``}>Articles & Advices</span>{" "}
           </p>
         </div>
 
@@ -49,7 +39,7 @@ function Blog() {
         </div>
 
         <div className="grid place-items-center">
-          <button className="hover:bg-white/5 hover:backdrop-blur-lg transition duration-300 border px-12 py-3 rounded-3xl">
+          <button className="hover:bg-white/5 hover:backdrop-blur-lg border px-12 py-3 rounded-3xl">
             View more...
           </button>
         </div>

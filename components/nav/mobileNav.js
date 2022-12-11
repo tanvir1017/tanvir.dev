@@ -3,15 +3,6 @@ import Link from "next/link";
 import style from "./navbar.module.css";
 import { data } from "./navLink";
 
-import { Jost, Pacifico } from "@next/font/google";
-const pacifico = Pacifico({
-  subsets: ["latin"],
-  weight: "400",
-});
-
-const jost = Jost({
-  subsets: ["latin"],
-});
 function MobileNav() {
   return (
     <div className={`${style.navBg} px-12 py-2`}>

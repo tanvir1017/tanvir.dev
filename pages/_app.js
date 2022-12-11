@@ -1,13 +1,8 @@
+import { AnimatePresence } from "framer-motion";
 import Navbar from "../components/nav/navbar";
 import "../styles/globals.css";
 
-import { Jost } from "@next/font/google";
-
-const jost = Jost({
-  subsets: ["latin"],
-});
-
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, router }) {
   let calcScrollValue = () => {
     let progress = document.getElementById("progress");
     let pos = document.documentElement.scrollTop;
@@ -37,7 +32,7 @@ function MyApp({ Component, pageProps }) {
     width: "calc(100% - 15px)",
   };
   return (
-    <main className={`${jost.variable}`}>
+    <main className={``}>
       <div
         onClick={() => (document.documentElement.scrollTop = 0)}
         id="progress"
@@ -52,7 +47,9 @@ function MyApp({ Component, pageProps }) {
         </span>
       </div>
       <Navbar />
-      <Component {...pageProps} />
+      <AnimatePresence initial={false}>
+        <Component key={router.pathname} {...pageProps} />
+      </AnimatePresence>
     </main>
   );
 }

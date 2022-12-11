@@ -1,26 +1,28 @@
+import { motion as m } from "framer-motion";
 import Image from "next/image";
-
 import style from "./heading.module.css";
-
-import { Jost } from "@next/font/google";
-const jost = Jost({
-  subsets: ["latin"],
-});
 
 function HeaderSection() {
   return (
-    <>
-      <div className={`headingSection ${jost.className}`}>
+    <m.div>
+      <div className={`headingSection font-jostRegular`}>
         <div className="flex justify-between items-center">
-          <div className="space-y-2 ">
+          <m.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.85 }}
+            className="space-y-2"
+          >
             <p>Hi there beautiful people on the internet</p>
-            <h4 className="font-semibold text-2xl">Tanvir here</h4>
+            <h4 className="font-semibold text-2xl ">Tanvir here</h4>
             <h1 className="text-6xl font-bold">
               {" "}
-              <span className={`${style.animatedText} font-black`}>
+              <span className={`${style.animatedText} font-jostBlack`}>
                 Frontend
               </span>
-              <span className={`${style.textHighlighter} text-white`}>
+              <span
+                className={`${style.textHighlighter} text-white font-jostBlack`}
+              >
                 Developer
               </span>
             </h1>
@@ -41,7 +43,7 @@ function HeaderSection() {
                 Read blogs
               </button>
             </div>
-          </div>
+          </m.div>
           <div className="profile-image">
             <Image
               src="/avatar.png"
@@ -52,7 +54,7 @@ function HeaderSection() {
           </div>
         </div>
       </div>
-    </>
+    </m.div>
   );
 }
 

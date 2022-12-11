@@ -1,34 +1,18 @@
 import { cardData } from "./data";
 import style from "./selfHighlighter.module.css";
 
-import { Pacifico } from "@next/font/google";
-const pacifico = Pacifico({
-  subsets: ["latin"],
-  weight: "400",
-});
-
-import { Jost } from "@next/font/google";
-const jost = Jost({
-  subsets: ["latin"],
-});
 function SelfHighlighter() {
   return (
     <>
-      <div className={`headingSection ${jost.className}`}>
-        <div>
-          <h2
-            className={`${jost.className} highLighter_title flex justify-center font-[600] text-4xl mb-16 uppercase`}
-          >
-            Describing
-            <span
-              className={`${style.textHighlighter}  ${pacifico.className} lowercase mr-4 ml-2`}
-            >
-              myself
-            </span>{" "}
-            into three sentence
-          </h2>
+      <div className={`headingSection `}>
+        <div className="grid place-items-center">
+          <h1 className="font-[600] uppercase text-4xl">Describing myself</h1>
+          <p className="">
+            <span className={` text-green-700 font-semibold`}>Into</span>{" "}
+            <span className={``}>Three Sentence</span>{" "}
+          </p>
         </div>
-        <div className="px-16">
+        <div className="px-16 my-14">
           <div className="grid grid-cols-3 gap-4 justify-items-center">
             {cardData.map((data, index) => {
               return (
