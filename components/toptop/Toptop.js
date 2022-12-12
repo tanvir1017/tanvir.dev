@@ -18,7 +18,7 @@ function Toptop() {
       progress.style.transition = "0.6s";
     }
 
-    progress.style.backgroundImage = `conic-gradient(#2dff546c ${scrollValue}%, #ff0e0e7e ${scrollValue}%)`;
+    progress.style.backgroundImage = `conic-gradient(#ff008c ${scrollValue}%, #d5067891 ${scrollValue}%)`;
   };
 
   if (typeof window !== "undefined") {
@@ -39,7 +39,7 @@ function Toptop() {
       <span
         id="progress-value"
         style={customInlineCss}
-        className="text-3xl -rotate-45 bg-white rounded-full grid place-items-center text-[#ee5252]"
+        className="text-3xl -rotate-45 bg-white/5 backdrop:filter[15px] rounded-full grid place-items-center text-[#fff]"
       >
         <TiLocationArrowOutline />
       </span>

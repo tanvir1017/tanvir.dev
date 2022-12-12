@@ -55,7 +55,7 @@ export default function Project() {
               whileTap={{ scale: 0.9 }}
               class="relative rounded-lg backdrop-blur-0 focus:outline-none focus:ring-1  bg-white/5 border border-purple-500 focus:ring-purple-700 focus:ring-offset-2 text-sm text-white ring-offset-purple-700 font-semibold px-6 flex items-center  pointer-events-auto py-5"
             >
-              {cardSplice > 4 ? "Show less..." : "Show more..."}
+              {cardSplice > 6 ? "Show less..." : "Show more..."}
             </motion.button>
           </div>
         </div>

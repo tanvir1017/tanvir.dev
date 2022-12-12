@@ -20,7 +20,7 @@ const menuItemVariants = {
   },
 };
 
-const MenuItem = ({ nav, toggle }) => {
+const MenuItem = ({ nav, toggle, isOpen }) => {
   return (
     <motion.li className="nav-li" onClick={toggle} variants={menuItemVariants}>
       <span className="icon-placeholder grid place-items-center">

@@ -20,6 +20,7 @@ const sidebarVariants = {
 
 function MobileNav() {
   const [isOpen, toggleOpen] = useCycle(false, true);
+  console.log(isOpen);
   return (
     <>
       <motion.nav
@@ -29,7 +30,7 @@ function MobileNav() {
       >
         <motion.div className="background" variants={sidebarVariants} />
         <MenuToggler className="button" toggle={() => toggleOpen()} />
-        <Navigation toggle={() => toggleOpen()} />
+        <Navigation toggle={() => toggleOpen()} isOpen={isOpen} />
       </motion.nav>
     </>
   );

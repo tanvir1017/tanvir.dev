@@ -11,11 +11,15 @@ const navigationVariants = {
   },
 };
 
-const Navigation = ({ toggle }) => {
+const Navigation = ({ toggle, isOpen }) => {
   return (
-    <motion.ul className="nav-ul" variants={navigationVariants}>
+    <motion.ul
+      // className={` nav-ul`}
+      className={`${isOpen ? "block" : "hidden"} nav-ul`}
+      variants={navigationVariants}
+    >
       {data.map((nav, i) => (
-        <MenuItem key={i} toggle={toggle} nav={nav} />
+        <MenuItem key={i} toggle={toggle} isOpen={isOpen} nav={nav} />
       ))}
     </motion.ul>
   );
