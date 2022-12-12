@@ -67,13 +67,18 @@ function MyApp({ Component, pageProps, router }) {
           </span>
         </div>
       </div>
-      <div className="pt-3 hidden">
+      <div className="pt-3 lg:block hidden">
         <Navbar />
       </div>
-      <motion.nav initial={false} animate={isOpen ? "open" : "closed"}>
+
+      <motion.nav
+        className="lg:hidden block"
+        initial={false}
+        animate={isOpen ? "open" : "closed"}
+      >
         <motion.div className="background" variants={sidebarVariants} />
         <MenuToggler className="button" toggle={() => toggleOpen()} />
-        <Navigation />
+        <Navigation toggle={() => toggleOpen()} />
       </motion.nav>
       <AnimatePresence initial={false}>
         <Component key={router.pathname} {...pageProps} />

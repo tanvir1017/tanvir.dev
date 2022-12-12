@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 const menuItemVariants = {
   open: {
@@ -19,11 +20,15 @@ const menuItemVariants = {
   },
 };
 
-const MenuItem = () => {
+const MenuItem = ({ nav, toggle }) => {
   return (
-    <motion.li className="nav-li" variants={menuItemVariants}>
-      <span className="icon-placeholder"></span>
-      <span className="text-placeholder"></span>
+    <motion.li className="nav-li" onClick={toggle} variants={menuItemVariants}>
+      <span className="icon-placeholder grid place-items-center">
+        <Link href={`${nav.path}`}>{nav.icon}</Link>
+      </span>
+      <span className="text-placeholder grid place-items-center">
+        <Link href={`${nav.path}`}>{nav.title}</Link>
+      </span>
     </motion.li>
   );
 };

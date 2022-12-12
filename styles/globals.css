@@ -86,13 +86,13 @@
   }
 
   .button {
-    @apply border-0 outline-none focus:outline-none z-20 absolute top-[30px] w-[50px] left-[28px] rounded-full;
+    @apply fixed border-0 outline-none focus:outline-none z-20 top-[30px] w-[50px] left-[28px] rounded-full;
   }
 }
 
 @layer components {
   .background {
-    @apply bg-white absolute top-[0px] z-10 left-[0px] bottom-0 w-full;
+    @apply bg-white fixed top-[0px] z-10 left-[0px] bottom-0 w-full;
   }
   .icon-placeholder {
     @apply w-[45px] h-[45px] rounded-full;
@@ -107,22 +107,27 @@
 .nav-ul li:nth-child(1) span {
   border: 2px solid #ff008c;
   z-index: 25;
+  color: #ff008c;
 }
 .nav-ul li:nth-child(2) span {
   border: 2px solid #d309e1;
   z-index: 25;
+  color: #d309e1;
 }
 .nav-ul li:nth-child(3) span {
   border: 2px solid #9c1aff;
   z-index: 25;
+  color: #9c1aff;
 }
 .nav-ul li:nth-child(4) span {
   border: 2px solid #7700ff;
   z-index: 25;
+  color: #7700ff;
 }
 .nav-ul li:nth-child(5) span {
   border: 2px solid #4400ff;
   z-index: 25;
+  color: #4400ff;
 }
 /* navigation */
 

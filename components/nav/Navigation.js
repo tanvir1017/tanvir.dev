@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import MenuItem from "./MenuItem";
+import { data } from "./navLink";
 
 const navigationVariants = {
   open: {
@@ -10,11 +11,11 @@ const navigationVariants = {
   },
 };
 
-const Navigation = () => {
+const Navigation = ({ toggle }) => {
   return (
     <motion.ul className="nav-ul" variants={navigationVariants}>
-      {[...Array(5)].map((_, i) => (
-        <MenuItem key={i} />
+      {data.map((nav, i) => (
+        <MenuItem key={i} toggle={toggle} nav={nav} />
       ))}
     </motion.ul>
   );
