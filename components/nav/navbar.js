@@ -5,7 +5,7 @@ import { data } from "./navLink";
 
 function Navbar() {
   return (
-    <div className={`${style.navBg} font-jostRegular px-12 py-2`}>
+    <div className={`${style.navBg} font-jostRegular px-12 py-5`}>
       <div className="flex justify-between items-center">
         <ul>
           <li className={``}>

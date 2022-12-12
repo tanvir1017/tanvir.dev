@@ -1,24 +1,23 @@
 /* eslint-disable @next/next/no-img-element */
+import { motion } from "framer-motion";
 import { blogLocData } from "../components/localData/localData";
 
 function Blog() {
   return (
     <>
-      <div className={` lg:container m_container font-jostRegular`}>
+      <div className={` lg:large_container m_container  font-jostRegular`}>
         <div className="grid place-items-center">
           <h1 className="font-jostBold uppercase text-4xl">Latest blog</h1>
           <p className="">
-            <span className={` text-green-700 font-semibold font-jostSemiBold`}>
-              MY
-            </span>{" "}
+            <span className={` text-green-700 font-jostSemiBold`}>MY</span>{" "}
             <span className={`font-caveatMedium`}>Articles & Advices</span>{" "}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 my-14 lg:mx-[135px] ">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-14 lg:mx-[135px] ">
           {blogLocData.map((blogs, index) => {
             return (
-              <div
+              <motion.div
                 key={index}
                 className={`rounded-2xl p-5 space-y-5 bg-white/5 backdrop:filter(16px)`}
               >
@@ -34,7 +33,7 @@ function Blog() {
                     alt={blogs.title}
                   />
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

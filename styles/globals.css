@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .large_container {
+    padding: 6.9rem 4rem;
+    z-index: 1 !important;
+  }
+  .m_container {
+    padding: 2.9rem 1rem;
+    z-index: 1 !important;
+  }
+}
+
 @font-face {
   font-family: "CaveatRegular";
   src: url("/Caveat-Regular.ttf");
@@ -62,6 +73,59 @@
   }
 }
 
+/* navigation */
+@layer base {
+  .nav {
+    @apply absolute top-0 right-0 bottom-0 w-[300px];
+  }
+  .nav-ul {
+    @apply p-5 absolute top-[100px] w-[260px];
+  }
+  .nav-li {
+    @apply flex items-center mb-5 space-x-6 cursor-pointer;
+  }
+
+  .button {
+    @apply border-0 outline-none focus:outline-none z-20 absolute top-[30px] w-[50px] left-[28px] rounded-full;
+  }
+}
+
+@layer components {
+  .background {
+    @apply bg-white absolute top-[0px] z-10 left-[0px] bottom-0 w-full;
+  }
+  .icon-placeholder {
+    @apply w-[45px] h-[45px] rounded-full;
+  }
+  .text-placeholder {
+    @apply flex-1 rounded-lg;
+  }
+}
+
+/* menu items */
+
+.nav-ul li:nth-child(1) span {
+  border: 2px solid #ff008c;
+  z-index: 25;
+}
+.nav-ul li:nth-child(2) span {
+  border: 2px solid #d309e1;
+  z-index: 25;
+}
+.nav-ul li:nth-child(3) span {
+  border: 2px solid #9c1aff;
+  z-index: 25;
+}
+.nav-ul li:nth-child(4) span {
+  border: 2px solid #7700ff;
+  z-index: 25;
+}
+.nav-ul li:nth-child(5) span {
+  border: 2px solid #4400ff;
+  z-index: 25;
+}
+/* navigation */
+
 html,
 body {
   scroll-behavior: smooth;
@@ -93,14 +157,6 @@ a {
 }
 
 /* own css */
-.container {
-  padding: 6.9rem 4rem;
-  z-index: 1 !important;
-}
-.m_container {
-  padding: 2.9rem 1rem;
-  z-index: 1 !important;
-}
 
 /* card css */
 screen {
@@ -306,3 +362,5 @@ li {
     padding: 0;
   }
 }
+
+/* mobile nav */

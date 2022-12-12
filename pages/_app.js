@@ -1,8 +1,26 @@
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, motion, useCycle } from "framer-motion";
+import MenuToggler from "../components/nav/MenuToggoler";
 import Navbar from "../components/nav/navbar";
+import Navigation from "../components/nav/Navigation";
 import "../styles/globals.css";
 
+const sidebarVariants = {
+  open: {
+    clipPath: `circle(1000px at 40px 40px)`,
+    transition: {
+      duration: 0.4,
+    },
+  },
+  closed: {
+    clipPath: `circle(30px at 40px 40px)`,
+    transition: {
+      duration: 0.4,
+      delay: 0.4,
+    },
+  },
+};
 function MyApp({ Component, pageProps, router }) {
+  let scrollValue;
   let calcScrollValue = () => {
     let progress = document.getElementById("progress");
     let pos = document.documentElement.scrollTop;
@@ -11,7 +29,7 @@ function MyApp({ Component, pageProps, router }) {
       document.documentElement.scrollHeight -
       document.documentElement.clientHeight;
 
-    let scrollValue = Math.round((pos * 100) / calcHeight);
+    scrollValue = Math.round((pos * 100) / calcHeight);
     if (pos > 100) {
       progress.style.bottom = "30px";
     } else {
@@ -31,9 +49,10 @@ function MyApp({ Component, pageProps, router }) {
     height: "calc(100% - 15px)",
     width: "calc(100% - 15px)",
   };
+  const [isOpen, toggleOpen] = useCycle(false, true);
   return (
     <main className={``}>
-      <div className="lg:block hidden">
+      <div className="">
         <div
           onClick={() => (document.documentElement.scrollTop = 0)}
           id="progress"
@@ -48,9 +67,14 @@ function MyApp({ Component, pageProps, router }) {
           </span>
         </div>
       </div>
-      <div className="pt-3 lg:block hidden">
+      <div className="pt-3 hidden">
         <Navbar />
       </div>
+      <motion.nav initial={false} animate={isOpen ? "open" : "closed"}>
+        <motion.div className="background" variants={sidebarVariants} />
+        <MenuToggler className="button" toggle={() => toggleOpen()} />
+        <Navigation />
+      </motion.nav>
       <AnimatePresence initial={false}>
         <Component key={router.pathname} {...pageProps} />
       </AnimatePresence>

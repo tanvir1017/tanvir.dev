@@ -5,18 +5,22 @@ import style from "./heading.module.css";
 function HeaderSection() {
   return (
     <m.div
-    // initial={{ scale: 1.138 }}
-    // animate={{ scale: 0.95 }}
-    // transition={{ duration: 0.8 }}
+      initial={{ scale: 1.138 }}
+      animate={{ scale: 0.95 }}
+      transition={{ duration: 0.8 }}
+      className="lg:large_container m_container"
     >
-      <div className={`lg:container m_container font-jostRegular`}>
-        <div className="lg:flex flex lg:flex-row flex-col-reverse justify-between items-center">
-          <m.div transition={{ duration: 0.85 }} className="space-y-2">
+      <div className={`font-jostRegular`}>
+        <div className="md:flex md:text-left text-center flex md:flex-row flex-col-reverse justify-between items-center">
+          <m.div
+            transition={{ duration: 0.85 }}
+            className="space-y-2 lg:mt-0 mt-12"
+          >
             <p>Hi there beautiful people on the internet</p>
             <h4 className="font-semibold text-2xl ">Tanvir here</h4>
-            <m.div className="lg:overflow-hidden">
+            <m.div className="lg:overflow-hidden pb-8">
               <m.h1
-                initial={{ y: "100%" }}
+                initial={{ y: "90px" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="lg:text-6xl text-5xl font-bold"
@@ -25,7 +29,7 @@ function HeaderSection() {
                 <span className={`${style.animatedText} font-jostBlack`}>
                   Frontend
                 </span>
-                <br className="lg:hidden" />
+                <div className="md:hidden block "></div>
                 <span
                   className={`${style.textHighlighter} text-white font-jostBlack`}
                 >

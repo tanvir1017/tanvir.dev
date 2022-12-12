@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { items } from "../localData/localData";
 import ProjectCard from "./projectCard";
 import Projects from "./projects";
@@ -26,9 +26,6 @@ export default function Project() {
       setCardSplice(4);
     }
   };
-  useEffect(() => {
-    console.log(cardSplice);
-  });
   return (
     <div className="card_container relative overflow-hidden">
       <AnimateSharedLayout type="crossfade">
