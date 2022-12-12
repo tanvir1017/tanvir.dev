@@ -5,7 +5,7 @@ function Settings() {
       fill="none"
       viewBox="0 0 24 24"
       strokeWidth="1"
-      stroke="#ff6f91"
+      stroke="#ff008c"
       width={150}
     >
       <path

@@ -10,7 +10,7 @@ function SelfHighlighter() {
             Describing myself
           </h1>
           <p className="">
-            <span className={` text-green-700 font-jostSemiBold`}>INTO</span>{" "}
+            <span className={`text-[#ff008c] font-jostSemiBold`}>INTO</span>{" "}
             <span className={`font-caveatMedium`}>Three Sentence</span>{" "}
           </p>
         </div>
@@ -20,7 +20,7 @@ function SelfHighlighter() {
               return (
                 <div
                   key={index}
-                  className={`${style.cardBg} rounded-xl lg:p-12 p-6 lg:mb-0 mb-4 space-y-4 even:pb-12 even:border-b-2 even:border-b-[#ff6f91] overflow-y-clip`}
+                  className={`${style.cardBg} rounded-xl lg:p-12 p-6 lg:mb-0 mb-4 space-y-4 even:pb-12 even:border-b-2 even:border-b-[#d309e1] overflow-y-clip`}
                 >
                   <div className="md:w-24">{data.icon}</div>
                   <h4 className="text-2xl font-bold">{data.title}</h4>

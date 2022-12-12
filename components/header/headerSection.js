@@ -48,15 +48,15 @@ function HeaderSection() {
               <m.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="p-3 rounded-lg backdrop-blur-0 bg-white/5 border-t-purple-500 border border-b-white/5 border-r-purple-500 border-l-white/5"
+                className="p-3 rounded-lg backdrop-blur-0 bg-white/5 border-t-[#ff008c] border border-b-white/5 border-r-[#ff008c] border-l-white/5"
               >
                 Get my resume
               </m.button>
               <m.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="p-3 rounded-lg backdrop-blur-0 bg-white/5 border-b-purple-500 border border-t-white/5 
-              border-l-purple-500 border-r-white/5"
+                className="p-3 rounded-lg backdrop-blur-0 bg-white/5 border-b-[#ff008c] border border-t-white/5 
+              border-l-[#ff008c] border-r-white/5"
               >
                 Read blogs
               </m.button>
