@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { motion } from "framer-motion";
 import { items } from "../localData/localData";
 
@@ -5,25 +6,45 @@ function Projects({ id, expander }) {
   const showSelectedProject = items.find((item) => item.id === id);
   const { id: foundedId, category, title } = showSelectedProject;
   return (
-    <motion.div key={id} className="expand_card" layoutId={id}>
-      <div className="expand_img">
-        <div className="expand_image_content">
-          <p
-            className="bg-purple-700 px-2 py-3 cursor-pointer"
-            onClick={expander}
+    <>
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0, transition: { duration: 0.15 } }}
+        transition={{ duration: 0.2, delay: 0.15 }}
+        style={{ pointerEvents: "auto" }}
+        className="overlay cursor-pointer"
+      >
+        <a onClick={() => expander(id)} />
+      </motion.div>
+      <div className="card-content-container open">
+        <motion.div className="card-content" layoutId={`card-container-${id}`}>
+          <motion.div
+            className="card-image-container"
+            layoutId={`card-image-container-${id}`}
           >
-            back
-          </p>
-          <img src={`/images/${foundedId}.jpg`} alt="" />
-        </div>
+            <img className="card-image" src={`images/${id}.jpg`} alt="" />
+          </motion.div>
+          <motion.div
+            className="title-container"
+            layoutId={`title-container-${id}`}
+          >
+            <span className="category">{category}</span>
+            <h2>{title}</h2>
+          </motion.div>
+          <motion.div className="content-container" animate>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora,
+              ut sunt! Molestiae vel quidem id illum earum quaerat, dignissimos
+              esse asperiores nesciunt error, modi aliquam blanditiis? Doloribus
+              veniam delectus ipsa facere, voluptatum placeat eum,
+              exercitationem neque voluptate harum est fuga, sunt officia libero
+              ex vero! Molestias dicta distinctio libero expedita?
+            </p>
+          </motion.div>
+        </motion.div>
       </div>
-      <div className="expand_text">
-        <div className="expand_text_content">
-          <small>{category}</small>
-          <p>{title}</p>
-        </div>
-      </div>
-    </motion.div>
+    </>
   );
 }
 

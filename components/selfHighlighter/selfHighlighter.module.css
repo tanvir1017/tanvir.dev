@@ -14,9 +14,7 @@
 }
 .cardBg {
   background-color: rgba(255, 255, 255, 0.024);
-  z-index: 2;
   backdrop-filter: blur(0.5px);
-  height: 25rem;
 }
 
 .cardBg::after {

@@ -33,20 +33,24 @@ function MyApp({ Component, pageProps, router }) {
   };
   return (
     <main className={``}>
-      <div
-        onClick={() => (document.documentElement.scrollTop = 0)}
-        id="progress"
-        className={`rounded-full backdrop-blur-0 bg-white/5  active:-translate-y-2 cursor-pointer fixed grid right-5 place-items-center z-[2] h-[70px] w-[70px]`}
-      >
-        <span
-          id="progress-value"
-          style={customInlineCss}
-          className="text-3xl bg-white rounded-full grid place-items-center text-[#ee5252]"
+      <div className="lg:block hidden">
+        <div
+          onClick={() => (document.documentElement.scrollTop = 0)}
+          id="progress"
+          className={` rounded-full backdrop-blur-0 bg-white/5  active:-translate-y-2 cursor-pointer fixed grid right-5 place-items-center z-[2] h-[70px] w-[70px]`}
         >
-          &#x1F815;
-        </span>
+          <span
+            id="progress-value"
+            style={customInlineCss}
+            className="text-3xl bg-white rounded-full grid place-items-center text-[#ee5252]"
+          >
+            &#x1F815;
+          </span>
+        </div>
       </div>
-      <Navbar />
+      <div className="pt-3 lg:block hidden">
+        <Navbar />
+      </div>
       <AnimatePresence initial={false}>
         <Component key={router.pathname} {...pageProps} />
       </AnimatePresence>

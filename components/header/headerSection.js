@@ -9,22 +9,23 @@ function HeaderSection() {
     // animate={{ scale: 0.95 }}
     // transition={{ duration: 0.8 }}
     >
-      <div className={`container font-jostRegular`}>
-        <div className="flex justify-between items-center">
+      <div className={`lg:container m_container font-jostRegular`}>
+        <div className="lg:flex flex lg:flex-row flex-col-reverse justify-between items-center">
           <m.div transition={{ duration: 0.85 }} className="space-y-2">
             <p>Hi there beautiful people on the internet</p>
             <h4 className="font-semibold text-2xl ">Tanvir here</h4>
-            <m.div className="overflow-hidden">
+            <m.div className="lg:overflow-hidden">
               <m.h1
                 initial={{ y: "100%" }}
                 animate={{ y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-6xl font-bold"
+                className="lg:text-6xl text-5xl font-bold"
               >
                 {" "}
                 <span className={`${style.animatedText} font-jostBlack`}>
                   Frontend
                 </span>
+                <br className="lg:hidden" />
                 <span
                   className={`${style.textHighlighter} text-white font-jostBlack`}
                 >

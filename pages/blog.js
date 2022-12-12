@@ -4,17 +4,18 @@ import { blogLocData } from "../components/localData/localData";
 function Blog() {
   return (
     <>
-      <div className={` container`}>
+      <div className={` lg:container m_container font-jostRegular`}>
         <div className="grid place-items-center">
-          {/* <h1 className="font-[600] uppercase text-4xl">&#x3E;_ Latest blog</h1> */}
-          <h1 className="font-[600] uppercase text-4xl">Latest blog</h1>
+          <h1 className="font-jostBold uppercase text-4xl">Latest blog</h1>
           <p className="">
-            <span className={` text-green-700 font-semibold`}>MY</span>{" "}
-            <span className={``}>Articles & Advices</span>{" "}
+            <span className={` text-green-700 font-semibold font-jostSemiBold`}>
+              MY
+            </span>{" "}
+            <span className={`font-caveatMedium`}>Articles & Advices</span>{" "}
           </p>
         </div>
 
-        <div className="grid grid-cols-3 gap-5 my-14 lg:mx-[135px] ">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 my-14 lg:mx-[135px] ">
           {blogLocData.map((blogs, index) => {
             return (
               <div

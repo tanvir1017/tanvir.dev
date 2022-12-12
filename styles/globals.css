@@ -67,11 +67,10 @@ body {
   scroll-behavior: smooth;
   padding: 0;
   margin: 0;
-  /* overflow: hidden; */
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  /* background-image: url("/bg.jpg"); */
-  /* background-repeat: no-repeat; */
+  --secondary: rgb(161, 161, 161);
+  --divider: #343434;
 }
 
 a {
@@ -95,37 +94,12 @@ a {
 
 /* own css */
 .container {
-  /* background-color: rgba(210, 148, 239, 0.1);
-  backdrop-filter: blur(2px); */
   padding: 6.9rem 4rem;
   z-index: 1 !important;
 }
-
-.expand_card {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  top: 0;
-  right: 0;
-
-  height: 120vh;
-  width: 100vw;
-  background-color: #b5b5b5;
-}
-
-.expand_img {
-  display: block;
-  width: 50%;
-  padding-top: 50px;
-}
-.expand_image_content {
-  display: block;
-  width: 100%;
-  text-align: center;
-}
-.expand_image_content p {
-  text-align: left;
-  margin-left: 40px;
+.m_container {
+  padding: 2.9rem 1rem;
+  z-index: 1 !important;
 }
 
 /* card css */
@@ -136,26 +110,14 @@ screen {
 .card_container {
   max-width: 990px;
   flex: 1 1 100%;
+  margin: 0 auto;
   padding: 45px 25px;
 }
-
-h1 {
-  font-weight: bold;
-  color: white;
-  margin: 6px 0 12px;
-}
-
 .date {
   color: var(--secondary);
   font-size: 14px;
   text-transform: uppercase;
 }
-
-header {
-  border-bottom: 1px solid var(--divider);
-  position: relative;
-}
-
 .avatar {
   background: var(--divider);
   border-radius: 50%;
@@ -261,7 +223,7 @@ li {
 
 .open .card-image-container,
 .open .title-container {
-  z-index: 1;
+  z-index: 4;
 }
 
 .title-container {
@@ -276,11 +238,6 @@ li {
   left: 30px;
 }
 
-h2 {
-  color: #fff;
-  margin: 8px 0;
-}
-
 .category {
   color: #fff;
   font-size: 14px;
@@ -288,16 +245,16 @@ h2 {
 }
 
 .overlay {
-  z-index: 1;
+  /* z-index: 2; */
   position: fixed;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.121);
+  backdrop-filter: blur(110px);
   will-change: opacity;
   top: 0;
   bottom: 0;
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 990px;
 }
 
 .overlay a {
@@ -315,12 +272,6 @@ h2 {
   padding: 460px 35px 35px 35px;
   max-width: 700px;
   width: 90vw;
-}
-
-p {
-  color: #9d9ca1;
-  font-size: 20px;
-  line-height: 28px;
 }
 
 @media only screen and (max-width: 800px) {
