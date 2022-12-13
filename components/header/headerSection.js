@@ -1,21 +1,26 @@
-import { motion as m } from "framer-motion";
+import { motion as m, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import style from "./heading.module.css";
 
 function HeaderSection() {
+  const shouldReduceMotion = useReducedMotion();
+  const childVariants = {
+    initial: { opacity: 0, y: shouldReduceMotion ? 0 : 25 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  };
   return (
     <m.div
-      initial={{ scale: 1.138 }}
-      animate={{ scale: 0.95 }}
-      transition={{ duration: 0.8 }}
+      initial="initial"
+      animate="visible"
+      variants={{
+        initial: { opacity: 0 },
+        visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
+      }}
       className="lg:large_container m_container"
     >
       <div className={`font-jostRegular`}>
         <div className="md:flex md:text-left text-center flex md:flex-row flex-col-reverse justify-between items-center">
-          <m.div
-            transition={{ duration: 0.85 }}
-            className="space-y-2 lg:mt-0 mt-12"
-          >
+          <m.div variants={childVariants} className="space-y-2 lg:mt-0 mt-12">
             <p>Hi there beautiful people on the internet</p>
             <h4 className="font-semibold text-2xl ">Tanvir here</h4>
             <m.div className="lg:overflow-hidden pb-8">
@@ -38,7 +43,7 @@ function HeaderSection() {
               </m.h1>
             </m.div>
 
-            <p className="pt-5">
+            <p className="pt-5" variants={childVariants}>
               Mainly i am play with javascript and explore with this language
               some
               <br />
@@ -46,6 +51,7 @@ function HeaderSection() {
             </p>
             <div className="space-x-3 pt-12">
               <m.button
+                variants={childVariants}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className="p-3 rounded-lg backdrop-blur-0 bg-white/5 border-t-[#ff008c] border border-b-white/5 border-r-[#ff008c] border-l-white/5"
@@ -53,6 +59,7 @@ function HeaderSection() {
                 Get my resume
               </m.button>
               <m.button
+                variants={childVariants}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
                 className="p-3 rounded-lg backdrop-blur-0 bg-white/5 border-b-[#ff008c] border border-t-white/5 

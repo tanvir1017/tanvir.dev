@@ -4,7 +4,7 @@
 
 @layer utilities {
   .large_container {
-    padding: 6.9rem 4rem;
+    padding: 6.9rem 6rem;
     z-index: 1 !important;
   }
   .m_container {
