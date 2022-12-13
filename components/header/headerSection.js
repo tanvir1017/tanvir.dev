@@ -20,9 +20,9 @@ function HeaderSection() {
             <h4 className="font-semibold text-2xl ">Tanvir here</h4>
             <m.div className="lg:overflow-hidden pb-8">
               <m.h1
-                initial={{ y: "90px" }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
+                initial={{ y: "90px", opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
                 className="lg:text-6xl text-5xl font-bold"
               >
                 {" "}

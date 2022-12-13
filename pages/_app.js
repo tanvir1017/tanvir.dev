@@ -38,7 +38,7 @@ function MyApp({ Component, pageProps, router }) {
         <MenuToggler className="button" toggle={() => toggleOpen()} />
         <Navigation toggle={() => toggleOpen()} />
       </motion.nav> */}
-      <AnimatePresence initial={false}>
+      <AnimatePresence>
         <Component key={router.pathname} {...pageProps} />
       </AnimatePresence>
     </main>
