@@ -9,7 +9,7 @@ function Contact() {
   return (
     <>
       {" "}
-      <div className="grid place-items-center ">
+      <div className="grid place-items-center" id="contact">
         <h1 className="font-jostBold uppercase text-4xl md:text-5xl mt-[12rem]">
           Let&apos;s connect
         </h1>
@@ -28,7 +28,8 @@ function Contact() {
             variants={childVariants}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
-            className="p-3 rounded-lg  backdrop-blur-0 bg-white/5 border-t-[#ff008c] border border-b-white/5 border-r-[#ff008c] border-l-white/5"
+            transition={{ duration: 0.85 }}
+            className="py-3 px-6 hover:bg-[#b90d6b] rounded-full  bg-[#ff008c]"
           >
             Contact Me
           </m.button>

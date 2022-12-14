@@ -48,12 +48,12 @@ export default function Project() {
               />
             ))}
           </ul>
-          <div class="inset-x-0 bottom-0 flex justify-center bg-gradient-to-t from-[#0d0a0a] pt-[500px] pb-8 pointer-events-none dark:from-[#121212] absolute">
+          <div className="inset-x-0 bottom-0 flex justify-center bg-gradient-to-t from-[#0d0a0a] pt-[500px] pb-8 pointer-events-none dark:from-[#121212] absolute">
             <motion.button
               onClick={cardShowOrHide}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
-              class="relative rounded-lg backdrop-blur-0 focus:outline-none focus:ring-1  bg-white/5 border border-purple-500 focus:ring-purple-700 focus:ring-offset-2 text-sm text-white ring-offset-purple-700 font-semibold px-6 flex items-center  pointer-events-auto py-5"
+              className="relative rounded-lg backdrop-blur-0 focus:outline-none focus:ring-1  bg-white/5 border border-purple-500 focus:ring-purple-700 focus:ring-offset-2 text-sm text-white ring-offset-purple-700 font-semibold px-6 flex items-center  pointer-events-auto py-5"
             >
               {cardSplice > 6 ? "Show less..." : "Show more..."}
             </motion.button>

@@ -1,11 +1,27 @@
+import { motion as m, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 
 function Stack() {
+  const shouldReduceMotion = useReducedMotion();
+  const childVariants = {
+    initial: { opacity: 0, y: shouldReduceMotion ? 0 : 25 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
+  };
   return (
     <>
-      <div className="">
-        <div className="grid place-items-center ">
+      <m.div
+        initial="initial"
+        animate="visible"
+        variants={{
+          initial: { opacity: 0 },
+          visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
+        }}
+      >
+        <div
+          className="grid place-items-center md:text-left text-center"
+          variants={childVariants}
+        >
           <h1 className="font-jostBold uppercase text-4xl md:text-5xl mt-[12rem]">
             Technological skill
           </h1>
@@ -15,9 +31,9 @@ function Stack() {
           </p>
         </div>
 
-        <div className="card_container">
-          <div className="grid grid-cols-3 place-item-center gap-7">
-            <div className=" bg-white/5 backdrop:filter-[10px]  rounded-3xl">
+        <m.div className="card_container">
+          <m.div className="grid md:grid-cols-2 lg:grid-cols-3 place-item-center gap-7">
+            <m.div className=" bg-white/5 backdrop:filter-[10px]  rounded-3xl">
               <Image
                 className="rounded-t-3xl"
                 width={500}
@@ -35,7 +51,7 @@ function Stack() {
                   incorporating third-party libraries.
                 </p>
               </div>
-            </div>
+            </m.div>
             <div className="grid grid-cols-2 gap-3">
               <div className=" bg-white/5 backdrop:filter-[10px] grid place-items-center h-[12rem] p-3 rounded-3xl ">
                 <Image
@@ -105,9 +121,9 @@ function Stack() {
                 />
               </div>
             </div>
-          </div>
-        </div>
-      </div>
+          </m.div>
+        </m.div>
+      </m.div>
     </>
   );
 }

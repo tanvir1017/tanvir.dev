@@ -20,7 +20,6 @@ const sidebarVariants = {
 
 function MobileNav() {
   const [isOpen, toggleOpen] = useCycle(false, true);
-  console.log(isOpen);
   return (
     <>
       <motion.nav

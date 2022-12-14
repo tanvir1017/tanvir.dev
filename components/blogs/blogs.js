@@ -1,12 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 import { motion } from "framer-motion";
-import { blogLocData, metaTagBlog } from "../components/localData/localData";
-import Meta from "../components/meta/meta";
+import React from "react";
+import { blogLocData } from "../localData/localData";
 
-function Blog() {
+function BlogsPage() {
   return (
     <>
-      <Meta metaTag={metaTagBlog} />
       <div className={` lg:large_container m_container  font-jostRegular`}>
         <div className="grid place-items-center">
           <h1 className="font-jostBold uppercase text-4xl">Latest blog</h1>
@@ -50,4 +49,4 @@ function Blog() {
   );
 }
 
-export default Blog;
+export default BlogsPage;
