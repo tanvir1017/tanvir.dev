@@ -5,7 +5,7 @@ import style from "./social.module.css";
 function Social() {
   return (
     <ul className="flex items-center mt-4">
-      {socialData.map(({ id, icon, name, theme }) => {
+      {socialData.map(({ id, icon, name }) => {
         return (
           <li
             key={id}

@@ -23,7 +23,11 @@ function Projects({ id, expander }) {
             className="card-image-container"
             layoutId={`card-image-container-${id}`}
           >
-            <img className="card-image" src={`images/${id}.jpg`} alt="" />
+            <img
+              className="card-image"
+              src={`projects/${id}.webp`}
+              alt="project-image"
+            />
           </motion.div>
           <motion.div
             className="title-container"

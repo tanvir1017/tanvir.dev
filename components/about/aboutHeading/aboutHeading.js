@@ -40,7 +40,7 @@ function AboutHeading() {
           </m.h1>
         </m.div>
 
-        <m.div className="w-[280px] h-[330px] bg-white/5 bg-center  bg-cover rounded-lg bg-[url('/about-me.jpg')] relative md:ml-16 lg:ml-24 ml-9">
+        <m.div className="w-[280px] h-[330px] bg-white/5 bg-center  bg-cover rounded-lg bg-[url('/about-me.jpg')] relative md:ml-16 lg:ml-24 ml-14">
           <m.div
             className="rounded-lg w-[280px] h-[375px] absolute -ml-7 -mt-6 block grayscale border-2 border-r-0  p-1"
             animate={{
