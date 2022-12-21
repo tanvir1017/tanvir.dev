@@ -1,8 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
 import { useState } from "react";
-import { items } from "../localData/localData";
 import ProjectCard from "./projectCard";
+import { projectData } from "./projectData";
 import Projects from "./projects";
 export default function Project() {
   const [expand, setExpand] = useState(false);
@@ -27,7 +27,7 @@ export default function Project() {
     }
   };
   return (
-    <div className="card_container relative overflow-hidden">
+    <div className="card_container relative">
       <AnimateSharedLayout type="crossfade">
         <div className="grid place-items-center">
           <h1 className="uppercase text-4xl font-jostBold">Projects</h1>
@@ -38,7 +38,7 @@ export default function Project() {
         </div>
         <div className="">
           <ul className="card-list">
-            {items.slice(0, cardSplice).map((card) => (
+            {projectData.slice(0, cardSplice).map((card) => (
               <ProjectCard
                 key={card.id}
                 {...card}

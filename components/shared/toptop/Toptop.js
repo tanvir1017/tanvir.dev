@@ -19,7 +19,6 @@ function Toptop() {
       progress.style.bottom = "-180px";
       progress.style.transition = "0.6s";
     }
-    console.log("pos", pos);
     progress.style.backgroundImage = `conic-gradient(#ff008c ${scrollValue}%, #d5067891 ${scrollValue}%)`;
   };
 

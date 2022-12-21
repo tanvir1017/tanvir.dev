@@ -2,8 +2,8 @@ import { AnimatePresence } from "framer-motion";
 import Footer from "../components/shared/footer/footer";
 import LgNav from "../components/shared/nav/LgNav";
 import MobileNav from "../components/shared/nav/Navigation/MobileNav";
+import Toptop from "../components/shared/toptop/Toptop";
 
-import Toptop from "../components/toptop/Toptop";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps, router }) {

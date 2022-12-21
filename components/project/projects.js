@@ -1,10 +1,16 @@
 /* eslint-disable @next/next/no-img-element */
 import { motion } from "framer-motion";
-import { items } from "../localData/localData";
+import { projectData } from "./projectData";
 
 function Projects({ id, expander }) {
-  const showSelectedProject = items.find((item) => item.id === id);
-  const { id: foundedId, category, title } = showSelectedProject;
+  const showSelectedProject = projectData.find((item) => item.id === id);
+  const {
+    category,
+    title,
+    listItem,
+    about,
+    link: linkItem,
+  } = showSelectedProject;
   return (
     <>
       <motion.div
@@ -37,14 +43,35 @@ function Projects({ id, expander }) {
             <h2>{title}</h2>
           </motion.div>
           <motion.div className="content-container" animate>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora,
-              ut sunt! Molestiae vel quidem id illum earum quaerat, dignissimos
-              esse asperiores nesciunt error, modi aliquam blanditiis? Doloribus
-              veniam delectus ipsa facere, voluptatum placeat eum,
-              exercitationem neque voluptate harum est fuga, sunt officia libero
-              ex vero! Molestias dicta distinctio libero expedita?
-            </p>
+            <motion.div className="">
+              <motion.ul>
+                {linkItem.map((codeShow, i) => (
+                  <div
+                    key={i}
+                    className="flex justify-center items-center space-x-3 z-"
+                  >
+                    <motion.li className="bg-[#ff008c] px-3 py-2 hover:bg-black hover:text-white grid place-items-center">
+                      {" "}
+                      <a href={`${codeShow.live}`}>Live</a>{" "}
+                    </motion.li>
+                    <motion.li>
+                      {" "}
+                      <a href={`${codeShow.code}`}>Code</a>{" "}
+                    </motion.li>
+                    <motion.li>
+                      {" "}
+                      <a href={`${codeShow.server}`}>Server</a>{" "}
+                    </motion.li>
+                  </div>
+                ))}
+              </motion.ul>
+            </motion.div>
+            <p>{about}</p>
+            <ul>
+              {listItem?.map((items) => (
+                <li key={items}> &gt; {items}</li>
+              ))}
+            </ul>
           </motion.div>
         </motion.div>
       </div>

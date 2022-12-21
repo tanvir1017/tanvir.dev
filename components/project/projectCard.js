@@ -2,16 +2,43 @@
 import { motion } from "framer-motion";
 
 function ProjectCard({ item, expander }) {
-  const { id, title, category } = item;
+  const { id, title, category, link: linkItem } = item;
+
   return (
     <li className={`card cursor-pointer`}>
+      {/* <motion.div className="absolute -left-0 z-30 grid align-middle">
+        <motion.ul>
+          {linkItem.map((codeShow, i) => (
+            <div key={i} className="space-y-3">
+              <motion.li className="bg-[#ff008c] grid place-items-center">
+                {" "}
+                <a target="_blank" href={`${codeShow.live}`} rel="noreferrer">
+                  Live
+                </a>{" "}
+              </motion.li>
+              <motion.li>
+                {" "}
+                <a href={`${codeShow.code}`}>Code</a>{" "}
+              </motion.li>
+              <motion.li>
+                {" "}
+                <a href={`${codeShow.server}`}>Server</a>{" "}
+              </motion.li>
+            </div>
+          ))}
+        </motion.ul>
+      </motion.div> */}
       <div className="card-content-container">
         <motion.div className="card-content" layoutId={`card-container-${id}`}>
           <motion.div
             className="card-image-container"
             layoutId={`card-image-container-${id}`}
           >
-            <img className="card-image" src={`projects/${id}.webp`} alt="" />
+            <img
+              className="card-image md:max-w-full max-w-fit"
+              src={`projects/${id}.webp`}
+              alt=""
+            />
           </motion.div>
           <motion.div
             className="title-container"

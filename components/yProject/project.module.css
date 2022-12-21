@@ -1,0 +1,16 @@
+.showProjectView {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100vw;
+  min-height: 100vh;
+  display: block;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  background: rgba(0, 0, 0, 0.121);
+  backdrop-filter: blur(110px);
+  will-change: opacity;
+}

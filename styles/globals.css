@@ -284,7 +284,7 @@ li {
   top: 0;
   left: 0;
   overflow: hidden;
-  height: 420px;
+  /* height: 420px; */
   width: 100vw;
 }
 

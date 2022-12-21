@@ -1,5 +1,5 @@
 import React from "react";
-import { socialData } from "../selfHighlighter/data";
+import { socialData } from "../../selfHighlighter/data";
 import style from "./social.module.css";
 
 function Social() {

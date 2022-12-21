@@ -1,7 +1,7 @@
 import { motion as m, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import headingSection from "../../../components/header/heading.module.css";
-import Social from "../../social/social";
+import Social from "../../shared/social/social";
 
 function AboutHeading() {
   const shouldReduceMotion = useReducedMotion();
