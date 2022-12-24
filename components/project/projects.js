@@ -1,82 +1,56 @@
-/* eslint-disable @next/next/no-img-element */
-import { motion } from "framer-motion";
+import {
+  AnimatePresence,
+  AnimateSharedLayout,
+  motion as m,
+} from "framer-motion";
+import { useState } from "react";
+import ProjectItem from "./project";
 import { projectData } from "./projectData";
+import ShowProject from "./showProject";
 
-function Projects({ id, expander }) {
-  const showSelectedProject = projectData.find((item) => item.id === id);
-  const {
-    category,
-    title,
-    listItem,
-    about,
-    link: linkItem,
-  } = showSelectedProject;
+function ProjectsList() {
+  const [expand, setExpand] = useState(false);
+  const [layoutId, setLayoutId] = useState(null);
+  const expander = (id) => {
+    if (!expand) {
+      setLayoutId(id);
+      setExpand(true);
+    } else {
+      setLayoutId(null);
+      setExpand(!true);
+    }
+  };
   return (
     <>
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0, transition: { duration: 0.15 } }}
-        transition={{ duration: 0.2, delay: 0.15 }}
-        style={{ pointerEvents: "auto" }}
-        className="overlay cursor-pointer"
-      >
-        <a onClick={() => expander(id)} />
-      </motion.div>
-      <div className="card-content-container open">
-        <motion.div className="card-content" layoutId={`card-container-${id}`}>
-          <motion.div
-            className="card-image-container"
-            layoutId={`card-image-container-${id}`}
-          >
-            <img
-              className="card-image"
-              src={`projects/${id}.webp`}
-              alt="project-image"
-            />
-          </motion.div>
-          <motion.div
-            className="title-container"
-            layoutId={`title-container-${id}`}
-          >
-            <span className="category">{category}</span>
-            <h2>{title}</h2>
-          </motion.div>
-          <motion.div className="content-container" animate>
-            <motion.div className="">
-              <motion.ul>
-                {linkItem.map((codeShow, i) => (
-                  <div
-                    key={i}
-                    className="flex justify-center items-center space-x-3 z-"
-                  >
-                    <motion.li className="bg-[#ff008c] px-3 py-2 hover:bg-black hover:text-white grid place-items-center">
-                      {" "}
-                      <a href={`${codeShow.live}`}>Live</a>{" "}
-                    </motion.li>
-                    <motion.li>
-                      {" "}
-                      <a href={`${codeShow.code}`}>Code</a>{" "}
-                    </motion.li>
-                    <motion.li>
-                      {" "}
-                      <a href={`${codeShow.server}`}>Server</a>{" "}
-                    </motion.li>
-                  </div>
-                ))}
-              </motion.ul>
-            </motion.div>
-            <p>{about}</p>
-            <ul>
-              {listItem?.map((items) => (
-                <li key={items}> &gt; {items}</li>
-              ))}
-            </ul>
-          </motion.div>
-        </motion.div>
+      <div className={`card_container`}>
+        <m.div className="grid place-items-center" animate>
+          <h1 className="uppercase text-4xl font-jostBold">Projects</h1>
+          <p className="">
+            <span className={` text-green-700 font-jostSemiBold`}>THAT</span>{" "}
+            <span className={`font-caveatMedium`}>I&apos;ve done</span>{" "}
+          </p>
+        </m.div>
+        <AnimateSharedLayout type="crossfade">
+          <ul className="card-list my-14">
+            {projectData.map((project, i) => {
+              return (
+                <ProjectItem
+                  expander={expander}
+                  key={i}
+                  project={project}
+                  layoutId={project.id}
+                />
+              );
+            })}
+          </ul>
+          <AnimatePresence>
+            {" "}
+            {expand && <ShowProject expander={expander} layoutId={layoutId} />}
+          </AnimatePresence>
+        </AnimateSharedLayout>
       </div>
     </>
   );
 }
 
-export default Projects;
+export default ProjectsList;

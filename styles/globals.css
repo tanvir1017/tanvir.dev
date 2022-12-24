@@ -77,6 +77,13 @@
       #7700ff,
       #4400ff
     );
+
+    --border-gradient: linear-gradient(
+      160deg,
+      rgba(252, 37, 103, 1),
+      rgba(250, 38, 151, 1),
+      rgba(186, 8, 181, 1)
+    );
   }
 }
 
@@ -97,7 +104,7 @@ a {
 }
 
 * {
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  /* -webkit-tap-highlight-color: rgba(0, 0, 0, 0); */
   box-sizing: border-box;
 }
 
@@ -198,13 +205,6 @@ screen {
 .avatar img {
   width: 40px;
   height: 40px;
-}
-
-ul,
-li {
-  list-style: none;
-  padding: 0;
-  margin: 0;
 }
 
 .card-list {

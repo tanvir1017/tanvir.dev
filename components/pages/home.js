@@ -1,9 +1,9 @@
 import React from "react";
 import BlogsPage from "../blogs/blogs";
 import HeaderSection from "../header/headerSection";
+import ProjectsList from "../project/projects";
 
 import SelfHighlighter from "../selfHighlighter/selfHighlighter";
-import Yprojects from "../yProject/Yprojects";
 
 function HomePage() {
   return (
@@ -11,7 +11,7 @@ function HomePage() {
       <HeaderSection />
       <SelfHighlighter />
       <BlogsPage />
-      <Yprojects />
+      <ProjectsList />
     </>
   );
 }

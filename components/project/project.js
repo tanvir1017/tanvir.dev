@@ -1,72 +1,35 @@
-/* eslint-disable @next/next/no-img-element */
-import { AnimatePresence, AnimateSharedLayout, motion } from "framer-motion";
-import { useState } from "react";
-import ProjectCard from "./projectCard";
-import { projectData } from "./projectData";
-import Projects from "./projects";
-export default function Project() {
-  const [expand, setExpand] = useState(false);
-  const [layoutId, setLayoutId] = useState(null);
-  const [cardSplice, setCardSplice] = useState(4);
+import { motion as m } from "framer-motion";
+import Image from "next/image";
 
-  const expander = (id) => {
-    if (!expand) {
-      setLayoutId(id);
-      setExpand(true);
-    } else {
-      setLayoutId(null);
-      setExpand(!true);
-    }
-  };
-
-  const cardShowOrHide = () => {
-    if (cardSplice === 4 || cardSplice === 6) {
-      setCardSplice((prev) => prev + 2);
-    } else if (cardSplice === 8) {
-      setCardSplice(4);
-    }
-  };
+export default function ProjectItem({ project: p, expander }) {
   return (
-    <div className="card_container relative">
-      <AnimateSharedLayout type="crossfade">
-        <div className="grid place-items-center">
-          <h1 className="uppercase text-4xl font-jostBold">Projects</h1>
-          <p className="">
-            <span className={` text-green-700 font-jostSemiBold`}>THAT</span>{" "}
-            <span className={`font-caveatMedium`}>I&apos;ve done</span>{" "}
-          </p>
-        </div>
-        <div className="">
-          <ul className="card-list">
-            {projectData.slice(0, cardSplice).map((card) => (
-              <ProjectCard
-                key={card.id}
-                {...card}
-                item={card}
-                expander={expander}
-                layoutId={card.id}
-              />
-            ))}
-          </ul>
-          <div className="inset-x-0 bottom-0 flex justify-center bg-gradient-to-t from-[#0d0a0a] pt-[500px] pb-8 pointer-events-none dark:from-[#121212] absolute">
-            <motion.button
-              onClick={cardShowOrHide}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className="relative rounded-lg backdrop-blur-0 focus:outline-none focus:ring-1  bg-white/5 border border-purple-500 focus:ring-purple-700 focus:ring-offset-2 text-sm text-white ring-offset-purple-700 font-semibold px-6 flex items-center  pointer-events-auto py-5"
-            >
-              {cardSplice > 6 ? "Show less..." : "Show more..."}
-            </motion.button>
-          </div>
-        </div>
-        <AnimatePresence>
-          {expand && (
-            <div className="">
-              <Projects expander={expander} id={layoutId} />
-            </div>
-          )}
-        </AnimatePresence>
-      </AnimateSharedLayout>
-    </div>
+    <li className={`card cursor-pointer`}>
+      <div className="card-content-container">
+        <m.div
+          className="card-content"
+          layoutId={`${p.id}`}
+          onClick={() => expander(p.id)}
+        >
+          <m.div
+            className="card-image-container"
+            layoutId={`card-image-container-${p.id}`}
+          >
+            <Image
+              className="card-image md:max-w-full max-w-fit"
+              src={`/projects/${p.id}.webp`}
+              width={800}
+              height={100}
+              alt={p.title}
+            />
+          </m.div>
+          <m.div
+            className="title-container"
+            layoutId={`title-container-${p.id}`}
+          >
+            <h4>{p.title}</h4>
+          </m.div>
+        </m.div>
+      </div>
+    </li>
   );
 }
