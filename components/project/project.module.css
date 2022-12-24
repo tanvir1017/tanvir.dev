@@ -5,14 +5,64 @@
   bottom: 0;
   right: 0;
   display: block;
-  overflow: hidden;
   scroll-behavior: smooth;
   background-position: center;
   background: rgba(0, 0, 0, 0.121);
+  max-width: 100%;
+  overflow-y: auto;
   backdrop-filter: blur(110px);
 }
+
+.showMoreButton {
+  background-color: #ff99da;
+  background-image: linear-gradient(
+    109.6deg,
+    rgba(61, 245, 167, 1),
+    rgb(59, 132, 215),
+    rgb(9, 224, 167),
+    rgb(62, 227, 33),
+    rgb(105, 247, 65)
+  );
+  background-size: 300%;
+}
+.showMoreButton:hover {
+  animation: showMoreButtonAnimation 2s infinite alternate;
+}
+
+@keyframes showMoreButtonAnimation {
+  0% {
+    background-position: right;
+  }
+  25% {
+    background-position: top;
+  }
+  50% {
+    background-position: bottom;
+  }
+  100% {
+    background-position: left;
+  }
+}
+
+.showProjectView::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+.showProjectView::-webkit-scrollbar-track {
+  background-color: #e7e7e7;
+  border-radius: 80vh;
+}
+.showProjectView::-webkit-scrollbar-thumb {
+  background-image: var(--border-gradient);
+  box-shadow: rgba(235, 56, 181, 0.84) 0px 8px 16px 0px;
+  border-radius: 50vh;
+}
+
 .descUl {
   margin-left: 25px;
+}
+.listLi {
+  margin-left: 18px;
 }
 .descUl::before {
   content: "";
@@ -22,10 +72,6 @@
   height: 12.3rem;
   background: white;
   border-radius: 10px;
-}
-
-.listLi {
-  margin-left: 18px;
 }
 .listLi::before {
   content: " ◉ ";
@@ -125,4 +171,21 @@
     #f857a6,
     #ff5858
   );
+}
+
+@media screen and (max-width: 1400px) {
+  .descUl::before {
+    display: none;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .listLi::before {
+    content: " ◉ ";
+    color: #ee6352;
+    background-image: var(--border-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: absolute;
+    left: 12px;
+  }
 }

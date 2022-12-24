@@ -6,7 +6,7 @@ import { FaCompressArrowsAlt } from "react-icons/fa";
 import { IoIosOpen } from "react-icons/io";
 import style from "./project.module.css";
 
-function ProjectImage({ expander, stack, layoutId, title, links }) {
+function ProjectImage({ expander, stack, layoutId, title, links, id }) {
   return (
     <div>
       <m.div
@@ -50,7 +50,7 @@ function ProjectImage({ expander, stack, layoutId, title, links }) {
               <>
                 {html && (
                   <li
-                    key={i}
+                    key={i + 2}
                     className={`${style.techLi} px-5 py-1 rounded-full bg-white/5`}
                   >
                     {html}
@@ -58,7 +58,7 @@ function ProjectImage({ expander, stack, layoutId, title, links }) {
                 )}
                 {css && (
                   <li
-                    key={i}
+                    key={i + 3}
                     className={`${style.techLi} px-5 py-1 rounded-full bg-white/5`}
                   >
                     {css}
@@ -66,7 +66,7 @@ function ProjectImage({ expander, stack, layoutId, title, links }) {
                 )}
                 {Bootstrap && (
                   <li
-                    key={i}
+                    key={i + 5}
                     className={`${style.techLi} px-5 py-1 rounded-full bg-white/5`}
                   >
                     {Bootstrap}
@@ -74,7 +74,7 @@ function ProjectImage({ expander, stack, layoutId, title, links }) {
                 )}
                 {Tailwind && (
                   <li
-                    key={i}
+                    key={i + 6}
                     className={`${style.techLi} px-5 py-1 rounded-full bg-white/5`}
                   >
                     {Tailwind}
@@ -82,7 +82,7 @@ function ProjectImage({ expander, stack, layoutId, title, links }) {
                 )}
                 {Mongodb && (
                   <li
-                    key={i}
+                    key={i + 7}
                     className={`${style.techLi} px-5 py-1 rounded-full bg-white/5`}
                   >
                     {Mongodb}
@@ -90,7 +90,7 @@ function ProjectImage({ expander, stack, layoutId, title, links }) {
                 )}
                 {Express && (
                   <li
-                    key={i}
+                    key={i + 8}
                     className={`${style.techLi} px-5 py-1 rounded-full bg-white/5`}
                   >
                     {Express}
@@ -98,7 +98,7 @@ function ProjectImage({ expander, stack, layoutId, title, links }) {
                 )}
                 {ReactRouter && (
                   <li
-                    key={i}
+                    key={i + 9}
                     className={`${style.techLi} px-5 py-1 rounded-full bg-white/5`}
                   >
                     {ReactRouter}
@@ -106,7 +106,7 @@ function ProjectImage({ expander, stack, layoutId, title, links }) {
                 )}
                 {Redux && (
                   <li
-                    key={i}
+                    key={i + 10}
                     className={`${style.techLi} px-5 py-1 rounded-full bg-white/5`}
                   >
                     {Redux}
@@ -114,7 +114,7 @@ function ProjectImage({ expander, stack, layoutId, title, links }) {
                 )}
                 {Firebase && (
                   <li
-                    key={i}
+                    key={i + 11}
                     className={`${style.techLi} px-5 py-1 rounded-full bg-white/5`}
                   >
                     {Firebase}
@@ -122,7 +122,7 @@ function ProjectImage({ expander, stack, layoutId, title, links }) {
                 )}
                 {PracticeProject && (
                   <li
-                    key={i}
+                    key={i + 12}
                     className={`${style.techLi} px-5 py-1 rounded-full bg-white/5`}
                   >
                     {PracticeProject}
@@ -144,7 +144,7 @@ function ProjectImage({ expander, stack, layoutId, title, links }) {
             <>
               {code && (
                 <m.li
-                  key={i}
+                  key={i + 13}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   className="bg-white/5 px-6 py-1 rounded-full"
@@ -161,7 +161,7 @@ function ProjectImage({ expander, stack, layoutId, title, links }) {
               )}
               {server && (
                 <m.li
-                  key={i}
+                  key={i + 14}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   className="bg-white/5 px-6 py-1 rounded-full"
@@ -178,7 +178,7 @@ function ProjectImage({ expander, stack, layoutId, title, links }) {
               )}
               {live && (
                 <m.li
-                  key={i}
+                  key={i + 15}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   className="bg-white/5 px-6 py-1 rounded-full"

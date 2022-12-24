@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import { motion } from "framer-motion";
+import Link from "next/link";
 import React from "react";
 import { blogLocData } from "../localData/localData";
 
@@ -41,7 +42,7 @@ function BlogsPage() {
 
         <div className="grid place-items-center">
           <button className="hover:bg-white/5 hover:backdrop-blur-lg border px-12 py-3 rounded-3xl">
-            View more...
+            <Link href="/blogs">View more...</Link>
           </button>
         </div>
       </div>

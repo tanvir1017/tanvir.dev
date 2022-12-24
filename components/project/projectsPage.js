@@ -3,14 +3,12 @@ import {
   AnimateSharedLayout,
   motion as m,
 } from "framer-motion";
-import Link from "next/link";
 import { useState } from "react";
 import ProjectItem from "./project";
-import Style from "./project.module.css";
 import { projectData } from "./projectData";
 import ShowProject from "./showProject";
 
-function ProjectsList() {
+function ProjectsPage() {
   const [expand, setExpand] = useState(false);
   const [layoutId, setLayoutId] = useState(null);
   const expander = (id) => {
@@ -34,7 +32,7 @@ function ProjectsList() {
         </m.div>
         <AnimateSharedLayout type="crossfade">
           <ul className="card-list my-14">
-            {projectData.slice(0, 4).map((project, i) => {
+            {projectData.map((project, i) => {
               return (
                 <ProjectItem
                   expander={expander}
@@ -45,15 +43,6 @@ function ProjectsList() {
               );
             })}
           </ul>
-          <div className="inset-x-0 bottom-0 flex justify-center bg-gradient-to-t from-[#232020] pt-[700px] pb-8 pointer-events-none dark:from-[#121212] absolute">
-            <m.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className={`relative -top-36 rounded-full backdrop-blur-0 focus:outline-none focus:ring-1    text-white px-6 flex shadow-lg items-center  pointer-events-auto py-2 ${Style.showMoreButton}`}
-            >
-              <Link href="/projects">Show more</Link>
-            </m.button>
-          </div>
           <AnimatePresence>
             {" "}
             {expand && <ShowProject expander={expander} layoutId={layoutId} />}
@@ -64,4 +53,4 @@ function ProjectsList() {
   );
 }
 
-export default ProjectsList;
+export default ProjectsPage;

@@ -5,9 +5,8 @@ import Social from "../social/social";
 const Footer = () => {
   return (
     <>
-      <footer className="m_container font-jostRegular">
+      <footer className="font-jostRegular">
         <div className="grid place-items-center my-24 px-12">
-          {/* <div className="bg-gray-700 h-[2px] w-full" /> */}
           <m.div className="mb-16 mt-12 space-y-8">
             <m.ul className="flex justify-center items-center space-x-8">
               <m.li initial={{ scale: 1 }} whileHover={{ scale: 1.1 }}>

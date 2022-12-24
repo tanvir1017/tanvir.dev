@@ -16,21 +16,22 @@ function ShowProject({ layoutId, expander }) {
   } = showProjectById;
   return (
     <m.div
-      className={`${style.showProjectView} font-jostRegular`}
+      className={`${style.showProjectView} font-jostRegular lg:py-0 pt-6`}
       layoutId={layoutId}
       style={{ pointerEvents: "auto" }}
     >
-      <m.div className="large_container">
-        <div className="grid grid-cols-2 gap-4 place-items-center">
+      <m.div className="lg:large_container m_container">
+        <div className="grid lg:grid-cols-2 grid-cols-1 gap-4 place-items-center">
           <ProjectImage
             expander={expander}
             stack={stack}
             layoutId={layoutId}
             title={title}
             links={links}
+            id={id}
           />
           <m.div
-            className="p-8 relative"
+            className="lg:p-8 relative"
             initial={{ opacity: 0, x: "-100px" }}
             animate={{ opacity: 1, x: "0px" }}
             transition={{ duration: 0.5, delay: 0.5 }}
@@ -42,7 +43,7 @@ function ShowProject({ layoutId, expander }) {
             </p>
             <ul className={`mt-4 ${style.descUl} space-y-2`}>
               {listItem.map((item, i) => (
-                <li key={i} className={`${style.listLi}`}>
+                <li key={i + 1} className={`${style.listLi}`}>
                   {item}
                 </li>
               ))}

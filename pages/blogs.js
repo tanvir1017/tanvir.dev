@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { blogLocData, metaTagBlog } from "../components/localData/localData";
 import Meta from "../components/meta/meta";
 
-function Blog() {
+function Blogs() {
   return (
     <>
       <Meta metaTag={metaTagBlog} />
@@ -39,15 +39,9 @@ function Blog() {
             );
           })}
         </div>
-
-        <div className="grid place-items-center">
-          <button className="hover:bg-white/5 hover:backdrop-blur-lg border px-12 py-3 rounded-3xl">
-            View more...
-          </button>
-        </div>
       </div>
     </>
   );
 }
 
-export default Blog;
+export default Blogs;

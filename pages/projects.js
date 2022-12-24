@@ -1,12 +1,12 @@
 import { metaTagProjects } from "../components/localData/localData";
 import Meta from "../components/meta/meta";
-import ProjectsList from "../components/project/projects";
+import ProjectsPage from "../components/project/projectsPage";
 
 function Projects() {
   return (
     <>
       <Meta metaTag={metaTagProjects} />
-      <ProjectsList />
+      <ProjectsPage />
     </>
   );
 }

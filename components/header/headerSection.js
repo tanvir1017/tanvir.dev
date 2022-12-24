@@ -57,7 +57,13 @@ function HeaderSection() {
                 whileTap={{ scale: 0.9 }}
                 className="p-3 rounded-lg backdrop-blur-0 bg-white/5 border-t-[#ff008c] border border-b-white/5 border-r-[#ff008c] border-l-white/5"
               >
-                Get my resume
+                <a
+                  href="https://drive.google.com/file/d/1kFNHhnbpWtBVQTTyCuSiqJhygGNBgBGH/view?usp=share_link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Get my resume
+                </a>
               </m.button>
               <m.button
                 variants={childVariants}
@@ -66,7 +72,7 @@ function HeaderSection() {
                 className="p-3 rounded-lg backdrop-blur-0 bg-white/5 border-b-[#ff008c] border border-t-white/5 
               border-l-[#ff008c] border-r-white/5"
               >
-                <Link href="/blog">Read blogs</Link>
+                <Link href="/blogs">Read blogs</Link>
               </m.button>
             </div>
           </m.div>
