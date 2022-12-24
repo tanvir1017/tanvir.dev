@@ -1,5 +1,6 @@
 import { motion as m, useReducedMotion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import style from "./heading.module.css";
 
 function HeaderSection() {
@@ -65,7 +66,7 @@ function HeaderSection() {
                 className="p-3 rounded-lg backdrop-blur-0 bg-white/5 border-b-[#ff008c] border border-t-white/5 
               border-l-[#ff008c] border-r-white/5"
               >
-                Read blogs
+                <Link href="/blog">Read blogs</Link>
               </m.button>
             </div>
           </m.div>
