@@ -22,7 +22,7 @@ function MobileNav() {
   const [isOpen, toggleOpen] = useCycle(false, true);
   return (
     <motion.nav
-      className=""
+      className="lg:hidden block"
       initial={false}
       animate={isOpen ? "open" : "closed"}
     >
