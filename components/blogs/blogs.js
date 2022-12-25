@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { motion } from "framer-motion";
+import { motion as m } from "framer-motion";
 import Link from "next/link";
 import React from "react";
 import { blogLocData } from "../localData/localData";
@@ -8,18 +8,30 @@ function BlogsPage() {
   return (
     <>
       <div className={` lg:large_container m_container  font-jostRegular`}>
-        <div className="grid place-items-center">
+        <m.div
+          className="grid place-items-center"
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.3 }}
+        >
           <h1 className="font-jostBold uppercase text-4xl">Latest blog</h1>
           <p className="">
             <span className={` text-green-700 font-jostSemiBold`}>MY</span>{" "}
             <span className={`font-caveatMedium`}>Articles & Advices</span>{" "}
           </p>
-        </div>
+        </m.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-14 lg:mx-[135px] ">
+        <m.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-14 lg:mx-[135px] "
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.3, delay: 0.3 }}
+        >
           {blogLocData.map((blogs, index) => {
             return (
-              <motion.div
+              <m.div
                 key={index}
                 className={`rounded-2xl p-5 space-y-5 bg-white/5 backdrop:filter(16px)`}
               >
@@ -35,10 +47,10 @@ function BlogsPage() {
                     alt={blogs.title}
                   />
                 </div>
-              </motion.div>
+              </m.div>
             );
           })}
-        </div>
+        </m.div>
 
         <div className="grid place-items-center">
           <button className="hover:bg-white/5 hover:backdrop-blur-lg border px-12 py-3 rounded-3xl">

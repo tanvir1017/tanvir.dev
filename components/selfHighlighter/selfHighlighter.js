@@ -1,3 +1,4 @@
+import { motion as m } from "framer-motion";
 import { cardData } from "./data";
 import style from "./selfHighlighter.module.css";
 
@@ -5,7 +6,13 @@ function SelfHighlighter() {
   return (
     <>
       <div className={`lg:large_container m_container font-jostRegular`}>
-        <div className="text-center grid place-items-center">
+        <m.div
+          className="text-center grid place-items-center"
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.3 }}
+        >
           <h1 className="uppercase text-4xl font-jostBold">
             Describing myself
           </h1>
@@ -13,9 +20,15 @@ function SelfHighlighter() {
             <span className={`text-[#ff008c] font-jostSemiBold`}>INTO</span>{" "}
             <span className={`font-caveatMedium`}>Three Sentence</span>{" "}
           </p>
-        </div>
+        </m.div>
         <div className="lg:px-16 my-14">
-          <div className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3  gap-4 justify-items-center">
+          <m.div
+            className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3  gap-4 justify-items-center"
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.3, delay: 0.3 }}
+          >
             {cardData.map((data, index) => {
               return (
                 <div
@@ -28,7 +41,7 @@ function SelfHighlighter() {
                 </div>
               );
             })}
-          </div>
+          </m.div>
         </div>
       </div>
     </>

@@ -23,7 +23,13 @@ function ProjectsPage() {
   return (
     <>
       <div className={`card_container relative`}>
-        <m.div className="grid place-items-center" animate>
+        <m.div
+          className="grid place-items-center"
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.3 }}
+        >
           <h1 className="uppercase text-4xl font-jostBold">Projects</h1>
           <p className="">
             <span className={` text-green-700 font-jostSemiBold`}>THAT</span>{" "}
@@ -31,7 +37,13 @@ function ProjectsPage() {
           </p>
         </m.div>
         <AnimateSharedLayout type="crossfade">
-          <ul className="card-list my-14">
+          <m.ul
+            className="card-list my-14"
+            initial={{ opacity: 0, y: 25 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.3 }}
+          >
             {projectData.map((project, i) => {
               return (
                 <ProjectItem
@@ -42,7 +54,7 @@ function ProjectsPage() {
                 />
               );
             })}
-          </ul>
+          </m.ul>
           <AnimatePresence>
             {" "}
             {expand && <ShowProject expander={expander} layoutId={layoutId} />}

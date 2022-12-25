@@ -7,15 +7,16 @@ import Toptop from "../components/shared/toptop/Toptop";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps, router }) {
+  const { pathname } = router;
   return (
     <main>
-      <Toptop />
+      {pathname !== "/404" && <Toptop />}
       <MobileNav />
-      <LgNav />
+      {pathname !== "/404" && <LgNav />}
       <AnimatePresence>
         <Component key={router.pathname} {...pageProps} />
       </AnimatePresence>
-      <Footer />
+      {pathname !== "/404" && <Footer />}
     </main>
   );
 }

@@ -1,13 +1,8 @@
-import { motion as m, useReducedMotion } from "framer-motion";
+import { motion as m } from "framer-motion";
 import Image from "next/image";
 import React from "react";
 
 function Stack() {
-  const shouldReduceMotion = useReducedMotion();
-  const childVariants = {
-    initial: { opacity: 0, y: shouldReduceMotion ? 0 : 25 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-  };
   return (
     <>
       <m.div
@@ -18,9 +13,12 @@ function Stack() {
           visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
         }}
       >
-        <div
+        <m.div
           className="grid place-items-center md:text-left text-center"
-          variants={childVariants}
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.3 }}
         >
           <h1 className="font-jostBold uppercase text-4xl md:text-5xl mt-[12rem]">
             Technological skill
@@ -29,9 +27,15 @@ function Stack() {
             <span className="text-yellow-300">That</span>{" "}
             <span className="font-caveatRegular">I love to work with</span>
           </p>
-        </div>
+        </m.div>
 
-        <m.div className="card_container">
+        <m.div
+          className="card_container"
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.3, delay: 0.3 }}
+        >
           <m.div className="grid md:grid-cols-2 lg:grid-cols-3 place-item-center gap-7">
             <m.div className=" bg-white/5 backdrop:filter-[10px]  rounded-3xl">
               <Image

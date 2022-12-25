@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import { motion } from "framer-motion";
+import { motion as m } from "framer-motion";
 import { blogLocData, metaTagBlog } from "../components/localData/localData";
 import Meta from "../components/meta/meta";
 
@@ -7,7 +7,13 @@ function Blogs() {
   return (
     <>
       <Meta metaTag={metaTagBlog} />
-      <div className={` lg:large_container m_container  font-jostRegular`}>
+      <m.div
+        className={` lg:large_container m_container  font-jostRegular`}
+        initial={{ opacity: 0, y: 25 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: false }}
+        transition={{ duration: 0.3 }}
+      >
         <div className="grid place-items-center">
           <h1 className="font-jostBold uppercase text-4xl">Latest blog</h1>
           <p className="">
@@ -16,10 +22,16 @@ function Blogs() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-14 lg:mx-[135px] ">
+        <m.div
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-14 lg:mx-[135px] "
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.3 }}
+        >
           {blogLocData.map((blogs, index) => {
             return (
-              <motion.div
+              <m.div
                 key={index}
                 className={`rounded-2xl p-5 space-y-5 bg-white/5 backdrop:filter(16px)`}
               >
@@ -35,11 +47,11 @@ function Blogs() {
                     alt={blogs.title}
                   />
                 </div>
-              </motion.div>
+              </m.div>
             );
           })}
-        </div>
-      </div>
+        </m.div>
+      </m.div>
     </>
   );
 }

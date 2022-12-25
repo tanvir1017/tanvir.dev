@@ -11,7 +11,7 @@ function AboutHeading() {
   };
   return (
     <>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1  space-y-5 md:space-y-0 gap-4">
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 space-y-5 md:space-y-0 gap-4">
         <m.div
           initial="initial"
           animate="visible"
@@ -28,9 +28,8 @@ function AboutHeading() {
             initial={{ y: "90px", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className={`${headingSection.animatedText} font-jostBlack lg:text-7xl text-5xl`}
+            className={`${headingSection.animatedText} font-jostBlack lg:text-6xl text-5xl`}
             style={{ lineHeight: "1.1" }}
-            href="#contact"
           >
             Hello,there!
             <div className="block "></div>
@@ -40,7 +39,7 @@ function AboutHeading() {
           </m.h1>
         </m.div>
 
-        <m.div className="w-[280px] h-[330px] bg-white/5 bg-center  bg-cover rounded-lg bg-[url('/about-me.jpg')] relative md:ml-16 lg:ml-24 ml-14">
+        <m.div className="w-[280px] h-[330px] bg-center  bg-cover rounded-lg bg-[url('/about-me.jpg')] relative ml-12">
           <m.div
             className="rounded-lg w-[280px] h-[375px] absolute -ml-7 -mt-6 block grayscale border-2 border-r-0  p-1"
             animate={{
@@ -64,7 +63,7 @@ function AboutHeading() {
         </m.div>
 
         <m.div
-          className=" lg:-ml-7 md:-ml-5 ml-0 md:px-5 lg:px-0 px-5 md:pt-0 pt-8"
+          className="md:-ml-5 ml-0 md:px-5 lg:px-0 px-5 md:pt-0 pt-8 overflow-hidden"
           initial="initial"
           animate="visible"
           variants={{
