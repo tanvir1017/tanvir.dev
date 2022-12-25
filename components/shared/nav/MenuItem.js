@@ -21,7 +21,7 @@ const menuItemVariants = {
   },
 };
 
-const MenuItem = ({ nav, toggle, isOpen }) => {
+const MenuItem = ({ nav, toggle }) => {
   return (
     <motion.li
       className={`nav-li ${style.navLink}`}

@@ -1,5 +1,5 @@
 import { BiHomeSmile } from "react-icons/bi";
-import { GrProjects } from "react-icons/gr";
+import { RiAppsFill } from "react-icons/ri";
 // import { MdOutlineConnectWithoutContact } from "react-icons/md";
 import { RiPagesFill } from "react-icons/ri";
 import { SiAboutdotme } from "react-icons/si";
@@ -13,5 +13,5 @@ export const data = [
   //   icon: <MdOutlineConnectWithoutContact />,
   //   path: "/contact",
   // },
-  { title: "Project", icon: <GrProjects />, path: "/projects" },
+  { title: "Project", icon: <RiAppsFill />, path: "/projects" },
 ];

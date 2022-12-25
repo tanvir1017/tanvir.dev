@@ -1,6 +1,6 @@
 import { motion as m } from "framer-motion";
 import { projectData } from "../project/projectData";
-import style from "./project.module.css";
+import Style from "./project.module.css";
 import ProjectImage from "./ProjectImage";
 
 function ShowProject({ layoutId, expander }) {
@@ -16,7 +16,7 @@ function ShowProject({ layoutId, expander }) {
   } = showProjectById;
   return (
     <m.div
-      className={`${style.showProjectView} font-jostRegular lg:py-0 pt-6`}
+      className={`${Style.showProjectView} font-jostRegular lg:py-0 lg:px-0 pt-6 px-3`}
       layoutId={layoutId}
       style={{ pointerEvents: "auto" }}
     >
@@ -38,12 +38,12 @@ function ShowProject({ layoutId, expander }) {
           >
             <h2 className="font-jostBold text-3xl">{title}</h2>
             <p>{desc}</p>
-            <p className="font-jostBold mt-5 border rounded-full inline-block px-5 py-1">
+            <p className="lg:font-jostBold mt-5 border rounded-full inline-block px-5 py-1">
               {about}
             </p>
-            <ul className={`mt-4 ${style.descUl} space-y-2`}>
+            <ul className={`mt-4 ${Style.descUl} space-y-2`}>
               {listItem.map((item, i) => (
-                <li key={i + 1} className={`${style.listLi}`}>
+                <li key={i + 1} className={`${Style.listLi}`}>
                   {item}
                 </li>
               ))}

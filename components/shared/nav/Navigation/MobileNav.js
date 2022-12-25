@@ -21,17 +21,15 @@ const sidebarVariants = {
 function MobileNav() {
   const [isOpen, toggleOpen] = useCycle(false, true);
   return (
-    <>
-      <motion.nav
-        className="lg:hidden block"
-        initial={false}
-        animate={isOpen ? "open" : "closed"}
-      >
-        <motion.div className="background" variants={sidebarVariants} />
-        <MenuToggler className="button" toggle={() => toggleOpen()} />
-        <Navigation toggle={() => toggleOpen()} isOpen={isOpen} />
-      </motion.nav>
-    </>
+    <motion.nav
+      className=""
+      initial={false}
+      animate={isOpen ? "open" : "closed"}
+    >
+      <motion.div className="background" variants={sidebarVariants} />
+      <MenuToggler className="button" toggle={() => toggleOpen()} />
+      <Navigation toggle={() => toggleOpen()} isOpen={isOpen} />
+    </motion.nav>
   );
 }
 

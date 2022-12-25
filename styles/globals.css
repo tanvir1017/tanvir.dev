@@ -128,7 +128,7 @@ a {
 
 @layer components {
   .background {
-    @apply bg-white fixed top-[0px] z-10 left-[0px] bottom-0 w-full;
+    @apply bg-black fixed top-[0px] z-10 left-[0px] bottom-0 w-full;
   }
   .icon-placeholder {
     @apply w-[45px] h-[45px] rounded-full;

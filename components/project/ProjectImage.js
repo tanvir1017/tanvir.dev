@@ -18,7 +18,7 @@ function ProjectImage({ expander, stack, layoutId, title, links, id }) {
         <m.span
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="absolute bg-white rounded-lg w-14 h-[56px] grid place-items-center top-0 left-0 right-0 bottom-0 cursor-pointer text-[#ff008c]"
+          className="absolute bg-white rounded-lg w-14 h-[56px] grid place-items-center top-0 left-0 lg:right-0 right-3  bottom-0 cursor-pointer text-[#ff008c]"
           onClick={() => expander(layoutId)}
         >
           <FaCompressArrowsAlt />

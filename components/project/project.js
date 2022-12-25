@@ -15,7 +15,7 @@ export default function ProjectItem({ project: p, expander }) {
             layoutId={`card-image-container-${p.id}`}
           >
             <Image
-              className="card-image md:max-w-full max-w-fit"
+              className="card-image max-w-full"
               src={`/projects/${p.id}.webp`}
               width={800}
               height={100}
