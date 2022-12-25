@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import MenuItem from "./MenuItem";
+import Style from "./navbar.module.css";
 import { data } from "./navLink";
 
 const navigationVariants = {
@@ -14,8 +15,7 @@ const navigationVariants = {
 const Navigation = ({ toggle, isOpen }) => {
   return (
     <motion.ul
-      // className={` nav-ul`}
-      className={`${isOpen ? "block" : "hidden"} nav-ul`}
+      className={`${isOpen ? "block" : "hidden"} ${Style.navUl} nav-ul`}
       variants={navigationVariants}
     >
       {data.map((nav, i) => (

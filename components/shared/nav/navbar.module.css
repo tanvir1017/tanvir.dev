@@ -30,3 +30,29 @@
 .linkText:hover {
   letter-spacing: 2px;
 }
+
+.navLink:nth-child(1) span {
+  border: 2px solid #ff008c;
+  z-index: 25;
+  color: #ff008c;
+}
+.navLink:nth-child(2) span {
+  border: 2px solid #d309e1;
+  z-index: 25;
+  color: #d309e1;
+}
+.navLink:nth-child(3) span {
+  border: 2px solid #9c1aff;
+  z-index: 25;
+  color: #9c1aff;
+}
+.navLink:nth-child(4) span {
+  border: 2px solid #7700ff;
+  z-index: 25;
+  color: #7700ff;
+}
+.navLink:nth-child(5) span {
+  border: 2px solid #4400ff;
+  z-index: 25;
+  color: #4400ff;
+}

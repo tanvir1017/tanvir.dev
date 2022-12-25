@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
+import style from "./navbar.module.css";
 
 const menuItemVariants = {
   open: {
@@ -22,7 +23,11 @@ const menuItemVariants = {
 
 const MenuItem = ({ nav, toggle, isOpen }) => {
   return (
-    <motion.li className="nav-li" onClick={toggle} variants={menuItemVariants}>
+    <motion.li
+      className={`nav-li ${style.navLink}`}
+      onClick={toggle}
+      variants={menuItemVariants}
+    >
       <span className="icon-placeholder grid place-items-center">
         <Link href={`${nav.path}`}>{nav.icon}</Link>
       </span>
