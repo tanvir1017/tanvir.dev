@@ -8,7 +8,6 @@ const menuItemVariants = {
     opacity: 1,
     transition: {
       duration: 0.4,
-      // ease: [0.6, 0.05, -0.01, 0.9],
     },
   },
   closed: {
@@ -16,7 +15,6 @@ const menuItemVariants = {
     opacity: 0,
     transition: {
       duration: 0.4,
-      // ease: [0.6, 0.05, -0.01, 0.9],
     },
   },
 };

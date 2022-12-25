@@ -5,10 +5,13 @@ import { data } from "./navLink";
 
 const navigationVariants = {
   open: {
-    transition: { staggerChildren: 0.07, delayChildren: 0.2 },
+    transition: {
+      staggerChildren: 0.07,
+      delayChildren: 0.2,
+    },
   },
-  closed: {
-    transition: { staggerChildren: 0.5, staggerDirection: -1 },
+  close: {
+    transition: { staggerChildren: 0.5, staggerDirection: 2 },
   },
 };
 
