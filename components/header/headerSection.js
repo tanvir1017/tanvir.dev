@@ -1,5 +1,4 @@
 import { motion as m, useReducedMotion } from "framer-motion";
-import Image from "next/image";
 import Link from "next/link";
 import Style from "./heading.module.css";
 
@@ -76,14 +75,14 @@ function HeaderSection() {
               </m.button>
             </div>
           </m.div>
-          <div className="profile-image">
+          {/* <div className="profile-image">
             <Image
               src="/avatar.png"
               width={350}
               height={350}
               alt="avatar"
             ></Image>
-          </div>
+          </div> */}
         </div>
       </div>
     </m.div>
