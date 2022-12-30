@@ -1,7 +1,7 @@
 import { motion as m, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import style from "./heading.module.css";
+import Style from "./heading.module.css";
 
 function HeaderSection() {
   const shouldReduceMotion = useReducedMotion();
@@ -32,12 +32,12 @@ function HeaderSection() {
                 className="lg:text-6xl text-5xl font-bold"
               >
                 {" "}
-                <span className={`${style.animatedText} font-jostBlack`}>
+                <span className={`${Style.animatedText} font-jostBlack`}>
                   Frontend
                 </span>
                 <div className="md:hidden block "></div>
                 <span
-                  className={`${style.textHighlighter} text-white font-jostBlack`}
+                  className={`${Style.textHighlighter} text-white font-jostBlack`}
                 >
                   Developer
                 </span>
