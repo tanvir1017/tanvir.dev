@@ -1,0 +1,34 @@
+.animatedText {
+  margin: 0 0 0.5em;
+  line-height: 0.8;
+  margin: 0;
+  color: #ee6352;
+  background-image: var(--mesh-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400%;
+  /* animation: bg-animation 15s infinite alternate; */
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: right;
+  }
+  100% {
+    background-position: left;
+  }
+}
+.textHighlighter {
+  position: relative;
+}
+.textHighlighter::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-image: url("/underline.svg");
+  background-repeat: no-repeat;
+  background-position: 100% 100%;
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+}

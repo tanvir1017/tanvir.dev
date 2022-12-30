@@ -1,0 +1,56 @@
+.navBg {
+  /* background-color: rgba(210, 148, 239, 0.1);
+  backdrop-filter: invert(0.5%); */
+}
+
+.animatedText {
+  margin: 0 0 0.5em;
+  line-height: 0.8;
+  margin: 0;
+  color: #ee6352;
+  background-image: var(--mesh-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 400%;
+  /* animation: bg-animation 15s infinite alternate; */
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+.navUl {
+}
+
+.linkText {
+  transition: 0.6s;
+}
+.linkText:hover {
+  letter-spacing: 2px;
+}
+
+.navLink:nth-child(1) span {
+  border: 2px solid #ff008c;
+
+  color: #ff008c;
+}
+.navLink:nth-child(2) span {
+  border: 2px solid #d309e1;
+  color: #d309e1;
+}
+.navLink:nth-child(5) span {
+  border: 2px solid #9c1aff;
+  color: #9c1aff;
+}
+.navLink:nth-child(4) span {
+  border: 2px solid #c019d9;
+  color: #c019d9;
+}
+.navLink:nth-child(3) span {
+  border: 2px solid #c019d9;
+  color: #c019d9;
+}

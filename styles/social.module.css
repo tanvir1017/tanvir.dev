@@ -1,0 +1,15 @@
+.socialLi:nth-child(1) {
+  background-color: #ff008c;
+}
+.socialLi:nth-child(2) {
+  background-color: #d309e1;
+}
+.socialLi:nth-child(3) {
+  background-color: #9c1aff;
+}
+.socialLi:nth-child(4) {
+  background-color: #7700ff;
+}
+.socialLi:nth-child(5) {
+  background-color: #4400ff;
+}
