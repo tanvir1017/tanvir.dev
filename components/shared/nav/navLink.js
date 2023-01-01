@@ -1,5 +1,5 @@
 import { BiHomeSmile } from "react-icons/bi";
-import { IoMdAnalytics } from "react-icons/io";
+import { IoAnalyticsSharp, IoLogIn } from "react-icons/io5";
 import { RiAppsFill, RiPagesFill } from "react-icons/ri";
 import { SiAboutdotme } from "react-icons/si";
 
@@ -10,7 +10,12 @@ export const data = [
   { title: "Project", icon: <RiAppsFill />, path: "/projects" },
   {
     title: "Dashboard",
-    icon: <IoMdAnalytics />,
+    icon: <IoAnalyticsSharp />,
     path: "/dashboard",
+  },
+  {
+    title: "Sign-in",
+    icon: <IoLogIn />,
+    path: "/signin",
   },
 ];

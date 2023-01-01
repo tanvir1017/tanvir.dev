@@ -54,3 +54,7 @@
   border: 2px solid #c019d9;
   color: #c019d9;
 }
+.navLink:nth-child(6) span {
+  border: 2px solid #9c1aff;
+  color: #9c1aff;
+}
