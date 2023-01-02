@@ -12,12 +12,14 @@ function MyApp({ Component, pageProps, router }) {
     <main>
       {pathname !== "/404" && <Toptop />}
       <MobileNav />
-      {pathname !== "/404" && pathname !== "/signin" && <LgNav />}
+      {pathname !== "/404" && <LgNav />}
       {/* {pathname !== "/404" && pathname !== "/login" && <LgNav />} */}
       <AnimatePresence>
         <Component key={router.pathname} {...pageProps} />
       </AnimatePresence>
-      {pathname !== "/404" && pathname !== "/signin" && <Footer />}
+      {pathname !== "/404" &&
+        pathname !== "/signin" &&
+        pathname !== "/signup" && <Footer />}
     </main>
   );
 }
