@@ -16,7 +16,7 @@ export function Input({
   return (
     <div className="my-5 space-y-1">
       {type === "file" ? (
-        <label className="block">
+        <label className="block" htmlFor={hFor}>
           <span className="sr-only">{label}</span>
         </label>
       ) : (

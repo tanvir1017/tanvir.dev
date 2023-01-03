@@ -1,9 +1,10 @@
 import Style from "@/styles/Home.module.css";
 import { Input, PasswordInput } from "components/shared/auth/Input";
 import SunRise from "components/shared/auth/sunRise";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import { useState } from "react";
+import { AiOutlineCloudUpload } from "react-icons/ai";
 
 function Signup() {
   const [loading, setLoading] = useState(false);
@@ -12,51 +13,66 @@ function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [picture, setPicture] = useState("");
-  const [pictureURL, setPictureURL] = useState("");
-  const [logInfo, setLogInfo] = useState(7);
+  const [pictureURL, setPictureURL] = useState("/userDemo.webp");
+  const [rememberMeFor, setRememberMeFor] = useState(7);
   const saveLogInfo = () => {
-    if (logInfo === 7) {
-      setLogInfo(30);
+    if (rememberMeFor === 7) {
+      setRememberMeFor(30);
     } else {
-      setLogInfo(7);
+      setRememberMeFor(7);
     }
   };
 
+  const uploadImage = async (e) => {
+    setLoading(true);
+    const formData = new FormData();
+    formData.append("file", e.target.files[0]);
+    formData.append("upload_preset", "bkmmbkko");
+    formData.append("cloud_name", "djbcnjkin");
+
+    try {
+      const res = await window.fetch(
+        `https://api.cloudinary.com/v1_1/djbcnjkin/image/upload`,
+        {
+          method: "post",
+          body: formData,
+        }
+      );
+      const result = await res.json();
+      if (result.url) {
+        // todo : have to dow a lot of modal show case with this result variable
+        setPictureURL(result.url);
+        setLoading(false);
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
   const handleOnLoad = async (e) => {
     e.preventDefault();
 
     // todo : upload picture to hosted server
-    const formData = new FormData();
-    formData.append("file", picture[0]);
-    formData.append("upload_preset", "bkmmbkko");
-    formData.append("cloud_name", "djbcnjkin");
-
-    setLoading(true);
-    const imgUploaded = await fetch(
-      `https://api.cloudinary.com/v1_1/djbcnjkin/image/upload`,
-      {
-        method: "post",
-        body: formData,
-      }
-    )
-      .then((resp) => resp.json())
-      .then((data) => {
-        setPictureURL(data.url);
-        setLoading(false);
-      })
-      .catch((err) => console.log(err));
-
-    const data = {
-      firstName,
-      lastName,
-      email,
-      confirmPassword,
-      password,
-      pictureURL,
-      picture,
-    };
-    console.log(data);
+    if (password !== confirmPassword) {
+      return window.alert("password didn't  matched");
+    } else {
+      const res = await window.fetch(`http://localhost:1017/register`, {
+        method: "POST",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          email,
+          pictureURL,
+          password,
+          rememberMeFor,
+        }),
+      });
+      const result = await res.json();
+      // todo : have to dow a lot of modal show case with this result variable
+      console.log(result);
+    }
   };
   return (
     <div className="font-jostRegular">
@@ -72,23 +88,42 @@ function Signup() {
               </p>
             </div>
 
-            <div className="w-[150px] h-[144px] border-2 rounded-full relative overflow-hidden">
-              <Image
-                className="absolute"
-                src="/userDemo.webp"
-                alt="user-avatar"
-                layout="fill"
-                objectFit="contain"
-              />
+            <div className="w-[145px] h-[144px] border-2 rounded-full m-auto relative overflow-hidden">
+              {loading ? (
+                <Image
+                  className="absolute"
+                  src="/loading.svg"
+                  alt="user-avatar"
+                  layout="fill"
+                  objectFit="contain"
+                  priority
+                />
+              ) : (
+                <Image
+                  className="absolute"
+                  src={pictureURL}
+                  alt="user-avatar"
+                  layout="fill"
+                  objectFit="cover"
+                  priority
+                />
+              )}
+              <div
+                className="rounded-full absolute top-[100%] hover:top-[50%] transition-all
+              duration-300 opacity-0 hover:opacity-100  left-[50%] -translate-x-[50%] -translate-y-[50%]"
+              >
+                <label className="absolute transition duration-200 p-4 top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] rounded-full backdrop-blur-sm bg-white/5 border-2 border-white/30">
+                  <AiOutlineCloudUpload />{" "}
+                </label>
+                <input
+                  className="scale-150 p-8 opacity-0 cursor-pointer top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] absolute"
+                  required={true}
+                  type="file"
+                  onChange={uploadImage}
+                />
+              </div>
             </div>
             <form onSubmit={handleOnLoad}>
-              <Input
-                label="Choose profile photo"
-                placeholder="picture"
-                required={true}
-                type="file"
-                handleValue={(e) => setPicture(e.target.files)}
-              />
               <Input
                 label="First Name"
                 placeholder="Mohammad"
