@@ -1,19 +1,20 @@
 import Style from "@/styles/Home.module.css";
+import { Input, PasswordInput } from "components/shared/auth/Input";
+import SunRise from "components/shared/auth/sunRise";
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { BiHide } from "react-icons/bi";
-import { FiEye } from "react-icons/fi";
 
 function Signup() {
-  const [passType, setPassType] = useState("password");
+  const [loading, setLoading] = useState(false);
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [picture, setPicture] = useState("");
+  const [pictureURL, setPictureURL] = useState("");
   const [logInfo, setLogInfo] = useState(7);
-  const passTypeHandle = () => {
-    if (passType === "password") {
-      setPassType("text");
-    } else {
-      setPassType("password");
-    }
-  };
   const saveLogInfo = () => {
     if (logInfo === 7) {
       setLogInfo(30);
@@ -21,8 +22,41 @@ function Signup() {
       setLogInfo(7);
     }
   };
-  const handleOnLoad = (e) => {
+
+  const handleOnLoad = async (e) => {
     e.preventDefault();
+
+    // todo : upload picture to hosted server
+    const formData = new FormData();
+    formData.append("file", picture[0]);
+    formData.append("upload_preset", "bkmmbkko");
+    formData.append("cloud_name", "djbcnjkin");
+
+    setLoading(true);
+    const imgUploaded = await fetch(
+      `https://api.cloudinary.com/v1_1/djbcnjkin/image/upload`,
+      {
+        method: "post",
+        body: formData,
+      }
+    )
+      .then((resp) => resp.json())
+      .then((data) => {
+        setPictureURL(data.url);
+        setLoading(false);
+      })
+      .catch((err) => console.log(err));
+
+    const data = {
+      firstName,
+      lastName,
+      email,
+      confirmPassword,
+      password,
+      pictureURL,
+      picture,
+    };
+    console.log(data);
   };
   return (
     <div className="font-jostRegular">
@@ -38,92 +72,60 @@ function Signup() {
               </p>
             </div>
 
+            <div className="w-[150px] h-[144px] border-2 rounded-full relative overflow-hidden">
+              <Image
+                className="absolute"
+                src="/userDemo.webp"
+                alt="user-avatar"
+                layout="fill"
+                objectFit="contain"
+              />
+            </div>
             <form onSubmit={handleOnLoad}>
-              <div className="my-5 space-y-1">
-                <label
-                  htmlFor="email"
-                  className="my-2 after:content-['*'] after:ml-0.5 after:text-red-500"
-                >
-                  Profile picture
-                </label>
-                <input
-                  required
-                  type="text"
-                  className="text-white block w-full py-3 px-2 rounded-lg  border-[#121212] border-2 focus:border-[#ff008c] focus:outline-none bg-white/5"
-                  placeholder="Mohammad"
-                />
-              </div>
-              <div className="my-5 space-y-1">
-                <label
-                  htmlFor="email"
-                  className="my-2 after:content-['*'] after:ml-0.5 after:text-red-500"
-                >
-                  First Name
-                </label>
-                <input
-                  required
-                  type="text"
-                  className="text-white block w-full py-3 px-2 rounded-lg  border-[#121212] border-2 focus:border-[#ff008c] focus:outline-none bg-white/5"
-                  placeholder="Mohammad"
-                />
-              </div>
-              <div className="my-5 space-y-1">
-                <label
-                  htmlFor="email"
-                  className="my-2 after:content-['*'] after:ml-0.5 after:text-red-500"
-                >
-                  Last Name
-                </label>
-                <input
-                  required
-                  type="text"
-                  className="text-white block w-full py-3 px-2 rounded-lg  border-[#121212] border-2 focus:border-[#ff008c] focus:outline-none bg-white/5"
-                  placeholder="Hossain"
-                />
-              </div>
-              <div className="my-5 space-y-1">
-                <label
-                  htmlFor="email"
-                  className="my-2 after:content-['*'] after:ml-0.5 after:text-red-500"
-                >
-                  Email
-                </label>
-                <input
-                  required
-                  type="text"
-                  className="text-white block w-full py-3 px-2 rounded-lg  border-[#121212] border-2 focus:border-[#ff008c] focus:outline-none bg-white/5"
-                  placeholder="you@example.com"
-                />
-              </div>
-              <div className="my-5 space-y-1">
-                <label
-                  htmlFor="email"
-                  className="my-2 after:content-['*'] after:ml-0.5 after:text-red-500"
-                >
-                  Password
-                </label>
-                <div className="relative">
-                  <input
-                    type={passType}
-                    className="text-white block w-full py-3 px-2 rounded-lg  border-[#121212] border-2 focus:border-[#ff008c] focus:outline-none bg-white/5"
-                    placeholder="password"
-                  />
-                  <div
-                    className="absolute -translate-x-[50%] -translate-y-[50%] left-[92%] top-[50%] 
-                  bg-[#39393952] p-2 rounded-full hover:bg-[#393939b4] cursor-pointer focus:bg-[#393939b4]"
-                  >
-                    {passType === "password" ? (
-                      <span onClick={passTypeHandle}>
-                        <FiEye />
-                      </span>
-                    ) : (
-                      <span onClick={passTypeHandle}>
-                        <BiHide />
-                      </span>
-                    )}
-                  </div>
-                </div>
-              </div>
+              <Input
+                label="Choose profile photo"
+                placeholder="picture"
+                required={true}
+                type="file"
+                handleValue={(e) => setPicture(e.target.files)}
+              />
+              <Input
+                label="First Name"
+                placeholder="Mohammad"
+                hFor="first name"
+                required={true}
+                type="text"
+                handleValue={(e) => setFirstName(e.target.value)}
+              />
+              <Input
+                label="Last Name"
+                placeholder="Hossain"
+                hFor="last name"
+                required={true}
+                type="text"
+                handleValue={(e) => setLastName(e.target.value)}
+              />
+              <Input
+                label="Email"
+                placeholder="you@gmail.com"
+                hFor="email"
+                required={true}
+                type="text"
+                handleValue={(e) => setEmail(e.target.value)}
+              />
+
+              <PasswordInput
+                hFor="password"
+                label="Password"
+                placeholder="Password"
+                handleValue={(e) => setPassword(e.target.value)}
+              />
+              <PasswordInput
+                hFor="confirm password"
+                label="Confirm Password"
+                placeholder="Confirm Password"
+                handleValue={(e) => setConfirmPassword(e.target.value)}
+              />
 
               <div className="flex justify-between md:flex-row flex-col items-start space-y-3 md:space-y-0">
                 <div className="flex items-center">
@@ -144,7 +146,7 @@ function Signup() {
                 type="submit"
                 className="bg-[#ff008c] block w-full mt-8 p-2 rounded-lg"
               >
-                Sign up
+                {loading ? "loading..." : "Sign up"}
               </button>
             </form>
             <div className="mt-3 text-center">
@@ -156,10 +158,7 @@ function Signup() {
               </small>
             </div>
           </div>
-          <div className={`${Style.boxWrapper} p-5`}>
-            <div className={`${Style.box}`}></div>
-            <div className={`${Style.boxOverly}`}></div>
-          </div>
+          <SunRise />
         </div>
       </div>
     </div>

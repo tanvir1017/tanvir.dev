@@ -1,19 +1,13 @@
 import Style from "@/styles/Home.module.css";
+import { Input, PasswordInput } from "components/shared/auth/Input";
+import SunRise from "components/shared/auth/sunRise";
 import Link from "next/link";
 import { useState } from "react";
-import { BiHide } from "react-icons/bi";
-import { FiEye } from "react-icons/fi";
 
 function Signin() {
-  const [passType, setPassType] = useState("password");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const [logInfo, setLogInfo] = useState(7);
-  const passTypeHandle = () => {
-    if (passType === "password") {
-      setPassType("text");
-    } else {
-      setPassType("password");
-    }
-  };
   const saveLogInfo = () => {
     if (logInfo === 7) {
       setLogInfo(30);
@@ -23,6 +17,7 @@ function Signin() {
   };
   const handleOnLoad = (e) => {
     e.preventDefault();
+    console.log(email, password);
   };
   return (
     <div className="font-jostRegular">
@@ -40,43 +35,20 @@ function Signin() {
             </div>
 
             <form onSubmit={handleOnLoad}>
-              <div className="my-5 space-y-1">
-                <label htmlFor="email" className="my-2">
-                  Email
-                </label>
-                <input
-                  required
-                  type="text"
-                  className="text-white block w-full py-3 px-2 rounded-lg  border-[#121212] border-2 focus:border-[#ff008c] focus:outline-none bg-white/5"
-                  placeholder="you@example.com"
-                />
-              </div>
-              <div className="my-5 space-y-1">
-                <label htmlFor="email" className="my-2">
-                  Password
-                </label>
-                <div className="relative">
-                  <input
-                    type={passType}
-                    className="text-white block w-full py-3 px-2 rounded-lg  border-[#121212] border-2 focus:border-[#ff008c] focus:outline-none bg-white/5"
-                    placeholder="password"
-                  />
-                  <div
-                    className="absolute -translate-x-[50%] -translate-y-[50%] left-[92%] top-[50%] 
-                  bg-[#39393952] p-2 rounded-full hover:bg-[#393939b4] cursor-pointer focus:bg-[#393939b4]"
-                  >
-                    {passType === "password" ? (
-                      <span onClick={passTypeHandle}>
-                        <FiEye />
-                      </span>
-                    ) : (
-                      <span onClick={passTypeHandle}>
-                        <BiHide />
-                      </span>
-                    )}
-                  </div>
-                </div>
-              </div>
+              <Input
+                handleValue={(e) => setEmail(e.target.value)}
+                label="Email"
+                placeholder="you@gmail.com"
+                hFor="email"
+                required={true}
+                type="text"
+              />
+              <PasswordInput
+                handleValue={(e) => setPassword(e.target.value)}
+                hFor="password"
+                label="Password"
+                placeholder="Password"
+              />
 
               <div className="flex justify-between md:flex-row flex-col items-start space-y-3 md:space-y-0">
                 <div className="flex items-center">
@@ -109,10 +81,7 @@ function Signin() {
               </small>
             </div>
           </div>
-          <div className={`${Style.boxWrapper} p-5`}>
-            <div className={`${Style.box}`}></div>
-            <div className={`${Style.boxOverly}`}></div>
-          </div>
+          <SunRise />
         </div>
       </div>
     </div>
