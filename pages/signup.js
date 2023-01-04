@@ -5,6 +5,8 @@ import Image from "next/legacy/image";
 import Link from "next/link";
 import { useState } from "react";
 import { AiOutlineCloudUpload } from "react-icons/ai";
+import { toast, ToastContainer, Zoom } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Signup() {
   const [loading, setLoading] = useState(false);
@@ -15,6 +17,8 @@ function Signup() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [pictureURL, setPictureURL] = useState("/userDemo.webp");
   const [rememberMeFor, setRememberMeFor] = useState(7);
+
+  // todo : set the user login limit by swiping the remember me button
   const saveLogInfo = () => {
     if (rememberMeFor === 7) {
       setRememberMeFor(30);
@@ -23,6 +27,7 @@ function Signup() {
     }
   };
 
+  // todo : img upload to cloudinary
   const uploadImage = async (e) => {
     setLoading(true);
     const formData = new FormData();
@@ -39,43 +44,82 @@ function Signup() {
         }
       );
       const result = await res.json();
+
       if (result.url) {
-        // todo : have to dow a lot of modal show case with this result variable
         setPictureURL(result.url);
         setLoading(false);
+        (async () => {
+          toast.success("Picture upload successful ⚒", {
+            theme: "colored",
+          });
+        })();
+      } else {
+        setLoading(false);
+        (async () => {
+          toast.error("Something went wrong", {
+            theme: "colored",
+            icon: "👎",
+          });
+        })();
       }
     } catch (error) {
-      console.log(error.message);
+      if (error) {
+        (async () => {
+          toast.error("Internal server error while uploading picture", {
+            theme: "colored",
+            icon: "⭕",
+          });
+        })();
+      }
     }
   };
+
+  // todo : send data to the database
   const handleOnLoad = async (e) => {
     e.preventDefault();
-
-    // todo : upload picture to hosted server
     if (password !== confirmPassword) {
-      return window.alert("password didn't  matched");
-    } else {
-      const res = await window.fetch(`http://localhost:1017/register`, {
-        method: "POST",
-        headers: {
-          "content-type": "application/json",
-        },
-        body: JSON.stringify({
-          firstName,
-          lastName,
-          email,
-          pictureURL,
-          password,
-          rememberMeFor,
-        }),
+      return toast.error("Password didn't matched", {
+        theme: "colored",
       });
-      const result = await res.json();
-      // todo : have to dow a lot of modal show case with this result variable
-      console.log(result);
+    } else {
+      try {
+        const res = await window.fetch(
+          `http://tanvirserver.vercel.app/register`,
+          {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: JSON.stringify({
+              firstName,
+              lastName,
+              email,
+              pictureURL,
+              password,
+              rememberMeFor,
+            }),
+          }
+        );
+        const result = await res.json();
+        // todo : have to dow a lot of modal show case with this result variable
+        console.log(result);
+      } catch (error) {
+        if (error) {
+          (async () => {
+            toast.error("Internal server error while uploading picture", {
+              theme: "colored",
+              icon: "⭕",
+            });
+          })();
+        }
+      }
     }
   };
+
+  // todo : check react-toastify notification toast
   return (
     <div className="font-jostRegular">
+      <ToastContainer transition={Zoom} />
       <div className="lg:max-w-6xl max-w-7xl grid lg:large_container m_container lg:m-auto ">
         <div className="flex lg:flex-row flex-col-reverse justify-between items-center ">
           <div>
