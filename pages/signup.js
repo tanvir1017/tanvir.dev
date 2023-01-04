@@ -63,14 +63,15 @@ function Signup() {
         })();
       }
     } catch (error) {
-      if (error) {
-        (async () => {
-          toast.error("Internal server error while uploading picture", {
-            theme: "colored",
-            icon: "⭕",
-          });
-        })();
-      }
+      console.log(error);
+      // if (error) {
+      //   (async () => {
+      //     toast.error("Internal server error while uploading picture", {
+      //       theme: "colored",
+      //       icon: "⭕",
+      //     });
+      //   })();
+      // }
     }
   };
 
@@ -84,7 +85,7 @@ function Signup() {
     } else {
       try {
         const res = await window.fetch(
-          `http://tanvirserver.vercel.app/register`,
+          `https://tanvirserver.vercel.app/register`,
           {
             method: "POST",
             headers: {
