@@ -64,14 +64,14 @@ function Signup() {
       }
     } catch (error) {
       console.log(error);
-      // if (error) {
-      //   (async () => {
-      //     toast.error("Internal server error while uploading picture", {
-      //       theme: "colored",
-      //       icon: "⭕",
-      //     });
-      //   })();
-      // }
+      if (error) {
+        (async () => {
+          toast.error("Internal server error while uploading picture", {
+            theme: "colored",
+            icon: "⭕",
+          });
+        })();
+      }
     }
   };
 
@@ -84,30 +84,34 @@ function Signup() {
       });
     } else {
       try {
-        const res = await window.fetch(
-          `https://tanvirserver.vercel.app/register`,
-          {
-            method: "POST",
-            headers: {
-              "content-type": "application/json",
-            },
-            body: JSON.stringify({
-              firstName,
-              lastName,
-              email,
-              pictureURL,
-              password,
-              rememberMeFor,
-            }),
-          }
-        );
+        const res = await fetch(`/api/auth`, {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({
+            firstName,
+            lastName,
+            email,
+            pictureURL,
+            password,
+            rememberMeFor,
+          }),
+        });
         const result = await res.json();
         // todo : have to dow a lot of modal show case with this result variable
-        console.log(result);
+        if (result.success) {
+          (async () => {
+            toast.success(result.message, {
+              theme: "light",
+              icon: "✔",
+            });
+          })();
+        }
       } catch (error) {
         if (error) {
           (async () => {
-            toast.error("Internal server error while uploading picture", {
+            toast.error("internal server error", {
               theme: "colored",
               icon: "⭕",
             });
