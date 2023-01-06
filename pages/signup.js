@@ -21,6 +21,16 @@ function Signup() {
   const [rememberMeFor, setRememberMeFor] = useState(7);
   const [routerPath, setRouterPath] = useState("");
 
+  const resetFieldValue = () => {
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setPassword("");
+    setConfirmPassword("");
+    setPictureURL("");
+    setRememberMeFor("");
+  };
+
   const router = useRouter();
   useEffect(() => {
     const storage = globalThis?.sessionStorage;
@@ -119,6 +129,7 @@ function Signup() {
               icon: "✔",
             });
           })();
+          resetFieldValue();
           (async () => {
             router.back(routerPath);
           })();
@@ -129,6 +140,7 @@ function Signup() {
               icon: "❌",
             });
           })();
+          setDataPosting(false);
         }
       } catch (error) {
         if (error) {
@@ -138,11 +150,11 @@ function Signup() {
               icon: "⭕",
             });
           })();
+          setDataPosting(false);
         }
       }
     }
   };
-  console.log(pictureURL.length);
 
   // todo : check react-toastify notification toast
   return (
