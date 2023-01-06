@@ -1,8 +1,8 @@
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
-import { model, Schema } from "mongoose";
+import mongoose from "mongoose";
 //  ! MONGOOSE SCHEMA
-const userSchema = new Schema({
+const userSchema = new mongoose.Schema({
   firstName: {
     type: String,
     required: true,
@@ -64,6 +64,6 @@ userSchema.methods.generateAuthToken = async function () {
     console.log("error", error);
   }
 };
-// const User = models.User || model("USERS", userSchema);
-const User = model("users", userSchema);
-export default User;
+const Users = mongoose.models.Users || mongoose.model("Users", userSchema);
+// const User = model("users", userSchema);
+export default Users;

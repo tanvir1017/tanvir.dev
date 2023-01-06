@@ -77,8 +77,31 @@
       #7700ff,
       #4400ff
     );
+    --toastify-color-light: #fff;
+    --toastify-color-dark: #121212;
+    --toastify-color-info: #3498db;
+    --toastify-color-success: #07bc0c;
+    --toastify-color-warning: #f1c40f;
+    --toastify-color-error: linear-gradient(
+      160deg,
+      rgba(186, 8, 181, 1),
+      rgba(250, 38, 151, 1),
+      rgba(252, 37, 103, 1)
+    ) !important;
 
+    --toastify-toast-width: 420px;
+    --toastify-toast-background: #fff;
+    --toastify-toast-min-height: 64px;
+    --toastify-toast-max-height: 800px;
+    --toastify-font-family: Jost-Regular;
+    --toastify-z-index: 9999;
     --border-gradient: linear-gradient(
+      160deg,
+      rgba(252, 37, 103, 1),
+      rgba(250, 38, 151, 1),
+      rgba(186, 8, 181, 1)
+    );
+    -toastify-color-progress-dark: linear-gradient(
       160deg,
       rgba(252, 37, 103, 1),
       rgba(250, 38, 151, 1),
@@ -87,6 +110,9 @@
   }
 }
 
+.Toastify__toast-container {
+  width: 400px !important;
+}
 html,
 body {
   scroll-behavior: smooth;

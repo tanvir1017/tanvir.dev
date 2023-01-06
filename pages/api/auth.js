@@ -1,6 +1,6 @@
 import { setCookie } from "cookies-next";
 import connectDB from "utils/server/db/connectiondDB";
-import User from "utils/server/model/modal";
+import Users from "utils/server/model/modal";
 export default async function handler(req, res) {
   try {
     console.log("connecting mongodb...");
@@ -24,8 +24,8 @@ export default async function handler(req, res) {
             "Please full-fill all the of the requirement that asked to you for register new account",
         });
       } else {
-        const existUser = await User.findOne({ email: email });
-        const user = new User({
+        const existUser = await Users.findOne({ email: email });
+        const user = new Users({
           firstName,
           lastName,
           email,
