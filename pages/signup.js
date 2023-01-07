@@ -20,6 +20,10 @@ function Signup() {
   const [pictureURL, setPictureURL] = useState("/userDemo.webp");
   const [rememberMeFor, setRememberMeFor] = useState(7);
   const [routerPath, setRouterPath] = useState("");
+  const API = process.env.NEXT_PUBLIC_API;
+  const CLOUD_NAME = process.env.NEXT_PUBLIC_CLOUD_NAME;
+  const UPLOAD_PRESET = process.env.NEXT_PUBLIC_UPLOAD_PRESET;
+  console.log(API);
 
   const resetFieldValue = () => {
     setFirstName("");
@@ -52,12 +56,12 @@ function Signup() {
     setLoading(true);
     const formData = new FormData();
     formData.append("file", e.target.files[0]);
-    formData.append("upload_preset", "bkmmbkko");
-    formData.append("cloud_name", "djbcnjkin");
+    formData.append("upload_preset", UPLOAD_PRESET);
+    formData.append("cloud_name", CLOUD_NAME);
 
     try {
       const res = await window.fetch(
-        `https://api.cloudinary.com/v1_1/djbcnjkin/image/upload`,
+        `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,
         {
           method: "post",
           body: formData,
@@ -105,7 +109,7 @@ function Signup() {
     } else {
       try {
         setDataPosting(true);
-        const res = await fetch(`http://localhost:3000/api/auth`, {
+        const res = await fetch(`${API}/api/auth`, {
           method: "POST",
           headers: {
             "content-type": "application/json",
