@@ -116,14 +116,14 @@ function Signup() {
           headers: {
             "content-type": "application/json",
           },
-          body: JSON.stringify({
+          body: {
             firstName,
             lastName,
             email,
             pictureURL,
             password,
             rememberMeFor,
-          }),
+          },
         });
         const result = await res.json();
         setDataPosting(false);
