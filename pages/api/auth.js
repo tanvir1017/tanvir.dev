@@ -1,4 +1,3 @@
-import { setCookie } from "cookies-next";
 import connectDB from "utils/server/db/connectiondDB";
 import Users from "utils/server/model/modal";
 export default async function handler(req, res) {
@@ -43,13 +42,13 @@ export default async function handler(req, res) {
           const isRegister = await user.save();
           console.log(isRegister);
           if (isRegister) {
-            const token = await isRegister.generateAuthToken();
-            setCookie("authToken", token, {
-              expires: new Date(
-                Date.now() + rememberMeFor ? rememberMeFor : 2592000
-              ),
-              httpOnly: true,
-            });
+            // const token = await isRegister.generateAuthToken();
+            // setCookie("authToken", token, {
+            //   expires: new Date(
+            //     Date.now() + rememberMeFor ? rememberMeFor : 2592000
+            //   ),
+            //   httpOnly: true,
+            // });
             return res.status(201).json({
               success: true,
               message: `account created successful`,
