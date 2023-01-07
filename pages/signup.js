@@ -21,6 +21,7 @@ function Signup() {
   const [rememberMeFor, setRememberMeFor] = useState(7);
   const [routerPath, setRouterPath] = useState("");
   const API = process.env.NEXT_PUBLIC_API;
+  const PRODUCTION_API = process.env.NEXT_PUBLIC_PRODUCTION_API;
   const CLOUD_NAME = process.env.NEXT_PUBLIC_CLOUD_NAME;
   const UPLOAD_PRESET = process.env.NEXT_PUBLIC_UPLOAD_PRESET;
   // console.log(API);
@@ -104,6 +105,14 @@ function Signup() {
   // todo : send data to the database
   const handleOnLoad = async (e) => {
     e.preventDefault();
+    const data = {
+      firstName,
+      lastName,
+      email,
+      pictureURL,
+      password,
+      rememberMeFor,
+    };
     if (password !== confirmPassword) {
       return toast.error("Password didn't matched", {
         theme: "colored",
@@ -111,19 +120,12 @@ function Signup() {
     } else {
       try {
         setDataPosting(true);
-        const res = await fetch(`${API}/api/auth`, {
+        const res = await fetch(`${PRODUCTION_API}/api/auth`, {
           method: "POST",
           headers: {
             "content-type": "application/json",
           },
-          body: {
-            firstName,
-            lastName,
-            email,
-            pictureURL,
-            password,
-            rememberMeFor,
-          },
+          body: JSON.stringify(data),
         });
         const result = await res.json();
         setDataPosting(false);

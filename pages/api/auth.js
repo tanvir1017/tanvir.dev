@@ -16,6 +16,7 @@ export default async function handler(req, res) {
         createAt,
         rememberMeFor,
       } = req.body;
+      console.log(req.body);
       if (!firstName || !lastName || !email || !pictureURL || !password) {
         return res.status(422).json({
           success: true,
@@ -33,6 +34,7 @@ export default async function handler(req, res) {
           role,
           createAt,
         });
+        console.log("user", user);
         if (existUser) {
           return res.status(422).json({
             success: false,
@@ -40,7 +42,6 @@ export default async function handler(req, res) {
           });
         } else {
           const isRegister = await user.save();
-          console.log(isRegister);
           if (isRegister) {
             // const token = await isRegister.generateAuthToken();
             // setCookie("authToken", token, {
@@ -63,7 +64,7 @@ export default async function handler(req, res) {
         }
       }
     } else if (req.method === "GET") {
-      return res.status(401).send({
+      return res.status(401).json({
         success: !true,
         message:
           "You are trying to get data from this location. But it is not the right location to give data as you want",
