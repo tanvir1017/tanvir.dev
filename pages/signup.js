@@ -23,7 +23,9 @@ function Signup() {
   const API = process.env.NEXT_PUBLIC_API;
   const CLOUD_NAME = process.env.NEXT_PUBLIC_CLOUD_NAME;
   const UPLOAD_PRESET = process.env.NEXT_PUBLIC_UPLOAD_PRESET;
-  console.log(API);
+  // console.log(API);
+  // console.log(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`);
+  // console.log(UPLOAD_PRESET);
 
   const resetFieldValue = () => {
     setFirstName("");
@@ -31,7 +33,7 @@ function Signup() {
     setEmail("");
     setPassword("");
     setConfirmPassword("");
-    setPictureURL("");
+    setPictureURL(pictureURL);
     setRememberMeFor("");
   };
 
@@ -132,8 +134,8 @@ function Signup() {
               theme: "light",
               icon: "✔",
             });
+            resetFieldValue();
           })();
-          resetFieldValue();
           (async () => {
             router.back(routerPath);
           })();
@@ -213,6 +215,7 @@ function Signup() {
             </div>
             <form onSubmit={handleOnLoad}>
               <Input
+                value={firstName}
                 label="First Name"
                 placeholder="Mohammad"
                 hFor="first name"
@@ -221,6 +224,7 @@ function Signup() {
                 handleValue={(e) => setFirstName(e.target.value)}
               />
               <Input
+                value={lastName}
                 label="Last Name"
                 placeholder="Hossain"
                 hFor="last name"
@@ -229,6 +233,7 @@ function Signup() {
                 handleValue={(e) => setLastName(e.target.value)}
               />
               <Input
+                value={email}
                 label="Email"
                 placeholder="you@gmail.com"
                 hFor="email"
@@ -238,12 +243,14 @@ function Signup() {
               />
 
               <PasswordInput
+                value={password}
                 hFor="password"
                 label="Password"
                 placeholder="Password"
                 handleValue={(e) => setPassword(e.target.value)}
               />
               <PasswordInput
+                value={confirmPassword}
                 hFor="confirm password"
                 label="Confirm Password"
                 placeholder="Confirm Password"

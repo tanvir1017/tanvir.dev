@@ -2,6 +2,7 @@ import { useState } from "react";
 import { BiHide } from "react-icons/bi";
 import { FiEye } from "react-icons/fi";
 export function Input({
+  value,
   label,
   placeholder,
   hFor,
@@ -29,6 +30,7 @@ export function Input({
       )}
 
       <input
+        value={value}
         required={required}
         type={type}
         className={className}
@@ -39,7 +41,13 @@ export function Input({
   );
 }
 
-export function PasswordInput({ hFor, label, placeholder, handleValue }) {
+export function PasswordInput({
+  hFor,
+  label,
+  placeholder,
+  handleValue,
+  value,
+}) {
   const [passType, setPassType] = useState("password");
   const [confirmPassType, setConfirmPassType] = useState("password");
   return (
@@ -52,6 +60,8 @@ export function PasswordInput({ hFor, label, placeholder, handleValue }) {
       </label>
       <div className="relative">
         <input
+          required
+          value={value}
           type={label === "Password" ? passType : confirmPassType}
           className="text-white block w-full py-3 px-2 rounded-lg  border-[#121212] border-2 focus:border-[#ff008c] focus:outline-none bg-white/5"
           placeholder={placeholder}
