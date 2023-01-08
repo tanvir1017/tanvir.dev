@@ -121,7 +121,8 @@ function Signup() {
     } else {
       try {
         setDataPosting(true);
-        const res = await fetch(`${API_URL}/api/auth`, {
+        // const res = await fetch(`${API_URL}/api/auth`, {
+        const res = await fetch(`https://tanvirhossain.vercel.app/api/auth`, {
           method: "POST",
           headers: {
             "content-type": "application/json",
