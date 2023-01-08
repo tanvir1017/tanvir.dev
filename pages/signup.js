@@ -120,7 +120,7 @@ function Signup() {
     } else {
       try {
         setDataPosting(true);
-        const res = await fetch(`${PRODUCTION_API}/api/auth`, {
+        const res = await fetch(`${API}/api/auth`, {
           method: "POST",
           headers: {
             "content-type": "application/json",

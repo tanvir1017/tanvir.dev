@@ -24,7 +24,8 @@ export default async function handler(req, res) {
             "Please full-fill all the of the requirement that asked to you for register new account",
         });
       } else {
-        const existUser = await Users.findOne({ email: email });
+        // const existUser = await Users.findOne({ email: email });
+        const existUser = false;
         const user = new Users({
           firstName,
           lastName,
@@ -34,7 +35,6 @@ export default async function handler(req, res) {
           role,
           createAt,
         });
-        console.log("user", user);
         if (existUser) {
           return res.status(422).json({
             success: false,
@@ -43,13 +43,13 @@ export default async function handler(req, res) {
         } else {
           const isRegister = await user.save();
           if (isRegister) {
-            // const token = await isRegister.generateAuthToken();
-            // setCookie("authToken", token, {
-            //   expires: new Date(
-            //     Date.now() + rememberMeFor ? rememberMeFor : 2592000
-            //   ),
-            //   httpOnly: true,
-            // });
+            const token = await isRegister.generateAuthToken();
+            setCookie("authToken", token, {
+              expires: new Date(
+                Date.now() + rememberMeFor ? rememberMeFor : 2592000
+              ),
+              httpOnly: true,
+            });
             return res.status(201).json({
               success: true,
               message: `account created successful`,
