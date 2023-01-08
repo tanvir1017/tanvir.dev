@@ -22,6 +22,7 @@ function Signup() {
   const [routerPath, setRouterPath] = useState("");
   const API = process.env.NEXT_PUBLIC_API;
   const PRODUCTION_API = process.env.NEXT_PUBLIC_PRODUCTION_API;
+  const API_URL = process.env.NODE_ENV === "production" ? PRODUCTION_API : API;
   const CLOUD_NAME = process.env.NEXT_PUBLIC_CLOUD_NAME;
   const UPLOAD_PRESET = process.env.NEXT_PUBLIC_UPLOAD_PRESET;
   // console.log(API);
@@ -120,7 +121,7 @@ function Signup() {
     } else {
       try {
         setDataPosting(true);
-        const res = await fetch(`${API}/api/auth`, {
+        const res = await fetch(`${API_URL}/api/auth`, {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -188,7 +189,8 @@ function Signup() {
                   alt="user-avatar"
                   layout="fill"
                   objectFit="contain"
-                  priority
+                  placeholder="blur"
+                  blurDataURL={"/loading.svg"}
                 />
               ) : (
                 <Image
