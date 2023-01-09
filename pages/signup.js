@@ -212,7 +212,6 @@ function Signup() {
                 </label>
                 <input
                   className="scale-150 p-8 opacity-0 cursor-pointer top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] absolute"
-                  required={true}
                   type="file"
                   onChange={uploadImage}
                 />

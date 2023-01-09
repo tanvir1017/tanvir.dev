@@ -19,3 +19,19 @@ export const data = [
     path: "/signin",
   },
 ];
+
+export const menuItems = [
+  { id: "b", title: "Blogs", icon: <BiHomeSmile />, path: "/dashboard/blogs" },
+  {
+    id: "pb",
+    title: "Post blog",
+    icon: <SiAboutdotme />,
+    path: "/dashboard/post_blog",
+  },
+  {
+    id: "a",
+    title: "Analytics",
+    icon: <RiPagesFill />,
+    path: "/dashboard/analytics",
+  },
+];

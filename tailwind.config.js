@@ -23,6 +23,8 @@ module.exports = {
     },
     height: {
       "[30rem]": "30rem",
+      screen: ["100vh"],
+      full: ["100%"],
     },
   },
   plugins: [],

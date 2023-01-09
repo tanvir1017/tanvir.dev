@@ -27,7 +27,7 @@ export default async function handler(req, res) {
       res.status(201).json({
         success: true,
         message: `account created successful`,
-        data: result,
+        data: JSON.parse(result),
       });
     } else if (req.method === "GET") {
       return res.status(401).json({
