@@ -19,6 +19,17 @@ export const data = [
     path: "/signin",
   },
 ];
+export const mobileLinkData = [
+  { title: "Home", icon: <BiHomeSmile />, path: "/" },
+  { title: "About", icon: <SiAboutdotme />, path: "/about" },
+  { title: "Blogs", icon: <RiPagesFill />, path: "/blogs" },
+  { title: "Project", icon: <RiAppsFill />, path: "/projects" },
+  {
+    title: "Sign-in",
+    icon: <IoLogIn />,
+    path: "/signin",
+  },
+];
 
 export const menuItems = [
   { id: "b", title: "Blogs", icon: <BiHomeSmile />, path: "/dashboard/blogs" },

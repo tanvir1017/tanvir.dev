@@ -9,7 +9,7 @@ import { TfiControlBackward } from "react-icons/tfi";
 function Sidebar() {
   const { pathName } = useRouter();
   const [toggleCollapse, setToggleCollapse] = useState(false);
-  const [isCollapsible, setIsCollapsible] = useState(true);
+  const [isCollapsible, setIsCollapsible] = useState(false);
   const activeMenu = useMemo(
     () => menuItems.find((menu) => menu.path === pathName),
     [pathName]
