@@ -9,16 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@mdx-js/loader": "^2.2.1",
-    "@mdx-js/react": "^2.2.1",
+    "@motionone/utils": "^10.15.1",
     "@next/font": "^13.0.6",
-    "@next/mdx": "^13.1.1",
     "bcryptjs": "^2.4.3",
     "classnames": "^2.3.2",
     "cookies-next": "^2.1.1",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.5",
-    "framer-motion": "^8.0.2",
+    "framer-motion": "^8.4.2",
     "jsonwebtoken": "^9.0.0",
     "mongoose": "^6.8.2",
     "netlify-cli": "^12.5.0",
@@ -26,6 +24,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "^4.7.1",
+    "react-quill": "^2.0.0",
     "react-toastify": "^9.1.1"
   },
   "devDependencies": {

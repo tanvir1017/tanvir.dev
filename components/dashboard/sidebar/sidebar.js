@@ -15,7 +15,7 @@ function Sidebar() {
     [pathName]
   );
   const sideBarWrapperClasses = classNames(
-    "h-screen px-4 pt-8 pb-4 bg-gray-100 flex-col text-black justify-between",
+    "h-screen px-4 pt-8 pb-4 bg-gray-200 flex-col text-black justify-between ",
     {
       ["w-80"]: !toggleCollapse,
       ["w-20"]: toggleCollapse,
