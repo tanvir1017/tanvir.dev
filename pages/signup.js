@@ -23,9 +23,6 @@ function Signup() {
 
   const CLOUD_NAME = process.env.NEXT_PUBLIC_CLOUD_NAME;
   const UPLOAD_PRESET = process.env.NEXT_PUBLIC_UPLOAD_PRESET;
-  // console.log(API);
-  // console.log(`https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`);
-  // console.log(UPLOAD_PRESET);
 
   const resetFieldValue = () => {
     setFirstName("");
@@ -33,7 +30,7 @@ function Signup() {
     setEmail("");
     setPassword("");
     setConfirmPassword("");
-    setPictureURL(profile);
+    setProfile("/userDemo.webp");
     setRememberMeFor("");
   };
 
@@ -62,7 +59,7 @@ function Signup() {
     formData.append("cloud_name", CLOUD_NAME);
 
     try {
-      const res = await window.fetch(
+      const res = await fetch(
         `https://api.cloudinary.com/v1_1/${CLOUD_NAME}/image/upload`,
         {
           method: "post",
@@ -135,7 +132,9 @@ function Signup() {
             theme: "light",
             icon: "✔",
           });
-          resetFieldValue();
+          (async () => {
+            resetFieldValue();
+          })();
           router.back(routerPath);
         } else if (!result.success) {
           toast.error(result.message, {
@@ -147,10 +146,13 @@ function Signup() {
         }
       } catch (error) {
         if (error) {
-          toast.error(error.message, {
-            theme: "colored",
-            icon: "⭕",
-          });
+          toast.error(
+            { ...error.message, value: "from catch" },
+            {
+              theme: "colored",
+              icon: "⭕",
+            }
+          );
           setDataPosting(false);
         }
       }
