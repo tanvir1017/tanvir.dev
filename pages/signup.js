@@ -17,12 +17,10 @@ function Signup() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
-  const [pictureURL, setPictureURL] = useState("/userDemo.webp");
+  const [profile, setProfile] = useState("/userDemo.webp");
   const [rememberMeFor, setRememberMeFor] = useState(7);
   const [routerPath, setRouterPath] = useState("");
-  const API = process.env.NEXT_PUBLIC_API;
-  const PRODUCTION_API = process.env.NEXT_PUBLIC_PRODUCTION_API;
-  const API_URL = process.env.NODE_ENV === "production" ? PRODUCTION_API : API;
+
   const CLOUD_NAME = process.env.NEXT_PUBLIC_CLOUD_NAME;
   const UPLOAD_PRESET = process.env.NEXT_PUBLIC_UPLOAD_PRESET;
   // console.log(API);
@@ -35,7 +33,7 @@ function Signup() {
     setEmail("");
     setPassword("");
     setConfirmPassword("");
-    setPictureURL(pictureURL);
+    setPictureURL(profile);
     setRememberMeFor("");
   };
 
@@ -74,7 +72,7 @@ function Signup() {
       const result = await res.json();
 
       if (result.url) {
-        setPictureURL(result.url);
+        setProfile(result.url);
         setLoading(false);
         (async () => {
           toast.success("Picture upload successful ⚒", {
@@ -110,7 +108,7 @@ function Signup() {
       firstName,
       lastName,
       email,
-      pictureURL,
+      profile,
       password,
       rememberMeFor,
     };
@@ -121,8 +119,7 @@ function Signup() {
     } else {
       try {
         setDataPosting(true);
-        const res = await fetch(`/api/auth`, {
-          // const res = await fetch(`https://tanvirhossain.vercel.app/api/auth`, {
+        const res = await fetch(`/api/signup`, {
           method: "POST",
           headers: {
             "content-type": "application/json",
@@ -131,35 +128,29 @@ function Signup() {
         });
         const result = await res.json();
         setDataPosting(false);
+        console.log(result);
         // todo : have to dow a lot of modal show case with this result variable
         if (result.success) {
-          (async () => {
-            toast.success(result.message, {
-              theme: "light",
-              icon: "✔",
-            });
-            resetFieldValue();
-          })();
-          (async () => {
-            router.back(routerPath);
-          })();
+          toast.success(result.message, {
+            theme: "light",
+            icon: "✔",
+          });
+          resetFieldValue();
+          router.back(routerPath);
         } else if (!result.success) {
-          (async () => {
-            toast.error(result.message, {
-              theme: "colored",
-              icon: "❌",
-            });
-          })();
+          toast.error(result.message, {
+            theme: "colored",
+            icon: "❌",
+          });
+
           setDataPosting(false);
         }
       } catch (error) {
         if (error) {
-          (async () => {
-            toast.error("internal server error", {
-              theme: "colored",
-              icon: "⭕",
-            });
-          })();
+          toast.error(error.message, {
+            theme: "colored",
+            icon: "⭕",
+          });
           setDataPosting(false);
         }
       }
@@ -196,7 +187,7 @@ function Signup() {
               ) : (
                 <Image
                   className="absolute"
-                  src={pictureURL}
+                  src={profile}
                   alt="user-avatar"
                   layout="fill"
                   objectFit="cover"
