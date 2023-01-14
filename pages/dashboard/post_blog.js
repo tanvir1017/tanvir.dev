@@ -52,9 +52,7 @@ function PostBlog() {
       },
     })
       .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-      });
+      .then((data) => {});
   }
 
   function handleTitleChange(event) {

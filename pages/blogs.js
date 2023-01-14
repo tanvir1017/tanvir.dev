@@ -1,9 +1,20 @@
 /* eslint-disable @next/next/no-img-element */
+import BlogList from "components/blogs/blogList";
 import { motion as m } from "framer-motion";
+import fs from "fs";
+import matter from "gray-matter";
+import path from "path";
+import { blogsFileNames, blogsPath } from "utils/mdx/mdxUtils";
 import { blogLocData, metaTagBlog } from "../components/localData/localData";
+
 import Meta from "../components/meta/meta";
 
-function Blogs() {
+export default function Blogs({ blogs }) {
+  const allTagSet = blogs.reduce((acc, blog) => {
+    blog.frontmatter.tags?.map((tag) => acc.add(tag));
+    return acc;
+  }, new Set([]));
+
   return (
     <>
       <Meta metaTag={metaTagBlog} />
@@ -51,9 +62,24 @@ function Blogs() {
             );
           })}
         </m.div>
+        <BlogList blogs={blogs} />
       </m.div>
     </>
   );
 }
 
-export default Blogs;
+export async function getStaticProps() {
+  const blogs = blogsFileNames.map((slug) => {
+    const content = fs.readFileSync(path.join(blogsPath, slug));
+    const { data } = matter(content);
+    return {
+      frontmatter: data,
+      slug: slug.replace(/\.mdx?$/, ""),
+    };
+  });
+  return {
+    props: {
+      blogs: JSON.parse(JSON.stringify(blogs)),
+    },
+  };
+}

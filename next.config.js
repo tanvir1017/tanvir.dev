@@ -16,11 +16,9 @@ const nextConfig = {
       },
     ];
   },
-  httpAgentOptions: {
-    keepAlive: 15000,
-  },
+  pageExtensions: ["ts", "tsx", "js", "jsx", "md", "mdx"],
   reactStrictMode: true,
-  images: { domains: ["res.cloudinary.com"] },
+  images: { domains: ["res.cloudinary.com", "images.unsplash.com"] },
 };
 
 module.exports = nextConfig;

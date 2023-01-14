@@ -1,4 +1,6 @@
+import { MDXProvider } from "@mdx-js/react";
 import { AnimatePresence } from "framer-motion";
+
 import { useEffect } from "react";
 import Footer from "../components/shared/footer/footer";
 import LgNav from "../components/shared/nav/LgNav";
@@ -17,19 +19,22 @@ function MyApp({ Component, pageProps, router }) {
     storage.setItem("prevPath", prevPath);
     storage.setItem("currentPath", globalThis.location.pathname);
   }
+
   return (
-    <main>
-      {pathname !== "/404" && <Toptop />}
-      <MobileNav />
-      {pathname !== "/404" && !pathname.includes("/dashboard") && <LgNav />}
-      <AnimatePresence>
-        <Component key={router.pathname} {...pageProps} />
-      </AnimatePresence>
-      {pathname !== "/404" &&
-        pathname !== "/signin" &&
-        pathname !== "/signup" &&
-        !pathname.includes("/dashboard") && <Footer />}
-    </main>
+    <MDXProvider>
+      <main>
+        {pathname !== "/404" && <Toptop />}
+        <MobileNav />
+        {pathname !== "/404" && !pathname.includes("/dashboard") && <LgNav />}
+        <AnimatePresence>
+          <Component key={router.pathname} {...pageProps} />
+        </AnimatePresence>
+        {pathname !== "/404" &&
+          pathname !== "/signin" &&
+          pathname !== "/signup" &&
+          !pathname.includes("/dashboard") && <Footer />}
+      </main>
+    </MDXProvider>
   );
 }
 
