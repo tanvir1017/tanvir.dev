@@ -27,5 +27,5 @@ module.exports = {
       full: ["100%"],
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/typography")],
 };

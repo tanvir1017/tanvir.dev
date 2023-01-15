@@ -25,14 +25,11 @@ function MyApp({ Component, pageProps, router }) {
       <main>
         {pathname !== "/404" && <Toptop />}
         <MobileNav />
-        {pathname !== "/404" && !pathname.includes("/dashboard") && <LgNav />}
+        {pathname !== "/404" && <LgNav />}
         <AnimatePresence>
           <Component key={router.pathname} {...pageProps} />
         </AnimatePresence>
-        {pathname !== "/404" &&
-          pathname !== "/signin" &&
-          pathname !== "/signup" &&
-          !pathname.includes("/dashboard") && <Footer />}
+        {pathname !== "/404" && <Footer />}
       </main>
     </MDXProvider>
   );
