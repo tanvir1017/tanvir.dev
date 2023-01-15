@@ -9,7 +9,7 @@ import { blogsFileNames, blogsPath } from "utils/mdx/mdxUtils";
 
 export default function SingleBlog({ mdxSource, frontmatter }) {
   return (
-    <div className="large_container">
+    <div className="md:large_container m_container">
       <BlogView mdxSource={mdxSource} frontmatter={frontmatter} />
     </div>
   );
