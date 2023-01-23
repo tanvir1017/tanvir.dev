@@ -1,22 +1,11 @@
 import { motion as m } from "framer-motion";
-import { useTheme } from "next-themes";
 import Link from "next/link";
-import { useRouter } from "next/router";
-import { useEffect, useState } from "react";
+import Example from "./Example";
 
 import style from "./navbar.module.css";
 import { data } from "./navLink";
 
 function LgNav() {
-  const { systemTheme, theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  const { pathname } = useRouter();
-  useEffect(() => {
-    setMounted(true);
-  }, []);
-  if (!mounted) {
-    return null;
-  }
   return (
     <div className="pt-3 lg:block hidden">
       <div className={`${style.navBg} font-jostRegular px-12 py-5`}>
@@ -33,40 +22,32 @@ function LgNav() {
                 >
                   Tanvir
                 </span>
-                <span className={`font-caveatMedium text-white`}>.dev</span>{" "}
+                <span
+                  className={`font-caveatMedium dark:text-white text-[#121212]`}
+                >
+                  .dev
+                </span>{" "}
               </Link>
             </m.li>
           </m.ul>
-          {pathname !== "/signin" && pathname !== "/signup" && (
-            <m.ul className="flex">
-              {data.map((nav, index) => (
-                <m.li
-                  key={index}
-                  className="m-2"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1, transition: 0.85, delay: 0.2 }}
-                >
-                  <Link href={nav.path} className={`${style.linkText} `}>
-                    {nav.title}
-                  </Link>
-                </m.li>
-              ))}
+
+          <m.ul className="flex justify-center items-center">
+            {data.map((nav, index) => (
               <m.li
-                className="m-2"
+                key={index}
+                className="m-2 text-[#121212] dark:text-white"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1, transition: 0.85, delay: 0.2 }}
               >
-                <select
-                  value={theme}
-                  onChange={(e) => setTheme(e.target.value)}
-                >
-                  <option value="system">System</option>
-                  <option value="dark">Dark</option>
-                  <option value="light">Light</option>
-                </select>
+                <Link href={nav.path} className={`${style.linkText} `}>
+                  {nav.title}
+                </Link>
               </m.li>
-            </m.ul>
-          )}
+            ))}
+            <m.li className="ml-5">
+              <Example />
+            </m.li>
+          </m.ul>
         </div>
       </div>
     </div>

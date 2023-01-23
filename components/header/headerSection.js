@@ -20,7 +20,10 @@ function HeaderSection() {
     >
       <div className={`font-jostRegular`}>
         <div className="md:flex md:text-left text-center flex md:flex-row flex-col-reverse justify-between items-center">
-          <m.div variants={childVariants} className="space-y-2 lg:mt-0 mt-12">
+          <m.div
+            variants={childVariants}
+            className="dark:text-white text-[#121212] space-y-2 lg:mt-0 mt-12"
+          >
             <p>Hi there beautiful people on the internet</p>
             <h4 className="font-semibold text-2xl ">Tanvir here</h4>
             <m.div className="lg:overflow-hidden pb-8">
@@ -36,7 +39,7 @@ function HeaderSection() {
                 </span>
                 <div className="md:hidden block "></div>
                 <span
-                  className={`${Style.textHighlighter} text-white font-jostBlack`}
+                  className={`${Style.textHighlighter} text-[#121212] dark:text-white font-jostBlack`}
                 >
                   Developer
                 </span>
@@ -54,7 +57,7 @@ function HeaderSection() {
                 variants={childVariants}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="p-3 rounded-lg backdrop-blur-0 bg-white/5 border-t-[#ff008c] border border-b-white/5 border-r-[#ff008c] border-l-white/5"
+                className="p-3 rounded-lg backdrop-blur-0 bg-[#ff008c] text-white  dark:bg-white/5 dark:border-t-[#ff008c] border-t-[#121212] dark:border border-2  border-b-white/5 border-r-[#121212] dark:border-r-[#ff008c] border-l-white/5"
               >
                 <a
                   href="https://drive.google.com/file/d/1kFNHhnbpWtBVQTTyCuSiqJhygGNBgBGH/view?usp=share_link"
@@ -68,21 +71,13 @@ function HeaderSection() {
                 variants={childVariants}
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="p-3 rounded-lg backdrop-blur-0 bg-white/5 border-b-[#ff008c] border border-t-white/5 
-              border-l-[#ff008c] border-r-white/5"
+                className="p-3 rounded-lg backdrop-blur-0 bg-[#ff008c]  dark:bg-white/5 border-b-[#121212] dark:border-b-[#ff008c] border-2 dark:border border-t-white/5 
+              border-l-[#121212] text-white dark:border-l-[#ff008c]  border-r-white/5"
               >
                 <Link href="/blogs">Read blogs</Link>
               </m.button>
             </div>
           </m.div>
-          {/* <div className="profile-image">
-            <Image
-              src="/avatar.png"
-              width={350}
-              height={350}
-              alt="avatar"
-            ></Image>
-          </div> */}
         </div>
       </div>
     </m.div>

@@ -5,7 +5,9 @@ import style from "./selfHighlighter.module.css";
 function SelfHighlighter() {
   return (
     <>
-      <div className={`lg:large_container m_container font-jostRegular`}>
+      <div
+        className={`lg:large_container m_container font-jostRegular text-[#121212] dark:text-white`}
+      >
         <m.div
           className="text-center grid place-items-center"
           initial={{ opacity: 0, y: 25 }}
@@ -37,7 +39,7 @@ function SelfHighlighter() {
                 >
                   <div className="md:w-24">{data.icon}</div>
                   <h4 className="text-2xl font-bold">{data.title}</h4>
-                  <p className="text-1xl text-gray-300">{data.desc}</p>
+                  <p className="text-1xl dark:text-gray-300">{data.desc}</p>
                 </div>
               );
             })}
