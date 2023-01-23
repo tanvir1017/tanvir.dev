@@ -1,5 +1,6 @@
 import { MDXProvider } from "@mdx-js/react";
 import { AnimatePresence } from "framer-motion";
+import { ThemeProvider } from "next-themes";
 
 import { useEffect } from "react";
 import Footer from "../components/shared/footer/footer";
@@ -21,17 +22,23 @@ function MyApp({ Component, pageProps, router }) {
   }
 
   return (
-    <MDXProvider>
-      <main>
-        {pathname !== "/404" && <Toptop />}
-        <MobileNav />
-        {pathname !== "/404" && <LgNav />}
-        <AnimatePresence>
-          <Component key={router.pathname} {...pageProps} />
-        </AnimatePresence>
-        {pathname !== "/404" && <Footer />}
-      </main>
-    </MDXProvider>
+    <ThemeProvider
+      forcedTheme={Component.theme || null}
+      enableSystem={true}
+      attribute="class"
+    >
+      <MDXProvider>
+        <main>
+          {pathname !== "/404" && <Toptop />}
+          <MobileNav />
+          {pathname !== "/404" && <LgNav />}
+          <AnimatePresence>
+            <Component key={router.pathname} {...pageProps} />
+          </AnimatePresence>
+          {pathname !== "/404" && <Footer />}
+        </main>
+      </MDXProvider>
+    </ThemeProvider>
   );
 }
 

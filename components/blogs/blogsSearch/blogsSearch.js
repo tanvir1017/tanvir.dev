@@ -11,9 +11,7 @@ export default function BlogsSearch() {
     }
   };
 
-  useEffect(() => {
-    console.log(focusInput);
-  }, [focusInput]);
+  useEffect(() => {}, [focusInput]);
   const handleOnSubmit = (e) => {
     e.preventDefault();
   };
@@ -33,7 +31,7 @@ export default function BlogsSearch() {
       </div>
       <div className="mb-12">
         <form onSubmit={handleOnSubmit}>
-          <label class="block text-center text-black relative overflow-hidden ">
+          <label className="block text-center text-black relative overflow-hidden ">
             <div
               className={classNames(
                 "absolute cursor-pointer text-white text-3xl top-[50%] delay-150 transition-all duration-500 -translate-x-[50%] -translate-y-[50%] p-2 rounded-full z-10",
