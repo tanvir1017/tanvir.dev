@@ -6,7 +6,7 @@ export default function Blogs({ blog }) {
   return (
     <Link key={blog.slug} href={`/blog/${blog?.slug}`}>
       <m.div
-        className={`rounded-2xl p-5 space-y-5 bg-white/5 backdrop:filter(16px)`}
+        className={`rounded-2xl p-5 space-y-5 dark:bg-white/5 bg-slate-800 backdrop:filter(16px)  text-white dark:shadow-none shadow-md`}
       >
         <h6 className="uppercase font-medium">
           {" "}

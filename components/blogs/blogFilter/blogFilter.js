@@ -6,7 +6,7 @@ export default function BlogFilter({ allTagSet, titles }) {
     <>
       <BlogsSearch titles={titles} />
 
-      <m.div className="flex items-center space-x-3 justify-center flex-wrap ">
+      <m.div className="flex items-center space-x-3 justify-center flex-wrap  dark:text-white text-[#121212]">
         {[...allTagSet].map((tag, index) => {
           return (
             <m.div

@@ -1,6 +1,5 @@
 import { motion as m } from "framer-motion";
 import { cardData } from "./data";
-import style from "./selfHighlighter.module.css";
 
 function SelfHighlighter() {
   return (
@@ -28,14 +27,14 @@ function SelfHighlighter() {
             className="grid grid-cols-1  md:grid-cols-2 lg:grid-cols-3  gap-4 justify-items-center"
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.3, delay: 0.3 }}
           >
             {cardData.map((data, index) => {
               return (
                 <div
                   key={index}
-                  className={`${style.cardBg} rounded-xl lg:p-12 p-6 lg:mb-0 mb-4 space-y-4 even:pb-12 even:border-b-2 even:border-b-[#d309e1] overflow-y-clip`}
+                  className={`dark:bg-[#ffffff06] bg-[#000000d6] text-white shadow-md cardBg rounded-xl lg:p-12 p-6 lg:mb-0 mb-4 space-y-4 even:pb-12 even:border-b-2 even:border-b-[#d309e1] overflow-y-clip dark:shadow-none`}
                 >
                   <div className="md:w-24">{data.icon}</div>
                   <h4 className="text-2xl font-bold">{data.title}</h4>

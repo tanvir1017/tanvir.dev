@@ -9,6 +9,7 @@ function About() {
     <>
       <Meta metaTag={metaTag} />
       <main className="lg:large_container m_container font-jostRegular">
+        <div className="pt-14"></div>
         <AboutHeading />
         <Stack />
         <Contact />

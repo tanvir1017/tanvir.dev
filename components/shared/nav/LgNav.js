@@ -1,15 +1,61 @@
 import { motion as m } from "framer-motion";
 import Link from "next/link";
-import Example from "./Example";
+import { useEffect } from "react";
 
 import style from "./navbar.module.css";
 import { data } from "./navLink";
+import Theme from "./Theme";
 
 function LgNav() {
+  useEffect(function mount() {
+    const body = document.body;
+    let topPosition = 0;
+    function onScroll() {
+      const currentScroll = window.pageYOffset;
+      if (currentScroll <= 0) {
+        body.classList.remove("scroll-up");
+      }
+      if (
+        currentScroll > topPosition &&
+        !body.classList.contains("scroll-down")
+      ) {
+        body.classList.remove("scroll-up");
+        body.classList.add("scroll-down");
+      }
+      if (
+        currentScroll < topPosition &&
+        body.classList.contains("scroll-down")
+      ) {
+        body.classList.remove("scroll-down");
+        body.classList.add("scroll-up");
+      }
+
+      topPosition = currentScroll;
+    }
+
+    window.addEventListener("scroll", onScroll);
+
+    return function unMount() {
+      window.removeEventListener("scroll", onScroll);
+    };
+  });
+
+  const conditionalClasses = {
+    background: "bg-white/5",
+    iconPadding: "p-2",
+    iconSize: "text-3xl",
+  };
+
   return (
     <div className="pt-3 lg:block hidden">
-      <div className={`${style.navBg} font-jostRegular px-12 py-5`}>
-        <div className="flex justify-between items-center">
+      <header
+        className={`font-jostRegular px-12 py-3  bg-slate-50/30 backdrop-blur-2xl dark:bg-[#121212]/60 fixed top-0 left-0 w-full text-center transition-all duration-500`}
+        style={{
+          boxShadow: "2px 0px 5px 1px rgba(49, 49, 49, 0.375)",
+          zIndex: 150,
+        }}
+      >
+        <nav className="flex justify-between items-center">
           <m.ul>
             <m.li
               initial={{ opacity: 0, x: "-100px" }}
@@ -45,11 +91,11 @@ function LgNav() {
               </m.li>
             ))}
             <m.li className="ml-5">
-              <Example />
+              <Theme conditionalClasses={conditionalClasses} />
             </m.li>
           </m.ul>
-        </div>
-      </div>
+        </nav>
+      </header>
     </div>
   );
 }

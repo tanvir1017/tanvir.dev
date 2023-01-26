@@ -17,7 +17,7 @@ export default function BlogsSearch() {
   };
   return (
     <>
-      <div className="grid place-items-center  text-center md:mt-0 mt-12 mb-8">
+      <div className="grid place-items-center  text-center md:mt-0 mt-12 mb-8  dark:text-white text-[#121212]">
         <h2 className="font-jostBold uppercase text-3xl">
           Search Articles by topics or titles
         </h2>
@@ -51,7 +51,7 @@ export default function BlogsSearch() {
             <input
               type="text"
               className={classNames(
-                "transition-all duration-500 p-4 focus:outline-none  rounded-full",
+                "transition-all duration-500 p-4 dark:bg-white dark:text-black text-white bg-[#121212]  focus:outline-none  rounded-full",
                 {
                   ["w-[0%] opacity-0"]: !focusInput,
                   ["w-[80%] opacity-100 "]: focusInput,

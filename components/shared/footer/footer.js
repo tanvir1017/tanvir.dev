@@ -5,7 +5,7 @@ import Social from "../social/social";
 const Footer = () => {
   return (
     <>
-      <footer className="font-jostRegular">
+      <footer className="font-jostRegular  text-black dark:text-white">
         <div className="grid place-items-center my-24 px-12">
           <m.div className="mb-16 mt-12 space-y-8">
             <m.ul className="flex justify-center items-center space-x-8">

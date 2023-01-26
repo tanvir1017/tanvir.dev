@@ -10,7 +10,7 @@ function ProjectImage({ expander, stack, layoutId, title, links, id }) {
   return (
     <div>
       <m.div
-        className="bg-white/5 grid p-5 rounded-lg relative z-10"
+        className="dark:bg-white/5 backdrop-blur-lg bg-black/5   grid p-5 rounded-lg relative z-10"
         initial={{ opacity: 0, scale: 0 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, delay: 0.3 }}
@@ -18,7 +18,7 @@ function ProjectImage({ expander, stack, layoutId, title, links, id }) {
         <m.span
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
-          className="absolute bg-white rounded-lg w-14 h-[56px] grid place-items-center top-0 left-0 lg:right-0 right-3  bottom-0 cursor-pointer text-[#ff008c]"
+          className="absolute backdrop-blur-lg bg-white/30  rounded-lg w-14 h-[56px] grid place-items-center top-0 left-0 lg:right-0 right-3  bottom-0 cursor-pointer text-black"
           onClick={() => expander(layoutId)}
         >
           <FaCompressArrowsAlt />
@@ -28,7 +28,7 @@ function ProjectImage({ expander, stack, layoutId, title, links, id }) {
           width={800}
           height={100}
           alt={title}
-          className="rounded-lg "
+          className="rounded-lg"
         />
         <ul className="flex justify-center flex-wrap items-center space-x-2 my-3 space-y-3">
           {stack.map(
@@ -147,7 +147,7 @@ function ProjectImage({ expander, stack, layoutId, title, links, id }) {
                   key={i + 13}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="bg-white/5 px-6 py-1 rounded-full"
+                  className="dark:bg-white/5 bg-[#121212] px-6 py-1 rounded-full"
                 >
                   <a
                     href={code}
@@ -164,7 +164,7 @@ function ProjectImage({ expander, stack, layoutId, title, links, id }) {
                   key={i + 14}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="bg-white/5 px-6 py-1 rounded-full"
+                  className="dark:bg-white/5 bg-[#121212] px-6 py-1 rounded-full"
                 >
                   <a
                     href={server}
@@ -181,7 +181,7 @@ function ProjectImage({ expander, stack, layoutId, title, links, id }) {
                   key={i + 15}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
-                  className="bg-white/5 px-6 py-1 rounded-full"
+                  className="dark:bg-white/5 bg-[#121212] px-6 py-1 rounded-full"
                 >
                   <a
                     href={live}

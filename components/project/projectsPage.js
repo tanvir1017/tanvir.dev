@@ -22,15 +22,15 @@ function ProjectsPage() {
   };
   return (
     <>
-      <div className={`card_container relative`}>
+      <div className={`card_container relative pt-8 `}>
         <m.div
-          className="grid place-items-center"
+          className="grid place-items-center dark:text-white text-[#121212]"
           initial={{ opacity: 0, y: 25 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: false }}
           transition={{ duration: 0.3 }}
         >
-          <h1 className="uppercase text-4xl font-jostBold">Projects</h1>
+          <h1 className="uppercase text-4xl font-jostBold ">Projects</h1>
           <p className="">
             <span className={` text-green-700 font-jostSemiBold`}>THAT</span>{" "}
             <span className={`font-caveatMedium`}>I&apos;ve done</span>{" "}

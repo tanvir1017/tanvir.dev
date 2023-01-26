@@ -31,7 +31,7 @@ function ShowProject({ layoutId, expander }) {
             id={id}
           />
           <m.div
-            className="lg:p-8 relative"
+            className="lg:p-8 relative  text-black dark:text-white"
             initial={{ opacity: 0, x: "-100px" }}
             animate={{ opacity: 1, x: "0px" }}
             transition={{ duration: 0.5, delay: 0.5 }}

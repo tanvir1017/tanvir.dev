@@ -1,10 +1,9 @@
-import React from "react";
 import { socialData } from "../../selfHighlighter/data";
 import style from "./social.module.css";
 
 function Social() {
   return (
-    <ul className="flex items-center mt-4">
+    <ul className="flex items-center mt-4  text-white">
       {socialData.map(({ id, icon, name }) => {
         return (
           <li

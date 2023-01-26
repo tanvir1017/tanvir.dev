@@ -18,7 +18,7 @@ const Path = ({ openPath, closedPath, ...rest }) => {
 
 const MenuToggler = ({ toggle }) => {
   return (
-    <button className="button" onClick={toggle}>
+    <button className="button" style={{ zIndex: 180 }} onClick={toggle}>
       <svg width="20" height="20" viewBox="0 0 23 23">
         <Path d="M 2 2.5 L 20 2.5" />
         <Path d="M 2 9.423 L 20 9.423" />

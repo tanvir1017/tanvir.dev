@@ -4,7 +4,7 @@ import Blogs from "./blogs";
 export default function BlogsCard({ blogs }) {
   return (
     <>
-      <div className="pt-8">
+      <div className="pt-8 dark:text-white text-[#121212]">
         <h3 className="font-jostBold uppercase text-3xl">Latest blog</h3>
       </div>
       <m.div

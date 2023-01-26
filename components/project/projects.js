@@ -24,7 +24,7 @@ function ProjectsList() {
   };
   return (
     <>
-      <div className={`card_container relative`}>
+      <div className={`card_container relative pt-5`}>
         <m.div
           className="grid place-items-center"
           initial={{ opacity: 0, y: 25 }}
@@ -32,10 +32,16 @@ function ProjectsList() {
           viewport={{ once: false }}
           transition={{ duration: 0.3 }}
         >
-          <h1 className="uppercase text-4xl font-jostBold">Projects</h1>
+          <h1 className="uppercase text-4xl font-jostBold text-[#121212] dark:text-white">
+            Projects
+          </h1>
           <p className="">
             <span className={` text-green-700 font-jostSemiBold`}>THAT</span>{" "}
-            <span className={`font-caveatMedium`}>I&apos;ve done</span>{" "}
+            <span
+              className={`font-caveatMedium text-[#121212] dark:text-white`}
+            >
+              I&apos;ve done
+            </span>{" "}
           </p>
         </m.div>
         <AnimateSharedLayout type="crossfade">
@@ -43,7 +49,7 @@ function ProjectsList() {
             className="card-list my-14"
             initial={{ opacity: 0, y: 25 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
+            viewport={{ once: true }}
             transition={{ duration: 0.3, delay: 0.3 }}
           >
             {projectData.slice(0, 4).map((project, i) => {
@@ -57,7 +63,7 @@ function ProjectsList() {
               );
             })}
           </m.ul>
-          <div className="inset-x-0 bottom-0 flex justify-center bg-gradient-to-t from-[#232020] pt-[700px] pb-8 pointer-events-none dark:from-[#121212] absolute">
+          <div className="inset-x-0 bottom-0 flex justify-center dark:bg-gradient-to-t  pt-[700px] pb-8 pointer-events-none dark:from-[#121212]  absolute">
             <m.button
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}

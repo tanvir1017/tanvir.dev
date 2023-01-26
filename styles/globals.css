@@ -3,6 +3,14 @@
 @tailwind utilities;
 
 @layer utilities {
+  header {
+  }
+  .scroll-down header {
+    transform: translate3d(0, -100%, 0);
+  }
+  .scroll-up header {
+    filter: drop-shadow(0px -2px 2px rgba(11, 13, 49, 0.184));
+  }
   .large_container {
     padding: 6.9rem 6rem;
     z-index: 1 !important;
@@ -10,6 +18,27 @@
   .m_container {
     padding: 2.9rem 1rem;
     z-index: 1 !important;
+  }
+  .cardBg {
+    backdrop-filter: blur(0.5px);
+  }
+  .cardBg::after {
+    z-index: -1;
+    content: "";
+    width: 50%;
+    height: 50%;
+    border-radius: 100%;
+    filter: blur(100px);
+  }
+  .cardBg:nth-child(2)::after {
+    background-image: var(--mesh-gradient);
+    background-repeat: no-repeat;
+    background-position: 100% 100%;
+    position: absolute;
+    top: -20px;
+    left: 80px;
+    background-size: 400%;
+    background-position: right;
   }
 }
 
@@ -119,22 +148,22 @@ a {
 /* navigation */
 @layer base {
   .nav {
-    @apply absolute top-0 right-0 bottom-0 w-[300px];
+    @apply absolute top-14 right-0 bottom-0 w-[300px];
   }
   .nav-ul {
-    @apply p-5 fixed z-20 top-[100px] w-[260px];
+    @apply p-5 fixed top-[100px] w-[260px];
   }
   .nav-li {
     @apply flex items-center mb-5 space-x-6 cursor-pointer;
   }
   .button {
-    @apply fixed border-0 outline-none focus:outline-none z-20 top-[32px] w-[50px] left-[30px] rounded-full;
+    @apply fixed border-0 outline-none focus:outline-none top-[32px] w-[50px] left-[30px] rounded-full;
   }
 }
 
 @layer components {
   .background {
-    @apply bg-black fixed top-[0px] z-10 left-[0px] bottom-0 w-full;
+    @apply bg-black fixed top-[0px] left-[0px] bottom-0 w-full;
   }
   .icon-placeholder {
     @apply w-[45px] h-[45px] rounded-full;
@@ -153,7 +182,7 @@ screen {
   max-width: 990px;
   flex: 1 1 100%;
   margin: 0 auto;
-  padding: 45px 25px;
+  padding: 100px 25px 45px;
 }
 .date {
   color: var(--secondary);

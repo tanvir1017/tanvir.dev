@@ -5,7 +5,8 @@ import { BsSunFill } from "react-icons/bs";
 import { CiDark } from "react-icons/ci";
 import { MdDarkMode, MdOutlineSettingsBrightness } from "react-icons/md";
 
-export default function Example() {
+export default function Theme({ conditionalClasses }) {
+  const { background, iconPadding, iconSize } = conditionalClasses;
   const { resolvedTheme, systemTheme, theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -31,12 +32,14 @@ export default function Example() {
   }
 
   const currentTheme = theme === "system" ? systemTheme : theme;
-  console.log(currentTheme);
   return (
     <Menu as="div" className="relative inline-block m-auto">
+      <span className="hidden">{currentTheme}</span>
       <div>
-        <Menu.Button className=" dark:backdrop-blur-sm  dark:bg-white/5 rounded-full p-2  font-medium text-[#121212] dark:text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 border-2 border-[#121212] dark:border-white   focus-visible:ring-opacity-75">
-          <span className="flex items-center justify-center text-3xl">
+        <Menu.Button
+          className={`dark:backdrop-blur-sm  dark:bg-white/5 rounded-full ${iconPadding}  font-medium text-[#121212] dark:text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 border-2 border-[#121212] dark:border-white   focus-visible:ring-opacity-75`}
+        >
+          <span className={`flex items-center justify-center ${iconSize}`}>
             {src}
           </span>
         </Menu.Button>
@@ -51,7 +54,7 @@ export default function Example() {
         leaveTo="transform opacity-0 scale-95"
       >
         <Menu.Items
-          className={` absolute right-0 mt-2 w-56 origin-top-right  rounded-md bg-white/5 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50`}
+          className={` absolute top-10 right-0 mt-2 w-56 origin-top-right  rounded-md ${background} shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`}
         >
           <div className={` px-1 py-1 `}>
             <div onClick={() => setTheme("dark")}>
