@@ -47,7 +47,7 @@ function LgNav() {
   };
 
   return (
-    <div className="pt-3 lg:block hidden">
+    <div className="pt-3 lg:block hidden ">
       <header
         className={`font-jostRegular px-12 py-3  bg-slate-50/30 backdrop-blur-2xl dark:bg-[#121212]/60 fixed top-0 left-0 w-full text-center transition-all duration-500`}
         style={{

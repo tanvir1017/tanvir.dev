@@ -11,14 +11,7 @@
   .scroll-up header {
     filter: drop-shadow(0px -2px 2px rgba(11, 13, 49, 0.184));
   }
-  .large_container {
-    padding: 6.9rem 6rem;
-    z-index: 1 !important;
-  }
-  .m_container {
-    padding: 2.9rem 1rem;
-    z-index: 1 !important;
-  }
+
   .cardBg {
     backdrop-filter: blur(0.5px);
   }
@@ -112,14 +105,12 @@ html,
 body {
   scroll-behavior: smooth;
   padding: 0;
-  /* background-color: #121212; */
-  color: white;
+
   margin: 0;
   font-size: 16px;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  --secondary: rgb(161, 161, 161);
-  --divider: #343434;
+
   position: relative;
 }
 a {

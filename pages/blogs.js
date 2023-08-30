@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import BlogFilter from "components/blogs/blogFilter/blogFilter";
 import BlogsCard from "components/blogs/blogsCard/blogsCard";
 import { motion as m } from "framer-motion";
@@ -11,7 +10,7 @@ import Meta from "../components/meta/meta";
 
 export default function Blogs({ blogs }) {
   const allTagSet = blogs.reduce((acc, blog) => {
-    blog.frontmatter.tags?.map((tag) => acc.add(tag));
+    blog.frontmatter.tags.map((tag) => acc.add(tag));
     return acc;
   }, new Set([]));
 

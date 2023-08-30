@@ -16,7 +16,6 @@ const sidebarVariants = {
     clipPath: `circle(20px at 40px 40px)`,
     transition: {
       duration: 0.4,
-      // delay: 0.4,
     },
   },
 };

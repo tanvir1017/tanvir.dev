@@ -1,6 +1,5 @@
 import { motion as m, useReducedMotion } from "framer-motion";
 import Link from "next/link";
-import Style from "./heading.module.css";
 
 function HeaderSection() {
   const shouldReduceMotion = useReducedMotion();
@@ -16,7 +15,7 @@ function HeaderSection() {
         initial: { opacity: 0 },
         visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
       }}
-      className="lg:large_container m_container"
+      className="container mt-28 max-w-6xl mx-auto"
     >
       <div className={`font-jostRegular`}>
         <div className="md:flex md:text-left text-center flex md:flex-row flex-col-reverse justify-between items-center">
@@ -24,8 +23,8 @@ function HeaderSection() {
             variants={childVariants}
             className="dark:text-white text-[#121212] space-y-2 lg:mt-0 mt-12"
           >
-            <p>Hi there beautiful people on the internet</p>
             <h4 className="font-semibold text-2xl ">Tanvir here</h4>
+            <p>Hi there beautiful people on the internet</p>
             <m.div className="lg:overflow-hidden pb-8">
               <m.h1
                 initial={{ y: "90px", opacity: 0 }}
@@ -33,16 +32,15 @@ function HeaderSection() {
                 transition={{ duration: 0.5, delay: 0.1 }}
                 className="lg:text-6xl text-5xl font-bold"
               >
-                {" "}
-                <span className={`${Style.animatedText} font-jostBlack`}>
-                  Frontend
-                </span>
+                Hello! I'm Tanvir, a Front-End developer
+                {/* <span className={`${Style.animatedText} font-jostBlack`}>
+                  Frontend Developer
+                </span> */}
                 <div className="md:hidden block "></div>
-                <span
+                {/* <span
                   className={`${Style.textHighlighter} text-[#121212] dark:text-white font-jostBlack`}
-                >
-                  Developer
-                </span>
+                > */}
+                {/* </span> */}
               </m.h1>
             </m.div>
 

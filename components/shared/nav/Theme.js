@@ -12,7 +12,6 @@ export default function Theme({ conditionalClasses }) {
 
   useEffect(() => {
     setMounted(true);
-    console.log(theme);
   }, [theme]);
   if (!mounted) {
     return null;
@@ -28,7 +27,6 @@ export default function Theme({ conditionalClasses }) {
 
     default:
       src = <MdOutlineSettingsBrightness />;
-      break;
   }
 
   const currentTheme = theme === "system" ? systemTheme : theme;
@@ -54,7 +52,7 @@ export default function Theme({ conditionalClasses }) {
         leaveTo="transform opacity-0 scale-95"
       >
         <Menu.Items
-          className={` absolute top-10 right-0 mt-2 w-56 origin-top-right  rounded-md ${background} shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`}
+          className={` absolute top-10 right-0 lg:mt-6 w-56 origin-top-right  rounded-md ${background} shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none`}
         >
           <div className={` px-1 py-1 `}>
             <div onClick={() => setTheme("dark")}>

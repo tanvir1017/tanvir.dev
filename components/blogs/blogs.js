@@ -1,11 +1,10 @@
-/* eslint-disable @next/next/no-img-element */
 import { motion as m } from "framer-motion";
 import Link from "next/link";
 
-function BlogsPage() {
+export default function BlogsSection() {
   return (
     <>
-      <div className={` lg:large_container m_container  font-jostRegular  `}>
+      <div className={` lg:large_container m_container  font-jostRegular`}>
         <m.div
           className="grid place-items-center "
           initial={{ opacity: 0, y: 25 }}
@@ -35,5 +34,3 @@ function BlogsPage() {
     </>
   );
 }
-
-export default BlogsPage;
