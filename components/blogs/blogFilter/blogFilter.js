@@ -11,7 +11,7 @@ export default function BlogFilter({ allTagSet, titles }) {
           return (
             <m.div
               key={index}
-              whileHover={{ scale: 1.1 }}
+              whilehover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               className="px-4 py-2 cursor-pointer border-2 "
               style={{

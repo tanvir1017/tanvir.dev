@@ -5,9 +5,9 @@ import { ThemeProvider } from "next-themes";
 import NextNProgress from "nextjs-progressbar";
 import Footer from "../components/shared/footer/footer";
 import MobileNav from "../components/shared/nav/Navigation/MobileNav";
-import Toptop from "../components/shared/toptop/Toptop";
 
 import NavBar from "components/shared/navbar/nav";
+import Toptop from "components/shared/toptop/Toptop";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps, router }) {

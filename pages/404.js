@@ -39,14 +39,14 @@ const Custom404 = () => {
             <div className="relative">
               <div className="flex flex-col lg:flex-row space-y-5 lg:space-y-0  justify-start items-center space-x-6">
                 <m.button
-                  whileHover={{ scale: 1.1 }}
+                  whilehover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   className={`rounded-full px-6 py-2 bg-[#312255] text-white`}
                 >
                   <Link href="/">GO HOME</Link>
                 </m.button>
                 <m.button
-                  whileHover={{ scale: 1.1 }}
+                  whilehover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   className={`rounded-full px-6 py-2 bg-[#312255] text-white`}
                   onClick={() => router.push(routerPath)}

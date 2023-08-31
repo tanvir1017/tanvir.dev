@@ -35,5 +35,21 @@ module.exports = {
       full: ["100%"],
     },
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [
+    require("@tailwindcss/typography"),
+    function ({ addUtilities }) {
+      const newUtilities = {
+        ".project-heading-title-light": {
+          "-webkit-text-stroke-width": "2px",
+          "-webkit-text-stroke-color": "rgba(12, 12, 12, 0.996)",
+        },
+        ".project-heading-title-dark": {
+          "-webkit-text-stroke-width": "2px",
+          "-webkit-text-stroke-color": "rgba(224, 210, 210, 0.996)",
+        },
+      };
+
+      addUtilities(newUtilities, ["responsive", "hover", "dark"]);
+    },
+  ],
 };

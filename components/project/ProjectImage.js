@@ -16,7 +16,7 @@ function ProjectImage({ expander, stack, layoutId, title, links, id }) {
         transition={{ duration: 0.5, delay: 0.3 }}
       >
         <m.span
-          whileHover={{ scale: 1.1 }}
+          whilehover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           className="absolute backdrop-blur-lg bg-white/30  rounded-lg w-14 h-[56px] grid place-items-center top-0 left-0 lg:right-0 right-3  bottom-0 cursor-pointer text-black"
           onClick={() => expander(layoutId)}
@@ -145,7 +145,7 @@ function ProjectImage({ expander, stack, layoutId, title, links, id }) {
               {code && (
                 <m.li
                   key={i + 13}
-                  whileHover={{ scale: 1.1 }}
+                  whilehover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   className="dark:bg-white/5 bg-[#121212] px-6 py-1 rounded-full"
                 >
@@ -162,7 +162,7 @@ function ProjectImage({ expander, stack, layoutId, title, links, id }) {
               {server && (
                 <m.li
                   key={i + 14}
-                  whileHover={{ scale: 1.1 }}
+                  whilehover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   className="dark:bg-white/5 bg-[#121212] px-6 py-1 rounded-full"
                 >
@@ -179,7 +179,7 @@ function ProjectImage({ expander, stack, layoutId, title, links, id }) {
               {live && (
                 <m.li
                   key={i + 15}
-                  whileHover={{ scale: 1.1 }}
+                  whilehover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
                   className="dark:bg-white/5 bg-[#121212] px-6 py-1 rounded-full"
                 >

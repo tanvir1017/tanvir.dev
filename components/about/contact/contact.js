@@ -38,7 +38,7 @@ function Contact() {
         <div className="grid place-items-center">
           <m.button
             variants={childVariants}
-            whileHover={{ scale: 1.1 }}
+            whilehover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             transition={{ duration: 0.85 }}
             className="py-3 px-6 hover:bg-[#b90d6b] rounded-full  bg-[#ff008c]"

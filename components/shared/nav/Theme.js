@@ -34,9 +34,7 @@ export default function Theme({ conditionalClasses }) {
     <Menu as="div" className="relative inline-block m-auto">
       <span className="hidden">{currentTheme}</span>
       <div>
-        <Menu.Button
-          className={`dark:backdrop-blur-sm  dark:bg-white/5 rounded-full ${iconPadding}  font-medium text-[#121212] dark:text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 border-2 border-[#121212] dark:border-white   focus-visible:ring-opacity-75`}
-        >
+        <Menu.Button className={``}>
           <span className={`flex items-center justify-center ${iconSize}`}>
             {src}
           </span>

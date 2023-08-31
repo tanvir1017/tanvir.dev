@@ -14,7 +14,7 @@ export default function BlogView({ mdxSource, frontmatter }) {
     <div className="prose prose-xl dark:prose-invert dark:prose-pre:bg-[#282C34]  mt-8 mx-auto">
       <m.button
         variants={childVariants}
-        whileHover={{ scale: 1.1 }}
+        whilehover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
         className="w-28 h-[38px] px-2 rounded-lg backdrop-blur-0 bg-white/5 border-t-[#ff008c] border border-b-white/5 border-r-[#ff008c] border-l-white/5"
       >

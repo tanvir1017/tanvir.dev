@@ -65,7 +65,7 @@ function ProjectsList() {
           </m.ul>
           <div className="inset-x-0 bottom-0 flex justify-center dark:bg-gradient-to-t  pt-[700px] pb-8 pointer-events-none dark:from-[#121212]  absolute">
             <m.button
-              whileHover={{ scale: 1.1 }}
+              whilehover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
               className={`relative -top-36 rounded-full backdrop-blur-0 focus:outline-none focus:ring-1    text-white px-6 flex shadow-lg items-center  pointer-events-auto py-2 ${Style.showMoreButton}`}
             >

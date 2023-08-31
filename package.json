@@ -15,6 +15,7 @@
     "@motionone/utils": "^10.15.1",
     "@next/font": "^13.0.6",
     "@next/mdx": "^13.1.2",
+    "lucide-react": "^0.241.0",
     "classnames": "^2.3.2",
     "date-fns": "^2.29.3",
     "eslint": "8.28.0",

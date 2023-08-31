@@ -1,7 +1,22 @@
+import { useTheme } from "next-themes";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import { data } from "../nav/navLink";
 import style from "./navbar.module.css";
+
+import { Moon, Sun } from "lucide-react";
+
 const NavBar = () => {
+  const { systemTheme, theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, [theme]);
+  if (!mounted) {
+    return null;
+  }
+
   return (
     <nav className="py-4">
       <div className="max-w-6xl mx-auto flex items-center justify-between">
@@ -36,9 +51,25 @@ const NavBar = () => {
               </Link>
             </li>
           ))}
-          {/* <m.li className="ml-5">
-          <Theme conditionalClasses={conditionalClasses} />
-        </m.li> */}
+          <li className="relative">
+            <button className="absolute top-[50%] left-[10%] translate-x-[50%] -translate-y-[50%]">
+              {theme !== "dark" ? (
+                <Moon
+                  size={25}
+                  className="text-gray-600"
+                  strokeWidth={1.5}
+                  onClick={() => setTheme("dark")}
+                />
+              ) : (
+                <Sun
+                  size={25}
+                  strokeWidth={1.5}
+                  className="text-slate-200"
+                  onClick={() => setTheme("light")}
+                />
+              )}
+            </button>
+          </li>
         </ul>
       </div>
     </nav>
