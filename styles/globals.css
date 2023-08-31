@@ -35,49 +35,85 @@
   }
 }
 
+/* Handwriting using for subtitle */
+
 @font-face {
   font-family: "CaveatRegular";
-  src: url("/Caveat-Regular.ttf");
+  src: url("/fonts/caveat/Caveat-Regular.ttf");
 }
 @font-face {
   font-family: "CaveatBold";
-  src: url("/Caveat-Bold.ttf");
+  src: url("/fonts/caveat/Caveat-Bold.ttf");
 }
 @font-face {
   font-family: "CaveatMedium";
-  src: url("/Caveat-Medium.ttf");
+  src: url("/fonts/caveat/Caveat-Medium.ttf");
 }
 @font-face {
   font-family: "CaveatSemiBold";
-  src: url("/public/Caveat-SemiBold.ttf");
+  src: url("/fonts/caveat/Caveat-SemiBold.ttf");
 }
+
+/* Regular use for page */
 @font-face {
-  font-family: "JostBold";
-  src: url("/Jost-Bold.ttf");
-}
-@font-face {
-  font-family: "JostBlack";
-  src: url("/Jost-Black.ttf");
-}
-@font-face {
-  font-family: "JostSemiBold";
-  src: url("/Jost-SemiBold.ttf");
-}
-@font-face {
-  font-family: "JostExtraBold";
-  src: url("/Jost-ExtraBold.ttf");
-}
-@font-face {
-  font-family: "JostExtraLight";
-  src: url("/Jost-ExtraLight.ttf");
+  font-family: "JostRegular";
+  src: url("/fonts/jost/Jost-Regular.ttf");
 }
 @font-face {
   font-family: "JostMedium";
-  src: url("/Jost-Medium.ttf");
+  src: url("/fonts/jost/Jost-Medium.ttf");
+}
+
+@font-face {
+  font-family: "JostSemiBold";
+  src: url("/fonts/jost/Jost-SemiBold.ttf");
 }
 @font-face {
-  font-family: "JostRegular";
-  src: url("/Jost-Regular.ttf");
+  font-family: "JostLight";
+  src: url("/fonts/jost/Jost-Light.ttf");
+}
+@font-face {
+  font-family: "JostExtraLight";
+  src: url("/fonts/jost/Jost-ExtraLight.ttf");
+}
+@font-face {
+  font-family: "JostBold";
+  src: url("/fonts/jost/Jost-Bold.ttf");
+}
+@font-face {
+  font-family: "JostExtraBold";
+  src: url("/fonts/jost/Jost-ExtraBold.ttf");
+}
+@font-face {
+  font-family: "JostBlack";
+  src: url("/fonts/jost/Jost-Black.ttf");
+}
+
+/* Stroke font use for Heading */
+
+@font-face {
+  font-family: "PoppinsBold";
+  src: url("/fonts/Poppins/Poppins-Bold.ttf");
+}
+@font-face {
+  font-family: "PoppinsBoldItalic";
+  src: url("/fonts/Poppins/Poppins-BoldItalic.ttf");
+}
+@font-face {
+  font-family: "PoppinsBlack";
+  src: url("/fonts/Poppins/Poppins-Black.ttf");
+}
+@font-face {
+  font-family: "PoppinsBlackItalic";
+  src: url("/fonts/Poppins/Poppins-BlackItalic.ttf");
+}
+@font-face {
+  font-family: "PoppinsExtraBold";
+  src: url("/fonts/Poppins/Poppins-ExtraBold.ttf");
+}
+@font-face {
+  font-family: "PoppinsExtraBoldItalic";
+  src: url("/fonts/Poppins/Poppins-ExtraBoldItalic.ttf");
 }
 
 @layer base {

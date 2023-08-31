@@ -43,7 +43,7 @@ function NewHeadingSection() {
               </div>
 
               <div className="space-x-3">
-                <button className="border bg-black dark:bg-slate-50 dark:hover:bg-slate-200 rounded-md py-2.5 px-5 dark:text-black text-white dark:font-jostRegular font-jostExtraLight uppercase">
+                <button className="border bg-black dark:bg-slate-50 dark:hover:bg-slate-200 rounded-md py-2.5 px-5 dark:text-black text-white dark:font-jostRegular font-jostExtraLight uppercase tracking-wider">
                   <a
                     href="https://drive.google.com/file/d/1kFNHhnbpWtBVQTTyCuSiqJhygGNBgBGH/view?usp=share_link"
                     target="_blank"
