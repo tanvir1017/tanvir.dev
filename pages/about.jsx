@@ -1,3 +1,4 @@
+import Hobby from "components/about/hobby/hobby";
 import TechnologySkills from "components/about/skill/technology-skill";
 import ContactMe from "components/home/contact-me/contact";
 import AboutHeading from "../components/about/aboutHeading/aboutHeading";
@@ -10,6 +11,7 @@ function About() {
       <Meta metaTag={metaTag} />
       <main className="">
         <AboutHeading />
+        <Hobby />
         <TechnologySkills />
         <ContactMe />
       </main>

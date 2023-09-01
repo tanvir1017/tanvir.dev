@@ -9,11 +9,11 @@ function NewHeadingSection() {
           <div className="md:flex md:text-left text-center flex md:flex-row flex-col-reverse justify-between items-center">
             <div className="dark:text-white text-[#121212] space-y-2 lg:mt-0 mt-12">
               <div className="lg:overflow-hidden pb-8">
-                <h1 className="md:text-5xl text-2xl font-FiraSansBold">
+                <h1 className="md:text-5xl text-2xl font-firaSansExtraBold tracking-wide">
                   Hello! I'm Tanvir, a Front-End developer
                   <div className="md:hidden block "></div>
                 </h1>
-                <div className="mt-5 space-y-3 pr-3">
+                <div className="mt-7 space-y-3 pr-3">
                   <p>
                     I love building tools that are user-friendly, simple and
                     delightful.
@@ -46,7 +46,7 @@ function NewHeadingSection() {
                     Get my resume
                   </a>
                 </button>
-                <button className="border border-slate-300 hover:bg-slate-100 rounded-md py-2.5 px-5 text-black dark:text-white dark:hover:text-black font-firaSansExtraLight uppercase">
+                <button className="border border-slate-300 hover:bg-slate-100 dark:hover:bg-[#3a3a3a] rounded-md py-2.5 px-5 dark:text-white font-firaSansRegular dark:font-firaSansExtraLight uppercase">
                   <Link href="/blogs">Read blogs</Link>
                 </button>
               </div>

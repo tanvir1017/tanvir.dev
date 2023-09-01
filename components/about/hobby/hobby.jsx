@@ -34,14 +34,14 @@ const reachMeData = [
   },
 ];
 
-function TechnologySkills() {
+function Hobby() {
   return (
     <section className="container max-w-6xl mx-auto ">
       <div className="mt-36">
         <div className="relative pb-16">
           <div className="absolute inset-0 m-auto text-center">
-            <h2 className="stroke-text-light dark:stroke-text-dark  md:text-9xl text-2xl uppercase font-poppinsBlack tracking-wider opacity-10 text-[#0605051a] inline-block">
-              Technological skills
+            <h2 className="stroke-text-light dark:stroke-text-dark  md:text-8xl text-2xl uppercase font-poppinsBlack tracking-wider opacity-10 text-[#0605051a] inline-block">
+              Dream that i have to full-fill
             </h2>
           </div>
           <h3 className="md:text-4xl text-2xl font-firaSansBold dark:text-white text-gray-600 mb-4 tracking-wider uppercase inline-block border dark:border-gray-600 border-slate-300 px-8 py-1.5 backdrop-blur-sm bg-[#d1c9c908]">
@@ -74,4 +74,4 @@ function TechnologySkills() {
   );
 }
 
-export default TechnologySkills;
+export default Hobby;
