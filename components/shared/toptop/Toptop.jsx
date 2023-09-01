@@ -19,7 +19,7 @@ function Toptop() {
       progress.style.bottom = "-180px";
       progress.style.transition = "0.6s";
     }
-    progress.style.backgroundImage = `conic-gradient(#ff008c ${scrollValue}%, #d5067891 ${scrollValue}%)`;
+    progress.style.backgroundImage = `conic-gradient(#08AEEA ${scrollValue}%, #2AF598 ${scrollValue}%)`;
   };
 
   if (typeof window !== "undefined") {

@@ -23,15 +23,8 @@ const NavBar = () => {
         <ul>
           <li>
             <Link href={"/"}>
-              <span
-                className={`${style.animatedText} font-jostBold  text-4xl`}
-                style={{ fontWeight: "900" }}
-              >
-                Tanvir
-              </span>
-              <span
-                className={`font-caveatMedium dark:text-white text-[#121212]`}
-              >
+              <span className="font-jostBold text-4xl">Tanvir</span>
+              <span className="text-transparent  bg-clip-text bg-gradient-to-r from-[#08AEEA] to-[#2AF598] font-caveatSemiBold text-2xl">
                 .dev
               </span>{" "}
             </Link>

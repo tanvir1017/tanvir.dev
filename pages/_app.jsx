@@ -3,9 +3,10 @@ import { AnimatePresence } from "framer-motion";
 import { ThemeProvider } from "next-themes";
 
 import NextNProgress from "nextjs-progressbar";
-import Footer from "../components/shared/footer/footer";
+
 import MobileNav from "../components/shared/nav/Navigation/MobileNav";
 
+import Footer from "components/shared/footer/footer";
 import NavBar from "components/shared/navbar/nav";
 import Toptop from "components/shared/toptop/Toptop";
 import "../styles/globals.css";
