@@ -16,10 +16,10 @@ const data = [
 ];
 const Blog = () => {
   return (
-    <section className="container max-w-6xl mx-auto">
-      <div className="mt-36 mb-24 flex items-end justify-between">
+    <section className="container max-w-6xl mx-auto  mt-40">
+      <div className="flex items-end justify-between">
         <div className="max-w-2xl">
-          <h2 className="md:text-4xl text-2xl font-jostExtraBold dark:text-white text-gray-600 mb-4">
+          <h2 className="md:text-4xl text-2xl font-jostBold dark:text-white text-gray-600 mb-4 tracking-wider uppercase">
             Latest Blogs & Topics
           </h2>
           <p className="">
@@ -37,7 +37,7 @@ const Blog = () => {
           </Link>
         </div>
       </div>
-      <div className="grid md:grid-cols-3 place-items-center mt-6">
+      <div className="mt-36 grid md:grid-cols-3 place-items-center">
         <div className="col-span-2 relative">
           {data.map((item, i) => (
             <div

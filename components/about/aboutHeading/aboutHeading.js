@@ -1,6 +1,5 @@
 import { motion as m, useReducedMotion } from "framer-motion";
 import Image from "next/image";
-import headingSection from "../../header/heading.module.css";
 import Social from "../../shared/social/social";
 
 function AboutHeading() {

@@ -1,5 +1,5 @@
 import { motion as m } from "framer-motion";
-import { TiLocationArrowOutline } from "react-icons/ti";
+import { MoveUp } from "lucide-react";
 
 function Toptop() {
   let calcScrollValue = () => {
@@ -46,9 +46,9 @@ function Toptop() {
       <m.span
         id="progress-value"
         style={customInlineCss}
-        className="text-3xl -rotate-45 bg-white/5 backdrop:filter[15px] rounded-full grid place-items-center text-[#fff]"
+        className=" bg-white/5 backdrop:filter[15px] rounded-full grid place-items-center text-[#fff]"
       >
-        <TiLocationArrowOutline />
+        <MoveUp size={32} strokeWidth={2.75} />
       </m.span>
     </m.div>
   );

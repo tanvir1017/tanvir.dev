@@ -18,10 +18,10 @@ const data = [
 
 const Projects = () => {
   return (
-    <section className="container max-w-6xl mx-auto relative ">
-      <div className="mt-28 mb-24 flex items-end justify-between">
-        <div>
-          <h2 className="md:text-4xl text-2xl font-jostExtraBold dark:text-white text-gray-600 mb-4">
+    <section className="container max-w-6xl mx-auto relative mt-40">
+      <div className=" flex items-end justify-between">
+        <div className="max-w-2xl">
+          <h2 className="md:text-4xl text-2xl font-jostBold dark:text-white text-gray-600 mb-4 tracking-wider uppercase">
             Projects
           </h2>
           <p className="">
@@ -35,7 +35,7 @@ const Projects = () => {
           </button>
         </div>
       </div>
-      <div className="grid md:grid-cols-3 place-items-center mt-6">
+      <div className="grid md:grid-cols-3 place-items-center mt-36">
         <div className="-rotate-90">
           <h2 className="cursor-pointer stroke-text-light dark:stroke-text-dark hover:stroke-text-light-gradient dark:hover:stroke-text-dark-gradient hover:opacity-100 md:text-9xl text-2xl uppercase font-poppinsBlackItalic tracking-wider opacity-10 text-[#0605051a] ">
             Projects
