@@ -18,8 +18,8 @@ const NavBar = () => {
   }
 
   return (
-    <nav className="py-4">
-      <div className="max-w-6xl mx-auto flex items-center justify-between">
+    <nav className="py-4 sticky top-0 dark:bg-[#21202036] bg-white/30 backdrop-blur-md z-50">
+      <div className="max-w-6xl mx-auto flex items-center justify-between ">
         <ul>
           <li>
             <Link href={"/"}>

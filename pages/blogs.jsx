@@ -1,6 +1,5 @@
 import BlogFilter from "components/blogs/blogFilter/blogFilter";
 import BlogsCard from "components/blogs/blogsCard/blogsCard";
-import { motion as m } from "framer-motion";
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
@@ -19,20 +18,14 @@ export default function Blogs({ blogs }) {
   return (
     <>
       <Meta metaTag={metaTagBlog} />
-      <m.div
-        className={` lg:large_container m_container  font-jostRegular`}
-        initial={{ opacity: 0, y: 25 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: false }}
-        transition={{ duration: 0.3 }}
-      >
+      <div className={`container font-jostRegular`}>
         <div className="lg:mx-[135px] ">
           <div className="mb-12">
             <BlogFilter titles={titles} allTagSet={allTagSet} />
           </div>
           <BlogsCard blogs={blogs} />
         </div>
-      </m.div>
+      </div>
     </>
   );
 }

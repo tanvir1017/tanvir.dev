@@ -16,7 +16,7 @@ const data = [
 ];
 const Blog = () => {
   return (
-    <section className="container max-w-6xl mx-auto  mt-40">
+    <section className="container max-w-6xl mx-auto mt-40">
       <div className="flex items-end justify-between">
         <div className="max-w-2xl">
           <h2 className="md:text-4xl text-2xl font-firaSansExtraBold dark:text-white text-gray-600 mb-4 tracking-wider uppercase">

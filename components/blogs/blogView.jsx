@@ -1,4 +1,4 @@
-import { motion as m, useReducedMotion } from "framer-motion";
+import { useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { BiArrowBack } from "react-icons/bi";
@@ -12,21 +12,12 @@ export default function BlogView({ mdxSource, frontmatter }) {
   };
   return (
     <div className="prose prose-xl dark:prose-invert dark:prose-pre:bg-[#282C34]  mt-8 mx-auto">
-      <m.button
-        variants={childVariants}
-        whilehover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-        className="w-28 h-[38px] px-2 rounded-lg backdrop-blur-0 bg-white/5 border-t-[#ff008c] border border-b-white/5 border-r-[#ff008c] border-l-white/5"
-      >
-        <Link
-          href="/blogs"
-          className="flex items-center"
-          style={{ textDecoration: "none" }}
-        >
-          <BiArrowBack />
-          <span className="mx-3">Back</span>
+      <button className="px-8 py-1 rounded-md  dark:bg-[#22222292] backdrop-blur-0 bg-slate-100">
+        <Link href="/blogs" className="flex items-center no-underline">
+          <BiArrowBack className="text-base mr-2" />
+          <span className="font-firaSansLightItalic ">Back</span>
         </Link>
-      </m.button>
+      </button>
 
       <div className="relative w-full lg:h-[28rem] md:h-[25rem] sm:h-[23rem] h-[15rem]  overflow-hidden">
         <Image

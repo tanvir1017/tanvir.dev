@@ -14,21 +14,21 @@ const reachMeData = [
     title: "Github",
     userName: "/tanvir1017",
     icon: <AiFillGithub className="text-2xl" />,
-    link: "",
+    link: "https://github.com/tanvir1017",
     className: "bg-gradient-to-tl to-[#08AEEA] from-[#2AF598] text-white",
   },
   {
     title: "LinkedIn",
     userName: "/in/tanvir1017",
     icon: <BsLinkedin className="text-2xl" />,
-    link: "",
+    link: "https://www.linkedin.com/in/tanvir1017",
     className: "bg-gradient-to-tl to-[#08AEEA] from-[#2AF598] text-white",
   },
   {
     title: "Facebook",
     userName: "/tanvir1017",
     icon: <BsFacebook className="text-2xl" />,
-    link: "",
+    link: "https://www.facebook.com/tanvir1017",
     className: "bg-gradient-to-tl to-[#08AEEA] from-[#2AF598] text-white ",
   },
 ];
@@ -56,9 +56,11 @@ const ContactMe = () => {
               className="flex items-center border dark:border-gray-600 border-slate-300 p-5 rounded-md hover:bg-slate-50 dark:hover:bg-[#d1c9c908]"
             >
               <span className={`${item.className} p-2 rounded-md box-shadows`}>
-                <a href={item.link}>{item.icon}</a>
+                <a href={item.link} target="_blank">
+                  {item.icon}
+                </a>
               </span>
-              <a href={item.link} className="ml-8">
+              <a href={item.link} target="_blank" className="ml-8">
                 <h6 className="text-xl font-poppinsBold dark:text-white text-gray-700">
                   {item.title}
                 </h6>

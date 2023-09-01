@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { BsGithub } from "react-icons/bs";
+import { RiDashboardFill } from "react-icons/ri";
 
 function AboutHeading() {
   return (
@@ -34,6 +35,7 @@ function AboutHeading() {
             </button>
             <button className="border border-slate-300 hover:bg-slate-100 rounded-md py-2.5 px-5 text-black dark:text-white dark:hover:text-black dark:font-firaSansRegular font-firaSansLight uppercase">
               <Link href="/blogs" className="flex items-center ">
+                <RiDashboardFill className="mr-2" />
                 Articles
               </Link>
             </button>
