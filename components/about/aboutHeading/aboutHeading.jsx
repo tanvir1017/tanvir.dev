@@ -1,96 +1,55 @@
-import { motion as m, useReducedMotion } from "framer-motion";
 import Image from "next/image";
-import Social from "../../shared/social/social";
+import Link from "next/link";
+import { BsGithub } from "react-icons/bs";
 
 function AboutHeading() {
-  const shouldReduceMotion = useReducedMotion();
-  const childVariants = {
-    initial: { opacity: 0, y: shouldReduceMotion ? 0 : 25 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-  };
   return (
-    <>
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 grid-cols-1 space-y-5 md:space-y-0 gap-4">
-        <m.div
-          initial="initial"
-          animate="visible"
-          className="my-12 md:my-0 md:px-5 lg:px-0 px-5 "
-          variants={{
-            initial: { opacity: 0 },
-            visible: {
-              opacity: 1,
-              transition: { duration: 0.85, staggerChildren: 0.2 },
-            },
-          }}
-        >
-          <m.h1
-            initial={{ y: "90px", opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            transition={{ duration: 0.5 }}
-            className={` font-jostBlack lg:text-6xl text-5xl`}
-            style={{ lineHeight: "1.1" }}
-          >
-            Hello,there!
-            <div className="block "></div>
-            Tanvir is at your
-            <div className=" block "></div>
-            service___
-          </m.h1>
-        </m.div>
+    <div className="container max-w-6xl mx-auto mt-20 border border-slate-200 dark:border-gray-600 rounded-lg py-12 dark:bg-[#33333360] dark:backdrop-blur-md bg-slate-100">
+      <div className="grid md:grid-cols-2 place-items-start justify-items-end">
+        <div>
+          <h1 className="md:text-5xl text-2xl font-poppinsBold">
+            More About Me
+          </h1>
+          <p className="text-lg mt-12">
+            Myself Tanvir. I am Javascript Developer that focuses on Javascript
+            library called React.Js. I have a passion for web accessibility,
+            design system, web security etc. I love to write clean code.
+          </p>
+          <p className="text-lg mt-5">
+            I have been doing frontend development around 1.6 years. And I love
+            to most of the things using Javascript. I have done many projects
+            that focuses on MERN stack.
+          </p>
 
-        <m.div className="w-[280px] h-[330px] bg-center  bg-cover rounded-lg bg-[url('/about-me.jpg')] relative ml-12">
-          <m.div
-            className="rounded-lg w-[280px] h-[375px] absolute -ml-7 -mt-6 block grayscale border-2 border-r-0  p-1"
-            animate={{
-              rotate: [0, -7],
-            }}
-            transition={{
-              duration: 0.85,
-              ease: "easeInOut",
-              times: [0, 0.2],
-              delay: 0.4,
-            }}
-          >
-            <Image
-              className="rounded-lg"
-              width={280}
-              height={240}
-              src="/about-me.jpg"
-              alt="avatar"
-            />
-          </m.div>
-        </m.div>
-
-        <m.div
-          className="md:-ml-5 ml-0 md:px-5 lg:px-0 px-5 md:pt-0 pt-8 overflow-hidden"
-          initial="initial"
-          animate="visible"
-          variants={{
-            initial: { opacity: 0 },
-            visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
-          }}
-        >
-          <m.div className="space-y-2" variants={childVariants}>
-            <h1 className="text-5xl font-jostBold">About Me</h1>
-            <p className="pt-5">
-              Hello, I am Tanvir Hossain. I am Javascript Developer that focuses
-              on Javascript library called React.Js. I have a passion for web
-              accessibility, design system, web security etc. I love to write
-              clean code.
-            </p>
-            <p className="pt-3">
-              I have been doing frontend development around 1.6 years. And I
-              love to most of the things using Javascript. I have done many
-              projects that focuses on MERN stack.
-            </p>
-          </m.div>
-
-          <m.div variants={childVariants} className="social">
-            <Social />
-          </m.div>
-        </m.div>
+          <div className="space-x-3 mt-10 ">
+            <button className="border bg-black dark:bg-slate-50 dark:hover:bg-slate-200 rounded-md py-2.5 px-5 dark:text-black text-white dark:font-firaSansRegular font-firaSansLight uppercase tracking-wider">
+              <a
+                href="https://drive.google.com/file/d/1kFNHhnbpWtBVQTTyCuSiqJhygGNBgBGH/view?usp=share_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center "
+              >
+                <BsGithub className="mr-2" /> Github
+              </a>
+            </button>
+            <button className="border border-slate-300 hover:bg-slate-100 rounded-md py-2.5 px-5 text-black dark:text-white dark:hover:text-black dark:font-firaSansRegular font-firaSansLight uppercase">
+              <Link href="/blogs" className="flex items-center ">
+                Articles
+              </Link>
+            </button>
+          </div>
+        </div>
+        <div className="rounded-lg block grayscale">
+          <Image
+            className="rounded-lg"
+            width={350}
+            height={100}
+            src="/about-me.jpg"
+            alt="avatar"
+          />
+        </div>
       </div>
-    </>
+    </div>
   );
 }
 

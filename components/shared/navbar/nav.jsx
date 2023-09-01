@@ -23,7 +23,9 @@ const NavBar = () => {
         <ul>
           <li>
             <Link href={"/"}>
-              <span className="font-jostBold text-4xl">Tanvir</span>
+              <span className="font-firaSansBold tracking-wider text-4xl">
+                Tanvir
+              </span>
               <span className="text-transparent  bg-clip-text bg-gradient-to-r from-[#08AEEA] to-[#2AF598] font-caveatSemiBold text-2xl">
                 .dev
               </span>{" "}

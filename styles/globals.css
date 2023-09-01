@@ -36,19 +36,6 @@
 }
 
 /* Handwriting using for subtitle */
-
-@font-face {
-  font-family: "CaveatRegular";
-  src: url("/fonts/caveat/Caveat-Regular.ttf");
-}
-@font-face {
-  font-family: "CaveatBold";
-  src: url("/fonts/caveat/Caveat-Bold.ttf");
-}
-@font-face {
-  font-family: "CaveatMedium";
-  src: url("/fonts/caveat/Caveat-Medium.ttf");
-}
 @font-face {
   font-family: "CaveatSemiBold";
   src: url("/fonts/caveat/Caveat-SemiBold.ttf");
@@ -56,37 +43,68 @@
 
 /* Regular use for page */
 @font-face {
-  font-family: "JostRegular";
-  src: url("/fonts/jost/Jost-Regular.ttf");
+  font-family: "FiraSansRegular";
+  src: url("/fonts/FiraSans/FiraSans-Regular.ttf");
 }
 @font-face {
-  font-family: "JostMedium";
-  src: url("/fonts/jost/Jost-Medium.ttf");
-}
-
-@font-face {
-  font-family: "JostSemiBold";
-  src: url("/fonts/jost/Jost-SemiBold.ttf");
+  font-family: "FiraSansItalic";
+  src: url("/fonts/FiraSans/FiraSans-Italic.ttf");
 }
 @font-face {
-  font-family: "JostLight";
-  src: url("/fonts/jost/Jost-Light.ttf");
+  font-family: "FiraSansMedium";
+  src: url("/fonts/FiraSans/FiraSans-Medium.ttf");
 }
 @font-face {
-  font-family: "JostExtraLight";
-  src: url("/fonts/jost/Jost-ExtraLight.ttf");
+  font-family: "FiraSansMediumItalic";
+  src: url("/fonts/FiraSans/FiraSans-MediumItalic.ttf");
 }
 @font-face {
-  font-family: "JostBold";
-  src: url("/fonts/jost/Jost-Bold.ttf");
+  font-family: "FiraSansSemiBold";
+  src: url("/fonts/FiraSans/FiraSans-SemiBold.ttf");
 }
 @font-face {
-  font-family: "JostExtraBold";
-  src: url("/fonts/jost/Jost-ExtraBold.ttf");
+  font-family: "FiraSansSemiBoldItalic";
+  src: url("/fonts/FiraSans/FiraSans-SemiBoldItalic.ttf");
 }
 @font-face {
-  font-family: "JostBlack";
-  src: url("/fonts/jost/Jost-Black.ttf");
+  font-family: "FiraSansLight";
+  src: url("/fonts/FiraSans/FiraSans-Light.ttf");
+}
+@font-face {
+  font-family: "FiraSansLightItalic";
+  src: url("/fonts/FiraSans/FiraSans-LightItalic.ttf");
+}
+@font-face {
+  font-family: "FiraSansExtraLight";
+  src: url("/fonts/FiraSans/FiraSans-ExtraLight.ttf");
+}
+@font-face {
+  font-family: "FiraSansExtraLightItalic";
+  src: url("/fonts/FiraSans/FiraSans-ExtraLightItalic.ttf");
+}
+@font-face {
+  font-family: "FiraSansBold";
+  src: url("/fonts/FiraSans/FiraSans-Bold.ttf");
+}
+@font-face {
+  font-family: "FiraSansBoldItalic";
+  src: url("/fonts/FiraSans/FiraSans-BoldItalic.ttf");
+}
+@font-face {
+  font-family: "FiraSansExtraBold";
+  src: url("/fonts/FiraSans/FiraSans-ExtraBold.ttf");
+}
+@font-face {
+  font-family: "FiraSansExtraBoldItalic";
+  src: url("/fonts/FiraSans/FiraSans-ExtraBoldItalic.ttf");
+}
+@font-face {
+  font-family: "FiraSansBlack";
+  src: url("/fonts/FiraSans/FiraSans-Black.ttf");
+}
+@font-face {
+  font-family: "FiraSansBlackItalic";
+  src: url("/fonts/FiraSans/FiraSans-BlackItalic.ttf");
 }
 
 /* Stroke font use for Heading */
@@ -167,6 +185,10 @@ a {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.box-shadows {
+  box-shadow: 2px 6px 14px 2px #1ceac452;
 }
 
 /* navigation */

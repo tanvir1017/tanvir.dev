@@ -1,21 +1,15 @@
-import { useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
 function NewHeadingSection() {
-  const shouldReduceMotion = useReducedMotion();
-  const childVariants = {
-    initial: { opacity: 0, y: shouldReduceMotion ? 0 : 25 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-  };
   return (
     <div className="container mt-28 max-w-6xl mx-auto">
       <div className="grid md:grid-cols-3 place-items-start justify-items-end">
-        <div className={`font-jostRegular col-span-2`}>
+        <div className={` col-span-2`}>
           <div className="md:flex md:text-left text-center flex md:flex-row flex-col-reverse justify-between items-center">
             <div className="dark:text-white text-[#121212] space-y-2 lg:mt-0 mt-12">
               <div className="lg:overflow-hidden pb-8">
-                <h1 className="md:text-5xl text-2xl font-bold">
+                <h1 className="md:text-5xl text-2xl font-FiraSansBold">
                   Hello! I'm Tanvir, a Front-End developer
                   <div className="md:hidden block "></div>
                 </h1>
@@ -43,7 +37,7 @@ function NewHeadingSection() {
               </div>
 
               <div className="space-x-3">
-                <button className="border bg-black dark:bg-slate-50 dark:hover:bg-slate-200 rounded-md py-2.5 px-5 dark:text-black text-white dark:font-jostRegular font-jostExtraLight uppercase tracking-wider">
+                <button className="border bg-black dark:bg-slate-50 dark:hover:bg-slate-200 rounded-md py-2.5 px-5 dark:text-black text-white dark:font-firaSansRegular font-firaSansExtraLight uppercase tracking-wider">
                   <a
                     href="https://drive.google.com/file/d/1kFNHhnbpWtBVQTTyCuSiqJhygGNBgBGH/view?usp=share_link"
                     target="_blank"
@@ -52,7 +46,7 @@ function NewHeadingSection() {
                     Get my resume
                   </a>
                 </button>
-                <button className="border border-slate-300 hover:bg-slate-100 rounded-md py-2.5 px-5 text-black dark:text-white dark:hover:text-black font-extralight uppercase">
+                <button className="border border-slate-300 hover:bg-slate-100 rounded-md py-2.5 px-5 text-black dark:text-white dark:hover:text-black font-firaSansExtraLight uppercase">
                   <Link href="/blogs">Read blogs</Link>
                 </button>
               </div>
@@ -61,17 +55,21 @@ function NewHeadingSection() {
         </div>
         <div>
           <Image
-            src="/author.png"
+            // src="/author.png"
+            src="/about-me.jpg"
             alt="Author image"
             width={350}
             height={100}
+            priority
             className="rounded-2xl dark:block hidden"
           />
           <Image
-            src="/author-light.png"
+            // src="/author-light.png"
+            src="/about-me.jpg"
             alt="Author image"
             width={350}
             height={100}
+            priority
             className="rounded-2xl dark:hidden block"
           />
         </div>

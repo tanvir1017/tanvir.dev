@@ -16,19 +16,26 @@ module.exports = {
     extend: {
       fontFamily: {
         // used for subtitle
-        caveatRegular: "CaveatRegular",
-        caveatBold: "CaveatBold",
-        caveatMedium: "CaveatMedium",
         caveatSemiBold: "CaveatSemiBold",
+
         // Globally use
-        jostBold: "JostBold",
-        jostBlack: "JostBlack",
-        jostExtraBold: "JostExtraBold",
-        jostExtraLight: "JostExtraLight",
-        jostLight: "JostLight",
-        jostMedium: "JostMedium",
-        jostRegular: "JostRegular",
-        jostSemiBold: "JostSemiBold",
+        firaSansRegular: "FiraSansRegular",
+        firaSansItalic: "FiraSansItalic",
+        firaSansLight: "FiraSansLight",
+        firaSansLightItalic: "FiraSansLightItalic",
+        firaSansExtraLight: "FiraSansExtraLight",
+        firaSansExtraLightItalic: "FiraSansExtraLightItalic",
+        firaSansMedium: "FiraSansMedium",
+        firaSansMediumItalic: "FiraSansMediumItalic",
+        firaSansSemiBold: "FiraSansSemiBold",
+        firaSansSemiBoldItalic: "FiraSansSemiBoldItalic",
+        firaSansBold: "FiraSansBold",
+        firaSansBoldItalic: "FiraSansBoldItalic",
+        firaSansExtraBold: "FiraSansExtraBold",
+        firaSansExtraBoldItalic: "FiraSansExtraBoldItalic",
+        firaSansBlack: "FiraSansBlack",
+        firaSansBlackItalic: "FiraSansBlackItalic",
+
         // Stroke font for heading & title
         poppinsBold: "PoppinsBold",
         poppinsBoldItalic: "PoppinsBoldItalic",

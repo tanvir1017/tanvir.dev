@@ -4,9 +4,9 @@ import Meta from "../components/meta/meta";
 
 export default function Home() {
   return (
-    <>
+    <main className="font-firaSansRegular">
       <Meta metaTag={metaTagHome} />
       <HomePage />
-    </>
+    </main>
   );
 }

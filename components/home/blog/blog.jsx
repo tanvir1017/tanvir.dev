@@ -19,7 +19,7 @@ const Blog = () => {
     <section className="container max-w-6xl mx-auto  mt-40">
       <div className="flex items-end justify-between">
         <div className="max-w-2xl">
-          <h2 className="md:text-4xl text-2xl font-jostBold dark:text-white text-gray-600 mb-4 tracking-wider uppercase">
+          <h2 className="md:text-4xl text-2xl font-FiraSansBold dark:text-white text-gray-600 mb-4 tracking-wider uppercase">
             Latest Blogs & Topics
           </h2>
           <p className="">
@@ -51,8 +51,8 @@ const Blog = () => {
           ))}
         </div>
         <div className="-rotate-90">
-          <h2 className="cursor-pointer stroke-text-light dark:stroke-text-dark hover:stroke-text-light-gradient dark:hover:stroke-text-dark-gradient hover:opacity-100 md:text-9xl text-2xl uppercase font-poppinsBlackItalic tracking-wider opacity-10 text-[#0605051a] ">
-            Latest Blogs
+          <h2 className="cursor-pointer stroke-text-light dark:stroke-text-dark hover:stroke-text-light-gradient dark:hover:stroke-text-dark-gradient hover:opacity-100 md:text-9xl text-2xl uppercase font-poppinsBlackItalic tracking-wider opacity-10 text-[#0605051a]">
+            LATEST BLOGS
           </h2>
         </div>
       </div>
