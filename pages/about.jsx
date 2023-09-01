@@ -8,7 +8,7 @@ function About() {
   return (
     <>
       <Meta metaTag={metaTag} />
-      <main className="lg:large_container m_container font-jostRegular">
+      <main className="container max-w-6xl mx-aut font-jostRegular">
         <div className="pt-14"></div>
         <AboutHeading />
         <Stack />

@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps, router }) {
     >
       <MDXProvider>
         <main>
-          <NextNProgress color="#ff2c45" />
+          <NextNProgress color="#857a7a" />
           {pathname !== "/404" && <Toptop />}
           <MobileNav />
           {pathname !== "/404" && <NavBar />}

@@ -27,7 +27,7 @@ function AboutHeading() {
             initial={{ y: "90px", opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.5 }}
-            className={`${headingSection.animatedText} font-jostBlack lg:text-6xl text-5xl`}
+            className={` font-jostBlack lg:text-6xl text-5xl`}
             style={{ lineHeight: "1.1" }}
           >
             Hello,there!
