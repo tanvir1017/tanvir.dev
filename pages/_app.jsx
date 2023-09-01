@@ -8,7 +8,7 @@ import MobileNav from "../components/shared/nav/Navigation/MobileNav";
 
 import Footer from "components/shared/footer/footer";
 import NavBar from "components/shared/navbar/nav";
-import Toptop from "components/shared/toptop/Toptop";
+import TapToTop from "components/shared/toptop/Toptop";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps, router }) {
@@ -23,7 +23,7 @@ function MyApp({ Component, pageProps, router }) {
       <MDXProvider>
         <main>
           <NextNProgress color="#857a7a" />
-          {pathname !== "/404" && <Toptop />}
+          {pathname !== "/404" && <TapToTop />}
           <MobileNav />
           {pathname !== "/404" && <NavBar />}
           <AnimatePresence>

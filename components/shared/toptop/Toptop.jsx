@@ -1,7 +1,7 @@
 import { motion as m } from "framer-motion";
 import { MoveUp } from "lucide-react";
 
-function Toptop() {
+function TapToTop() {
   let calcScrollValue = () => {
     let progress = document.getElementById("progress");
 
@@ -54,4 +54,4 @@ function Toptop() {
   );
 }
 
-export default Toptop;
+export default TapToTop;
