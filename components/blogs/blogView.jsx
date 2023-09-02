@@ -1,15 +1,9 @@
-import { useReducedMotion } from "framer-motion";
 import Image from "next/legacy/image";
 import Link from "next/link";
 import { BiArrowBack } from "react-icons/bi";
-import BlogContent from "./blogContent";
+import RemoteMdx from "./remote-mdx";
 
 export default function BlogView({ mdxSource, frontmatter }) {
-  const shouldReduceMotion = useReducedMotion();
-  const childVariants = {
-    initial: { opacity: 0, y: shouldReduceMotion ? 0 : 25 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-  };
   return (
     <div className="prose prose-2xl dark:prose-invert dark:prose-pre:bg-[#282C34]  mt-8 mx-auto">
       <button className="px-8 py-1 rounded-md  dark:bg-[#22222292] backdrop-blur-0 bg-slate-100 mb-5">
@@ -32,7 +26,7 @@ export default function BlogView({ mdxSource, frontmatter }) {
         <p>{frontmatter.description}</p>
       </div>
 
-      <BlogContent mdxSource={mdxSource} />
+      <RemoteMdx mdxSource={mdxSource} />
     </div>
   );
 }

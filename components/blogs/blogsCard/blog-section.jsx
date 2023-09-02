@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import Blogs from "./blogs";
-export default function BlogsCard({ blogs }) {
+import BlogsCard from "./blogs-slug";
+export default function BlogSection({ blogs }) {
   return (
     <>
       <div className="pt-8 dark:text-white text-[#121212] max-w-lg">
@@ -14,7 +14,7 @@ export default function BlogsCard({ blogs }) {
       </div>
       <div className="grid md:grid-cols-2 gap-5 mb-14 mt-10">
         {blogs.map((blog, index) => {
-          return <Blogs key={index} blog={blog} />;
+          return <BlogsCard key={index} blog={blog} />;
         })}
       </div>
     </>
