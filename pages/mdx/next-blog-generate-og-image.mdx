@@ -10,7 +10,9 @@ series:
   title: "Build a Developer Blog with Next.js"
 ---
 
+```js
 import { createOgImage } from "../../lib/createOgImage";
+```
 
 export const variables = {
   title: "Automatically Generate Branded Open Graph (OG) Images",
@@ -65,17 +67,12 @@ Cloudinary is primarily an image hosting service and CDN. They also provide a po
 
 For example, the image on the left is generated with the following URL:
 
-<Aside>
-  <Img
-    caption="Generated image"
-    src={createOgImage({
-      title: variables.title,
-      meta: variables.meta,
-    })}
-    width={1600}
-    height={836}
-  />
-</Aside>
+```html
+<aside>
+  <Img caption="Generated image" src={createOgImage({ title: variables.title,
+  meta: variables.meta, })} width={1600} height={836} />
+</aside>
+```
 
 <div>
   <div className="break-words rounded-xl bg-white/5 px-5 pt-4 pb-5">
@@ -96,18 +93,13 @@ Follow along the step-by-step walkthrough or jump straight to the complete code 
 - Upload an image to your Cloudinary account that will be used as the base layer for the generated image.
 - Create a utility function that returns a URL string of the composed transformations. For the sake of readability, we use an array of transformations that we `join(){:js}` before returning.
 
-<Aside>
-  <Img
-    caption="Background base layer"
-    src={[
-      `https://res.cloudinary.com/delba/image/upload`,
-      `w_1600,h_836,q_100`,
-      `grain-gradient.png`,
-    ].join("/")}
-    width={1600}
-    height={836}
-  />
-</Aside>
+```html
+<aside>
+  <Img caption="Background base layer" src={[
+  `https://res.cloudinary.com/delba/image/upload`, `w_1600,h_836,q_100`,
+  `grain-gradient.png`, ].join("/")} width={1600} height={836} />
+</aside>
+```
 
 ```ts showLineNumbers
 const createOgImage = () => {
@@ -130,11 +122,13 @@ const createOgImage = () => {
 };
 ```
 
-<Aside position="right" styled={true}>
+```html
+<aside position="right" styled="{true}">
   The path we send to Cloudinary must form a valid URL. Arguments are separated
   by commas: `w_1600,h_836,q_100`. Transformation layers can be chained and are
   separated by slashes: `w_1600,h_836,q_100/grain.png`
-</Aside>
+</aside>
+```
 
 - **Width and Height (Line 7)** — Set the dimensions and ratio of the generated image to something appropriate for social networks. The base image you uploaded will be scaled to match these dimensions. You can use the [crop mode](https://cloudinary.com/documentation/transformation_reference#c_crop_resize) to decide what kind of scaling will be applied.
 - **Quality (Line 7)** — Cloudinary significantly reduces image file sizes by automatically compressing images. This is great for adding images to your website. But something we want to avoid for an OG image because we don't want to double compress the image (social networks apply their own compression). We can override the default setting using the [quality](https://cloudinary.com/documentation/transformation_reference#q_quality) option.
@@ -150,20 +144,14 @@ Overlays consist of two components the `l_` layer that starts the overlay defini
 
 # Text layer
 
-<Aside>
-  <Img
-    src={[
-      `https://res.cloudinary.com/delba/image/upload`,
-      `w_1600,h_836,q_100`,
-      `l_text:Arial_100:${e(
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-      )},co_rgb:fff`,
-      `grain-gradient.png`,
-    ].join("/")}
-    width={1600}
-    height={836}
-  />
-</Aside>
+```html
+<aside>
+  <Img src={[ `https://res.cloudinary.com/delba/image/upload`,
+  `w_1600,h_836,q_100`, `l_text:Arial_100:${e( "Lorem ipsum dolor sit amet,
+  consectetur adipiscing elit." )},co_rgb:fff`, `grain-gradient.png`,
+  ].join("/")} width={1600} height={836} />
+</aside>
+```
 
 ```ts showLineNumbers {7-9}
 const e = (str: string) => encodeURIComponent(encodeURIComponent(str));
@@ -187,20 +175,16 @@ const createOgImage = () => {
 
 By default, if a layer (image or text) has a larger width or height than the base image, the delivered image canvas is resized to display the entire layer.
 
-<Aside>
-  <Img
-    src={[
-      `https://res.cloudinary.com/delba/image/upload`,
-      `w_1600,h_836,q_100`,
-      `l_text:Arial_64:${e(
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis tortor sapien, sit amet feugiat ante feugiat nec. Phasellus pharetra efficitur felis commodo iaculis."
-      )},co_rgb:fff,c_fit,w_1400`,
-      `grain-gradient.png`,
-    ].join("/")}
-    width={1600}
-    height={836}
-  />
-</Aside>
+```html
+<aside>
+  <Img src={[ `https://res.cloudinary.com/delba/image/upload`,
+  `w_1600,h_836,q_100`, `l_text:Arial_64:${e( "Lorem ipsum dolor sit amet,
+  consectetur adipiscing elit. Sed iaculis tortor sapien, sit amet feugiat ante
+  feugiat nec. Phasellus pharetra efficitur felis commodo iaculis."
+  )},co_rgb:fff,c_fit,w_1400`, `grain-gradient.png`, ].join("/")} width={1600}
+  height={836} />
+</aside>
+```
 
 ```ts showLineNumbers
 const createOgImage = () => {
@@ -220,22 +204,16 @@ const createOgImage = () => {
 
 You can make your OG image fit your brand by customizing the font and color. One powerful Cloudinary feature is that you can use any typeface listed on Google fonts. In this case, I am using the same font and color as my website.
 
-<Aside>
-  <Img
-    src={[
-      `https://res.cloudinary.com/delba/image/upload`,
-      `w_1600,h_836,q_100`,
-      // TITLE
-      // Karla google font in light rose
-      `l_text:Karla_72_bold:${e(
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis tortor sapien, sit amet feugiat ante feugiat nec. Phasellus pharetra efficitur felis commodo iaculis."
-      )},co_rgb:ffe4e6,c_fit,w_1400`,
-      `grain-gradient.png`,
-    ].join("/")}
-    width={1600}
-    height={836}
-  />
-</Aside>
+```html
+<aside>
+  <Img src={[ `https://res.cloudinary.com/delba/image/upload`,
+  `w_1600,h_836,q_100`, // TITLE // Karla google font in light rose
+  `l_text:Karla_72_bold:${e( "Lorem ipsum dolor sit amet, consectetur adipiscing
+  elit. Sed iaculis tortor sapien, sit amet feugiat ante feugiat nec. Phasellus
+  pharetra efficitur felis commodo iaculis." )},co_rgb:ffe4e6,c_fit,w_1400`,
+  `grain-gradient.png`, ].join("/")} width={1600} height={836} />
+</aside>
+```
 
 ```ts showLineNumbers
 const createOgImage = () => {
@@ -252,24 +230,18 @@ const createOgImage = () => {
 
 ### Positioning layers
 
-<Aside>
-  <Img
-    src={[
-      `https://res.cloudinary.com/delba/image/upload`,
-      `w_1600,h_836,q_100`,
-      // TITLE
-      // Karla google font in light rose
-      `l_text:Karla_72_bold:${e(
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis tortor sapien, sit amet feugiat ante feugiat nec. Phasellus pharetra efficitur felis commodo iaculis."
-      )},co_rgb:ffe4e6,c_fit,w_1400,h_240`,
-      // Positioning
-      `fl_layer_apply,g_south_west,x_100,y_180`,
-      `grain-gradient.png`,
-    ].join("/")}
-    width={1600}
-    height={836}
-  />
-</Aside>
+```html
+<aside>
+  <Img src={[ `https://res.cloudinary.com/delba/image/upload`,
+  `w_1600,h_836,q_100`, // TITLE // Karla google font in light rose
+  `l_text:Karla_72_bold:${e( "Lorem ipsum dolor sit amet, consectetur adipiscing
+  elit. Sed iaculis tortor sapien, sit amet feugiat ante feugiat nec. Phasellus
+  pharetra efficitur felis commodo iaculis."
+  )},co_rgb:ffe4e6,c_fit,w_1400,h_240`, // Positioning
+  `fl_layer_apply,g_south_west,x_100,y_180`, `grain-gradient.png`, ].join("/")}
+  width={1600} height={836} />
+</aside>
+```
 
 ```ts showLineNumbers {5}
 const createOgImage = () => {
@@ -291,25 +263,19 @@ const createOgImage = () => {
 
 You can use what we've learned to create a new text layer to house post details such as the author, publish date, and category.
 
-<Aside>
-  <Img
-    src={[
-      `https://res.cloudinary.com/delba/image/upload`,
-      `w_1600,h_836,q_100`,
-      `l_text:Karla_72_bold:${e(
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis tortor sapien, sit amet feugiat ante feugiat nec. Phasellus pharetra efficitur felis commodo iaculis."
-      )},co_rgb:ffe4e6,c_fit,w_1400,h_240`,
-      `fl_layer_apply,g_south_west,x_100,y_180`,
-      `l_text:Karla_48:${e(
-        "Phasellus pharetra efficitur felis"
-      )},co_rgb:ffe4e680,c_fit,w_1400`,
-      `fl_layer_apply,g_south_west,x_100,y_100`,
-      `grain-gradient.png`,
-    ].join("/")}
-    width={1600}
-    height={836}
-  />
-</Aside>
+```html
+<aside>
+  <Img src={[ `https://res.cloudinary.com/delba/image/upload`,
+  `w_1600,h_836,q_100`, `l_text:Karla_72_bold:${e( "Lorem ipsum dolor sit amet,
+  consectetur adipiscing elit. Sed iaculis tortor sapien, sit amet feugiat ante
+  feugiat nec. Phasellus pharetra efficitur felis commodo iaculis."
+  )},co_rgb:ffe4e6,c_fit,w_1400,h_240`,
+  `fl_layer_apply,g_south_west,x_100,y_180`, `l_text:Karla_48:${e( "Phasellus
+  pharetra efficitur felis" )},co_rgb:ffe4e680,c_fit,w_1400`,
+  `fl_layer_apply,g_south_west,x_100,y_100`, `grain-gradient.png`, ].join("/")}
+  width={1600} height={836} />
+</aside>
+```
 
 ```ts showLineNumbers {6-7}
 const createOgImage = () => {
@@ -332,28 +298,21 @@ You can use image layers to embed other images into your composition. These imag
 
 We'll use the latter to add a headshot to our OG image that dynamically syncs with a user's Twitter profile image. Changing the profile image on Twitter will eventually (after caches expire) update the headshots of all generated OG images.
 
-<Aside>
-  <Img
-    src={[
-      `https://res.cloudinary.com/delba/image/upload`,
-      `w_1600,h_836,q_100`,
-      `l_text:Karla_72_bold:${e(
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis tortor sapien, sit amet feugiat ante feugiat nec. Phasellus pharetra efficitur felis commodo iaculis."
-      )},co_rgb:ffe4e6,c_fit,w_1400,h_240`,
-      `fl_layer_apply,g_south_west,x_100,y_180`,
-      `l_text:Karla_48:${e(
-        "Phasellus pharetra efficitur felis"
-      )},co_rgb:ffe4e680,c_fit,w_1400`,
-      `fl_layer_apply,g_south_west,x_100,y_100`,
-      `l_twitter_name:delba_oliveira`,
-      `c_thumb,g_face,r_max,w_380,h_380,q_100`,
-      `fl_layer_apply,w_140,g_north_west,x_100,y_100`,
-      `grain-gradient.png`,
-    ].join("/")}
-    width={1600}
-    height={836}
-  />
-</Aside>
+```html
+<aside>
+  <Img src={[ `https://res.cloudinary.com/delba/image/upload`,
+  `w_1600,h_836,q_100`, `l_text:Karla_72_bold:${e( "Lorem ipsum dolor sit amet,
+  consectetur adipiscing elit. Sed iaculis tortor sapien, sit amet feugiat ante
+  feugiat nec. Phasellus pharetra efficitur felis commodo iaculis."
+  )},co_rgb:ffe4e6,c_fit,w_1400,h_240`,
+  `fl_layer_apply,g_south_west,x_100,y_180`, `l_text:Karla_48:${e( "Phasellus
+  pharetra efficitur felis" )},co_rgb:ffe4e680,c_fit,w_1400`,
+  `fl_layer_apply,g_south_west,x_100,y_100`, `l_twitter_name:delba_oliveira`,
+  `c_thumb,g_face,r_max,w_380,h_380,q_100`,
+  `fl_layer_apply,w_140,g_north_west,x_100,y_100`, `grain-gradient.png`,
+  ].join("/")} width={1600} height={836} />
+</aside>
+```
 
 ```ts showLineNumbers
 const createOgImage = () => {
@@ -378,79 +337,3 @@ const createOgImage = () => {
 # Closing thoughts
 
 There is a lot more you can do with Cloudinary's URL-based API. Hopefully, this is a good starting point for you to create your own unique OG images that stand out and lead to more people viewing your content.
-
-# Final code
-
-<Code>
-```ts showLineNumbers title="lib/createOgImage.ts"
-export const createOgImage = ({
-  title,
-  meta,
-}: {
-  title: string
-  meta: string
-}) =>
-  [
-    // ACCOUNT PREFIX
-    // Add your own Cloudinary account ID.
-    `https://res.cloudinary.com/cloudinaryId/image/upload`,
-    // Composed Image Transformations
-    `w_1600,h_836,q_100`,
-
-    // TITLE
-    // Karla google font in light rose
-    `l_text:Karla_72_bold:${e(title)},co_rgb:ffe4e6,c_fit,w_1400,h_240`,
-    // Positioning
-    `fl_layer_apply,g_south_west,x_100,y_180`,
-
-    // META
-    // Karla, but smaller
-    `l_text:Karla_48:${e(meta)},co_rgb:ffe4e680,c_fit,w_1400`,
-    // Positioning
-    `fl_layer_apply,g_south_west,x_100,y_100`,
-
-    // PROFILE IMAGE
-    // dynamically fetched from my twitter profile
-    `l_twitter_name:delba_oliveira`,
-    // Transformations
-    `c_thumb,g_face,r_max,w_380,h_380,q_100`,
-    // Positioning
-    `fl_layer_apply,w_140,g_north_west,x_100,y_100`,
-
-    // BG
-    `grain-gradient.png`,
-
-].join("/")
-
-// double escape for commas and slashes
-const e = (str: string) => encodeURIComponent(encodeURIComponent(str))
-
-````
-
-```tsx showLineNumbers title="pages/blog/[slug].tsx"
-import { createOgImage } from "@/lib/createOrgImage"
-import Head from "next/head"
-
-export default function Page({ post }) {
-  const ogImage = createOgImage({
-    title: post.title,
-    meta: ["delba.dev", post.publishedAt, ...post.tags].join(" · "),
-  })
-
-  return (
-    <>
-      <Head>
-        <meta property="og:image" content={ogImage} />
-        <meta property="og:image:width" content="1600" />
-        <meta property="og:image:height" content="836" />
-        <meta property="og:image:alt" content={post.title} />
-        <meta name="twitter:card" content="summary_large_image" />
-      </Head>
-
-      {/* ... */}
-    </>
-  )
-}
-````
-
-</Code>
