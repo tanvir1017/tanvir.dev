@@ -56,11 +56,11 @@ const ContactMe = () => {
               className="flex items-center border dark:border-gray-600 border-slate-300 p-5 rounded-md hover:bg-slate-50 dark:hover:bg-[#d1c9c908]"
             >
               <span className={`${item.className} p-2 rounded-md box-shadows`}>
-                <a href={item.link} target="_blank">
+                <a href={item.link} rel="noopener">
                   {item.icon}
                 </a>
               </span>
-              <a href={item.link} target="_blank" className="ml-8">
+              <a href={item.link} rel="noopener" className="ml-8">
                 <h6 className="text-xl font-poppinsBold dark:text-white text-gray-700">
                   {item.title}
                 </h6>
