@@ -32,7 +32,7 @@ export async function getStaticProps() {
   const blogs = blogsFileNames.map((slug) => {
     const content = fs.readFileSync(path.join(blogsPath, slug));
     const { data } = matter(content);
-    console.log(data);
+
     return {
       frontmatter: data,
       slug: slug.replace(/\.mdx?$/, ""),

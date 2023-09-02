@@ -25,7 +25,7 @@ export default function BlogsCard({ blog }) {
               {formatShortDate(publishedAt)}
             </h6>
             <h6 className=" font-firaSansLight flex items-center">
-              <Clock className="w-4 h-4 text-[#2AF598] mr-2" /> 7 min read
+              <Clock className="w-4 h-4 text-[#2AF598] mr-2" /> -- min read
             </h6>
           </span>
           <h4 className="text-2xl font-firaSansRegular ">{title}</h4>

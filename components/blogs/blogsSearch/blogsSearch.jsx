@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import { FiSearch } from "react-icons/fi";
 
 export default function BlogsSearch({ titles }) {
-  console.log(titles);
   const [focusInput, setFocusInput] = useState(false);
   const handleFocusedInput = () => {
     if (!focusInput) {

@@ -13,9 +13,11 @@ export default function BlogSection({ blogs }) {
         </p>
       </div>
       <div className="grid md:grid-cols-2 gap-5 mb-14 mt-10">
-        {blogs.map((blog, index) => {
-          return <BlogsCard key={index} blog={blog} />;
-        })}
+        {blogs
+          .filter((blog) => blog.frontmatter.status !== "draft")
+          .map((blog, index) => {
+            return <BlogsCard key={index} blog={blog} />;
+          })}
       </div>
     </>
   );
