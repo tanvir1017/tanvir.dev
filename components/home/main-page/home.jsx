@@ -3,15 +3,13 @@ import ContactMe from "../contact-me/contact";
 import NewHeadingSection from "../header/new_heading-section";
 import Projects from "../projects/projects";
 
-function HomePage() {
+export default function HomePage({ blogs }) {
   return (
     <>
       <NewHeadingSection />
       <Projects />
-      <Blog />
+      <Blog blogs={blogs} />
       <ContactMe />
     </>
   );
 }
-
-export default HomePage;

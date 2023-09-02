@@ -1,20 +1,12 @@
 import Link from "next/link";
 import { FaLongArrowAltRight } from "react-icons/fa";
-const data = [
-  {
-    name: "Build-Time Syntax Highlighting: Zero Client-Side JS, Support for 100+ Languages and Any VSCode Theme",
-    desc: "Leverage VS Code's ecosystem to generate highly accurate syntax highlighting at build time. With zero performance cost and access to the entire VS Code theme catalog.",
-  },
-  {
-    name: "Open Graph Images: Automatically Generate OG Images From Post Content",
-    desc: "Use Cloudinary's generous free tier and flexible API to automatically generate a branded OG image for your blog posts.",
-  },
-  {
-    name: "Integrate MDX with a single tool and less boilerplate. Manage content with type-safe data and helper functions.",
-    desc: "Effortlessly integrate MDX and manage content effectively. Validate and transform markdown posts into type-safe data your app can import.",
-  },
-];
-const Blog = () => {
+import { formatShortDate } from "utils/timeFormatter/timeFormatter";
+
+const Blog = ({ blogs }) => {
+  const latestBlogs = blogs
+    .filter((item) => item.frontmatter.status !== "draft")
+    .slice(-3)
+    .reverse();
   return (
     <section className="container max-w-6xl mx-auto mt-40">
       <div className="flex items-end justify-between">
@@ -39,20 +31,25 @@ const Blog = () => {
       </div>
       <div className="mt-36 grid md:grid-cols-3 place-items-center">
         <div className="col-span-2 relative">
-          {data.map((item, i) => (
-            <div
-              key={i}
-              className="shadow-md cursor-pointer px-5 py-6 dark:border-gray-600 border my-3 rounded-lg relative"
-            >
-              <h5 className=" text-xl font-jostSemiBold">{item.name}</h5>
-              <p className="mb-5 mt-2">Jul 18 · 13,526 views</p>
-              <p className="text-sm">{item.desc}</p>
-            </div>
+          {latestBlogs.map((item, i) => (
+            <Link href={`/blog/${item?.slug}`} key={i}>
+              <div className="shadow-md cursor-pointer px-5 py-6 dark:border-gray-600 border my-3 rounded-lg relative">
+                <h5 className=" text-xl font-jostSemiBold">
+                  {item?.frontmatter?.title}
+                </h5>
+                <p className="mb-5 mt-2">
+                  {formatShortDate(item?.frontmatter?.publishedAt)}
+                  {/* ·{" "} */}
+                  {/* <span>13,526 views</span> */}
+                </p>
+                <p className="text-sm">{item?.frontmatter?.description}</p>
+              </div>
+            </Link>
           ))}
         </div>
-        <div className="-rotate-90">
+        <div className="rotate-90">
           <h2 className="cursor-pointer stroke-text-light dark:stroke-text-dark hover:stroke-text-light-gradient dark:hover:stroke-text-dark-gradient hover:opacity-100 md:text-9xl text-2xl uppercase font-poppinsBlackItalic tracking-wider opacity-10 text-[#0605051a]">
-            LATEST BLOGS
+            articles
           </h2>
         </div>
       </div>

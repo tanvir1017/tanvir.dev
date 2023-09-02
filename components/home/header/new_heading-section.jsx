@@ -61,16 +61,7 @@ function NewHeadingSection() {
             width={350}
             height={100}
             priority
-            className="rounded-2xl dark:block hidden"
-          />
-          <Image
-            // src="/author-light.png"
-            src="/about-me.jpg"
-            alt="Author image"
-            width={350}
-            height={100}
-            priority
-            className="rounded-2xl dark:hidden block"
+            className="rounded-2xl"
           />
         </div>
       </div>

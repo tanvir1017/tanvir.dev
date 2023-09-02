@@ -19,7 +19,7 @@ function TapToTop() {
       progress.style.bottom = "-180px";
       progress.style.transition = "0.6s";
     }
-    progress.style.backgroundImage = `conic-gradient(#08AEEA ${scrollValue}%, #2AF598 ${scrollValue}%)`;
+    progress.style.backgroundImage = `conic-gradient(rgb(8, 174, 234) ${scrollValue}%, rgb(15 98 159) ${scrollValue}%)`;
   };
 
   if (typeof window !== "undefined") {

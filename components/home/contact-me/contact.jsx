@@ -35,7 +35,7 @@ const reachMeData = [
 
 const ContactMe = () => {
   return (
-    <section className="container max-w-6xl mx-auto mt-36">
+    <section className="container max-w-6xl mx-auto mt-44">
       <div className="text-center relative pb-28">
         <div className="absolute inset-x-0 ">
           <h2 className="stroke-text-light dark:stroke-text-dark  md:text-9xl text-2xl uppercase font-poppinsBlackItalic tracking-wider opacity-10 text-[#0605051a] inline-block">
