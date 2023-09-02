@@ -10,7 +10,6 @@ function HomePage() {
       <Projects />
       <Blog />
       <ContactMe />
-      {/* <ContactMe /> */}
     </>
   );
 }
