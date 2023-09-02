@@ -2,9 +2,9 @@ import BlogsSearch from "../blogsSearch/blogsSearch";
 
 export default function BlogFilter({ allTagSet, titles }) {
   return (
-    <>
+    <div className="mb-20">
       <BlogsSearch titles={titles} />
-      <div className="flex items-center space-x-3 justify-center flex-wrap  dark:text-white text-[#121212]">
+      <div className="flex items-center space-x-3 justify-center flex-wrap">
         {[...allTagSet].map((tag, index) => {
           return (
             <button
@@ -20,6 +20,6 @@ export default function BlogFilter({ allTagSet, titles }) {
           );
         })}
       </div>
-    </>
+    </div>
   );
 }

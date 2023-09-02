@@ -1,5 +1,5 @@
 import BlogFilter from "components/blogs/blogFilter/blogFilter";
-import BlogsCard from "components/blogs/blogsCard/blogsCard";
+import BlogSection from "components/blogs/blogsCard/blog-section";
 import fs from "fs";
 import matter from "gray-matter";
 import path from "path";
@@ -18,12 +18,10 @@ export default function Blogs({ blogs }) {
   return (
     <>
       <Meta metaTag={metaTagBlog} />
-      <div className={`container font-jostRegular`}>
-        <div className="lg:mx-[135px] ">
-          <div className="mb-12">
-            <BlogFilter titles={titles} allTagSet={allTagSet} />
-          </div>
-          <BlogsCard blogs={blogs} />
+      <div className={`container font-firaSansRegular`}>
+        <div className="max-w-5xl mx-auto">
+          <BlogFilter titles={titles} allTagSet={allTagSet} />
+          <BlogSection blogs={blogs} />
         </div>
       </div>
     </>
@@ -34,6 +32,7 @@ export async function getStaticProps() {
   const blogs = blogsFileNames.map((slug) => {
     const content = fs.readFileSync(path.join(blogsPath, slug));
     const { data } = matter(content);
+
     return {
       frontmatter: data,
       slug: slug.replace(/\.mdx?$/, ""),
