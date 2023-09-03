@@ -1,22 +1,29 @@
+import RemoteMdx from "components/blogs/remote-mdx";
 import Meta from "components/meta/meta";
+import fs from "fs";
+import matter from "gray-matter";
+import "highlight.js/styles/atom-one-dark-reasonable.css";
+import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
+import path from "path";
 import { BiArrowBack } from "react-icons/bi";
+import rehypeHighlight from "rehype-highlight";
 import BlurImageWithBlurHash from "utils/blur-able-image/blur-hash";
+import { projectShowCasePath, projectsFileNames } from "utils/mdx/mdxUtils";
 import { formatShortDate } from "utils/timeFormatter/timeFormatter";
-import RemoteMdx from "./remote-mdx";
 
-export default function BlogView({ mdxSource, frontmatter }) {
-  const singleMetaTagForBlog = {
+export default function ProjectSlug({ mdxSource, frontmatter }) {
+  const projectMeta = {
     title: frontmatter.title,
     name: frontmatter.title,
     content: frontmatter.description,
   };
   return (
     <div className="font-firaSansRegular">
-      <Meta metaTag={singleMetaTagForBlog} />
+      <Meta metaTag={projectMeta} />
       <div className="prose prose-md dark:prose-invert prose-pre:bg-[#282C34]  mt-8 max-w-4xl mx-auto overflow-hidden">
         <div className="mb-8">
-          <Link href="/blogs" className="no-underline ">
+          <Link href="/projects" className="no-underline ">
             <button className="px-8 py-1 rounded-md  mb-5 flex items-center group/item">
               <BiArrowBack className="text-base mr-2 group-hover/item:-translate-x-2.5 duration-200 " />
               <span className="font-firaSansExtraLight text-base">
@@ -35,7 +42,7 @@ export default function BlogView({ mdxSource, frontmatter }) {
         <div className="relative lg:h-[28rem] md:h-[25rem] sm:h-[23rem] h-[15rem]  overflow-hidden mb-10 rounded-lg">
           <BlurImageWithBlurHash
             className="absolute "
-            src={frontmatter.bannerUrl}
+            src={frontmatter.thumbnail}
             alt={frontmatter.title}
             layout="fill"
             objectFit="cover"
@@ -48,4 +55,36 @@ export default function BlogView({ mdxSource, frontmatter }) {
       </div>
     </div>
   );
+}
+
+export async function getStaticProps({ params }) {
+  const { slug } = params;
+  const filePath = path.join(projectShowCasePath, `${slug}.mdx`);
+  const fileContent = fs.readFileSync(filePath, "utf-8");
+  const { data: frontmatter, content } = matter(fileContent);
+  const mdxSource = await serialize(content, {
+    mdxOptions: {
+      rehypePlugins: [rehypeHighlight],
+    },
+  });
+  return {
+    props: {
+      mdxSource,
+      frontmatter: JSON.parse(JSON.stringify(frontmatter)),
+      slug,
+    },
+  };
+}
+export async function getStaticPaths() {
+  const projectPaths = projectsFileNames.map((slug) => {
+    return {
+      params: {
+        slug: slug.replace(/\.mdx?$/, ""),
+      },
+    };
+  });
+  return {
+    paths: projectPaths,
+    fallback: false,
+  };
 }

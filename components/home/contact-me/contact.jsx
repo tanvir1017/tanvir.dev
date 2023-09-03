@@ -1,3 +1,5 @@
+import SayHelloDialog from "components/headless-ui/say-hello-dialog";
+import { useState } from "react";
 import { AiFillGithub } from "react-icons/ai";
 import { BsFacebook, BsLinkedin } from "react-icons/bs";
 import { HiOutlineEnvelope } from "react-icons/hi2";
@@ -34,6 +36,15 @@ const reachMeData = [
 ];
 
 const ContactMe = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
   return (
     <section className="container max-w-6xl mx-auto mt-44">
       <div className="text-center relative pb-28">
@@ -68,6 +79,13 @@ const ContactMe = () => {
               </a>
             </div>
           ))}
+        </div>
+        <div className="max-w-sm mx-auto mt-5">
+          <SayHelloDialog
+            closeModal={closeModal}
+            openModal={openModal}
+            isOpen={isOpen}
+          />
         </div>
       </div>
     </section>

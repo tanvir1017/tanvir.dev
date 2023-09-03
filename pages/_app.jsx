@@ -15,11 +15,7 @@ function MyApp({ Component, pageProps, router }) {
   const { pathname } = router;
 
   return (
-    <ThemeProvider
-      forcedTheme={Component.theme || null}
-      enableSystem={true}
-      attribute="class"
-    >
+    <ThemeProvider attribute="class">
       <MDXProvider>
         <main>
           <NextNProgress color="#857a7a" />

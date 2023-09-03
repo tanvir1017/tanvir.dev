@@ -23,7 +23,7 @@ export const metaTagBlog = {
     "js, next.js, next, rect,blogs, blog, async, event-loop, vue, anguler, web, mern , developer, mern-stack, mongodb, filrebase, express, nodejs, netlify, vercel, remix, mongoose",
 };
 export const metaTagProjects = {
-  title: "Projects",
+  title: "Tanvir's Showcase",
   name: "Projects || Web app",
   content:
     "This is a portfolio of MERN stack developer tanvir1017. This page will help to know some content so called blog about programming which is written by the developer",

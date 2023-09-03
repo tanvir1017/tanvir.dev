@@ -45,16 +45,16 @@ module.exports = {
         poppinsExtraBoldItalic: "PoppinsExtraBoldItalic",
       },
     },
-    height: {
-      "[30rem]": "30rem",
-      screen: ["100vh"],
-      full: ["100%"],
-    },
   },
   plugins: [
     require("@tailwindcss/typography"),
     function ({ addUtilities }) {
       const newUtilities = {
+        ".App": {
+          "min-height": "100vh",
+          display: "flex",
+          "flex-direction": "column",
+        },
         ".stroke-text-light": {
           "-webkit-text-stroke-width": "2px",
           "-webkit-text-stroke-color": "#000",
