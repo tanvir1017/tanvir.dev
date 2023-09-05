@@ -2,7 +2,11 @@ import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { data } from "../nav/navLink";
+export const data = [
+  { title: "About", path: "/about" },
+  { title: "Blogs", path: "/blogs" },
+  { title: "Project", path: "/projects" },
+];
 
 import { AlignJustify, Moon, Sun, X } from "lucide-react";
 import { useRouter } from "next/router";
@@ -35,7 +39,7 @@ const pathVariants = {
   },
 };
 
-const MobileNavBar = ({ pathname, isMenuOpen, setIsMenuOpen }) => {
+const MobileNavBar = ({ pathname, isMenuOpen, setIsMenuOpen, theme }) => {
   return (
     <nav className="py-3 sticky top-0 dark:bg-[#15192fb4] bg-white/30 backdrop-blur-md z-50 md:hidden block  shadow-xl">
       <div className="px-4">
@@ -234,6 +238,7 @@ const NavBar = () => {
       <MobileNavBar
         pathname={pathname}
         isMenuOpen={isMenuOpen}
+        theme={theme}
         setIsMenuOpen={setIsMenuOpen}
       />
     </>
