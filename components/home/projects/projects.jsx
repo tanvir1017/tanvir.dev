@@ -1,4 +1,6 @@
+import { useScroll } from "framer-motion";
 import { Github, Link } from "lucide-react";
+import { useRef } from "react";
 import { FaLongArrowAltRight } from "react-icons/fa";
 
 const data = [
@@ -17,6 +19,11 @@ const data = [
 ];
 
 const Projects = () => {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["0 1", "1.33 1"],
+  });
   return (
     <section className="container max-w-6xl mx-auto relative mt-40">
       <div className=" flex items-end justify-between">

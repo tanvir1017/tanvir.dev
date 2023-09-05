@@ -1,7 +1,7 @@
 const ProjectHeading = () => {
   return (
-    <section className="container relative inset-y-0 m-auto">
-      <div className="">
+    <section className="container relative h-screen flex">
+      <div className="m-auto">
         <h2 className="stroke-text-light dark:stroke-text-dark  md:text-9xl text-2xl uppercase font-poppinsBlackItalic tracking-wider opacity-10 text-[#0605051a]">
           Among my
         </h2>
@@ -11,7 +11,7 @@ const ProjectHeading = () => {
           </span>
           <span className="opacity-10">are</span>
         </h2>
-        <h2 className="justify-items-end grid  stroke-text-light dark:stroke-text-dark  md:text-9xl text-2xl uppercase font-poppinsBlackItalic tracking-wider opacity-10 text-[#0605051a]">
+        <h2 className="grid justify-items-end  stroke-text-light dark:stroke-text-dark  md:text-9xl text-2xl uppercase font-poppinsBlackItalic tracking-wider opacity-10 text-[#0605051a]">
           the following
         </h2>
       </div>

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function NewHeadingSection() {
   return (
-    <div className="container mt-28 max-w-6xl mx-auto">
+    <div className="container mt-28 max-w-6xl mx-auto ">
       <div className="grid md:grid-cols-3 place-items-start justify-items-end">
         <div className={` col-span-2`}>
           <div className="md:flex md:text-left text-center flex md:flex-row flex-col-reverse justify-between items-center">
