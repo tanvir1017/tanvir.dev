@@ -35,19 +35,7 @@ const pathVariants = {
   },
 };
 
-const MobileNavBar = () => {
-  const { theme, setTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, [theme]);
-  if (!mounted) {
-    return null;
-  }
-  const { pathname } = useRouter();
-
+const MobileNavBar = ({ pathname, isMenuOpen, setIsMenuOpen }) => {
   return (
     <nav className="py-3 sticky top-0 dark:bg-[#15192fb4] bg-white/30 backdrop-blur-md z-50 md:hidden block  shadow-xl">
       <div className="px-4">
@@ -155,6 +143,8 @@ const MobileNavBar = () => {
 const NavBar = () => {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { pathname } = useRouter();
 
   useEffect(() => {
     setMounted(true);
@@ -241,7 +231,11 @@ const NavBar = () => {
         </div>
       </nav>
 
-      <MobileNavBar />
+      <MobileNavBar
+        pathname={pathname}
+        isMenuOpen={isMenuOpen}
+        setIsMenuOpen={setIsMenuOpen}
+      />
     </>
   );
 };
