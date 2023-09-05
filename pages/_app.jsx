@@ -1,5 +1,4 @@
 import { MDXProvider } from "@mdx-js/react";
-import { AnimatePresence } from "framer-motion";
 import { ThemeProvider } from "next-themes";
 
 import NextNProgress from "nextjs-progressbar";
@@ -17,14 +16,12 @@ function MyApp({ Component, pageProps, router }) {
   return (
     <ThemeProvider attribute="class">
       <MDXProvider>
-        <main>
+        <main className="dark:bg-[#15192f]">
           <NextNProgress color="#857a7a" />
           {pathname !== "/404" && <TapToTop />}
           <MobileNav />
           {pathname !== "/404" && <NavBar />}
-          <AnimatePresence>
-            <Component key={router.pathname} {...pageProps} />
-          </AnimatePresence>
+          <Component key={router.pathname} {...pageProps} />
           {pathname !== "/404" && <Footer />}
         </main>
       </MDXProvider>

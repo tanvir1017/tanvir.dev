@@ -1,31 +1,14 @@
-import { useScroll } from "framer-motion";
-import { Github, Link } from "lucide-react";
-import { useRef } from "react";
+import Link from "next/link";
 import { FaLongArrowAltRight } from "react-icons/fa";
+import ProjectCardHome from "./project-card";
 
-const data = [
-  {
-    name: "Academy.py",
-    desc: "A web application for Learn python in very easy way & all in one environment",
-  },
-  {
-    name: "Miazi Farm",
-    desc: "Miazi-Farm is an online marketplace for 100% natural and organic honey, honey-nuts, and organic oil. We source our products from small farmers and producers who practice sustainable agriculture. Visit our website today to learn more and place an order.",
-  },
-  {
-    name: "Nur It Institute",
-    desc: "NurIt Institute offers online courses on web development, digital marketing, and graphic design. Learn the skills you need to succeed in your chosen field. Visit our website today.",
-  },
-];
-
-const Projects = () => {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["0 1", "1.33 1"],
-  });
+const Projects = ({ projects }) => {
+  const latestProjects = projects
+    .filter((item) => item.frontmatter.status !== "undone")
+    .slice(-3)
+    .reverse();
   return (
-    <section className="container max-w-6xl mx-auto relative mt-40">
+    <section className="container max-w-6xl mx-auto relative ">
       <div className=" flex items-end justify-between">
         <div className="max-w-2xl">
           <h2 className="md:text-4xl text-2xl font-firaSansExtraBold dark:text-white text-gray-600 mb-4 tracking-wider uppercase">
@@ -36,10 +19,12 @@ const Projects = () => {
           </p>
         </div>
         <div>
-          <button className="border border-slate-300 hover:bg-slate-100 rounded-md py-2.5 px-5 text-black dark:text-white dark:hover:text-black font-firaSansLight ">
-            View all projects{" "}
-            <FaLongArrowAltRight className="w-4 h-4 text-gray-400  inline-flex " />
-          </button>
+          <Link href="/projects">
+            <button className="border border-slate-300 hover:bg-slate-100 rounded-md py-2.5 px-5 text-black dark:text-white dark:hover:text-black font-firaSansLight ">
+              View all projects{" "}
+              <FaLongArrowAltRight className="w-4 h-4 text-gray-400  inline-flex " />
+            </button>
+          </Link>
         </div>
       </div>
       <div className="grid md:grid-cols-3 place-items-center mt-36">
@@ -50,40 +35,8 @@ const Projects = () => {
         </div>
 
         <div className="col-span-2 relative">
-          {data.map((item, i) => (
-            <div
-              key={i}
-              className="shadow-md cursor-pointer px-5 py-6 dark:border-gray-600 border my-3 rounded-lg relative"
-            >
-              <h5 className="mb-5 text-xl font-FiraSansMedium">{item.name}</h5>
-              <p>{item.desc}</p>
-              <div className="space-x-3 my-5">
-                <button className="rounded-md px-3 py-0.5 border-[1px] dark:border-gray-600 border-slate-200">
-                  React.js
-                </button>
-                <button className="rounded-md px-3 py-0.5 border-[1px] dark:border-gray-600 border-slate-200 ">
-                  Redux.js
-                </button>
-                <button className="rounded-md px-3 py-0.5 border-[1px] dark:border-gray-600 border-slate-200 ">
-                  Express.js
-                </button>
-                <button className="rounded-md px-3 py-0.5 border-[1px] dark:border-gray-600 border-slate-200 ">
-                  Mongodb
-                </button>
-              </div>
-              <div className="flex items-center">
-                <span className="flex items-center dark:text-white text-gray-600 mr-4">
-                  <Link size={15} className="mr-1" /> Live Here
-                </span>
-                <span className="flex items-center dark:text-white text-gray-600 mr-4">
-                  <Github size={15} className="mr-1" /> Front-End
-                </span>
-                <span className="flex items-center dark:text-white text-gray-600">
-                  <Github size={15} className="mr-1" />
-                  Backend
-                </span>
-              </div>
-            </div>
+          {latestProjects.map((item, i) => (
+            <ProjectCardHome key={i} project={item} />
           ))}
         </div>
       </div>
