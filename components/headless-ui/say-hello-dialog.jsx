@@ -47,12 +47,14 @@ export default function SayHelloDialog({ closeModal, openModal, isOpen }) {
                     as="h3"
                     className="text-lg font-medium leading-6 text-gray-900"
                   >
-                    Payment successful
+                    Hey There!
                   </Dialog.Title>
                   <div className="mt-2">
                     <p className="text-sm text-gray-500">
-                      Your payment has been successfully submitted. We’ve sent
-                      you an email with all of the details of your order.
+                      I'm Tanvir. I am Javascript Developer that focuses on
+                      Javascript library called React.Js. I have a passion for
+                      web accessibility, design system, web security etc. I love
+                      to write clean code.
                     </p>
                   </div>
 

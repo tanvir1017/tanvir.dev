@@ -39,37 +39,41 @@ const pathVariants = {
   },
 };
 
-const MobileNavBar = ({ pathname, isMenuOpen, setIsMenuOpen, theme }) => {
+const MobileNavBar = ({
+  pathname,
+  isMenuOpen,
+  setIsMenuOpen,
+  theme,
+  setTheme,
+}) => {
   return (
     <nav className="py-3 sticky top-0 dark:bg-[#15192fb4] bg-white/30 backdrop-blur-md z-50 md:hidden block  shadow-xl">
       <div className="px-4">
         <ul className="flex items-center justify-between ">
           <li>
-            <Link
-              href="/"
-              className="font-firaSansBold racking-wider text-4xl flex items-center"
-            >
+            <Link href="/" className="font-firaSansBold  flex items-end">
               <motion.svg
                 variants={svgVariants}
                 initial="hidden"
                 animate="visible"
-                width="40"
-                height="40"
+                width="50"
+                height="50"
                 viewBox="0 0 321 415"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                className=""
               >
                 <motion.path
                   d="M207 2H111C106.2 84.4 36.6667 108.667 2.5 110.5V206.5C164.1 197.7 207 73 207 2Z"
                   stroke="#08AEEA"
-                  strokeWidth="4"
+                  strokeWidth="12"
                   variants={pathVariants}
                 />
                 <motion.path
                   variants={pathVariants}
                   d="M318.5 412.5L318.5 316.5C236.1 311.7 211.833 242.167 210 208L114 208C122.8 369.6 247.5 412.5 318.5 412.5Z"
                   stroke="#2AF598"
-                  strokeWidth="4"
+                  strokeWidth="12"
                 />
               </motion.svg>
               <span className="text-transparent  bg-clip-text bg-gradient-to-r from-[#08AEEA] to-[#2AF598] font-caveatSemiBold text-2xl">
@@ -126,17 +130,18 @@ const MobileNavBar = ({ pathname, isMenuOpen, setIsMenuOpen, theme }) => {
           })}
         >
           {data.map((nav, index) => (
-            <li
-              key={index}
-              className={cn(
-                "m-2 text-[#121212] dark:text-white border border-[#2b3460] rounded-md p-1.5",
-                {
-                  ["bg-[#1d2345]"]: pathname === nav.path,
-                }
-              )}
-            >
-              <Link href={nav.path}>{nav.title}</Link>
-            </li>
+            <Link key={index} href={nav.path}>
+              <li
+                className={cn(
+                  "m-2 text-[#121212] dark:text-white border border-[#2b3460] rounded-md p-1.5",
+                  {
+                    ["bg-[#1d2345]"]: pathname === nav.path,
+                  }
+                )}
+              >
+                {nav.title}
+              </li>
+            </Link>
           ))}
         </ul>
       </div>
@@ -174,18 +179,19 @@ const NavBar = () => {
                     viewBox="0 0 321 415"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
+                    className=""
                   >
                     <motion.path
                       d="M207 2H111C106.2 84.4 36.6667 108.667 2.5 110.5V206.5C164.1 197.7 207 73 207 2Z"
                       stroke="#08AEEA"
-                      strokeWidth="4"
+                      strokeWidth="12"
                       variants={pathVariants}
                     />
                     <motion.path
                       variants={pathVariants}
                       d="M318.5 412.5L318.5 316.5C236.1 311.7 211.833 242.167 210 208L114 208C122.8 369.6 247.5 412.5 318.5 412.5Z"
                       stroke="#2AF598"
-                      strokeWidth="4"
+                      strokeWidth="12"
                     />
                   </motion.svg>
                   <span className="text-transparent  bg-clip-text bg-gradient-to-r from-[#08AEEA] to-[#2AF598] font-caveatSemiBold text-2xl">
@@ -236,6 +242,7 @@ const NavBar = () => {
       </nav>
 
       <MobileNavBar
+        setTheme={setTheme}
         pathname={pathname}
         isMenuOpen={isMenuOpen}
         theme={theme}

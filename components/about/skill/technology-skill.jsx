@@ -36,11 +36,11 @@ const reachMeData = [
 
 function TechnologySkills() {
   return (
-    <section className="container max-w-6xl mx-auto ">
-      <div className="mt-36">
-        <div className="relative pb-16">
+    <section className="md:px-0 max-w-6xl mx-auto px-3">
+      <div className="md:mt-36 mt-10">
+        <div className="relative md:pb-16 pb-6">
           <div className="absolute inset-0 m-auto text-center">
-            <h2 className="stroke-text-light dark:stroke-text-dark  md:text-9xl text-2xl uppercase font-poppinsBlack tracking-wider opacity-10 text-[#0605051a] inline-block">
+            <h2 className="stroke-text-light dark:stroke-text-dark md:text-9xl text-2xl uppercase font-poppinsBlack tracking-wider opacity-10 text-[#0605051a] md:inline-block hidden">
               Technological skills
             </h2>
           </div>
@@ -50,8 +50,8 @@ function TechnologySkills() {
         </div>
       </div>
 
-      <div className="mt-16 relative z-40">
-        <div className="grid grid-cols-2 gap-3">
+      <div className="md:mt-16   relative z-20">
+        <div className="grid md:grid-cols-2 gap-3">
           {reachMeData.map((item, i) => (
             <div
               key={i}
@@ -63,7 +63,7 @@ function TechnologySkills() {
                 </a>
               </span>
               <a href={item.link} className="ml-8" rel="noopener noreferrer">
-                <h6 className="text-xl font-firaSansBold tracking-wider dark:text-white text-gray-700">
+                <h6 className="md:text-xl text-base font-firaSansBold tracking-wider dark:text-white text-gray-700">
                   {item.title}
                 </h6>
                 <p className="dark:text-white text-gray-600">{item.userName}</p>

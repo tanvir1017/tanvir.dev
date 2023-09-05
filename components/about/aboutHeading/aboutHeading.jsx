@@ -1,17 +1,17 @@
-import Image from "next/image";
+import Image from "next/legacy/image";
 import Link from "next/link";
 import { BsGithub } from "react-icons/bs";
 import { RiDashboardFill } from "react-icons/ri";
 
 function AboutHeading() {
   return (
-    <div className="container max-w-6xl mx-auto mt-20 border border-slate-200 dark:border-gray-600 rounded-lg py-12 dark:bg-[#33333360] dark:backdrop-blur-md bg-slate-100">
-      <div className="grid md:grid-cols-2 place-items-start justify-items-end">
-        <div>
-          <h1 className="md:text-5xl text-2xl font-poppinsBold">
+    <div className="max-w-6xl mx-auto md:mt-20 mt-0 md:border md:border-slate-200 dark:border-gray-600 rounded-lg py-12 dark:bg-[#202330] dark:backdrop-blur-md bg-slate-100 px-3">
+      <div className="grid md:grid-cols-2 place-items-start md:justify-items-end justify-items-end md:px-5 px-2">
+        <div className="md:order-1 order-2">
+          <h1 className="md:text-5xl text-2xl font-poppinsBold mt-5">
             More About Me
           </h1>
-          <p className="text-lg mt-12">
+          <p className="text-lg md:mt-12 mt-6">
             Myself Tanvir. I am Javascript Developer that focuses on Javascript
             library called React.Js. I have a passion for web accessibility,
             design system, web security etc. I love to write clean code.
@@ -41,13 +41,23 @@ function AboutHeading() {
             </button>
           </div>
         </div>
-        <div className="rounded-lg block grayscale">
+        <div className="grayscale md:block hidden md:order-2 order-1">
           <Image
             className="rounded-lg"
             width={350}
-            height={100}
+            height={467}
             src="/about-me.jpg"
             alt="avatar"
+          />
+        </div>
+        <div className="h-48 w-48 md:hidden block grayscale relative md:order-2 order-1">
+          <Image
+            src="/about-me.jpg"
+            alt="Author image"
+            layout="fill"
+            objectFit="cover"
+            priority
+            className="rounded-2xl absolute"
           />
         </div>
       </div>

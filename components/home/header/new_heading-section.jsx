@@ -57,7 +57,7 @@ function NewHeadingSection() {
                 </div>
               </div>
             </div>
-            <div className="z-20 md:order-2 order-1 md:block hidden">
+            <div className="z-20  md:block hidden  md:order-2 order-1">
               <Image
                 src="/about-me.jpg"
                 alt="Author image"
@@ -67,7 +67,7 @@ function NewHeadingSection() {
                 className="rounded-2xl"
               />
             </div>
-            <div className="h-48 w-48 md:hidden block relative">
+            <div className="h-48 w-48 md:hidden block relative md:order-2 order-1">
               <Image
                 src="/about-me.jpg"
                 alt="Author image"
