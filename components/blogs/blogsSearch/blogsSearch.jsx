@@ -18,7 +18,7 @@ export default function BlogsSearch({ titles }) {
   };
   return (
     <>
-      <div className="text-center mt-36 dark:text-white text-[#121212]">
+      <div className="text-center md:mt-36 mt-12 dark:text-white text-[#121212]">
         <h2 className="font-firaSansSemiBold uppercase text-4xl">
           Search Articles by topics or titles
         </h2>

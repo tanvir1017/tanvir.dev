@@ -6,7 +6,7 @@ export default function SayHelloDialog({ closeModal, openModal, isOpen }) {
   return (
     <>
       <div
-        className=" flex items-center justify-center border dark:border-gray-600 border-slate-300 p-5 rounded-md hover:bg-slate-50 dark:hover:bg-[#d1c9c908] cursor-pointer"
+        className=" flex items-center md:justify-center border dark:border-gray-600 border-slate-300 p-5 rounded-md hover:bg-slate-50 dark:hover:bg-[#d1c9c908] cursor-pointer"
         onClick={openModal}
       >
         <span className="bg-gradient-to-tl to-[#08AEEA] from-[#2AF598] text-white  p-2 rounded-md box-shadows">

@@ -56,22 +56,22 @@ module.exports = {
           "flex-direction": "column",
         },
         ".stroke-text-light": {
-          "-webkit-text-stroke-width": "2px",
+          "-webkit-text-strokeWidth": "2px",
           "-webkit-text-stroke-color": "#000",
         },
         ".stroke-text-dark": {
-          "-webkit-text-stroke-width": "2px",
+          "-webkit-text-strokeWidth": "2px",
           "-webkit-text-stroke-color": "#fff",
         },
         ".stroke-text-light-gradient": {
-          "-webkit-text-stroke-width": "2px",
+          "-webkit-text-strokeWidth": "2px",
           "-webkit-text-stroke-color": "transparent",
           background: "-webkit-linear-gradient(45deg, #08AEEA, #2AF598)",
           "-webkit-background-clip": "text",
           "-webkit-text-fill-color": "transparent",
         },
         ".stroke-text-dark-gradient": {
-          "-webkit-text-stroke-width": "2px",
+          "-webkit-text-strokeWidth": "2px",
           "-webkit-text-stroke-color": "transparent",
           background: "-webkit-linear-gradient(45deg, #08AEEA, #2AF598)",
           "-webkit-background-clip": "text",

@@ -41,7 +41,7 @@ function TapToTop() {
       }}
       onClick={() => (document.documentElement.scrollTop = 0)}
       id="progress"
-      className={` rounded-full backdrop-blur-0 bg-white/5  active:-translate-y-2 cursor-pointer right-5 fixed grid place-items-center z-[2] h-[70px] w-[70px]`}
+      className={`md:grid hidden  rounded-full backdrop-blur-0 bg-white/5  active:-translate-y-2 cursor-pointer right-5 fixed  place-items-center z-[2] h-[70px] w-[70px]`}
     >
       <m.span
         id="progress-value"

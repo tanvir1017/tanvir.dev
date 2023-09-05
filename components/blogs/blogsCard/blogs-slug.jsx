@@ -6,9 +6,13 @@ export default function BlogsCard({ blog }) {
   const { title, publishedAt, bannerUrl, blurHash } = blog.frontmatter;
 
   return (
-    <Link key={blog?.slug} href={`/blog/${blog?.slug}`}>
-      <div className="dark:border-gray-700 border-slate-200 border-[1px] border-t-0  h-[27rem] overflow-hidden shadow-md">
-        <div className="relative h-[17.5rem] w-[32.6875rem] ">
+    <Link
+      key={blog?.slug}
+      href={`/blog/${blog?.slug}`}
+      className="overflow-clip"
+    >
+      <div className="dark:border-gray-700 border-slate-200 border-[1px] border-t-0  md:h-[27rem] h-[24rem] overflow-hidden shadow-md">
+        <div className="relative md:h-72 md:w-[32.6875rem] h-52 w-full ">
           <BlurImageWithBlurHash
             className="absolute"
             layout="fill"

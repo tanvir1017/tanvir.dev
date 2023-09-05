@@ -3,8 +3,6 @@ import { ThemeProvider } from "next-themes";
 
 import NextNProgress from "nextjs-progressbar";
 
-import MobileNav from "../components/shared/nav/Navigation/MobileNav";
-
 import Footer from "components/shared/footer/footer";
 import NavBar from "components/shared/navbar/nav";
 import TapToTop from "components/shared/toptop/Toptop";
@@ -19,7 +17,6 @@ function MyApp({ Component, pageProps, router }) {
         <main className="dark:bg-[#15192f]">
           <NextNProgress color="#857a7a" />
           {pathname !== "/404" && <TapToTop />}
-          <MobileNav />
           {pathname !== "/404" && <NavBar />}
           <Component key={router.pathname} {...pageProps} />
           {pathname !== "/404" && <Footer />}

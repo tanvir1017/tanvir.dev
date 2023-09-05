@@ -18,8 +18,8 @@ export default function Blogs({ blogs }) {
   return (
     <>
       <Meta metaTag={metaTagBlog} />
-      <div className={`container font-firaSansRegular`}>
-        <div className="max-w-5xl mx-auto">
+      <div className={`md:container font-firaSansRegular`}>
+        <div className="md:max-w-5xl mx-auto">
           <BlogFilter titles={titles} allTagSet={allTagSet} />
           <BlogSection blogs={blogs} />
         </div>

@@ -43,6 +43,7 @@ const ProjectCardHome = ({ project }) => {
             href={preview}
             target="_blank"
             className="flex items-center dark:text-white text-gray-600 mr-4"
+            rel="noopener noreferrer"
           >
             <ArrowUpRightFromCircle
               strokeWidth={1}
@@ -58,6 +59,7 @@ const ProjectCardHome = ({ project }) => {
             <a
               href={item}
               target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center dark:text-white text-gray-600 mr-4"
             >
               <Github size={15} className="mr-1" />{" "}
