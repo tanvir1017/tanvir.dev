@@ -122,11 +122,9 @@ const MobileNavBar = ({
         </ul>
 
         <ul
-          className={cn("", {
-            ["h-36 duration-300 delay-200 transition-all visible opacity-1 mt-4"]:
-              isMenuOpen,
-            ["h-0 duration-300 transition-all invisible opacity-0"]:
-              !isMenuOpen,
+          className={cn("duration-300  transition-all", {
+            ["h-36 visible opacity-100 mt-4"]: isMenuOpen,
+            ["h-0 invisible opacity-0 -mt-2"]: !isMenuOpen,
           })}
         >
           {data.map((nav, index) => (

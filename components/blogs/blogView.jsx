@@ -14,11 +14,11 @@ export default function BlogView({ mdxSource, frontmatter }) {
   return (
     <div className="font-firaSansRegular">
       <Meta metaTag={singleMetaTagForBlog} />
-      <div className="prose prose-md dark:prose-invert prose-pre:bg-[#282C34]  mt-8 max-w-4xl mx-auto overflow-hidden">
+      <div className="prose md:prose-md prose-sm dark:prose-invert prose-pre:bg-[#282C34]  mt-8 max-w-4xl mx-auto overflow-hidden md:px-0 px-2">
         <div className="mb-8">
           <Link href="/blogs" className="no-underline ">
-            <button className="px-8 py-1 rounded-md  mb-5 flex items-center group/item">
-              <BiArrowBack className="text-base mr-2 group-hover/item:-translate-x-2.5 duration-200 " />
+            <button className="py-1 rounded-md  mb-5 flex items-center group/item">
+              <BiArrowBack className="text-base mr-1.5 group-hover/item:-translate-x-0.5 duration-200 " />
               <span className="font-firaSansExtraLight text-base">
                 Back to overview
               </span>

@@ -18,7 +18,7 @@ const ProjectCard = ({ project }) => {
     <div className=" p-2 rounded-lg border dark:border-gray-600 border-slate-200 dark:bg-[#2927278a] bg-slate-50 shadow-md dark:shadow-none">
       <Link href={`/project/${project.slug}`}>
         <div
-          className="md:h-[32.6875rem] h-[16.6875rem] w-full relative rounded-lg overflow-clip"
+          className="md:h-[20.6875rem] h-[16.6875rem] w-full relative rounded-lg overflow-clip"
           title={title}
         >
           <BlurImageWithBlurHash
