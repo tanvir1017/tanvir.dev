@@ -27,6 +27,7 @@ export async function getStaticProps() {
     return {
       frontmatter: data,
       slug: slug.replace(/\.mdx?$/, ""),
+      // slug: slug.replace(/\.mdx?$/, ""),
     };
   });
   const blogs = blogsFileNames.map((slug) => {
