@@ -134,6 +134,7 @@ const MobileNavBar = ({
                   "m-2 text-[#121212] dark:text-white border border-[#2b3460] rounded-md p-1.5",
                   {
                     ["bg-[#1d2345]"]: pathname === nav.path,
+                    ["text-[#ffffff]"]: pathname === nav.path,
                   }
                 )}
               >
