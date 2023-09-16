@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from "next/link";
 import Blur from "./blur";
 
@@ -6,7 +6,7 @@ function NewHeadingSection() {
   return (
     <section className="border-general relative w-full overflow-hidden overflow-x-clip bg-slate-50 bg-gradient-to-t from-slate-50 to-slate-100 dark:bg-[#15192f] dark:bg-none h-screen flex">
       <Blur />
-      <div className=" px-3 m-auto max-w-6xl ">
+      <div className="px-3 m-auto max-w-6xl">
         <div className="">
           <div className="grid md:grid-cols-3 place-items-start justify-items-end">
             <div className="md:col-span-2 md:order-1 order-2">
@@ -17,25 +17,24 @@ function NewHeadingSection() {
                       Hello! I'm Tanvir, a Front-End developer
                       <div className="md:hidden block "></div>
                     </h1>
-                    <div className="mt-7 space-y-3 pr-3">
+                    <div className="mt-7 space-y-3 pr-3 max-w-xl">
                       <p>
                         I love building tools that are user-friendly, simple and
-                        delightful.
+                        delightful and focused on javascript language 💘
                       </p>
                       <p className="md:block hidden">
-                        I was a student at Lambda School where I spent 8 months
-                        learning the fundamentals of front-end and back-end web
-                        development. I also worked at Lambda where my role was
-                        split between helping scale processes through
-                        automation's and overseeing student teams.
+                        Back on June 6th, 2021 [27 months], I started learning
+                        the fundamentals of Front-end Or MERN Stack development.
+                        I am an undergraduate student from Dhaka Polytechnic
+                        Institute. I completed studies in computer science
+                        engineering diploma from this college.
                       </p>
+
                       <p className="md:block hidden">
-                        Through these experiences, I had the opportunity to work
-                        with both small and large, specialized and
-                        cross-functional teams across different time zones and
-                        developed a working style that leans towards
-                        flexibility, clarity, and collaboration. I'm currently
-                        looking for a new role as a developer. Hire me?
+                        Through these experiences, I developed many projects
+                        both small and mid-large with the MERN stack. I'm
+                        currently looking for a new role as a Front-end/MERN
+                        Stack developer. Hire me?
                       </p>
                     </div>
                   </div>
@@ -57,24 +56,24 @@ function NewHeadingSection() {
                 </div>
               </div>
             </div>
-            <div className="z-20  md:block hidden  md:order-2 order-1">
+            <div className="z-20 md:block hidden  md:order-2 order-1">
               <Image
-                src="/about-me.jpg"
+                src="/author/author.webp"
                 alt="Author image"
-                width={350}
-                height={467}
+                width={330}
+                height={100}
                 priority
                 className="rounded-2xl"
               />
             </div>
-            <div className="h-48 w-48 md:hidden block relative md:order-2 order-1">
+            <div className="md:hidden block md:order-2 order-1">
               <Image
-                src="/about-me.jpg"
+                src="/author/author-mobile.webp"
                 alt="Author image"
-                layout="fill"
-                objectFit="cover"
+                width={200}
+                height={100}
                 priority
-                className="rounded-2xl absolute"
+                className="rounded-2xl"
               />
             </div>
           </div>

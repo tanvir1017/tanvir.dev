@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import Link from "next/link";
 import { BsGithub } from "react-icons/bs";
 import { RiDashboardFill } from "react-icons/ri";
@@ -6,20 +6,28 @@ import { RiDashboardFill } from "react-icons/ri";
 function AboutHeading() {
   return (
     <div className="max-w-6xl mx-auto md:mt-20 mt-0 md:border md:border-slate-200 dark:border-gray-600 rounded-lg py-12 dark:bg-[#202330] dark:backdrop-blur-md bg-slate-100 px-3">
-      <div className="grid md:grid-cols-2 place-items-start md:justify-items-end justify-items-end md:px-5 px-2">
+      <div className="grid md:grid-cols-2 place-items-center md:justify-items-end justify-items-end md:px-5 px-2">
         <div className="md:order-1 order-2">
           <h1 className="md:text-5xl text-2xl font-poppinsBold mt-5">
-            More About Me
+            HELLO! 👋
           </h1>
-          <p className="text-lg md:mt-12 mt-6">
-            Myself Tanvir. I am Javascript Developer that focuses on Javascript
-            library called React.Js. I have a passion for web accessibility,
-            design system, web security etc. I love to write clean code.
+          <p className="text-base md:mt-12 mt-6">
+            I'm called Tanvir(Tanu). As a passionate MERN stack developer, I
+            thrive on crafting user-friendly, elegant, and delightful code that
+            leaves a lasting impression.
           </p>
-          <p className="text-lg mt-5">
-            I have been doing frontend development around 1.6 years. And I love
-            to most of the things using Javascript. I have done many projects
-            that focuses on MERN stack.
+          <p className="text-base md:my-4 my-4">
+            My journey through the world of web development has been a
+            relentless pursuit of simplicity and focus. Each line of code I
+            write is a testament to my commitment to creating seamless,
+            intuitive user experiences. With every project, I seek not only to
+            solve problems but to elevate them to new heights of efficiency and
+            elegance.
+          </p>
+          <p className="text-base">
+            Join me on this exhilarating journey, where code isn't just
+            functional; it's a work of art, a reflection of my unwavering
+            dedication to excellence.
           </p>
 
           <div className="space-x-3 mt-10 ">
@@ -41,23 +49,24 @@ function AboutHeading() {
             </button>
           </div>
         </div>
-        <div className="grayscale md:block hidden md:order-2 order-1">
+        <div className="md:block hidden  md:order-2 order-1">
           <Image
-            className="rounded-lg"
+            src="/author/about-me.webp"
+            alt="Author image"
             width={350}
-            height={467}
-            src="/about-me.jpg"
-            alt="avatar"
+            height={100}
+            priority
+            className="rounded-2xl"
           />
         </div>
-        <div className="h-48 w-48 md:hidden block grayscale relative md:order-2 order-1">
+        <div className="md:hidden block md:order-2 order-1">
           <Image
-            src="/about-me.jpg"
+            src="/author/author-mobile.webp"
             alt="Author image"
-            layout="fill"
-            objectFit="cover"
+            width={200}
+            height={100}
             priority
-            className="rounded-2xl absolute"
+            className="rounded-2xl"
           />
         </div>
       </div>
