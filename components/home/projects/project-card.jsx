@@ -1,5 +1,6 @@
-import { ArrowUpRightFromCircle, ChevronRight, Github } from "lucide-react";
+import { ArrowUpRightFromCircle, Github } from "lucide-react";
 import Link from "next/link";
+import { BiArrowBack } from "react-icons/bi";
 const ProjectCardHome = ({ project }) => {
   const {
     title,
@@ -13,18 +14,13 @@ const ProjectCardHome = ({ project }) => {
     blurHash,
   } = project.frontmatter;
   return (
-    <div className="shadow-md px-5 py-6 dark:border-gray-600 border my-3 rounded-lg relative cursor-pointer">
-      <Link href={`/project/${project.slug}`} className=" cursor-pointer">
-        <h5 className="mb-5 text-xl font-FiraSansMedium inline-flex items-center group ">
-          {title}{" "}
-          <span>
-            {" "}
-            <ChevronRight
-              strokeWidth={2.5}
-              className="group-hover:translate-x-2 duration-200 transition-all text-green-400"
-            />
-          </span>
-        </h5>
+    <div className="shadow-md px-5 py-6 dark:border-gray-600 border my-3 rounded-lg relative cursor-pointer group/link">
+      <Link
+        href={`/project/${project.slug}`}
+        className="flex justify-between items-center cursor-pointer mb-5"
+      >
+        <h5 className="text-xl font-FiraSansMedium">{title} </h5>
+        <BiArrowBack className="text-base group-hover/link:translate-x-1.5 duration-200 rotate-180" />
       </Link>
       <p>{description}</p>
       <div className="my-5">
@@ -47,15 +43,15 @@ const ProjectCardHome = ({ project }) => {
           >
             <ArrowUpRightFromCircle
               strokeWidth={1}
-              className="mr-1"
+              className="md:mr-1 mr-2"
               size={15}
             />
-            Live Here
+            live <span className="md:block hidden md:ml-1 ml-0"> Here</span>
           </a>
           <div className="absolute w-0 group-hover:w-[85%] duration-300 transition-all h-0.5 bg-gray-200"></div>
         </div>
         {code.map((item, i) => (
-          <div key={i} className="group relative">
+          <div key={i} className="group relative ">
             <a
               href={item}
               target="_blank"

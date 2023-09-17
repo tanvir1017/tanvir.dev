@@ -61,7 +61,7 @@ function AboutHeading() {
         </div>
         <div className="md:hidden block md:order-2 order-1">
           <Image
-            src="/author/author-mobile.webp"
+            src="/author/mobile-view-author.png"
             alt="Author image"
             width={200}
             height={100}
