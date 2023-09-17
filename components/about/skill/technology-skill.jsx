@@ -7,14 +7,12 @@ const reachMeData = [
     title: "Programming Languages",
     userName: "JavaScript(E6+), TypeScript.",
     icon: <FaLanguage className="text-2xl text-white" />,
-    link: "",
     className: "bg-gradient-to-tl to-[#08AEEA] from-[#2AF598] text-white",
   },
   {
     title: "Databases",
     userName: "Mongodb.",
     icon: <FaDatabase className="text-2xl" />,
-    link: "",
     className: "bg-gradient-to-tl to-[#08AEEA] from-[#2AF598] text-white",
   },
   {
@@ -22,14 +20,12 @@ const reachMeData = [
     userName:
       "React, NextJS, Redux, Express, Tailwind, React Bootstrap, Material UI more.",
     icon: <MdOutlineLocalLibrary className="text-2xl" />,
-    link: "",
     className: "bg-gradient-to-tl to-[#08AEEA] from-[#2AF598] text-white",
   },
   {
     title: "Developer Tools",
     userName: "Github, Git, Firebase, etc.",
     icon: <PiCodesandboxLogoLight className="text-2xl" />,
-    link: "",
     className: "bg-gradient-to-tl to-[#08AEEA] from-[#2AF598] text-white ",
   },
 ];
@@ -58,9 +54,7 @@ function TechnologySkills() {
               className="flex items-center border dark:border-gray-600 border-slate-300 p-5 rounded-md hover:bg-slate-50 dark:hover:bg-[#d1c9c908]"
             >
               <span className={`${item.className} p-2 rounded-md box-shadows`}>
-                <a href={item.link} rel="noopener noreferrer">
-                  {item.icon}
-                </a>
+                {item.icon}
               </span>
               <a href={item.link} className="ml-8" rel="noopener noreferrer">
                 <h6 className="md:text-xl text-base font-firaSansBold tracking-wider dark:text-white text-gray-700">
