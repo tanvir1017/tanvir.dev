@@ -24,7 +24,7 @@ export const SlackConfirmEmail = ({ name, subject, message }) => (
             src="https://res.cloudinary.com/djbcnjkin/image/upload/v1695030251/mqmasrrhqj5ug8bg3hmz.png"
             width="50"
             height="50"
-            alt="Slack"
+            alt="tanvirhossain.vercel.app"
             style={{ borderRadius: "50px" }}
           />
           <Section style={{ color: "black" }}>
@@ -90,7 +90,7 @@ export const SlackConfirmEmail = ({ name, subject, message }) => (
                       src="https://res.cloudinary.com/djbcnjkin/image/upload/v1695033206/hvxauolynwlue9gluybp.png"
                       width="32"
                       height="32"
-                      alt="Slack"
+                      alt="tanvirhossain.vercel.app"
                       style={socialMediaIcon}
                     />
                   </Link>
@@ -101,7 +101,7 @@ export const SlackConfirmEmail = ({ name, subject, message }) => (
                       src="https://res.cloudinary.com/djbcnjkin/image/upload/v1695033206/k1kctbqkdxzkfbnyrn78.png"
                       width="32"
                       height="32"
-                      alt="Slack"
+                      alt="tanvirhossain.vercel.app"
                       style={socialMediaIcon}
                     />
                   </Link>
@@ -112,7 +112,7 @@ export const SlackConfirmEmail = ({ name, subject, message }) => (
                       src="https://res.cloudinary.com/djbcnjkin/image/upload/v1695033206/ooahbjc2defp99hdwqce.png"
                       width="32"
                       height="32"
-                      alt="Slack"
+                      alt="tanvirhossain.vercel.app"
                       style={socialMediaIcon}
                     />
                   </Link>
@@ -123,7 +123,7 @@ export const SlackConfirmEmail = ({ name, subject, message }) => (
                       src="https://res.cloudinary.com/djbcnjkin/image/upload/v1695033206/lfvw5sn8ttpg6ujczuew.png"
                       width="32"
                       height="32"
-                      alt="Slack"
+                      alt="tanvirhossain.vercel.app"
                       style={socialMediaIcon}
                     />
                   </Link>
@@ -165,7 +165,7 @@ export const SlackConfirmEmail = ({ name, subject, message }) => (
               src="https://res.cloudinary.com/djbcnjkin/image/upload/v1695029896/wuo400qfz4yanfv1b6hq.png"
               width="500"
               height="100"
-              alt="Slack"
+              alt="tanvirhossain.vercel.app"
             />
           </Section>
           <Text style={footerText}>
