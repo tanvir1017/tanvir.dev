@@ -1,8 +1,37 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Rocket } from "lucide-react";
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
+import { RiSendPlaneFill } from "react-icons/ri";
+import { RxCrossCircled } from "react-icons/rx";
+import useSWR from "swr";
 
 export default function SayHelloDialog({ closeModal, openModal, isOpen }) {
+  const { mutate: revalidate } = useSWR("/api/email");
+  const [data, setData] = useState({});
+
+  const updateData = (e) => {
+    setData({
+      ...data,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleGetFormValue = async (e) => {
+    e.preventDefault();
+    await revalidate(async () => {
+      const res = await fetch("/api/email", {
+        method: "POST",
+        headers: {
+          "Content-type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok && !res?.status === 200)
+        return console.log("message not sended");
+      if (res.ok && res?.status === 200) return console.log("message sended");
+    });
+  };
   return (
     <>
       <div
@@ -13,7 +42,7 @@ export default function SayHelloDialog({ closeModal, openModal, isOpen }) {
           <Rocket />
         </span>
         <h6 className="text-xl font-poppinsBold dark:text-white text-gray-700 ml-8">
-          Say Hello! 👋
+          Directly Connect me
         </h6>
       </div>
 
@@ -45,27 +74,81 @@ export default function SayHelloDialog({ closeModal, openModal, isOpen }) {
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h3"
-                    className="text-lg font-medium leading-6 text-gray-900"
+                    className="text-lg font-medium leading-6 text-gray-900 flex items-center justify-between"
                   >
-                    Hey There!
+                    Let's work together 🙆‍♂️{" "}
+                    <button
+                      onClick={closeModal}
+                      className="py-1.5 px-3 bg-red-100 text-red-800 rounded-md "
+                    >
+                      <RxCrossCircled />{" "}
+                    </button>
                   </Dialog.Title>
                   <div className="mt-2">
-                    <p className="text-sm text-gray-500">
-                      I'm Tanvir. I am Javascript Developer that focuses on
-                      Javascript library called React.Js. I have a passion for
-                      web accessibility, design system, web security etc. I love
-                      to write clean code.
-                    </p>
-                  </div>
-
-                  <div className="mt-4">
-                    <button
-                      type="button"
-                      className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
-                      onClick={closeModal}
-                    >
-                      Got it, thanks!
-                    </button>
+                    <form onSubmit={handleGetFormValue}>
+                      <label className="block">
+                        <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                          Your name
+                        </span>
+                        <input
+                          onChange={updateData}
+                          name="name"
+                          type="text"
+                          required
+                          placeholder="your awesome name"
+                          className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-[#08AEEA] focus:ring-[#08AEEA] focus:ring-1 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 text-black"
+                        />
+                      </label>
+                      <label className="block my-2">
+                        <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                          Subject
+                        </span>
+                        <input
+                          onChange={updateData}
+                          name="subject"
+                          type="text"
+                          required
+                          placeholder="Available for work?"
+                          className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-[#08AEEA] focus:ring-[#08AEEA] focus:ring-1 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 text-black"
+                        />
+                      </label>
+                      <label class="block my-3">
+                        <span class="block text-sm font-medium text-slate-700 after:content-['*'] after:text-red-500 after:ml-1">
+                          Email
+                        </span>
+                        <input
+                          onChange={updateData}
+                          name="email"
+                          type="email"
+                          class="peer mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-[#2AF598] focus:ring-[#2AF598] block w-full rounded-md sm:text-sm focus:ring-1 text-black"
+                          placeholder="developer.tanvirhossain@gmail.com"
+                        />
+                        <p class="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
+                          Please provide a valid email address.
+                        </p>
+                      </label>{" "}
+                      <label class="block">
+                        <span class="block text-sm font-medium text-slate-700 after:content-['*'] after:text-red-500 after:ml-1">
+                          Your Message
+                        </span>
+                        <textarea
+                          onChange={updateData}
+                          name="message"
+                          type="text"
+                          required
+                          placeholder="Are you available right now?..."
+                          className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-[#2AF598] focus:ring-[#2AF598] block w-full rounded-md sm:text-sm focus:ring-1 text-black"
+                        />
+                      </label>
+                      <div className="mt-4 text-end">
+                        <button
+                          type="submit"
+                          className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                        >
+                          Send me <RiSendPlaneFill />
+                        </button>
+                      </div>
+                    </form>
                   </div>
                 </Dialog.Panel>
               </Transition.Child>
