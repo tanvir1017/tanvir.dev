@@ -1,70 +1,6 @@
-// import { Button } from "@react-email/button";
-// import { Tailwind } from "@react-email/tailwind";
-
-// const Email = () => {
-//   return (
-//     <Tailwind
-//       config={{
-//         darkMode: "class",
-//         theme: {
-//           container: {
-//             center: true,
-//             padding: "2rem",
-//             screens: {
-//               "2xl": "1400px",
-//             },
-//           },
-//           extend: {
-//             fontFamily: {
-//               // used for subtitle
-//               caveatSemiBold: "CaveatSemiBold",
-
-//               // Globally use
-//               firaSansRegular: "FiraSansRegular",
-//               firaSansItalic: "FiraSansItalic",
-//               firaSansLight: "FiraSansLight",
-//               firaSansLightItalic: "FiraSansLightItalic",
-//               firaSansExtraLight: "FiraSansExtraLight",
-//               firaSansExtraLightItalic: "FiraSansExtraLightItalic",
-//               firaSansMedium: "FiraSansMedium",
-//               firaSansMediumItalic: "FiraSansMediumItalic",
-//               firaSansSemiBold: "FiraSansSemiBold",
-//               firaSansSemiBoldItalic: "FiraSansSemiBoldItalic",
-//               firaSansBold: "FiraSansBold",
-//               firaSansBoldItalic: "FiraSansBoldItalic",
-//               firaSansExtraBold: "FiraSansExtraBold",
-//               firaSansExtraBoldItalic: "FiraSansExtraBoldItalic",
-//               firaSansBlack: "FiraSansBlack",
-//               firaSansBlackItalic: "FiraSansBlackItalic",
-
-//               // Stroke font for heading & title
-//               poppinsBold: "PoppinsBold",
-//               poppinsBoldItalic: "PoppinsBoldItalic",
-//               poppinsBlack: "PoppinsBlack",
-//               poppinsBlackItalic: "PoppinsBlackItalic",
-//               poppinsExtraBold: "PoppinsExtraBold",
-//               poppinsExtraBoldItalic: "PoppinsExtraBoldItalic",
-//             },
-//           },
-//         },
-//       }}
-//     >
-//       <div className="app">
-//         <p>Hello</p>
-//         <Button
-//           href="https://example.com"
-//           className="px-3 py-2 font-medium leading-4 text-white"
-//         >
-//           Click me
-//         </Button>
-//       </div>
-//     </Tailwind>
-//   );
-// };
-// export default Email;
-
 import {
   Body,
+  Column,
   Container,
   Head,
   Heading,
@@ -72,110 +8,259 @@ import {
   Img,
   Link,
   Preview,
+  Row,
+  Section,
   Text,
 } from "@react-email/components";
 
-export const Email = ({ name, subject }) => (
+export const SlackConfirmEmail = ({ name, subject, message }) => (
   <Html>
     <Head />
-    <Preview>Thanks for sharing your interest</Preview>
+    <Preview>Confirm your email address</Preview>
     <Body style={main}>
       <Container style={container}>
-        <Heading style={h1}>Hey {name}! 👋</Heading>
-        <Text>Thanks for sharing your interest for {subject}</Text>
-
-        {/* <Text
-          style={{
-            ...text,
-            color: "#ababab",
-            marginTop: "14px",
-            marginBottom: "16px",
-          }}
-        >
-        </Text> */}
-        {/* <Text
-          style={{
-            ...text,
-            color: "#ababab",
-            marginTop: "12px",
-            marginBottom: "38px",
-          }}
-        >
-          Hint: You can set a permanent password in Settings & members → My
-          account.
-        </Text> */}
-        <Img src="/author/emailfooter.png" alt="Footer logo" />
-        <Text style={footer}>
-          <Link
-            href="https://tanvirhossain.vercel.app"
-            target="_blank"
-            style={{ ...link, color: "#898989" }}
-          >
-            tanvir.dev
-          </Link>
+        <Section style={{ marginTop: "35px" }}>
+          <Img
+            src="https://res.cloudinary.com/djbcnjkin/image/upload/v1695030251/mqmasrrhqj5ug8bg3hmz.png"
+            width="50"
+            height="50"
+            alt="tanvirhossain.vercel.app"
+            style={{ borderRadius: "50px" }}
+          />
+          <Section style={{ color: "black" }}>
+            <Heading
+              level={4}
+              style={{
+                marginTop: "10px",
+                marginBottom: "-20px",
+                fontSize: "25px",
+                fontWeight: "bold",
+              }}
+            >
+              Tanvir Hossain
+            </Heading>{" "}
+            <Text>Front-end Developer</Text>
+          </Section>{" "}
+        </Section>
+        <Heading level={4} style={h1}>
+          Hey! {name} 👋
+        </Heading>{" "}
+        <Text style={{ color: "gray", fontSize: "22px", fontWeight: "200" }}>
+          It's me Tanvir Hossain. I just got your e-mail. Thanks a billion for
+          showing interest to talk to me 💖
         </Text>
+        <Text style={heroText}>You wanted to discuss with me about</Text>
+        <Section style={codeBox}>
+          <Text
+            style={{
+              ...confirmationCodeText,
+              color: "#08AEEA",
+              fontWeight: "bold",
+            }}
+          >
+            {subject}
+          </Text>
+        </Section>
+        <Text style={heroText}>{message}</Text>
+        <Text style={text}>
+          This mail is sent from{" "}
+          <Link
+            style={{ fontStyle: "italic" }}
+            href="https://tanvirhossain.verce.app"
+          >
+            Tanvir.dev
+          </Link>
+          , when you click to directly connected button and send email
+        </Text>
+        <Section>
+          <Row style={footerLogos}>
+            <Column style={{ width: "66%" }}>
+              <Img
+                src="https://res.cloudinary.com/djbcnjkin/image/upload/v1695030251/mqmasrrhqj5ug8bg3hmz.png"
+                width="50"
+                height="50"
+                alt="tanvirhossain.vercel.app"
+              />
+            </Column>
+            <Column>
+              <Row>
+                <Column>
+                  <Link href="https://www.github.com/tanvir1017">
+                    <Img
+                      src="https://res.cloudinary.com/djbcnjkin/image/upload/v1695033206/hvxauolynwlue9gluybp.png"
+                      width="32"
+                      height="32"
+                      alt="tanvirhossain.vercel.app"
+                      style={socialMediaIcon}
+                    />
+                  </Link>
+                </Column>
+                <Column>
+                  <Link href="https://www.linkedin.com/in/tanvir1017">
+                    <Img
+                      src="https://res.cloudinary.com/djbcnjkin/image/upload/v1695033206/k1kctbqkdxzkfbnyrn78.png"
+                      width="32"
+                      height="32"
+                      alt="tanvirhossain.vercel.app"
+                      style={socialMediaIcon}
+                    />
+                  </Link>
+                </Column>
+                <Column>
+                  <Link href="https://www.facebook.com/tanvir1017">
+                    <Img
+                      src="https://res.cloudinary.com/djbcnjkin/image/upload/v1695033206/ooahbjc2defp99hdwqce.png"
+                      width="32"
+                      height="32"
+                      alt="tanvirhossain.vercel.app"
+                      style={socialMediaIcon}
+                    />
+                  </Link>
+                </Column>{" "}
+                <Column>
+                  <Link href="https://www.twitter.com/tanvi1017">
+                    <Img
+                      src="https://res.cloudinary.com/djbcnjkin/image/upload/v1695033206/lfvw5sn8ttpg6ujczuew.png"
+                      width="32"
+                      height="32"
+                      alt="tanvirhossain.vercel.app"
+                      style={socialMediaIcon}
+                    />
+                  </Link>
+                </Column>
+              </Row>
+            </Column>
+          </Row>
+        </Section>
+        <Section>
+          <Link
+            style={footerLink}
+            href="https://tanvirhossain.vercel.app/about"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            About Me
+          </Link>
+          &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+          <Link
+            style={footerLink}
+            href="https://tanvirhossain.vercel.app/blogs"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Blogs
+          </Link>
+          &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+          <Link
+            style={footerLink}
+            href="https://tanvirhossain.vercel.app/projects"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Projects
+          </Link>
+          &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+          <Section style={{ marginTop: "20px" }}>
+            <Img
+              src="https://res.cloudinary.com/djbcnjkin/image/upload/v1695029896/wuo400qfz4yanfv1b6hq.png"
+              width="500"
+              height="100"
+              alt="tanvirhossain.vercel.app"
+            />
+          </Section>
+          <Text style={footerText}>
+            © Don't wary about this mail i'll not use it for marketing purpose
+            or my own purpose. if I do not respond to you in 24 hours that is
+            because of some issue made by Gmail. so kindly please, email me
+            manually at{" "}
+            <Link style={{ fontStyle: "italic" }} href="#">
+              tanvir.hossaindev1@gmail.com
+            </Link>
+            <br />
+            <br />
+            All rights reserved.
+          </Text>
+        </Section>
       </Container>
     </Body>
   </Html>
 );
 
-export default Email;
+export default SlackConfirmEmail;
 
-const main = {
-  maxWidth: "1152px",
-  margin: "0 auto",
-  backgroundColor: "#ffffff",
-  border: "1px solid tomato",
+const footerText = {
+  fontSize: "12px",
+  color: "#b7b7b7",
+  lineHeight: "15px",
+  textAlign: "left",
+  marginBottom: "50px",
 };
 
-const container = {
-  paddingLeft: "12px",
-  paddingRight: "12px",
-  margin: "0 auto",
-};
-
-const h1 = {
-  color: "#333",
-  fontFamily:
-    "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-  fontSize: "24px",
-  fontWeight: "bold",
-  margin: "40px 0",
-  padding: "0",
-};
-
-const link = {
-  color: "#2754C5",
-  fontFamily:
-    "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-  fontSize: "14px",
+const footerLink = {
+  color: "#b7b7b7",
   textDecoration: "underline",
 };
 
+const footerLogos = {
+  marginBottom: "32px",
+  paddingLeft: "8px",
+  paddingRight: "8px",
+  width: "100%",
+};
+
+const socialMediaIcon = {
+  display: "inline",
+  marginLeft: "32px",
+};
+
+const main = {
+  backgroundColor: "#ffffff",
+  margin: "0 auto",
+  fontFamily:
+    "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+};
+
+const container = {
+  maxWidth: "600px",
+  margin: "0 auto",
+};
+
+const logoContainer = {
+  marginTop: "32px",
+};
+
+const h1 = {
+  color: "#1d1c1d",
+  fontSize: "36px",
+  fontWeight: "700",
+  margin: "30px 0",
+  padding: "0",
+  lineHeight: "42px",
+};
+
+const heroText = {
+  fontSize: "20px",
+  lineHeight: "28px",
+  color: "black",
+  marginBottom: "30px",
+};
+
+const codeBox = {
+  background: "rgb(245, 244, 245)",
+  borderRadius: "4px",
+  marginRight: "50px",
+  marginBottom: "30px",
+  padding: "43px 23px",
+};
+
+const confirmationCodeText = {
+  fontSize: "30px",
+  textAlign: "center",
+  verticalAlign: "middle",
+};
+
 const text = {
-  color: "#333",
-  fontFamily:
-    "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
+  color: "#000",
   fontSize: "14px",
-  margin: "24px 0",
-};
-
-const footer = {
-  color: "#898989",
-  fontFamily:
-    "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif",
-  fontSize: "12px",
-  lineHeight: "22px",
-  marginTop: "12px",
-  marginBottom: "24px",
-};
-
-const code = {
-  display: "inline-block",
-  padding: "16px 4.5%",
-  width: "90.5%",
-  backgroundColor: "#f4f4f4",
-  borderRadius: "5px",
-  border: "1px solid #eee",
-  color: "#333",
+  lineHeight: "24px",
 };
