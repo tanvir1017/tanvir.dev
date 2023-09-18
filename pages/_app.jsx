@@ -6,6 +6,7 @@ import NextNProgress from "nextjs-progressbar";
 import Footer from "components/shared/footer/footer";
 import NavBar from "components/shared/navbar/nav";
 import TapToTop from "components/shared/toptop/Toptop";
+import { Toaster } from "react-hot-toast";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps, router }) {
@@ -18,6 +19,7 @@ function MyApp({ Component, pageProps, router }) {
           <NextNProgress color="#857a7a" />
           {pathname !== "/404" && <TapToTop />}
           {pathname !== "/404" && <NavBar />}
+          <Toaster position="top-center" />
           <Component key={router.pathname} {...pageProps} />
           {pathname !== "/404" && <Footer />}
         </main>

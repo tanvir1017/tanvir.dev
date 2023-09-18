@@ -25,7 +25,7 @@ export default async function handler(req, res) {
       });
 
       const emailHtml = render(
-        <Email name={body.name} subject={body.subject} />
+        <Email name={body.name} subject={body.subject} email={body.email} />
       );
 
       const options = {
@@ -36,7 +36,7 @@ export default async function handler(req, res) {
       };
 
       const isMailTransported = await transporter.sendMail(options);
-      console.log(isMailTransported);
+
       if (!isMailTransported) {
         return res.status(500).json({
           success: false,
