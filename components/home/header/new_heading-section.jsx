@@ -40,7 +40,7 @@ function NewHeadingSection() {
                   </div>
 
                   <div className="space-x-3">
-                    <button className="border bg-black dark:bg-slate-50 dark:hover:bg-slate-200 rounded-md py-2.5 px-5 dark:text-black text-white dark:font-firaSansRegular font-firaSansExtraLight uppercase tracking-wider">
+                    <button className="border bg-black dark:bg-slate-50 dark:hover:bg-slate-200 rounded-md py-2.5 px-5 dark:text-black text-white dark:font-firaSansRegular font-firaSansExtraLight uppercase tracking-wider z-30 relative">
                       <a
                         href="https://drive.google.com/file/d/1kFNHhnbpWtBVQTTyCuSiqJhygGNBgBGH/view?usp=share_link"
                         target="_blank"
@@ -49,7 +49,7 @@ function NewHeadingSection() {
                         Get my resume
                       </a>
                     </button>
-                    <button className="border border-slate-300 hover:bg-slate-100 dark:hover:bg-[#3a3a3a] rounded-md py-2.5 px-5 dark:text-white font-firaSansRegular dark:font-firaSansExtraLight uppercase">
+                    <button className="z-30 border border-slate-300 hover:bg-slate-100 dark:hover:bg-[#3a3a3a] rounded-md py-2.5 px-5 dark:text-white font-firaSansRegular dark:font-firaSansExtraLight uppercase relative">
                       <Link href="/blogs">Read blogs</Link>
                     </button>
                   </div>
