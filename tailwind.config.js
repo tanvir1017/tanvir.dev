@@ -16,33 +16,13 @@ module.exports = {
     extend: {
       fontFamily: {
         // used for subtitle
-        caveatSemiBold: "CaveatSemiBold",
+        CaveatSemi: "CaveatSemi",
 
         // Globally use
-        firaSansRegular: "FiraSansRegular",
-        firaSansItalic: "FiraSansItalic",
-        firaSansLight: "FiraSansLight",
-        firaSansLightItalic: "FiraSansLightItalic",
-        firaSansExtraLight: "FiraSansExtraLight",
-        firaSansExtraLightItalic: "FiraSansExtraLightItalic",
-        firaSansMedium: "FiraSansMedium",
-        firaSansMediumItalic: "FiraSansMediumItalic",
-        firaSansSemiBold: "FiraSansSemiBold",
-        firaSansSemiBoldItalic: "FiraSansSemiBoldItalic",
-        firaSansBold: "FiraSansBold",
-        firaSansBoldItalic: "FiraSansBoldItalic",
-        firaSansExtraBold: "FiraSansExtraBold",
-        firaSansExtraBoldItalic: "FiraSansExtraBoldItalic",
-        firaSansBlack: "FiraSansBlack",
-        firaSansBlackItalic: "FiraSansBlackItalic",
-
-        // Stroke font for heading & title
-        poppinsBold: "PoppinsBold",
-        poppinsBoldItalic: "PoppinsBoldItalic",
-        poppinsBlack: "PoppinsBlack",
-        poppinsBlackItalic: "PoppinsBlackItalic",
-        poppinsExtraBold: "PoppinsExtraBold",
-        poppinsExtraBoldItalic: "PoppinsExtraBoldItalic",
+        HubotSansReguler: "HubotSansReguler",
+        HubotSansItalic: "HubotSansItalic",
+        HubotSansLight: "HubotSansLight",
+        HubotSansBlack: "HubotSansBlack",
       },
     },
   },

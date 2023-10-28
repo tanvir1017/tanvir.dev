@@ -13,7 +13,7 @@ function NewHeadingSection() {
               <div className="md:flex md:text-left text-center flex md:flex-row flex-col-reverse justify-between items-center">
                 <div className="dark:text-white text-[#121212] space-y-2 lg:mt-0 mt-12">
                   <div className="lg:overflow-hidden pb-8">
-                    <h1 className="md:text-5xl text-2xl font-firaSansExtraBold tracking-wide">
+                    <h1 className="md:text-5xl text-2xl  tracking-wide font-bold">
                       Hello! I'm Tanvir, a Front-End developer
                       <div className="md:hidden block "></div>
                     </h1>
@@ -40,7 +40,7 @@ function NewHeadingSection() {
                   </div>
 
                   <div className="space-x-3">
-                    <button className="border bg-black dark:bg-slate-50 dark:hover:bg-slate-200 rounded-md py-2.5 px-5 dark:text-black text-white dark:font-firaSansRegular font-firaSansExtraLight uppercase tracking-wider z-30 relative">
+                    <button className="border bg-black dark:bg-slate-50 dark:hover:bg-slate-200 rounded-md py-2.5 px-5 dark:text-black text-white  uppercase tracking-wider z-30 relative">
                       <a
                         href="https://drive.google.com/file/d/1kFNHhnbpWtBVQTTyCuSiqJhygGNBgBGH/view?usp=share_link"
                         target="_blank"
@@ -49,7 +49,7 @@ function NewHeadingSection() {
                         Get my resume
                       </a>
                     </button>
-                    <button className="z-30 border border-slate-300 hover:bg-slate-100 dark:hover:bg-[#3a3a3a] rounded-md py-2.5 px-5 dark:text-white font-firaSansRegular dark:font-firaSansExtraLight uppercase relative">
+                    <button className="z-30 border border-slate-300 hover:bg-slate-100 dark:hover:bg-[#3a3a3a] rounded-md py-2.5 px-5 dark:text-white uppercase relative">
                       <Link href="/blogs">Read blogs</Link>
                     </button>
                   </div>

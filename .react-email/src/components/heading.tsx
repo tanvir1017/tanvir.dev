@@ -102,10 +102,10 @@ const getColorClassNames = (color: HeadingColor | undefined) => {
 const getWeightClassNames = (weight: HeadingWeight | undefined) => {
   switch (weight) {
     case 'medium':
-      return 'font-medium';
+      return 'medium';
     case 'bold':
     case undefined:
-      return 'font-bold';
+      return 'bold';
     default:
       return unreachable(weight);
   }

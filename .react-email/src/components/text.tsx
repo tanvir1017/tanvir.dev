@@ -89,9 +89,9 @@ const getWeightClassNames = (weight: TextWeight | undefined) => {
   switch (weight) {
     case undefined:
     case 'normal':
-      return 'font-normal';
+      return 'normal';
     case 'medium':
-      return 'font-medium';
+      return 'medium';
     default:
       return unreachable(weight);
   }

@@ -37,8 +37,8 @@
 html,
 body {
   scroll-behavior: smooth;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
+    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   position: relative;
 }
 
@@ -58,6 +58,30 @@ body {
 .box-shadows {
   box-shadow: 2px 6px 14px 2px #1ceac452;
 }
+
+/* Regular use for page */
+@font-face {
+  font-family: "CaveatSemi";
+  src: url("/fonts/caveat/Caveat-SemiBold.ttf");
+}
+@font-face {
+  font-family: "HubotSansReguler";
+  src: url("/fonts/Hubot/HubotSans-Regular.woff2");
+}
+@font-face {
+  font-family: "HubotSansLight";
+  src: url("/fonts/Hubot/HubotSans-Light.woff2");
+}
+@font-face {
+  font-family: "HubotSansItalic";
+  src: url("/fonts/Hubot/HubotSans-Italic.woff2");
+}
+@font-face {
+  font-family: "HubotSansBlack";
+  src: url("/fonts/Hubot/HubotSans-Black.woff2");
+}
+
+/* Stroke font use for Heading */
 
 /* navigation */
 @layer base {
@@ -85,103 +109,4 @@ body {
   .text-placeholder {
     @apply flex-1 rounded-lg;
   }
-}
-
-/* Handwriting using for subtitle */
-@font-face {
-  font-family: "CaveatSemiBold";
-  src: url("/fonts/caveat/Caveat-SemiBold.ttf");
-}
-
-/* Regular use for page */
-@font-face {
-  font-family: "FiraSansRegular";
-  src: url("/fonts/FiraSans/FiraSans-Regular.ttf");
-}
-@font-face {
-  font-family: "FiraSansItalic";
-  src: url("/fonts/FiraSans/FiraSans-Italic.ttf");
-}
-@font-face {
-  font-family: "FiraSansMedium";
-  src: url("/fonts/FiraSans/FiraSans-Medium.ttf");
-}
-@font-face {
-  font-family: "FiraSansMediumItalic";
-  src: url("/fonts/FiraSans/FiraSans-MediumItalic.ttf");
-}
-@font-face {
-  font-family: "FiraSansSemiBold";
-  src: url("/fonts/FiraSans/FiraSans-SemiBold.ttf");
-}
-@font-face {
-  font-family: "FiraSansSemiBoldItalic";
-  src: url("/fonts/FiraSans/FiraSans-SemiBoldItalic.ttf");
-}
-@font-face {
-  font-family: "FiraSansLight";
-  src: url("/fonts/FiraSans/FiraSans-Light.ttf");
-}
-@font-face {
-  font-family: "FiraSansLightItalic";
-  src: url("/fonts/FiraSans/FiraSans-LightItalic.ttf");
-}
-@font-face {
-  font-family: "FiraSansExtraLight";
-  src: url("/fonts/FiraSans/FiraSans-ExtraLight.ttf");
-}
-@font-face {
-  font-family: "FiraSansExtraLightItalic";
-  src: url("/fonts/FiraSans/FiraSans-ExtraLightItalic.ttf");
-}
-@font-face {
-  font-family: "FiraSansBold";
-  src: url("/fonts/FiraSans/FiraSans-Bold.ttf");
-}
-@font-face {
-  font-family: "FiraSansBoldItalic";
-  src: url("/fonts/FiraSans/FiraSans-BoldItalic.ttf");
-}
-@font-face {
-  font-family: "FiraSansExtraBold";
-  src: url("/fonts/FiraSans/FiraSans-ExtraBold.ttf");
-}
-@font-face {
-  font-family: "FiraSansExtraBoldItalic";
-  src: url("/fonts/FiraSans/FiraSans-ExtraBoldItalic.ttf");
-}
-@font-face {
-  font-family: "FiraSansBlack";
-  src: url("/fonts/FiraSans/FiraSans-Black.ttf");
-}
-@font-face {
-  font-family: "FiraSansBlackItalic";
-  src: url("/fonts/FiraSans/FiraSans-BlackItalic.ttf");
-}
-
-/* Stroke font use for Heading */
-
-@font-face {
-  font-family: "PoppinsBold";
-  src: url("/fonts/Poppins/Poppins-Bold.ttf");
-}
-@font-face {
-  font-family: "PoppinsBoldItalic";
-  src: url("/fonts/Poppins/Poppins-BoldItalic.ttf");
-}
-@font-face {
-  font-family: "PoppinsBlack";
-  src: url("/fonts/Poppins/Poppins-Black.ttf");
-}
-@font-face {
-  font-family: "PoppinsBlackItalic";
-  src: url("/fonts/Poppins/Poppins-BlackItalic.ttf");
-}
-@font-face {
-  font-family: "PoppinsExtraBold";
-  src: url("/fonts/Poppins/Poppins-ExtraBold.ttf");
-}
-@font-face {
-  font-family: "PoppinsExtraBoldItalic";
-  src: url("/fonts/Poppins/Poppins-ExtraBoldItalic.ttf");
 }

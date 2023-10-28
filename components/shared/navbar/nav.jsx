@@ -51,7 +51,7 @@ const MobileNavBar = ({
       <div className="px-4">
         <ul className="flex items-center justify-between ">
           <li>
-            <Link href="/" className="font-firaSansBold  flex items-end">
+            <Link href="/" className="  flex items-end">
               <motion.svg
                 variants={svgVariants}
                 initial="hidden"
@@ -76,7 +76,7 @@ const MobileNavBar = ({
                   strokeWidth="12"
                 />
               </motion.svg>
-              <span className="text-transparent  bg-clip-text bg-gradient-to-r from-[#08AEEA] to-[#2AF598] font-caveatSemiBold text-2xl">
+              <span className="text-transparent  bg-clip-text bg-gradient-to-r from-[#08AEEA] to-[#2AF598] caveatSemiBold text-2xl">
                 .dev
               </span>{" "}
             </Link>
@@ -168,7 +168,7 @@ const NavBar = () => {
           <ul>
             <li>
               <Link href={"/"}>
-                <span className="font-firaSansBold racking-wider text-4xl flex items-center">
+                <span className=" racking-wider text-4xl flex items-center">
                   <motion.svg
                     variants={svgVariants}
                     initial="hidden"
@@ -193,7 +193,7 @@ const NavBar = () => {
                       strokeWidth="12"
                     />
                   </motion.svg>
-                  <span className="text-transparent  bg-clip-text bg-gradient-to-r from-[#08AEEA] to-[#2AF598] font-caveatSemiBold text-2xl">
+                  <span className="text-transparent  bg-clip-text bg-gradient-to-r from-[#08AEEA] to-[#2AF598] font-CaveatSemi text-2xl">
                     .dev
                   </span>{" "}
                 </span>

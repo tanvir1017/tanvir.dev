@@ -62,7 +62,7 @@ export default function SayHelloDialog({ closeModal, openModal, isOpen }) {
         <span className="bg-gradient-to-tl to-[#08AEEA] from-[#2AF598] text-white  p-2 rounded-md box-shadows">
           <Rocket />
         </span>
-        <h6 className="text-xl font-poppinsBold dark:text-white text-gray-700 ml-8">
+        <h6 className="text-xl poppinsBold dark:text-white text-gray-700 ml-8">
           Directly Connect me
         </h6>
       </div>
@@ -95,7 +95,7 @@ export default function SayHelloDialog({ closeModal, openModal, isOpen }) {
                 <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
                   <Dialog.Title
                     as="h3"
-                    className="text-lg font-medium leading-6 text-gray-900 flex items-center justify-between"
+                    className="text-lg medium leading-6 text-gray-900 flex items-center justify-between"
                   >
                     Let's work together 🙆‍♂️{" "}
                     <button
@@ -108,7 +108,7 @@ export default function SayHelloDialog({ closeModal, openModal, isOpen }) {
                   <div className="mt-2">
                     <form onSubmit={handleGetFormValue}>
                       <label className="block">
-                        <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                        <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm medium text-slate-700">
                           Your name
                         </span>
                         <input
@@ -121,7 +121,7 @@ export default function SayHelloDialog({ closeModal, openModal, isOpen }) {
                         />
                       </label>
                       <label className="block my-2">
-                        <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                        <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm medium text-slate-700">
                           Subject
                         </span>
                         <input
@@ -134,7 +134,7 @@ export default function SayHelloDialog({ closeModal, openModal, isOpen }) {
                         />
                       </label>
                       <label class="block my-3">
-                        <span class="block text-sm font-medium text-slate-700 after:content-['*'] after:text-red-500 after:ml-1">
+                        <span class="block text-sm medium text-slate-700 after:content-['*'] after:text-red-500 after:ml-1">
                           Email
                         </span>
                         <input
@@ -149,7 +149,7 @@ export default function SayHelloDialog({ closeModal, openModal, isOpen }) {
                         </p>
                       </label>{" "}
                       <label class="block">
-                        <span class="block text-sm font-medium text-slate-700 after:content-['*'] after:text-red-500 after:ml-1">
+                        <span class="block text-sm medium text-slate-700 after:content-['*'] after:text-red-500 after:ml-1">
                           Your Message
                         </span>
                         <textarea
@@ -164,7 +164,7 @@ export default function SayHelloDialog({ closeModal, openModal, isOpen }) {
                       <div className="mt-4 text-end">
                         <button
                           type="submit"
-                          className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+                          className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
                         >
                           Send me <RiSendPlaneFill />
                         </button>

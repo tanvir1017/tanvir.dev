@@ -19,7 +19,7 @@ const ProjectCardHome = ({ project }) => {
         href={`/project/${project.slug}`}
         className="flex justify-between items-center cursor-pointer mb-5"
       >
-        <h5 className="text-xl font-FiraSansMedium">{title} </h5>
+        <h5 className="text-xl ">{title} </h5>
         <BiArrowBack className="text-base group-hover/link:translate-x-1.5 duration-200 rotate-180" />
       </Link>
       <p>{description}</p>

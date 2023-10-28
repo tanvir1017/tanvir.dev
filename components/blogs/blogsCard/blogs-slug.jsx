@@ -41,7 +41,7 @@ export default function BlogsCard({ blog }) {
               <p className="text-xs">{formatShortDate(publishedAt)}</p>
             </div>
           </div>
-          <h4 className="text-xl font-firaSansRegular mt-4">{title}</h4>
+          <h4 className="text-xl  mt-4">{title}</h4>
         </div>
       </div>
     </Link>

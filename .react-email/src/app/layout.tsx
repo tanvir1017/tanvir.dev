@@ -4,7 +4,7 @@ import '../styles/globals.css';
 
 export const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--inter',
 });
 
 export default function RootLayout({
@@ -14,8 +14,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-black text-slate-12 font-sans">
-        <div className={classnames(inter.variable, 'font-sans')}>
+      <body className="bg-black text-slate-12 sans">
+        <div className={classnames(inter.variable, 'sans')}>
           {children}
         </div>
       </body>

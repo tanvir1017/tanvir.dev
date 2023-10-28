@@ -36,11 +36,11 @@ function TechnologySkills() {
       <div className="md:mt-36 mt-10">
         <div className="relative md:pb-16 pb-6">
           <div className="absolute inset-0 m-auto text-center">
-            <h2 className="stroke-text-light dark:stroke-text-dark md:text-9xl text-2xl uppercase font-poppinsBlack tracking-wider opacity-10 text-[#0605051a] md:inline-block hidden">
+            <h2 className="stroke-text-light dark:stroke-text-dark md:text-9xl text-2xl uppercase poppinsBlack tracking-wider opacity-10 text-[#0605051a] md:inline-block hidden font-HubotSansBlack">
               Technological skills
             </h2>
           </div>
-          <h3 className="md:text-4xl text-2xl font-firaSansBold dark:text-white text-gray-600 mb-4 tracking-wider uppercase inline-block border dark:border-gray-600 border-slate-300 px-8 py-1.5 backdrop-blur-sm bg-[#d1c9c908]">
+          <h3 className="md:text-4xl text-2xl  dark:text-white text-gray-600 mb-4 tracking-wider uppercase inline-block border dark:border-gray-600 border-slate-300 px-8 py-1.5 backdrop-blur-sm bg-[#d1c9c908]">
             Tech skills
           </h3>
         </div>
@@ -57,7 +57,7 @@ function TechnologySkills() {
                 {item.icon}
               </span>
               <a href={item.link} className="ml-8" rel="noopener noreferrer">
-                <h6 className="md:text-xl text-base font-firaSansBold tracking-wider dark:text-white text-gray-700">
+                <h6 className="md:text-xl text-base  tracking-wider dark:text-white text-gray-700">
                   {item.title}
                 </h6>
                 <p className="dark:text-white text-gray-600">{item.userName}</p>

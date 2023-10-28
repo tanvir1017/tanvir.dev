@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps, router }) {
   return (
     <ThemeProvider attribute="class">
       <MDXProvider>
-        <main className="dark:bg-[#15192f]">
+        <main className="dark:bg-[#15192f] font-HubotSansReguler">
           <NextNProgress color="#857a7a" />
           {pathname !== "/404" && <TapToTop />}
           {pathname !== "/404" && <NavBar />}

@@ -1,5 +1,44 @@
-# What i learned from this NEXT.js project
+---
+title: "NurIt Institute, a online based course platform"
+description: "NurIt-Institute is a leading online educational platform dedicated to empowering individuals with essential digital skills. Our mission is to provide high-quality, accessible, and comprehensive courses in a variety of digital domains."
+publishedAt: "2023-09-06"
+status: "done"
+preview: "https://nuritinstitute.vercel.app/"
+code:
+  [
+    "https://github.com/tanvir1017/nurit_v2",
+    "https://github.com/tanvir1017/nurit_v2/tree/main/pages/api",
+  ]
+tech:
+  [
+    "Tailwind",
+    "Mongodb",
+    "Express",
+    "Prisma",
+    "swr",
+    "Nextjs",
+    "Typescript",
+    "Authentication",
+  ]
+thumbnail: /projects/nurit-institute.webp
+blurHash: "LGF5?xYk^6#M@-5c,1J5@[or[Q6."
+---
 
-    -   NEXT.js core concept
-    -   Basic concept about SSG & SSR
-    -   Framer Motion basic stuff
+# NurIt-Institute
+
+NurIt-Institute A LMS website.
+
+## Functionality that implemented
+
+- User Authentication (sign up and sign in) using JWT token.
+- CRUD operations for courses, lessons, topics, users etc.
+- Blog functionality.
+- Light & Dark Mode (Trendy)
+
+## Challenges That I've got while implementing functionality
+
+- Implementing the authentication system was challenging because it required understanding of how to handle cookies and tokens securely.
+
+- Implementing user authentication was challenging as it required understanding of JSON Web Tokens(JWT).
+
+- The database structure is complex with multiple collections interconnected which made the implementation process difficult.

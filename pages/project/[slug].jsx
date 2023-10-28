@@ -19,20 +19,20 @@ export default function ProjectSlug({ mdxSource, frontmatter }) {
     content: frontmatter.description,
   };
   return (
-    <div className="font-firaSansRegular">
+    <div className="">
       <Meta metaTag={projectMeta} />
       <div className="prose md:prose-md prose-sm dark:prose-invert prose-pre:bg-[#282C34]  mt-8 max-w-4xl mx-auto overflow-hidden md:px-0 px-2">
         <div className="mb-8">
           <Link href="/projects" className="no-underline ">
             <button className="py-1 rounded-md  mb-5 flex items-center group/item">
               <BiArrowBack className="text-base mr-2 group-hover/item:-translate-x-0.5 duration-200 " />
-              <span className="font-firaSansExtraLight text-base">
+              <span className="firaSansExtraLight text-base">
                 Back to overview
               </span>
             </button>
           </Link>
 
-          <h1 className="mb-2 md:text-4xl text-2xl tracking-wide font-firaSansMedium">
+          <h1 className="mb-2 md:text-4xl text-2xl tracking-wide ">
             {frontmatter.title}
           </h1>
           <p className="text-base">

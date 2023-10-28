@@ -13,7 +13,7 @@ import Meta from "../components/meta/meta";
 
 export default function Home({ blogs, projects }) {
   return (
-    <main className="font-firaSansRegular">
+    <main className="">
       <Meta metaTag={metaTagHome} />
       <HomePage blogs={blogs} projects={projects} />
     </main>

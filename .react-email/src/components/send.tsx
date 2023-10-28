@@ -38,7 +38,7 @@ export const Send = ({ markup }: { markup: string }) => {
   return (
     <Popover.Root>
       <Popover.Trigger asChild>
-        <button className="box-border outline-none self-center w-20 h-5 flex items-center justify-center rounded-lg text-center transition duration-300 ease-in-out border border-slate-6 text-slate-11 text-sm px-4 py-4 hover:border-slate-12 hover:text-slate-12 font-sans">
+        <button className="box-border outline-none self-center w-20 h-5 flex items-center justify-center rounded-lg text-center transition duration-300 ease-in-out border border-slate-6 text-slate-11 text-sm px-4 py-4 hover:border-slate-12 hover:text-slate-12 sans">
           Send
         </button>
       </Popover.Trigger>
@@ -46,7 +46,7 @@ export const Send = ({ markup }: { markup: string }) => {
       <Popover.Portal>
         <Popover.Content
           align="end"
-          className={`w-80 -mt-10 p-3 bg-black border border-slate-6 text-slate-11 rounded-lg font-sans ${inter.variable}`}
+          className={`w-80 -mt-10 p-3 bg-black border border-slate-6 text-slate-11 rounded-lg sans ${inter.variable}`}
         >
           <Popover.Close
             aria-label="Close"

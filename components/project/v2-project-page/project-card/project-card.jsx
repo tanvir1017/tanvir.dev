@@ -36,7 +36,7 @@ const ProjectCard = ({ project }) => {
         <div className="flex md:flex-row flex-col  items-center justify-between px-2">
           <div className="md:mb-0 mb-2">
             <a href={preview} target="_blank" rel="noopener noreferrer">
-              <button className="flex items-center border rounded-md px-3 py-1.5  dark:hover:bg-[#3232328a] hover:bg-slate-100 font-firaSansLight text-sm">
+              <button className="flex items-center border rounded-md px-3 py-1.5  dark:hover:bg-[#3232328a] hover:bg-slate-100  text-sm">
                 Preview
                 <ArrowUpRight strokeWidth={1} className="mr-2" />
               </button>
@@ -50,7 +50,7 @@ const ProjectCard = ({ project }) => {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <button className="flex items-center border rounded-md px-3 py-1.5 dark:hover:bg-[#3232328a] hover:bg-slate-100 font-firaSansLight text-sm">
+                <button className="flex items-center border rounded-md px-3 py-1.5 dark:hover:bg-[#3232328a] hover:bg-slate-100  text-sm">
                   <GithubIcon className="mr-2" strokeWidth={1} />
                   <span className="text-xs md:text-sm">
                     {" "}
@@ -65,7 +65,7 @@ const ProjectCard = ({ project }) => {
         <div className="mt-4">
           <div className="px-2">
             <Link href={`/project/${project.slug}`} className="">
-              <h2 className="text-xl font-firaSansMedium dark:text-slate-100 text-gray-800">
+              <h2 className="text-xl  dark:text-slate-100 text-gray-800">
                 {title}
               </h2>
             </Link>
@@ -74,7 +74,7 @@ const ProjectCard = ({ project }) => {
             {tech.slice(0, 5).map((ts, i) => (
               <button
                 key={i}
-                className="border rounded-md py-1 dark:hover:bg-[#3232328a] hover:bg-slate-100 text-sm font-firaSansLight"
+                className="border rounded-md py-1 dark:hover:bg-[#3232328a] hover:bg-slate-100 text-sm "
               >
                 {ts}
               </button>

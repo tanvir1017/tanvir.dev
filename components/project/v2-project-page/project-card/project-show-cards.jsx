@@ -6,8 +6,8 @@ const ProjectShowCards = ({ projects }) => {
     .slice(-3)
     .reverse();
   return (
-    <section className="md:container font-firaSansRegular md:mt-40 mt-10 px-3">
-      <h1 className="font-firaSansBold md:text-5xl text-2xl uppercase dark:text-slate-100 text-gray-800 ">
+    <section className="md:container  md:mt-40 mt-10 px-3">
+      <h1 className=" md:text-5xl text-2xl uppercase dark:text-slate-100 text-gray-800 ">
         Something that i've built
       </h1>
 

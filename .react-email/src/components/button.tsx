@@ -30,7 +30,7 @@ export const Button = React.forwardRef<ButtonElement, Readonly<ButtonProps>>(
     const classNames = classnames(
       getSize(size),
       getAppearance(appearance),
-      'inline-flex items-center justify-center border font-medium',
+      'inline-flex items-center justify-center border medium',
       className,
     );
 

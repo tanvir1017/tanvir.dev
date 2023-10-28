@@ -49,12 +49,12 @@ const ContactMe = () => {
     <section className="md:container max-w-6xl mx-auto md:mt-44 mt-12 px-3">
       <div className="text-center relative md:pb-28 pb-10">
         <div className="absolute inset-x-0 md:block hidden">
-          <h2 className="stroke-text-light dark:stroke-text-dark  md:text-9xl  uppercase font-poppinsBlackItalic tracking-wider opacity-10 text-[#0605051a] inline-block">
+          <h2 className="stroke-text-light dark:stroke-text-dark  md:text-9xl  uppercase poppinsBlackItalic tracking-wider opacity-10 text-[#0605051a] inline-block font-HubotSansBlack">
             Reach Me
           </h2>
         </div>
         <div className="absolute inset-x-0">
-          <h3 className="md:text-4xl text-2xl font-FiraSansBold dark:text-white text-gray-600 mb-4 tracking-wider uppercase inline-block border dark:border-gray-600 border-slate-300 px-8 py-1.5 backdrop-blur-sm bg-[#d1c9c908]">
+          <h3 className="md:text-4xl text-2xl  dark:text-white text-gray-600 mb-4 tracking-wider uppercase inline-block border dark:border-gray-600 border-slate-300 px-8 py-1.5 backdrop-blur-sm bg-[#d1c9c908] ">
             Reach Me
           </h3>
         </div>
@@ -77,7 +77,7 @@ const ContactMe = () => {
                 className="ml-8"
                 target="_blank"
               >
-                <h6 className="text-xl font-poppinsBold dark:text-white text-gray-700">
+                <h6 className="text-xl poppinsBold dark:text-white text-gray-700">
                   {item.title}
                 </h6>
                 <p className="dark:text-white text-gray-600">{item.userName}</p>

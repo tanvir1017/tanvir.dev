@@ -4,9 +4,7 @@ export default function BlogSection({ blogs }) {
   return (
     <div className="px-3">
       <div className="pt-8 dark:text-white text-[#121212] max-w-lg">
-        <h2 className="font-firaSansBold uppercase text-3xl mb-5">
-          Latest blogs
-        </h2>
+        <h2 className=" uppercase text-3xl mb-5 font-bold">Latest blogs</h2>
         <p>
           I write about web development, design and productivity. I also share
           my thoughts on life in general!

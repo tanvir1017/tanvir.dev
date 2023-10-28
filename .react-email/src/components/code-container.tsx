@@ -84,7 +84,7 @@ export const CodeContainer: React.FC<Readonly<CodeContainerProps>> = ({
               const isCurrentLang = activeLang === language;
               return (
                 <motion.button
-                  className={`relative py-[8px] px-4 text-sm font-medium font-sans transition ease-in-out duration-200 hover:text-slate-12 ${
+                  className={`relative py-[8px] px-4 text-sm medium sans transition ease-in-out duration-200 hover:text-slate-12 ${
                     activeLang !== language ? 'text-slate-11' : 'text-slate-12'
                   }`}
                   onClick={() => setActiveLang(language)}
