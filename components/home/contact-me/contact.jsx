@@ -31,7 +31,7 @@ const reachMeData = [
     userName: "/tanvir1017",
     icon: <BsFacebook className="text-2xl" />,
     link: "https://www.facebook.com/tanvir1017",
-    className: "bg-gradient-to-tl to-[#08AEEA] from-[#2AF598] text-white ",
+    className: "bg-gradient-to-tl to-[#08AEEA] from-[#2AF598] text-white",
   },
 ];
 
@@ -62,27 +62,32 @@ const ContactMe = () => {
       <div className="mb-44 mt-16 max-w-3xl mx-auto">
         <div className="grid md:grid-cols-2 gap-3">
           {reachMeData.map((item, i) => (
-            <div
+            <a
+              href={item.link}
+              rel="noopener noreferrer"
               key={i}
-              className="flex items-center border dark:border-gray-600 border-slate-300 p-5 rounded-md hover:bg-slate-50 dark:hover:bg-[#d1c9c908]"
+              target="_blank"
             >
-              <span className={`${item.className} p-2 rounded-md box-shadows`}>
-                <a href={item.link} rel="noopener noreferrer" target="_blank">
-                  {item.icon}
-                </a>
-              </span>
-              <a
-                href={item.link}
-                rel="noopener noreferrer"
-                className="ml-8"
-                target="_blank"
+              <div
+                key={i}
+                className="flex items-center border dark:border-gray-600 border-slate-300 p-5 rounded-md hover:bg-slate-50 dark:hover:bg-[#d1c9c908] "
               >
-                <h6 className="text-xl poppinsBold dark:text-white text-gray-700">
-                  {item.title}
-                </h6>
-                <p className="dark:text-white text-gray-600">{item.userName}</p>
-              </a>
-            </div>
+                <div className={`${item.className} p-2 rounded-md box-shadows`}>
+                  <a href={item.link} rel="noopener noreferrer" target="_blank">
+                    {item.icon}
+                  </a>
+                </div>
+
+                <div className="ml-8">
+                  <h6 className="text-xl poppinsBold dark:text-white text-gray-700">
+                    {item.title}
+                  </h6>
+                  <p className="dark:text-white text-gray-600">
+                    {item.userName}
+                  </p>
+                </div>
+              </div>
+            </a>
           ))}
         </div>
         <div className="max-w-sm mx-auto mt-5">

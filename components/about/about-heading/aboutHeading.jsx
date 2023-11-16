@@ -9,7 +9,7 @@ function AboutHeading() {
       <div className="grid md:grid-cols-2 place-items-center md:justify-items-end justify-items-end md:px-5 px-2">
         <div className="md:order-1 order-2">
           <h1 className="md:text-5xl text-2xl font-HubotSansBlack mt-5">
-            HELLO! 🙋‍♂️
+            HALLO! 🙋‍♂️
           </h1>
           <p className="text-base md:mt-12 mt-6">
             I'm called Tanvir(Tanu). As a passionate MERN stack developer, I

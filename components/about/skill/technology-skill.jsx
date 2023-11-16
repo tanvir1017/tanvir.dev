@@ -36,7 +36,7 @@ function TechnologySkills() {
       <div className="md:mt-36 mt-10">
         <div className="relative md:pb-16 pb-6">
           <div className="absolute inset-0 m-auto text-center">
-            <h2 className="stroke-text-light dark:stroke-text-dark md:text-9xl text-2xl uppercase poppinsBlack tracking-wider opacity-10 text-[#0605051a] md:inline-block hidden font-HubotSansBlack">
+            <h2 className="stroke-text-light dark:stroke-text-dark 2xl:text-9xl lg:text-[7rem] lg:leading-[6rem] text-2xl uppercase poppinsBlack tracking-wider opacity-10 text-[#0605051a] md:inline-block hidden font-HubotSansBlack">
               Technological skills
             </h2>
           </div>
@@ -57,10 +57,12 @@ function TechnologySkills() {
                 {item.icon}
               </span>
               <a href={item.link} className="ml-8" rel="noopener noreferrer">
-                <h6 className="md:text-xl text-base  tracking-wider dark:text-white text-gray-700">
+                <h6 className="md:text-xl text-base  tracking-wider dark:text-white text-gray-700 font-bold">
                   {item.title}
                 </h6>
-                <p className="dark:text-white text-gray-600">{item.userName}</p>
+                <p className="dark:text-white text-gray-600 text-sm mt-2">
+                  {item.userName}
+                </p>
               </a>
             </div>
           ))}

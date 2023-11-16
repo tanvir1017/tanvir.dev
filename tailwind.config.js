@@ -57,6 +57,11 @@ module.exports = {
           "-webkit-background-clip": "text",
           "-webkit-text-fill-color": "transparent",
         },
+        ".dark-outline-gradient-text": {
+          "-webkit-text-stroke-color": "transparent",
+          "-webkit-text-strokeWidth": "calc(1em / 16)",
+          "-webkit-background-clip": "text",
+        },
       };
 
       addUtilities(newUtilities, ["responsive", "hover", "dark"]);

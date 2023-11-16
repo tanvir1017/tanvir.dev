@@ -108,7 +108,7 @@ export default function SayHelloDialog({ closeModal, openModal, isOpen }) {
                   <div className="mt-2">
                     <form onSubmit={handleGetFormValue}>
                       <label className="block">
-                        <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm medium text-slate-700">
+                        <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm medium text-slate-700">
                           Your name
                         </span>
                         <input
@@ -121,7 +121,7 @@ export default function SayHelloDialog({ closeModal, openModal, isOpen }) {
                         />
                       </label>
                       <label className="block my-2">
-                        <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm medium text-slate-700">
+                        <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm medium text-slate-700">
                           Subject
                         </span>
                         <input
@@ -133,23 +133,23 @@ export default function SayHelloDialog({ closeModal, openModal, isOpen }) {
                           className="mt-1 block w-full px-3 py-2 bg-white border border-slate-300 rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-[#08AEEA] focus:ring-[#08AEEA] focus:ring-1 invalid:border-pink-500 invalid:text-pink-600 focus:invalid:border-pink-500 focus:invalid:ring-pink-500 text-black"
                         />
                       </label>
-                      <label class="block my-3">
-                        <span class="block text-sm medium text-slate-700 after:content-['*'] after:text-red-500 after:ml-1">
+                      <label className="block my-3">
+                        <span className="block text-sm medium text-slate-700 after:content-['*'] after:text-red-500 after:ml-1">
                           Email
                         </span>
                         <input
                           onChange={updateData}
                           name="email"
                           type="email"
-                          class="peer mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-[#2AF598] focus:ring-[#2AF598] block w-full rounded-md sm:text-sm focus:ring-1 text-black"
+                          className="peer mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-[#2AF598] focus:ring-[#2AF598] block w-full rounded-md sm:text-sm focus:ring-1 text-black"
                           placeholder="developer.tanvirhossain@gmail.com"
                         />
-                        <p class="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
+                        <p className="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
                           Please provide a valid email address.
                         </p>
                       </label>{" "}
-                      <label class="block">
-                        <span class="block text-sm medium text-slate-700 after:content-['*'] after:text-red-500 after:ml-1">
+                      <label className="block">
+                        <span className="block text-sm medium text-slate-700 after:content-['*'] after:text-red-500 after:ml-1">
                           Your Message
                         </span>
                         <textarea
