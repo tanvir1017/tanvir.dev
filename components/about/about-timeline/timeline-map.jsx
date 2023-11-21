@@ -91,7 +91,7 @@ const TimeLineMap = () => {
           </div>
         </li>{" "}
         <li className="mb-12 ms-12">
-          <span className="overflow-hidden absolute flex items-center justify-center w-12 h-12 rounded-full -start-6 ring-8 dark:ring-[#08aeea35] ring-[#2af59a25] bg-gradient-to-tl to-[#08AEEA] from-[#2AF598">
+          <span className="overflow-hidden absolute flex items-center justify-center w-12 h-12 rounded-full -start-6 ring-8 dark:ring-[#08aeea35] ring-[#2af59a25] bg-gradient-to-tl to-[#08AEEA] from-[#2AF598 z-10">
             <Image
               src="/author/birth.jpg"
               alt="Me at the age of 1 or 0.5 year"

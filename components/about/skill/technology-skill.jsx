@@ -24,7 +24,7 @@ const reachMeData = [
   },
   {
     title: "Developer Tools",
-    userName: "Github, Git, Firebase, etc.",
+    userName: "Github, Git, Firebase, Figma, PhotoShop etc.",
     icon: <PiCodesandboxLogoLight className="text-2xl" />,
     className: "bg-gradient-to-tl to-[#08AEEA] from-[#2AF598] text-white ",
   },
@@ -35,9 +35,9 @@ function TechnologySkills() {
     <section className="md:px-0 max-w-6xl mx-auto px-3">
       <div className="md:mt-36 mt-10">
         <div className="relative md:pb-16 pb-6">
-          <div className="absolute inset-0 m-auto text-center">
-            <h2 className="stroke-text-light dark:stroke-text-dark 2xl:text-9xl lg:text-[7rem] lg:leading-[6rem] text-2xl uppercase poppinsBlack tracking-wider opacity-10 text-[#0605051a] md:inline-block hidden font-HubotSansBlack">
-              Technological skills
+          <div className="absolute inset-0 m-auto text-left">
+            <h2 className="stroke-text-light dark:stroke-text-dark 2xl:text-9xl lg:text-[7rem] break-words lg:leading-[6rem] uppercase poppinsBlack tracking-wider opacity-10 text-[#0605051a] md:inline-block hidden font-HubotSansBlack">
+              Tech skills
             </h2>
           </div>
           <h3 className="md:text-4xl text-2xl  dark:text-white text-gray-600 mb-4 tracking-wider uppercase inline-block border dark:border-gray-600 border-slate-300 px-8 py-1.5 backdrop-blur-sm bg-[#d1c9c908]">

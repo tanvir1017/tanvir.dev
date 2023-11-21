@@ -46,8 +46,8 @@ const ContactMe = () => {
     setIsOpen(true);
   }
   return (
-    <section className="md:container max-w-6xl mx-auto md:mt-44 mt-12 px-3">
-      <div className="text-center relative md:pb-28 pb-10">
+    <section className="md:container max-w-6xl mx-auto md:mt-44 mt-12 px-2">
+      <div className="sm:text-center text-left relative md:pb-28 pb-10">
         <div className="absolute inset-x-0 md:block hidden">
           <h2 className="stroke-text-light dark:stroke-text-dark  md:text-9xl  uppercase poppinsBlackItalic tracking-wider opacity-10 text-[#0605051a] inline-block font-HubotSansBlack">
             Reach Me
@@ -59,35 +59,32 @@ const ContactMe = () => {
           </h3>
         </div>
       </div>
-      <div className="mb-44 mt-16 max-w-3xl mx-auto">
+      <div className="mb-44 mt-16 md:max-w-3xl max-w-full md:mx-auto">
         <div className="grid md:grid-cols-2 gap-3">
           {reachMeData.map((item, i) => (
-            <a
-              href={item.link}
-              rel="noopener noreferrer"
+            <div
               key={i}
-              target="_blank"
+              className="flex items-center border dark:border-gray-600 border-slate-300 md:p-5 p-3 rounded-md hover:bg-slate-50 dark:hover:bg-[#d1c9c908] "
             >
-              <div
-                key={i}
-                className="flex items-center border dark:border-gray-600 border-slate-300 p-5 rounded-md hover:bg-slate-50 dark:hover:bg-[#d1c9c908] "
-              >
-                <div className={`${item.className} p-2 rounded-md box-shadows`}>
-                  <a href={item.link} rel="noopener noreferrer" target="_blank">
-                    {item.icon}
-                  </a>
-                </div>
-
-                <div className="ml-8">
-                  <h6 className="text-xl poppinsBold dark:text-white text-gray-700">
-                    {item.title}
-                  </h6>
-                  <p className="dark:text-white text-gray-600">
-                    {item.userName}
-                  </p>
-                </div>
+              <div className={`${item.className} p-2 rounded-md box-shadows`}>
+                <a href={item.link} rel="noopener noreferrer" target="_blank">
+                  {item.icon}
+                </a>
               </div>
-            </a>
+
+              <div className="ml-8">
+                <h6 className="text-xl font-bold dark:text-slate-300 text-gray-700">
+                  <a href={item.link} rel="noopener noreferrer" target="_blank">
+                    {item.title}
+                  </a>
+                </h6>
+                <p className="dark:text-slate-300 text-gray-600 md:text-base text-sm">
+                  <a href={item.link} rel="noopener noreferrer" target="_blank">
+                    {item.userName}
+                  </a>
+                </p>
+              </div>
+            </div>
           ))}
         </div>
         <div className="max-w-sm mx-auto mt-5">

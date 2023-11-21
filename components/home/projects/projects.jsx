@@ -42,7 +42,7 @@ const Projects = ({ projects }) => {
           </h2>
         </div>
 
-        <div className="col-span-2 relative">
+        <div className="md:col-span-2 relative">
           {latestProjects.map((item, i) => (
             <ProjectCardHome key={i} project={item} />
           ))}

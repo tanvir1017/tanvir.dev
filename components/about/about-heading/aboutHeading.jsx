@@ -5,7 +5,7 @@ import { RiDashboardFill } from "react-icons/ri";
 
 function AboutHeading() {
   return (
-    <div className="max-w-6xl mx-auto md:mt-20 mt-0 md:border md:border-slate-200 dark:border-gray-600 rounded-lg py-12 dark:bg-[#202330] dark:backdrop-blur-md bg-slate-100 px-3">
+    <div className="max-w-6xl mx-auto md:mt-20 mt-0 md:border md:border-slate-200 dark:border-gray-600 rounded-lg py-12 md:dark:bg-[#202330] bg-transparent dark:backdrop-blur-md bg-slate-100 px-3">
       <div className="grid md:grid-cols-2 place-items-center md:justify-items-end justify-items-end md:px-5 px-2">
         <div className="md:order-1 order-2">
           <h1 className="md:text-5xl text-2xl font-HubotSansBlack mt-5">
@@ -33,7 +33,7 @@ function AboutHeading() {
           <div className="space-x-3 mt-10 ">
             <button className="border bg-black dark:bg-slate-50 dark:hover:bg-slate-200 rounded-md py-2.5 px-5 dark:text-black text-white   uppercase tracking-wider">
               <a
-                href="https://drive.google.com/file/d/1kFNHhnbpWtBVQTTyCuSiqJhygGNBgBGH/view?usp=share_link"
+                href="https://github.com/tanvir1017"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center "

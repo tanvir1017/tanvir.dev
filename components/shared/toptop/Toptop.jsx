@@ -1,5 +1,5 @@
 import { motion as m } from "framer-motion";
-import { MoveUp } from "lucide-react";
+import { ArrowUpToLine } from "lucide-react";
 
 function TapToTop() {
   let calcScrollValue = () => {
@@ -48,7 +48,7 @@ function TapToTop() {
         style={customInlineCss}
         className=" bg-white/5 backdrop:filter[15px] rounded-full grid place-items-center text-[#fff]"
       >
-        <MoveUp size={32} strokeWidth={2.75} />
+        <ArrowUpToLine />
       </m.span>
     </m.div>
   );

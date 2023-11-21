@@ -12,7 +12,7 @@ function About() {
       <main className="md:container">
         <AboutHeading />
         <TechnologySkills />
-        <div className="mb-32 inline-block">
+        <div className="sm:mt-20 mb-32 inline-block">
           <TimeLine />
         </div>
         <ContactMe />

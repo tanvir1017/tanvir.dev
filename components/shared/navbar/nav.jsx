@@ -76,7 +76,7 @@ const MobileNavBar = ({
                   strokeWidth="12"
                 />
               </motion.svg>
-              <span className="text-transparent  bg-clip-text bg-gradient-to-r from-[#08AEEA] to-[#2AF598] caveatSemiBold text-2xl">
+              <span className="text-transparent  bg-clip-text bg-gradient-to-r from-[#08AEEA] to-[#2AF598] font-CaveatSemi text-2xl">
                 .dev
               </span>{" "}
             </Link>
@@ -163,7 +163,7 @@ const NavBar = () => {
 
   return (
     <>
-      <nav className="py-4 sticky top-0 dark:bg-[#15192fb4] bg-white/30 backdrop-blur-md z-50 md:block hidden">
+      <nav className="py-4 sticky top-0 dark:bg-[#15192fb4] bg-white/30 backdrop-blur-md z-50 md:block hidden lg:px-2 sm:px-5">
         <div className="max-w-6xl mx-auto flex items-center justify-between ">
           <ul>
             <li>
@@ -201,24 +201,38 @@ const NavBar = () => {
             </li>
           </ul>
 
-          <ul className="flex justify-center items-center">
+          <ul className="flex justify-center items-center ">
             {data.map((nav, index) => (
               <li
                 key={index}
-                className="m-2 text-[#121212] dark:text-white"
+                className="m-2 text-[#121212] dark:text-white group"
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1, transition: 0.85, delay: 0.2 }}
               >
                 <Link
                   href={nav.path}
-                  className="hover:tracking-widest duration-500"
+                  className={cn(
+                    "hover:tracking-widest duration-500 transition-all",
+                    {
+                      ["tracking-widest"]: pathname === nav.path,
+                    }
+                  )}
                 >
                   {nav.title}
                 </Link>
+                <hr
+                  className={cn(
+                    "w-0 group-hover:w-full duration-500 transition-transform",
+                    {
+                      ["w-full border-[#14C8CD] border-[1.5px] transition-colors"]:
+                        pathname === nav.path,
+                    }
+                  )}
+                />
               </li>
             ))}
-            <li className="relative">
-              <button className="absolute top-[50%] left-[10%] translate-x-[50%] -translate-y-[50%]">
+            <li className="">
+              <button className=" flex items-center justify-center">
                 {theme !== "dark" ? (
                   <Moon
                     size={25}

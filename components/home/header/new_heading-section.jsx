@@ -39,8 +39,8 @@ function NewHeadingSection() {
                     </div>
                   </div>
 
-                  <div className="space-x-3">
-                    <button className="border bg-black dark:bg-slate-50 dark:hover:bg-slate-200 rounded-md py-2.5 px-5 dark:text-black text-white  uppercase tracking-wider z-30 relative">
+                  <div className="flex items-center md:space-x-3 space-x-2">
+                    <button className="border bg-black dark:bg-slate-50 dark:hover:bg-slate-200 rounded-md md:py-2.5 py-2 md:px-5 px-2 dark:text-black text-white  uppercase tracking-wider z-30 relative text-sm md:text-base">
                       <a
                         href="https://drive.google.com/file/d/1kFNHhnbpWtBVQTTyCuSiqJhygGNBgBGH/view?usp=share_link"
                         target="_blank"
@@ -49,7 +49,7 @@ function NewHeadingSection() {
                         Get my resume
                       </a>
                     </button>
-                    <button className="z-30 border border-slate-300 hover:bg-slate-100 dark:hover:bg-[#3a3a3a] rounded-md py-2.5 px-5 dark:text-white uppercase relative">
+                    <button className="z-30 border border-slate-300 hover:bg-slate-100 dark:hover:bg-[#3a3a3a] rounded-md md:py-2.5 py-2 md:px-5 px-2 dark:text-white uppercase relative  text-sm md:text-base">
                       <Link href="/blogs">Read blogs</Link>
                     </button>
                   </div>

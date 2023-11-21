@@ -19,15 +19,19 @@ const ProjectCardHome = ({ project }) => {
         href={`/project/${project.slug}`}
         className="flex justify-between items-center cursor-pointer mb-5"
       >
-        <h5 className="text-xl ">{title} </h5>
+        <h5 className="md:text-xl text-base font-bold dark:text-slate-300">
+          {title}{" "}
+        </h5>
         <BiArrowBack className="text-base group-hover/link:translate-x-1.5 duration-200 rotate-180" />
       </Link>
-      <p>{description}</p>
+      <p className="md:text-base text-sm dark:text-slate-300">{description}</p>
       <div className="my-5">
         {tech.map((item, i) => (
           <button
             key={i}
-            className="rounded-md m-1 px-3 py-0.5 border-[1px] dark:border-gray-600 border-slate-200"
+            className={
+              "rounded-md m-1 md:px-3 px-1.5 py-1 md:text-base text-xs border-[1px] dark:border-gray-600 border-slate-200"
+            }
           >
             {item}
           </button>
