@@ -1,45 +1,62 @@
+import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import Blur from "./blur";
-
 function NewHeadingSection() {
+  const shouldReduceMotion = useReducedMotion();
+
+  const childVariants = {
+    initial: { opacity: 0, y: shouldReduceMotion ? 0 : 25 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
   return (
     <section className="border-general relative w-full overflow-hidden overflow-x-clip bg-slate-50 bg-gradient-to-t from-slate-50 to-slate-100 dark:bg-[#15192f] dark:bg-none h-screen flex">
       <Blur />
       <div className="px-3 m-auto max-w-6xl">
         <div className="">
-          <div className="grid md:grid-cols-3 place-items-start justify-items-end">
+          <div className="grid md:grid-cols-3 place-items-stretch lg:justify-items-stretch justify-items-end">
             <div className="md:col-span-2 md:order-1 order-2">
               <div className="md:flex md:text-left text-center flex md:flex-row flex-col-reverse justify-between items-center">
                 <div className="dark:text-white text-[#121212] space-y-2 lg:mt-0 mt-12">
-                  <div className="lg:overflow-hidden pb-8">
-                    <h1 className="md:text-5xl text-2xl  tracking-wide font-bold">
-                      Hello! I'm Tanvir, a Front-End developer
-                      <div className="md:hidden block "></div>
-                    </h1>
+                  <motion.div
+                    initial="initial"
+                    animate="visible"
+                    variants={{
+                      initial: { opacity: 0 },
+                      visible: {
+                        opacity: 1,
+                        transition: { staggerChildren: 0.2 },
+                      },
+                    }}
+                    className="lg:overflow-hidden lg:mb-12 inline-block z-50"
+                  >
+                    <motion.div variants={childVariants}>
+                      <h3>Hello! I'm Tanvir,</h3>
+                    </motion.div>
+                    <motion.div variants={childVariants}>
+                      <h1 className="lg:text-7xl text-2xl font-HubotSansBlack tracking-wider my-8">
+                        Frontend Dev.
+                      </h1>
+                    </motion.div>
                     <div className="mt-7 space-y-3 pr-3 max-w-xl">
-                      <p>
+                      <motion.p variants={childVariants}>
                         I love building tools that are user-friendly, simple and
                         delightful and focused on javascript language 💘
-                      </p>
-                      <p className="md:block hidden">
-                        Back on June 6th, 2021 [27 months], I started learning
-                        the fundamentals of Front-end Or MERN Stack development.
-                        I am an undergraduate student from Dhaka Polytechnic
-                        Institute. I completed studies in computer science
-                        engineering diploma from this college.
-                      </p>
-
-                      <p className="md:block hidden">
-                        Through these experiences, I developed many projects
-                        both small and mid-large with the MERN stack. I'm
-                        currently looking for a new role as a Front-end/MERN
-                        Stack developer. Hire me?
-                      </p>
+                      </motion.p>
+                      <motion.p
+                        variants={childVariants}
+                        className="md:block hidden"
+                      >
+                        I have been doing frontend development almost 2 years
+                        years, 그리고 I have done many projects that focuses on
+                        MERN stack. I'm a big extreme{" "}
+                        <span className="font-bold">javascript 🤌</span>{" "}
+                        enthusiast, also in my liked tech list includes many
+                        programming languages i.e, Python 🐍
+                      </motion.p>
                     </div>
-                  </div>
-
-                  <div className="flex items-center md:space-x-3 space-x-2">
+                  </motion.div>
+                  <div className="md:space-x-3 space-x-2">
                     <button className="border bg-black dark:bg-slate-50 dark:hover:bg-slate-200 rounded-md md:py-2.5 py-2 md:px-5 px-2 dark:text-black text-white  uppercase tracking-wider z-30 relative text-sm md:text-base">
                       <a
                         href="https://drive.google.com/file/d/1kFNHhnbpWtBVQTTyCuSiqJhygGNBgBGH/view?usp=share_link"

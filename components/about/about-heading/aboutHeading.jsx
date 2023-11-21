@@ -6,28 +6,22 @@ import { RiDashboardFill } from "react-icons/ri";
 function AboutHeading() {
   return (
     <div className="max-w-6xl mx-auto md:mt-20 mt-0 md:border md:border-slate-200 dark:border-gray-600 rounded-lg py-12 md:dark:bg-[#202330] bg-transparent dark:backdrop-blur-md bg-slate-100 px-3">
-      <div className="grid md:grid-cols-2 place-items-center md:justify-items-end justify-items-end md:px-5 px-2">
+      <div className="grid md:grid-cols-2 place-items-start md:justify-items-end justify-items-end md:px-5 px-2">
         <div className="md:order-1 order-2">
           <h1 className="md:text-5xl text-2xl font-HubotSansBlack mt-5">
             HALLO! 🙋‍♂️
           </h1>
           <p className="text-base md:mt-12 mt-6">
-            I'm called Tanvir(Tanu). As a passionate MERN stack developer, I
-            thrive on crafting user-friendly, elegant, and delightful code that
-            leaves a lasting impression.
+            I'm called Tanvir. As a passionate Javascript Developer, I love to
+            build tools user-friendly, elegant, and delightful code that leaves
+            a lasting impression.
           </p>
-          <p className="text-base md:my-4 my-4">
-            My journey through the world of web development has been a
-            relentless pursuit of simplicity and focus. Each line of code I
-            write is a testament to my commitment to creating seamless,
-            intuitive user experiences. With every project, I seek not only to
-            solve problems but to elevate them to new heights of efficiency and
-            elegance.
-          </p>
-          <p className="text-base">
-            Join me on this exhilarating journey, where code isn't just
-            functional; it's a work of art, a reflection of my unwavering
-            dedication to excellence.
+
+          <p className="text-base my-4">
+            Back on June 6th, 2021 [27 months], I started learning the
+            fundamentals of Front-end Or MERN Stack development. I am an
+            undergraduate student from Dhaka Polytechnic Institute. I completed
+            studies in computer science engineering diploma from this college.
           </p>
 
           <div className="space-x-3 mt-10 ">
