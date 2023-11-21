@@ -1,14 +1,12 @@
 import { Dialog, Transition } from "@headlessui/react";
 import { Rocket } from "lucide-react";
 import { Fragment, useState } from "react";
-import toast from "react-hot-toast";
 import { RiSendPlaneFill } from "react-icons/ri";
 import { RxCrossCircled } from "react-icons/rx";
-import useSWR from "swr";
 
 export default function SayHelloDialog({ closeModal, openModal, isOpen }) {
-  const { mutate: revalidate } = useSWR("/api/email");
-  const { mutate } = useSWR("/api/email/send-to-me.js");
+  // const { mutate: revalidate } = useSWR("/api/email");
+  // const { mutate } = useSWR("/api/email/send-to-me.js");
   const [data, setData] = useState({});
 
   const updateData = (e) => {
@@ -20,38 +18,38 @@ export default function SayHelloDialog({ closeModal, openModal, isOpen }) {
 
   const handleGetFormValue = async (e) => {
     e.preventDefault();
-    await mutate(async () => {
-      const res = await fetch("/api/email/send-to-me", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+    // await mutate(async () => {
+    //   const res = await fetch("/api/email/send-to-me", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-type": "application/json",
+    //     },
+    //     body: JSON.stringify(data),
+    //   });
 
-      if (!res.ok && !res?.status === 200)
-        return toast.error("something went wrong when email sending to author");
-      if (res.ok && res?.status === 200) {
-        toast.success("Just receive your mail 👀");
-      }
-    });
+    //   if (!res.ok && !res?.status === 200)
+    //     return toast.error("something went wrong when email sending to author");
+    //   if (res.ok && res?.status === 200) {
+    //     toast.success("Just receive your mail 👀");
+    //   }
+    // });
 
-    await revalidate(async () => {
-      const res = await fetch("/api/email", {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
+    // await revalidate(async () => {
+    //   const res = await fetch("/api/email", {
+    //     method: "POST",
+    //     headers: {
+    //       "Content-type": "application/json",
+    //     },
+    //     body: JSON.stringify(data),
+    //   });
 
-      if (!res.ok && !res?.status === 200)
-        return toast.error("something went wrong");
-      if (res.ok && res?.status === 200) {
-        toast.success("Now! Check your mail 📩");
-        closeModal();
-      }
-    });
+    //   if (!res.ok && !res?.status === 200)
+    //     return toast.error("something went wrong");
+    //   if (res.ok && res?.status === 200) {
+    //     toast.success("Now! Check your mail 📩");
+    //     closeModal();
+    //   }
+    // });
   };
   return (
     <>
