@@ -41,14 +41,14 @@ function TapToTop() {
       }}
       onClick={() => (document.documentElement.scrollTop = 0)}
       id="progress"
-      className={`md:grid hidden  rounded-full backdrop-blur-0 bg-white/5  active:-translate-y-2 cursor-pointer right-5 fixed  place-items-center z-[2] h-[70px] w-[70px]`}
+      className={`md:grid hidden rounded-full backdrop-blur-0 bg-white/5 active:-translate-y-2 cursor-pointer right-5 fixed  place-items-center z-[2] h-[45px] w-[45px]`}
     >
       <m.span
         id="progress-value"
         style={customInlineCss}
         className=" bg-white/5 backdrop:filter[15px] rounded-full grid place-items-center text-[#fff]"
       >
-        <ArrowUpToLine />
+        <ArrowUpToLine size={20} />
       </m.span>
     </m.div>
   );

@@ -1,7 +1,7 @@
+import { motion, useReducedMotion } from "framer-motion";
 import { FaDatabase, FaLanguage } from "react-icons/fa";
 import { MdOutlineLocalLibrary } from "react-icons/md";
 import { PiCodesandboxLogoLight } from "react-icons/pi";
-
 const reachMeData = [
   {
     title: "Programming Languages",
@@ -31,6 +31,12 @@ const reachMeData = [
 ];
 
 function TechnologySkills() {
+  const shouldReduceMotion = useReducedMotion();
+
+  const childVariants = {
+    initial: { opacity: 0, y: shouldReduceMotion ? 0 : 25 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+  };
   return (
     <section className="md:px-0 max-w-6xl mx-auto px-3">
       <div className="md:mt-36 mt-10">
@@ -47,9 +53,21 @@ function TechnologySkills() {
       </div>
 
       <div className="md:mt-16   relative z-20">
-        <div className="grid md:grid-cols-2 gap-3">
+        <motion.div
+          initial="initial"
+          animate="visible"
+          variants={{
+            initial: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.2 },
+            },
+          }}
+          className="grid md:grid-cols-2 gap-3"
+        >
           {reachMeData.map((item, i) => (
-            <div
+            <motion.div
+              variants={childVariants}
               key={i}
               className="flex items-center border dark:border-gray-600 border-slate-300 p-5 rounded-md hover:bg-slate-50 dark:hover:bg-[#d1c9c908]"
             >
@@ -64,9 +82,9 @@ function TechnologySkills() {
                   {item.userName}
                 </p>
               </a>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
