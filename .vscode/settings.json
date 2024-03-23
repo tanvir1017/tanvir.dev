@@ -1,4 +1,11 @@
 {
   "css.validate": false,
-  "cSpell.words": ["Codesandbox", "fira", "frontmatter", "jost"]
+  "cSpell.words": [
+    "Codesandbox",
+    "fira",
+    "frontmatter",
+    "jost"
+  ],
+  "typescript.tsdk": "node_modules\\.pnpm\\typescript@5.4.3\\node_modules\\typescript\\lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }
