@@ -8,7 +8,7 @@ import createMdx from "@next/mdx";
 
 const nextConfig = {
   images: {
-    domains: ["res.cloudinary.com"],
+    domains: ["res.cloudinary.com", "assets.aceternity.com"],
   },
 
   pageExtensions: ["js", "jsx", "ts", "tsx", "mdx"], // Add 'mdx' to the list of extensions

@@ -3,7 +3,8 @@ import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import Blur from "./blur";
-function NewHeadingSection() {
+import { Button } from "@/components/ui/button";
+function Header() {
   const shouldReduceMotion = useReducedMotion();
 
   const childVariants = {
@@ -11,8 +12,9 @@ function NewHeadingSection() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
   return (
-    <section className="border-general relative w-full overflow-hidden overflow-x-clip bg-slate-50 bg-gradient-to-t from-slate-50 to-slate-100 dark:bg-[#15192f] dark:bg-none h-screen flex">
+    <section className="border-general relative w-full overflow-hidden overflow-x-clip  dark:bg-none h-screen flex ">
       <Blur />
+      <Button variant="outline">Hello</Button>
       <div className="px-3 m-auto max-w-6xl">
         <div className="">
           <div className="grid md:grid-cols-3 place-items-stretch lg:justify-items-stretch justify-items-end">
@@ -101,4 +103,4 @@ function NewHeadingSection() {
   );
 }
 
-export default NewHeadingSection;
+export default Header;

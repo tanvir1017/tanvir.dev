@@ -1,8 +1,8 @@
 "use client";
 
-import AboutHeading from "@/components/about/about-heading/aboutHeading";
-import TimeLine from "@/components/about/about-timeline/timeline";
-import TechnologySkills from "@/components/about/skill/technology-skill";
+import AboutHeading from "@/layouts/AboutPageLayout/Header/about-header";
+import TechnologySkills from "@/layouts/AboutPageLayout/Skill/technology-skill";
+import TimeLine from "@/layouts/AboutPageLayout/Timeline/timeline";
 import { MdContactEmergency } from "react-icons/md";
 
 function About() {

@@ -1,12 +1,17 @@
+"use client";
 import Link from "next/link";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import { formatShortDate } from "utils/timeFormatter/timeFormatter";
+import { formatShortDate } from "@/lib/utils/timeFormatter/timeFormatter";
+import { BlogContentProps } from "@/ts/type";
+import { useMemo } from "react";
 
-const Blog = ({ blogs }) => {
-  const latestBlogs = blogs
-    .filter((item) => item.frontmatter.status !== "draft")
-    .slice(-3)
-    .reverse();
+const HomePageBlogSection = ({ blogs }: { blogs: BlogContentProps[] }) => {
+  const latestBlogs = useMemo(() => {
+    return blogs
+      .filter((item) => item.status !== "draft")
+      .slice(-3)
+      .reverse();
+  }, []);
   return (
     <section className="max-w-6xl mx-auto md:mt-40 mt-12 md:px-0 px-3">
       <div className="md:flex items-end justify-between">
@@ -45,15 +50,11 @@ const Blog = ({ blogs }) => {
       <div className="md:mt-36 mt-10 grid md:grid-cols-3 place-items-center">
         <div className="col-span-2 relative">
           {latestBlogs.map((item, i) => (
-            <Link href={`/blog/${item?.slug}`} key={i}>
+            <Link href={`blogs/${item?.slug}`} key={i}>
               <div className="shadow-md cursor-pointer px-5 py-6 dark:border-gray-600 border my-3 rounded-lg relative">
-                <h5 className=" text-xl jostSemiBold">
-                  {item?.frontmatter?.title}
-                </h5>
-                <p className="mb-5 mt-2">
-                  {formatShortDate(item?.frontmatter?.publishedAt)}
-                </p>
-                <p className="text-sm">{item?.frontmatter?.description}</p>
+                <h5 className=" text-xl jostSemiBold">{item.title}</h5>
+                <p className="mb-5 mt-2">{formatShortDate(item.publishedAt)}</p>
+                <p className="text-sm">{item.description}</p>
               </div>
             </Link>
           ))}
@@ -68,4 +69,4 @@ const Blog = ({ blogs }) => {
   );
 };
 
-export default Blog;
+export default HomePageBlogSection;
