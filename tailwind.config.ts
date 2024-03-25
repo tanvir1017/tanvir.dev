@@ -1,13 +1,13 @@
-import type { Config } from "tailwindcss"
+import type { Config } from "tailwindcss";
 
 const config = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -18,6 +18,17 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        // used for subtitle
+        CaveatSemi: "CaveatSemi",
+
+        // Globally use
+        HubotSansReguler: "HubotSansReguler",
+        HubotSansItalic: "HubotSansItalic",
+        HubotSansLight: "HubotSansLight",
+        HubotSansBlack: "HubotSansBlack",
+      },
+
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -74,7 +85,48 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
-} satisfies Config
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/typography"),
+    function ({ addUtilities }: { addUtilities: any }) {
+      const newUtilities = {
+        ".App": {
+          "min-height": "100vh",
+          display: "flex",
+          "flex-direction": "column",
+        },
+        ".stroke-text-light": {
+          "-webkit-text-strokeWidth": "2px",
+          "-webkit-text-stroke-color": "#000",
+        },
+        ".stroke-text-dark": {
+          "-webkit-text-strokeWidth": "2px",
+          "-webkit-text-stroke-color": "#fff",
+        },
+        ".stroke-text-light-gradient": {
+          "-webkit-text-strokeWidth": "2px",
+          "-webkit-text-stroke-color": "transparent",
+          background: "-webkit-linear-gradient(45deg, #08AEEA, #2AF598)",
+          "-webkit-background-clip": "text",
+          "-webkit-text-fill-color": "transparent",
+        },
+        ".stroke-text-dark-gradient": {
+          "-webkit-text-strokeWidth": "2px",
+          "-webkit-text-stroke-color": "transparent",
+          background: "-webkit-linear-gradient(45deg, #08AEEA, #2AF598)",
+          "-webkit-background-clip": "text",
+          "-webkit-text-fill-color": "transparent",
+        },
+        ".dark-outline-gradient-text": {
+          "-webkit-text-stroke-color": "transparent",
+          "-webkit-text-strokeWidth": "calc(1em / 16)",
+          "-webkit-background-clip": "text",
+        },
+      };
 
-export default config
+      addUtilities(newUtilities, ["responsive", "hover", "dark"]);
+    },
+  ],
+} satisfies Config;
+
+export default config;

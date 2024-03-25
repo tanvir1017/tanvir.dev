@@ -1,3 +1,4 @@
+"use client";
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";

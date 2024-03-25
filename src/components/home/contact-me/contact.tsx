@@ -1,8 +1,9 @@
+"use client";
+
 import { useState } from "react";
 import { AiFillGithub } from "react-icons/ai";
 import { BsFacebook, BsLinkedin } from "react-icons/bs";
 import { HiOutlineEnvelope } from "react-icons/hi2";
-import SayHelloDialog from "src/components/headless-ui/say-hello-dialog";
 
 const reachMeData = [
   {
@@ -87,13 +88,7 @@ const ContactMe = () => {
             </div>
           ))}
         </div>
-        <div className="max-w-sm mx-auto mt-5">
-          <SayHelloDialog
-            closeModal={closeModal}
-            openModal={openModal}
-            isOpen={isOpen}
-          />
-        </div>
+        <div className="max-w-sm mx-auto mt-5"></div>
       </div>
     </section>
   );

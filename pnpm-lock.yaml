@@ -5,23 +5,17 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  '@headlessui/react':
-    specifier: ^1.7.7
-    version: 1.7.18(react-dom@18.2.0)(react@18.2.0)
   '@mdx-js/loader':
-    specifier: ^2.2.1
+    specifier: ^2.3.0
     version: 2.3.0(webpack@5.91.0)
   '@mdx-js/react':
-    specifier: ^2.2.1
+    specifier: ^2.3.0
     version: 2.3.0(react@18.2.0)
   '@motionone/utils':
     specifier: ^10.15.1
     version: 10.17.0
-  '@next/font':
-    specifier: ^13.0.6
-    version: 13.5.6
   '@next/mdx':
-    specifier: ^13.1.2
+    specifier: ^13.5.6
     version: 13.5.6(@mdx-js/loader@2.3.0)(@mdx-js/react@2.3.0)
   '@radix-ui/react-icons':
     specifier: ^1.3.0
@@ -29,6 +23,9 @@ dependencies:
   '@radix-ui/react-slot':
     specifier: ^1.0.2
     version: 1.0.2(@types/react@18.2.69)(react@18.2.0)
+  '@types/mdx':
+    specifier: ^2.0.12
+    version: 2.0.12
   class-variance-authority:
     specifier: ^0.7.0
     version: 0.7.0
@@ -60,14 +57,11 @@ dependencies:
     specifier: 14.1.4
     version: 14.1.4(react-dom@18.2.0)(react@18.2.0)
   next-mdx-remote:
-    specifier: ^4.2.1
+    specifier: ^4.4.1
     version: 4.4.1(react-dom@18.2.0)(react@18.2.0)
   next-themes:
     specifier: ^0.2.1
     version: 0.2.1(next@14.1.4)(react-dom@18.2.0)(react@18.2.0)
-  nextjs-progressbar:
-    specifier: ^0.0.16
-    version: 0.0.16(next@14.1.4)(react@18.2.0)
   nodemailer:
     specifier: ^6.9.5
     version: 6.9.13
@@ -77,18 +71,12 @@ dependencies:
   react-dom:
     specifier: 18.2.0
     version: 18.2.0(react@18.2.0)
-  react-hot-toast:
-    specifier: ^2.4.1
-    version: 2.4.1(csstype@3.1.3)(react-dom@18.2.0)(react@18.2.0)
   react-icons:
     specifier: ^4.7.1
     version: 4.12.0(react@18.2.0)
   react-rough-notation:
     specifier: ^1.0.5
     version: 1.0.5(react-dom@18.2.0)(react@18.2.0)
-  reading-time:
-    specifier: ^1.5.0
-    version: 1.5.0
   rehype-highlight:
     specifier: ^6.0.0
     version: 6.0.0
@@ -175,19 +163,6 @@ packages:
       strip-json-comments: 3.1.1
     transitivePeerDependencies:
       - supports-color
-    dev: false
-
-  /@headlessui/react@1.7.18(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-4i5DOrzwN4qSgNsL4Si61VMkUcWbcSKueUV7sFhpHzQcSShdlHENE5+QBntMSRvHt8NyoFO2AGG8si9lq+w4zQ==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      react: ^16 || ^17 || ^18
-      react-dom: ^16 || ^17 || ^18
-    dependencies:
-      '@tanstack/react-virtual': 3.2.0(react-dom@18.2.0)(react@18.2.0)
-      client-only: 0.0.1
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
     dev: false
 
   /@humanwhocodes/config-array@0.11.14:
@@ -354,10 +329,6 @@ packages:
     resolution: {integrity: sha512-H9U9B1dFnCDmylDZ6/dYt95Ie1Iu+SLBMcO6rkIGIDcj5UK+DNyMiWm83xWBZ1gREM8cfp5Srv1g6wqf8pM4lw==}
     dependencies:
       glob: 7.1.7
-    dev: false
-
-  /@next/font@13.5.6:
-    resolution: {integrity: sha512-urmUq05uCVJsBqAAJEV+xK5OTTodrSxdiG+351SOSjlWctywdBM6qX+K9pIe3K48RxjfnxlBbXjGyOJAji+pfw==}
     dev: false
 
   /@next/mdx@13.5.6(@mdx-js/loader@2.3.0)(@mdx-js/react@2.3.0):
@@ -540,21 +511,6 @@ packages:
       tailwindcss: 3.4.1
     dev: true
 
-  /@tanstack/react-virtual@3.2.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-OEdMByf2hEfDa6XDbGlZN8qO6bTjlNKqjM3im9JG+u3mCL8jALy0T/67oDI001raUUPh1Bdmfn4ZvPOV5knpcg==}
-    peerDependencies:
-      react: ^16.8.0 || ^17.0.0 || ^18.0.0
-      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      '@tanstack/virtual-core': 3.2.0
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-    dev: false
-
-  /@tanstack/virtual-core@3.2.0:
-    resolution: {integrity: sha512-P5XgYoAw/vfW65byBbJQCw+cagdXDT/qH6wmABiLt4v4YBT2q2vqCOhihe+D1Nt325F/S/0Tkv6C5z0Lv+VBQQ==}
-    dev: false
-
   /@types/acorn@4.0.6:
     resolution: {integrity: sha512-veQTnWP+1D/xbxVrPC3zHnCZRjSrKfhbMUlEA43iMZLu7EsnTtkJklIuwrCPbOi8YkvDQAiW05VQQFvvz9oieQ==}
     dependencies:
@@ -627,10 +583,6 @@ packages:
     resolution: {integrity: sha512-dHM6ZxwlmuZaRmUPfv1p+KrdD1Dci04FbdEm/9wEMouFqxYoFl5aMkt0VMAUtYRQDyYvD41WJLukhq/ha3YuTw==}
     dependencies:
       undici-types: 5.26.5
-
-  /@types/nprogress@0.2.3:
-    resolution: {integrity: sha512-k7kRA033QNtC+gLc4VPlfnue58CM1iQLgn1IMAU8VPHGOj7oIHPp9UlhedEnD/Gl8evoCjwkZjlBORtZ3JByUA==}
-    dev: false
 
   /@types/prop-types@15.7.12:
     resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==}
@@ -2120,14 +2072,6 @@ packages:
       slash: 3.0.0
     dev: false
 
-  /goober@2.1.14(csstype@3.1.3):
-    resolution: {integrity: sha512-4UpC0NdGyAFqLNPnhCT2iHpza2q+RAY3GV85a/mRPdzyPQMsj0KmMMuetdIkzWRbJ+Hgau1EZztq8ImmiMGhsg==}
-    peerDependencies:
-      csstype: ^3.0.10
-    dependencies:
-      csstype: 3.1.3
-    dev: false
-
   /gopd@1.0.1:
     resolution: {integrity: sha512-d65bNlIadxvpb/A2abVdlqKqV563juRnZ1Wtk6s1sIR8uNsXR70xqIzVqxVf1eTqDunwT2MkczEeaezCKTZhwA==}
     dependencies:
@@ -3373,19 +3317,6 @@ packages:
       - babel-plugin-macros
     dev: false
 
-  /nextjs-progressbar@0.0.16(next@14.1.4)(react@18.2.0):
-    resolution: {integrity: sha512-GV0fD38EMD3vSDCmkq+tObmoup6QA91a6a9MxGuhJZuRk/9TNsrHGnIQQQ/sggkMkXuT4fBgF6jRjFwScDT3zA==}
-    peerDependencies:
-      next: '>= 6.0.0'
-      react: '>= 16.0.0'
-    dependencies:
-      '@types/nprogress': 0.2.3
-      next: 14.1.4(react-dom@18.2.0)(react@18.2.0)
-      nprogress: 0.2.0
-      prop-types: 15.8.1
-      react: 18.2.0
-    dev: false
-
   /node-releases@2.0.14:
     resolution: {integrity: sha512-y10wOWt8yZpqXmOgRo77WaHEmhYQYGNA6y421PKsKYWEK8aW+cqAphborZDhqfyKrbZEN92CN1X2KbafY2s7Yw==}
 
@@ -3402,10 +3333,6 @@ packages:
     resolution: {integrity: sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==}
     engines: {node: '>=0.10.0'}
     dev: true
-
-  /nprogress@0.2.0:
-    resolution: {integrity: sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA==}
-    dev: false
 
   /object-assign@4.1.1:
     resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
@@ -3710,20 +3637,6 @@ packages:
       scheduler: 0.23.0
     dev: false
 
-  /react-hot-toast@2.4.1(csstype@3.1.3)(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-j8z+cQbWIM5LY37pR6uZR6D4LfseplqnuAO4co4u8917hBUvXlEqyP1ZzqVLcqoyUesZZv/ImreoCeHVDpE5pQ==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      react: '>=16'
-      react-dom: '>=16'
-    dependencies:
-      goober: 2.1.14(csstype@3.1.3)
-      react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
-    transitivePeerDependencies:
-      - csstype
-    dev: false
-
   /react-icons@4.12.0(react@18.2.0):
     resolution: {integrity: sha512-IBaDuHiShdZqmfc/TwHu6+d6k2ltNCf3AszxNmjJc1KUfXdEeRJOKyNvLmAHaarhzGmTSVygNdyu8/opXv2gaw==}
     peerDependencies:
@@ -3764,10 +3677,6 @@ packages:
     engines: {node: '>=8.10.0'}
     dependencies:
       picomatch: 2.3.1
-
-  /reading-time@1.5.0:
-    resolution: {integrity: sha512-onYyVhBNr4CmAxFsKS7bz+uTLRakypIe4R+5A824vBSkQy/hB3fZepoVEf8OVAxzLvK+H/jm9TzpI3ETSm64Kg==}
-    dev: false
 
   /reflect.getprototypeof@1.0.6:
     resolution: {integrity: sha512-fmfw4XgoDke3kdI6h4xcUz1dG8uaiv5q9gcEwLS4Pnth2kxT+GZ7YehS1JTMGBQmtV7Y4GFGbs2re2NqhdozUg==}

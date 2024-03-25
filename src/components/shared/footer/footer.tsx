@@ -1,6 +1,11 @@
+"use client";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Footer = () => {
+  const pathname = usePathname();
+  if (pathname === "/404") return null;
+
   return (
     <footer className="md:px-0 px-3 md:mt-36 mt-12 pb-20">
       <div className="jostRegular text-black dark:text-white max-w-6xl mx-auto text-center">

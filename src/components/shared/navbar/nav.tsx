@@ -11,7 +11,7 @@ export const data = [
 
 import { AlignJustify, Moon, Sun, X } from "lucide-react";
 import { usePathname, useRouter } from "next/navigation";
-import { cn } from "@/utils/cn/cn";
+import { cn } from "@/lib/utils/cn/cn";
 
 const svgVariants = {
   hidden: {
