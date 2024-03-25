@@ -2,6 +2,7 @@
 
 This repository follows a modern folder structure commonly used in Next.js projects. Below is an overview of the directory layout:
 
+```css
 project-root/
 │
 ├── pages/
@@ -64,3 +65,4 @@ project-root/
 │
 ├── package.json
 └── ...
+```
