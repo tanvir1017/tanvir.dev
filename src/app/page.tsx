@@ -13,7 +13,7 @@ export default async function Home() {
   const projects = (await getAllProjectsMeta()) as ProjectContentTypes[];
 
   return (
-    <main>
+    <main className="App">
       <DotBackgroundDemo />
       <Header />
       <HeroScrollDemo />

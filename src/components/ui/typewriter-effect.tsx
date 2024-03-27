@@ -1,8 +1,6 @@
-"use client";
-
 import { cn } from "@/lib/utils/cn/cn";
-import { motion, useInView } from "framer-motion";
-import { useEffect } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
+import { useEffect, useRef } from "react";
 
 export const TypewriterEffect = ({
   words,
@@ -16,59 +14,45 @@ export const TypewriterEffect = ({
   className?: string;
   cursorClassName?: string;
 }) => {
-  // split text inside of words into array of characters
-  const wordsArray = words.map((word) => {
-    return {
-      ...word,
-      text: word.text.split(""),
-    };
-  });
+  // Split text inside of words into an array of characters
+  const wordsArray = words.map((word) => ({
+    ...word,
+    text: word.text.split(""),
+  }));
+  const controls = useAnimation();
+  const ref = useRef(null);
+  const isInView = useInView(ref);
 
-  const [scope, animate] = useAnimate();
-  const isInView = useInView(scope);
   useEffect(() => {
     if (isInView) {
-      animate(
-        "span",
-        {
-          display: "inline-block",
-          opacity: 1,
-          width: "fit-content",
-        },
-        {
-          duration: 0.3,
-          delay: stagger(0.1),
-          ease: "easeInOut",
-        }
-      );
+      controls.start((i) => ({
+        opacity: 1,
+        transition: { duration: 0.3, delay: i * 0.1 },
+      }));
     }
-  }, [isInView]);
+  }, [controls, isInView]);
 
-  const renderWords = () => {
-    return (
-      <motion.div ref={scope} className="inline">
-        {wordsArray.map((word, idx) => {
-          return (
-            <div key={`word-${idx}`} className="inline-block">
-              {word.text.map((char, index) => (
-                <motion.span
-                  initial={{}}
-                  key={`char-${index}`}
-                  className={cn(
-                    `dark:text-white text-black opacity-0 hidden`,
-                    word.className
-                  )}
-                >
-                  {char}
-                </motion.span>
-              ))}
-              &nbsp;
-            </div>
-          );
-        })}
-      </motion.div>
-    );
-  };
+  const renderWords = () => (
+    <motion.div ref={ref} className="inline">
+      {wordsArray.map((word, wordIdx) => (
+        <div key={`word-${wordIdx}`} className="inline-block">
+          {word.text.map((char, charIdx) => (
+            <motion.span
+              custom={charIdx} // Use the character index for stagger delay
+              initial={{ opacity: 0 }}
+              animate={controls}
+              key={`char-${charIdx}`}
+              className={cn("dark:text-white text-black", word.className)}
+            >
+              {char}
+            </motion.span>
+          ))}
+          &nbsp; {/* Space after each word */}
+        </div>
+      ))}
+    </motion.div>
+  );
+
   return (
     <div
       className={cn(
@@ -78,12 +62,8 @@ export const TypewriterEffect = ({
     >
       {renderWords()}
       <motion.span
-        initial={{
-          opacity: 0,
-        }}
-        animate={{
-          opacity: 1,
-        }}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: [0, 1] }}
         transition={{
           duration: 0.8,
           repeat: Infinity,
