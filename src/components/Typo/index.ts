@@ -1,2 +1,3 @@
 import * as Typo from "./typo-graphy-style-coponent";
-export { Typo };
+import * as TextStyled from "./text-styled";
+export { Typo, TextStyled };
