@@ -2,9 +2,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
+const restrictedPages = ["/resume"];
 const Footer = () => {
   const pathname = usePathname();
-  if (pathname === "/404") return null;
+  if (restrictedPages.includes(pathname)) return null;
 
   return (
     <footer className="md:px-0 px-3 md:mt-36 mt-12 pb-20">

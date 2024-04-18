@@ -6,7 +6,7 @@ import { getAllPostsMeta, getAllProjectsMeta } from "@/lib/utils/mdx/mdxUtils";
 import { BlogContentProps, ProjectContentTypes } from "@/ts/type";
 import { HeroScrollDemo } from "@/layouts/HomePageLayout/Scroll/hero";
 import { BackgroundBeamsDemo } from "@/layouts/HomePageLayout/ContactWithMe/contact-beams";
-import { Header } from "@/layouts/HomePageLayout/Header/DotBackground";
+import { Header } from "@/layouts/HomePageLayout/Header/header";
 import { GainedSkilled } from "@/layouts/HomePageLayout/GainedSkills/gained-skills";
 import { TabsDemo } from "@/layouts/HomePageLayout/ProjectShowCaseTabs/project-tabs";
 import { StyledComponent } from "@/components/StyledCoponent";

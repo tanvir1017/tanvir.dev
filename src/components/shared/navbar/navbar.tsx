@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   HoveredLink,
   Menu,
@@ -10,20 +10,30 @@ import { cn } from "@/lib/utils/cn/cn";
 import LOGO from "@/components/LOGO/t.dev";
 import { ChevronDown, Sun } from "lucide-react";
 import { BiWorld } from "react-icons/bi";
-import { Button } from "@/components/Button";
+import { Button } from "@/components/custom-components/Button";
 import { Button as SButton } from "@/components/ui/button";
+import { useTheme } from "next-themes";
+import ThemeSwitch from "./theme-switch";
+import { usePathname } from "next/navigation";
 
-export function NavbarDemo() {
-  return <Navbar className="top-2" />;
+const restrictedPages = ["/resume"];
+
+export function Navbar() {
+  return <NavbarInside className="top-2" />;
 }
 
-function Navbar({ className }: { className?: string }) {
+function NavbarInside({ className }: { className?: string }) {
   const [active, setActive] = useState<string | null>(null);
+  const pathname = usePathname();
+
   return (
     <div
       className={cn(
-        "fixed top-10 inset-x-0 max-w-2xl mx-auto z-50 bg-[#15192f]/15 border backdrop-blur-md dark:border-white/[0.2] shadow-input rounded-full flex items-center justify-between ",
-        className
+        "fixed top-10 inset-x-0 max-w-2xl mx-auto z-50 bg-[#15192f]/15 backdrop-blur-md border dark:border-white/[0.2] shadow-input rounded-[5px] flex items-center justify-between ",
+        className,
+        {
+          hidden: restrictedPages.includes(pathname),
+        }
       )}
     >
       <div className="px-4 py-2">
@@ -32,10 +42,10 @@ function Navbar({ className }: { className?: string }) {
       <div className="flex items-center">
         <Menu
           setActive={setActive}
-          className="mr-4 hover:bg-white/10 px-4 py-2"
+          className="hover:bg-white/10 px-4 py-2 mr-2"
         >
           <MenuItem setActive={setActive} active={active} item="Articles">
-            <div className="  text-sm grid grid-cols-2 gap-10 p-4">
+            <div className="text-sm grid grid-cols-2 gap-10 p-4">
               <ProductItem
                 title="Algochurn"
                 href="https://algochurn.com"
@@ -63,8 +73,8 @@ function Navbar({ className }: { className?: string }) {
             </div>
           </MenuItem>
         </Menu>
-
-        <div className="flex items-center mr-4 text-white  font-normal">
+        {/* Localization GERMAN | ENGLISH | BANGLA */}
+        <div className="flex items-center mr-2  dark:text-white font-normal">
           <SButton className="dark:bg-white/10 dark:hover:bg-white/10 py-2">
             Deutsche
           </SButton>
@@ -72,12 +82,14 @@ function Navbar({ className }: { className?: string }) {
             <ChevronDown strokeWidth={0.7} className="" />
           </SButton>
         </div>
-        <div className="hover:bg-white/10 py-2 px-4 rounded-tr-full rounded-br-full mr-1">
-          <Sun />
+
+        {/* Theme Toggler For Dark Mode | Light Mode */}
+        <div className="hover:bg-white/10 rounded-md mr-2">
+          <ThemeSwitch />
         </div>
       </div>
     </div>
   );
 }
 
-NavbarDemo.displayName = "Navbar";
+Navbar.displayName = "Navbar";

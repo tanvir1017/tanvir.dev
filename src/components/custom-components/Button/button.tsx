@@ -1,5 +1,5 @@
 import { ChevronDown, Eye } from "lucide-react";
-import { Button } from "../ui/button";
+import { Button } from "../../ui/button";
 import React from "react";
 import { cn } from "@/lib/utils/cn/cn";
 
