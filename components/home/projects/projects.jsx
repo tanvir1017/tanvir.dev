@@ -11,7 +11,7 @@ const Projects = ({ projects }) => {
     <section className=" max-w-6xl mx-auto relative md:px-0 px-3 md:mt-0 mt-12">
       <div className="flex md:flex-row flex-col items-end justify-between">
         <div className="max-w-2xl">
-          <h2 className="md:text-4xl text-2xl font-HubotSansBlack dark:text-white text-gray-600 mb-4 tracking-wider uppercase md:block hidden">
+          <h2 className="mt-10 md:text-4xl text-2xl font-HubotSansBlack dark:text-white text-gray-600 mb-4 tracking-wider uppercase md:block hidden">
             Projects
           </h2>
           <div className="md:hidden flex items-center justify-between mb-4">

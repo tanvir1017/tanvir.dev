@@ -73,14 +73,19 @@ function NewHeadingSection() {
                 </div>
               </div>
             </div>
-            <div className="z-20 md:block hidden  md:order-2 order-1">
+            <div className="z-20 md:block hidden md:order-2 order-1 border-2 p-1 dark:border-[#989898] border-[#d1d1d1] relative">
+              <div className="absolute -top-2 -left-2  border-b-2 border-r-2 w-2 h-2 dark:border-[#989898] border-[#121212]"></div>
+              <div className="absolute -bottom-2 -right-2  border-t-2 border-l-2 w-2 h-2 dark:border-[#989898] border-[#121212]"></div>
+              <div className="absolute -bottom-2 -left-2  border-t-2 border-r-2 w-2 h-2 dark:border-[#989898] border-[#121212]"></div>
+              <div className="absolute -bottom-2 -left-2  border-t-2 border-r-2 w-2 h-2 dark:border-[#989898] border-[#121212]"></div>
+              <div className="absolute -top-2 -right-2  border-b-2 border-l-2 w-2 h-2 dark:border-[#989898] border-[#121212]"></div>
               <Image
-                src="/author/author.webp"
+                src="/author/about-me.webp"
                 alt="Author image"
                 width={330}
                 height={100}
                 priority
-                className="rounded-2xl"
+                className=""
               />
             </div>
             <div className="md:hidden block md:order-2 order-1">

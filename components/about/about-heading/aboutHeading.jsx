@@ -12,8 +12,8 @@ function AboutHeading() {
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
   return (
-    <div className="max-w-6xl mx-auto md:mt-20 mt-0 md:border md:border-slate-200 dark:border-gray-600 rounded-lg py-12 md:dark:bg-[#202330] bg-transparent dark:backdrop-blur-md bg-slate-100 px-3">
-      <div className="grid md:grid-cols-2 place-items-start md:justify-items-end justify-items-end md:px-5 px-2">
+    <div className="max-w-6xl mx-auto md:mt-20 mt-0 border border-slate-800 dark:border-gray-700 rounded-lg py-12 bg-slate-100 md:dark:bg-[#121212] bg-transparent dark:backdrop-blur-md  px-3 bg-[url('/author/patterns.png')] ">
+      <div className="grid md:grid-cols-2 place-items-start md:justify-items-end justify-items-end md:px-5 px-2 ">
         <motion.div
           initial="initial"
           animate="visible"
@@ -83,7 +83,7 @@ function AboutHeading() {
             width={350}
             height={100}
             priority
-            className="rounded-2xl"
+            className="rounded-md"
           />
         </div>
         <div className="md:hidden block md:order-2 order-1">
