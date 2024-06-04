@@ -1,8 +1,9 @@
+"use client";
+import { cn } from "@/lib/utils/cn/cn";
 import { useEffect, useState } from "react";
 import { FiSearch } from "react-icons/fi";
-import { cn } from "utils/cn/cn";
 
-export default function BlogsSearch({ titles }) {
+export default function BlogsSearch({ titles }: any) {
   const [focusInput, setFocusInput] = useState(false);
   const handleFocusedInput = () => {
     if (!focusInput) {
@@ -13,7 +14,7 @@ export default function BlogsSearch({ titles }) {
   };
 
   useEffect(() => {}, [focusInput]);
-  const handleOnSubmit = (e) => {
+  const handleOnSubmit = (e: any) => {
     e.preventDefault();
   };
   return (

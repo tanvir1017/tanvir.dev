@@ -1,3 +1,4 @@
+// @ts-nocheck
 /* eslint-disable @next/next/no-img-element */
 import BlogsCard from "./blogs-slug";
 export default function BlogSection({ blogs }) {

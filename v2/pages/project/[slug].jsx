@@ -8,9 +8,9 @@ import Link from "next/link";
 import path from "path";
 import { BiArrowBack } from "react-icons/bi";
 import rehypeHighlight from "rehype-highlight";
-import BlurImageWithBlurHash from "utils/blur-able-image/blur-hash";
+import BlurImageWithBlurHash from "@/lib/utils/blur-able-image/blur-hash";
 import { projectShowCasePath, projectsFileNames } from "utils/mdx/mdxUtils";
-import { formatShortDate } from "utils/timeFormatter/timeFormatter";
+import { formatShortDate } from "@/lib/utils/timeFormatter/timeFormatter";
 
 export default function ProjectSlug({ mdxSource, frontmatter }) {
   const projectMeta = {

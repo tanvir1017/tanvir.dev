@@ -1,3 +1,4 @@
+// @ts-nocheck
 import BlogsSearch from "../blogsSearch/blogsSearch";
 
 export default function BlogFilter({ allTagSet, titles }) {

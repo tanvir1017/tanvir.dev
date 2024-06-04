@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { MDXRemote } from "next-mdx-remote";
 
 const components = {};

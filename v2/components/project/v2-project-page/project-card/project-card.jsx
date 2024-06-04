@@ -1,6 +1,6 @@
 import { ArrowUpRight, GithubIcon } from "lucide-react";
 import Link from "next/link";
-import BlurImageWithBlurHash from "utils/blur-able-image/blur-hash";
+import BlurImageWithBlurHash from "@/lib/utils/blur-able-image/blur-hash";
 
 const ProjectCard = ({ project }) => {
   const {

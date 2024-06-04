@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
+import { Key } from "react";
 import BlogsCard from "./blogs-slug";
-export default function BlogSection({ blogs }) {
+export default function BlogSection({ blogs }: any) {
   return (
     <div className="px-3">
       <div className="pt-8 dark:text-white text-[#121212] max-w-lg">
@@ -12,8 +13,8 @@ export default function BlogSection({ blogs }) {
       </div>
       <div className="grid md:grid-cols-2 gap-5 mb-14 mt-10 ">
         {blogs
-          .filter((blog) => blog.frontmatter.status !== "draft")
-          .map((blog, index) => {
+          .filter((blog: any) => blog.frontmatter.status !== "draft")
+          .map((blog: any, index: Key | null | undefined) => {
             return <BlogsCard key={index} blog={blog} />;
           })}
       </div>

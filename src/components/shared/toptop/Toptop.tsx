@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { motion as m } from "framer-motion";
 import { ArrowUpToLine } from "lucide-react";
 

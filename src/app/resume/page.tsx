@@ -6,6 +6,7 @@ import React from "react";
 
 const ResumeIFrame = () => {
   const router = useRouter();
+
   return (
     <div className="container " style={{ minWidth: "100%", display: "table" }}>
       <div className=" max-w-[50.9996875rem] mx-auto py-10">

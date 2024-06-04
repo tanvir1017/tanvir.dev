@@ -1,6 +1,7 @@
+// @ts-nocheck
 import Head from "next/head";
 
-function Meta({ metaTag }) {
+function Meta({ metaTag }: any) {
   const { title, name, content, keywords } = metaTag;
   return (
     <Head>

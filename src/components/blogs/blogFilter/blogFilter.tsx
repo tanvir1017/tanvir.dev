@@ -1,6 +1,6 @@
 import BlogsSearch from "../blogsSearch/blogsSearch";
 
-export default function BlogFilter({ allTagSet, titles }) {
+export default function BlogFilter({ allTagSet, titles }: any) {
   return (
     <div className="mb-20">
       <BlogsSearch titles={titles} />

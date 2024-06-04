@@ -7,7 +7,6 @@ import { Menu } from "@/components/ui/navbar-menu";
 import { Navbar } from "@/components/shared/navbar/navbar";
 
 const inter = Inter({ subsets: ["latin"] });
-
 export default function RootLayout({
   children,
 }: {

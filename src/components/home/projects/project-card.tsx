@@ -1,7 +1,7 @@
 import { ArrowUpRightFromCircle, Github } from "lucide-react";
 import Link from "next/link";
 import { BiArrowBack } from "react-icons/bi";
-const ProjectCardHome = ({ project }) => {
+const ProjectCardHome = ({ project }: any) => {
   const {
     title,
     description,
@@ -26,7 +26,7 @@ const ProjectCardHome = ({ project }) => {
       </Link>
       <p className="md:text-base text-sm dark:text-slate-300">{description}</p>
       <div className="my-5">
-        {tech.map((item, i) => (
+        {tech.map((item: any, i: number) => (
           <button
             key={i}
             className={
@@ -54,7 +54,7 @@ const ProjectCardHome = ({ project }) => {
           </a>
           <div className="absolute w-0 group-hover:w-[85%] duration-300 transition-all h-0.5 bg-gray-200"></div>
         </div>
-        {code.map((item, i) => (
+        {code.map((item: any, i: number) => (
           <div key={i} className="group relative ">
             <a
               href={item}

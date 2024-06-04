@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { FiSearch } from "react-icons/fi";
-import { cn } from "utils/cn/cn";
+import { cn } from "@/lib/utils/cn/cn";
 
 export default function BlogsSearch({ titles }) {
   const [focusInput, setFocusInput] = useState(false);

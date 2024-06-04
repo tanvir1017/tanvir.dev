@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { FaLongArrowAltRight } from "react-icons/fa";
-import { formatShortDate } from "utils/timeFormatter/timeFormatter";
+import { formatShortDate } from "@/lib/utils/timeFormatter/timeFormatter";
 
 const Blog = ({ blogs }) => {
   const latestBlogs = blogs

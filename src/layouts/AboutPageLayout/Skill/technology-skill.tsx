@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { motion, useReducedMotion } from "framer-motion";
 import { FaDatabase, FaLanguage } from "react-icons/fa";
 import { MdOutlineLocalLibrary } from "react-icons/md";

@@ -2,9 +2,9 @@ import Link from "next/link";
 import { FaLongArrowAltRight } from "react-icons/fa";
 import ProjectCardHome from "./project-card";
 
-const Projects = ({ projects }) => {
+const Projects = ({ projects }: any) => {
   const latestProjects = projects
-    .filter((item) => item.frontmatter.status !== "undone")
+    .filter((item: any) => item.frontmatter.status !== "undone")
     .slice(-3)
     .reverse();
   return (
@@ -43,7 +43,7 @@ const Projects = ({ projects }) => {
         </div>
 
         <div className="md:col-span-2 relative">
-          {latestProjects.map((item, i) => (
+          {latestProjects.map((item: any, i: number) => (
             <ProjectCardHome key={i} project={item} />
           ))}
         </div>

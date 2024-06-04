@@ -1,3 +1,4 @@
+// @ts-nocheck
 import ProjectCard from "./project-card";
 
 const ProjectShowCards = ({ projects }) => {

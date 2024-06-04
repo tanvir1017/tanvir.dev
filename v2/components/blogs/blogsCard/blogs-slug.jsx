@@ -1,7 +1,7 @@
 import Image from "next/legacy/image";
 import Link from "next/link";
-import BlurImageWithBlurHash from "utils/blur-able-image/blur-hash";
-import { formatShortDate } from "utils/timeFormatter/timeFormatter";
+import BlurImageWithBlurHash from "@/lib/utils/blur-able-image/blur-hash";
+import { formatShortDate } from "@/lib/utils/timeFormatter/timeFormatter";
 export default function BlogsCard({ blog }) {
   const { title, publishedAt, bannerUrl, blurHash } = blog.frontmatter;
 

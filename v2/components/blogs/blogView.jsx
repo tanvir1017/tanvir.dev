@@ -1,8 +1,8 @@
 import Meta from "components/meta/meta";
 import Link from "next/link";
 import { BiArrowBack } from "react-icons/bi";
-import BlurImageWithBlurHash from "utils/blur-able-image/blur-hash";
-import { formatShortDate } from "utils/timeFormatter/timeFormatter";
+import BlurImageWithBlurHash from "@/lib/utils/blur-able-image/blur-hash";
+import { formatShortDate } from "@/lib/utils/timeFormatter/timeFormatter";
 import RemoteMdx from "./remote-mdx";
 
 export default function BlogView({ mdxSource, frontmatter }) {

@@ -1,6 +1,6 @@
 import Image from "next/legacy/image";
 import { useState } from "react";
-import { cn } from "utils/cn/cn";
+import { cn } from "@/lib/utils/cn/cn";
 
 export default function BlurImageWithBlurHash(props) {
   const [isLoading, setLoading] = useState(true);
