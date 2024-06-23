@@ -4,7 +4,7 @@ import { cn } from "utils/cn/cn";
 
 export default function BlurImageWithBlurHash(props) {
   const [isLoading, setLoading] = useState(true);
-
+  // V2 Pulled From main
   return (
     <Image
       {...props}
