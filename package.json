@@ -37,7 +37,8 @@
     "rehype-highlight": "^6.0.0",
     "remark-gfm": "^3.0.1",
     "swr": "^2.0.0",
-    "tailwind-merge": "^1.14.0"
+    "tailwind-merge": "^1.14.0",
+    "vercel": "^34.2.4"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.9",
