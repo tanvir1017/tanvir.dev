@@ -2,6 +2,9 @@ import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import Blur from "./blur";
+import ResumeOrCv from "./resume-cv-dialog";
+import { useState } from "react";
+import { Atom } from "lucide-react";
 function NewHeadingSection() {
   const shouldReduceMotion = useReducedMotion();
 
@@ -9,6 +12,16 @@ function NewHeadingSection() {
     initial: { opacity: 0, y: shouldReduceMotion ? 0 : 25 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  function closeModal() {
+    setIsOpen(false);
+  }
+
+  function openModal() {
+    setIsOpen(true);
+  }
   return (
     <section className="border-general relative w-full overflow-hidden overflow-x-clip bg-slate-50 bg-gradient-to-t from-slate-50 to-slate-100 dark:bg-[#15192f] dark:bg-none h-screen flex">
       <Blur />
@@ -48,24 +61,72 @@ function NewHeadingSection() {
                         className="md:block hidden"
                       >
                         I have been doing frontend development almost 2 years
-                        years, 그리고 I have done many projects that focuses on
-                        MERN stack. I'm a big extreme{" "}
+                        years.{" "}
+                        <span title="And" alt="and">
+                          그리고
+                        </span>
+                        , I have done many projects that focuses on MERN stack.
+                        I'm a big extreme{" "}
                         <span className="font-bold">javascript 🤌</span>{" "}
                         enthusiast, also in my liked tech list includes many
                         programming languages i.e, Python 🐍
                       </motion.p>
                     </div>
                   </motion.div>
-                  <div className="md:space-x-3 space-x-2">
-                    <button className="border bg-black dark:bg-slate-50 dark:hover:bg-slate-200 rounded-md md:py-2.5 py-2 md:px-5 px-2 dark:text-black text-white  uppercase tracking-wider z-30 relative text-sm md:text-base">
-                      <a
-                        href="https://drive.google.com/file/d/1kFNHhnbpWtBVQTTyCuSiqJhygGNBgBGH/view?usp=share_link"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Get my resume
-                      </a>
-                    </button>
+                  <div className="md:space-x-3 space-x-2 flex items-start">
+                    <div className="relative group transition-transform hover:translate-y-1">
+                      <button className="border bg-black dark:bg-slate-50 dark:hover:bg-slate-200 rounded-md md:py-2.5 py-2 md:px-5 px-2 dark:text-black text-white  uppercase tracking-wider z-30  text-sm md:text-base flex items-center justify-center">
+                        <span className="">
+                          {" "}
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="26"
+                            height="26"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="0.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="lucide lucide-atom"
+                          >
+                            <circle cx="12" cy="12" r="1" />
+                            <path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5Z" />
+                            <path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.52 4.54-6.54 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5Z" />
+                          </svg>{" "}
+                        </span>
+                        Resume Or Cv{" "}
+                      </button>
+
+                      <div className="h-0 group-hover:h-auto group-hover:pt-1 overflow-hidden absolute w-full duration-500">
+                        <div className="bg-gray-100 w-full rounded-md flex items-center justify-between p-0.5">
+                          <button className="border border-black/15 bg-black dark:bg-slate-50 dark:hover:bg-slate-200 rounded-md md:py-1.5 py-1 md:px-5 px-2 dark:text-black text-white  uppercase tracking-wider z-30 text-sm md:text-base">
+                            <a
+                              href="https://drive.google.com/file/d/1kFNHhnbpWtBVQTTyCuSiqJhygGNBgBGH/view?usp=share_link"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              Resume
+                            </a>
+                          </button>
+
+                          <button className="border border-black/15 bg-black dark:bg-slate-50 dark:hover:bg-slate-200 rounded-md md:py-1.5 py-1 md:px-5 px-2 dark:text-black text-white  uppercase tracking-wider z-30 text-sm md:text-base">
+                            <a
+                              href="https://drive.google.com/file/d/1FCZUsoSG9yqcd3Nu912hfReQMTCf5eUM/view"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                            >
+                              CV
+                            </a>
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                    {/* <ResumeOrCv
+                      closeModal={closeModal}
+                      openModal={openModal}
+                      isOpen={isOpen}
+                    /> */}
                     <button className="z-30 border border-slate-300 hover:bg-slate-100 dark:hover:bg-[#3a3a3a] rounded-md md:py-2.5 py-2 md:px-5 px-2 dark:text-white uppercase relative  text-sm md:text-base">
                       <Link href="/blogs">Read blogs</Link>
                     </button>
