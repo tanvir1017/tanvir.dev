@@ -78,7 +78,7 @@ function AboutHeading() {
         </motion.div>
         <div className="md:block hidden  md:order-2 order-1">
           <Image
-            src="/author/about-me.webp"
+            src="/author/tanvir1017-about.png"
             alt="Author image"
             width={350}
             height={100}

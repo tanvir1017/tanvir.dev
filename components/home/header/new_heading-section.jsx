@@ -1,10 +1,8 @@
 import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import Blur from "./blur";
-import ResumeOrCv from "./resume-cv-dialog";
 import { useState } from "react";
-import { Atom } from "lucide-react";
+import Blur from "./blur";
 function NewHeadingSection() {
   const shouldReduceMotion = useReducedMotion();
 
@@ -87,8 +85,8 @@ function NewHeadingSection() {
                             stroke="currentColor"
                             stroke-width="0.5"
                             stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="lucide lucide-atom"
+                            strokeLinejoin="round"
+                            className="lucide lucide-atom"
                           >
                             <circle cx="12" cy="12" r="1" />
                             <path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5Z" />
@@ -141,7 +139,7 @@ function NewHeadingSection() {
               <div className="absolute -bottom-2 -left-2  border-t-2 border-r-2 w-2 h-2 dark:border-[#989898] border-[#121212]"></div>
               <div className="absolute -top-2 -right-2  border-b-2 border-l-2 w-2 h-2 dark:border-[#989898] border-[#121212]"></div>
               <Image
-                src="/author/about-me.webp"
+                src="/author/tanvir1017.png"
                 alt="Author image"
                 width={330}
                 height={100}
