@@ -83,8 +83,8 @@ function NewHeadingSection() {
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
-                            stroke-width="0.5"
-                            stroke-linecap="round"
+                            strokeWidth="0.5"
+                            strokeLinecap="round"
                             strokeLinejoin="round"
                             className="lucide lucide-atom"
                           >

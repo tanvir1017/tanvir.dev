@@ -7,7 +7,7 @@ import { HiOutlineEnvelope } from "react-icons/hi2";
 const reachMeData = [
   {
     title: "E-Mail",
-    userName: "tanvir.hossaindev1@gmail.com",
+    userName: "developer.tanvirhossain@gmail.com",
     icon: <HiOutlineEnvelope className="text-2xl text-white" />,
     link: "https://mail.google.com/mail/u/0/#inbox?compose=new",
     className: "bg-gradient-to-tl to-[#08AEEA] from-[#2AF598] text-white",
@@ -66,13 +66,13 @@ const ContactMe = () => {
               key={i}
               className="flex items-center border dark:border-gray-600 border-slate-300 md:p-5 p-3 rounded-md hover:bg-slate-50 dark:hover:bg-[#d1c9c908] "
             >
-              <div className={`${item.className} p-2 rounded-md box-shadows`}>
+              <div className={`${item.className} p-2  rounded-md box-shadows`}>
                 <a href={item.link} rel="noopener noreferrer" target="_blank">
                   {item.icon}
                 </a>
               </div>
 
-              <div className="ml-8">
+              <div className="ml-4">
                 <h6 className="text-xl font-bold dark:text-slate-300 text-gray-700">
                   <a href={item.link} rel="noopener noreferrer" target="_blank">
                     {item.title}

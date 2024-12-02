@@ -30,7 +30,7 @@ const TimeLineMap = () => {
               </span>
             </h3>
             <time className="block mb-2 text-sm font-normal leading-normal text-gray-400 dark:text-gray-500">
-              From July 1, 2019 - Present
+              From July 1, 2019 - Dec 31, 2023
             </time>
             <p className="mb-4 md:text-base text-xs font-normal text-gray-500 dark:text-gray-400 md:leading-normal leading-5">
               I successfully graduated with a diploma in Computer Science
@@ -100,7 +100,7 @@ const TimeLineMap = () => {
           </span>
           <div>
             <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900 dark:text-white">
-              Appear In Earth
+              First Light on Earth
             </h3>
             <time className="block mb-2 text-sm font-normal leading-normal text-gray-400 dark:text-gray-500">
               May 2, 2003
