@@ -1,44 +1,36 @@
+# Portfolio Update - Coming Soon 🚀
+
+![Updated Portfolio View](/public/new-look-portfolio.png)
+
+## ✨ What's Changing?
+
+Here's a quick overview of what i changed in the updated version:
+
+1. **New Visual Design**
+
+   - Sleek, minimalist style with modern colors and typography.
+   - Enhanced responsiveness for all devices.
+
+2. **Improved Project Showcase**
+
+   - Adding rich details about each project (tech stack, challenges, outcomes).
+   - Interactive elements to explore projects more intuitively.
+
+3. **Enhanced Features**
+
+   - Optimized performance and faster load times.
+   - Integration of animation effects for better interactivity.
+
+4. **Better About Me Section**
+   - More detailed and engaging personal introduction.
+   - Highlighting key skills and achievements prominently.
+
 ---
-title: "NurIt Institute, a online based course platform"
-description: "NurIt-Institute is a leading online educational platform dedicated to empowering individuals with essential digital skills. Our mission is to provide high-quality, accessible, and comprehensive courses in a variety of digital domains."
-publishedAt: "2023-09-06"
-status: "done"
-preview: "https://nuritinstitute.vercel.app/"
-code:
-  [
-    "https://github.com/tanvir1017/nurit_v2",
-    "https://github.com/tanvir1017/nurit_v2/tree/main/pages/api",
-  ]
-tech:
-  [
-    "Tailwind",
-    "Mongodb",
-    "Express",
-    "Prisma",
-    "swr",
-    "Nextjs",
-    "Typescript",
-    "Authentication",
-  ]
-thumbnail: /projects/nurit-institute.webp
-blurHash: "LGF5?xYk^6#M@-5c,1J5@[or[Q6."
+
+## 🛠️ Development Timeline
+
+- **_ONGOING_**
+
 ---
 
-# NurIt-Institute
-
-NurIt-Institute A LMS website.
-
-## Functionality that implemented
-
-- User Authentication (sign up and sign in) using JWT token.
-- CRUD operations for courses, lessons, topics, users etc.
-- Blog functionality.
-- Light & Dark Mode (Trendy)
-
-## Challenges That I've got while implementing functionality
-
-- Implementing the authentication system was challenging because it required understanding of how to handle cookies and tokens securely.
-
-- Implementing user authentication was challenging as it required understanding of JSON Web Tokens(JWT).
-
-- The database structure is complex with multiple collections interconnected which made the implementation process difficult.
+[Current Portfolio](https://tanvirhossain.vercel.app)
