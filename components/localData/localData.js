@@ -1,5 +1,5 @@
 export const metaTagHome = {
-  title: "Tanvir | Front end dev",
+  title: "Tanvir | Web dev",
   name: "Portfolio",
   content:
     "This is a portfolio of MERN stack developer tanvir1017. Focused on js by the framework of react.js ",
