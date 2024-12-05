@@ -46,7 +46,7 @@ function NewHeadingSection() {
                     </motion.div>
                     <motion.div variants={childVariants}>
                       <h1 className="lg:text-7xl text-2xl font-HubotSansBlack tracking-wider my-8">
-                        Frontend Dev.
+                        Web Developer.
                       </h1>
                     </motion.div>
                     <div className="mt-7 space-y-3 pr-3 max-w-xl">
