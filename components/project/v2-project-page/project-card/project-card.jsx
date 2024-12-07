@@ -71,7 +71,7 @@ const ProjectCard = ({ project }) => {
             </Link>
           </div>
           <div className="grid grid-flow-col grid-rows-2 gap-2 mt-4 mb-1">
-            {tech.slice(0, 5).map((ts, i) => (
+            {tech?.slice(0, 5)?.map((ts, i) => (
               <button
                 key={i}
                 className="border rounded-md py-1 dark:hover:bg-[#3232328a] hover:bg-slate-100 text-sm "

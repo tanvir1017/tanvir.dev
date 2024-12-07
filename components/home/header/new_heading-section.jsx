@@ -21,9 +21,9 @@ function NewHeadingSection() {
     setIsOpen(true);
   }
   return (
-    <section className="border-general relative w-full overflow-hidden overflow-x-clip bg-slate-50 bg-gradient-to-t from-slate-50 to-slate-100 dark:bg-[#15192f] dark:bg-none h-screen flex">
+    <section className="border-general relative w-full overflow-hidden overflow-x-clip bg-slate-50 bg-gradient-to-t from-slate-50 to-slate-100 dark:bg-[#15192f] dark:bg-none md:h-screen h-[80vh] flex">
       <Blur />
-      <div className="px-3 m-auto max-w-6xl">
+      <div className="px-3 m-auto max-w-6xl z-20 isolate">
         <div className="">
           <div className="grid md:grid-cols-3 place-items-stretch lg:justify-items-stretch justify-items-end">
             <div className="md:col-span-2 md:order-1 order-2">
@@ -71,7 +71,7 @@ function NewHeadingSection() {
                       </motion.p>
                     </div>
                   </motion.div>
-                  <div className="md:space-x-3 space-x-2 flex items-start">
+                  <div className="md:space-x-3 space-x-2 flex items-center md:items-start justify-center md:justify-start ">
                     <div className="relative group transition-transform hover:translate-y-1">
                       <button className="border bg-black dark:bg-slate-50 dark:hover:bg-slate-200 rounded-md md:py-2.5 py-2 md:px-5 px-2 dark:text-black text-white  uppercase tracking-wider z-30  text-sm md:text-base flex items-center justify-center">
                         <span className="">
@@ -125,7 +125,7 @@ function NewHeadingSection() {
                       openModal={openModal}
                       isOpen={isOpen}
                     /> */}
-                    <button className="z-30 border border-slate-300 hover:bg-slate-100 dark:hover:bg-[#3a3a3a] rounded-md md:py-2.5 py-2 md:px-5 px-2 dark:text-white uppercase relative  text-sm md:text-base">
+                    <button className=" border border-slate-300 hover:bg-slate-100 dark:hover:bg-[#3a3a3a] rounded-md md:py-2.5 py-2 md:px-5 px-2 dark:text-white uppercase relative  text-sm md:text-base">
                       <Link href="/blogs">Read blogs</Link>
                     </button>
                   </div>
