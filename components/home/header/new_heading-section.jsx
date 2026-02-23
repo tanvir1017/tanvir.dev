@@ -1,163 +1,128 @@
 import { motion, useReducedMotion } from "framer-motion";
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
+import {
+  TbBrandGithub,
+  TbBrandLeetcode,
+  TbBrandLinkedin,
+  TbMail,
+} from "react-icons/tb";
 import Blur from "./blur";
+
+const Sparkle = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="14"
+    height="14"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  >
+    <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+  </svg>
+);
+
 function NewHeadingSection() {
   const shouldReduceMotion = useReducedMotion();
-
   const childVariants = {
     initial: { opacity: 0, y: shouldReduceMotion ? 0 : 25 },
     visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
   };
 
-  const [isOpen, setIsOpen] = useState(false);
-
-  function closeModal() {
-    setIsOpen(false);
-  }
-
-  function openModal() {
-    setIsOpen(true);
-  }
   return (
     <section className="border-general relative w-full overflow-hidden overflow-x-clip bg-slate-50 bg-gradient-to-t from-slate-50 to-slate-100 dark:bg-[#15192f] dark:bg-none md:h-screen h-[80vh] flex">
       <Blur />
-      <div className="px-3 m-auto max-w-6xl z-20 isolate">
-        <div className="">
-          <div className="grid md:grid-cols-3 place-items-stretch lg:justify-items-stretch justify-items-end">
-            <div className="md:col-span-2 md:order-1 order-2">
-              <div className="md:flex md:text-left text-center flex md:flex-row flex-col-reverse justify-between items-center">
-                <div className="dark:text-white text-[#121212] space-y-2 lg:mt-0 mt-12">
-                  <motion.div
-                    initial="initial"
-                    animate="visible"
-                    variants={{
-                      initial: { opacity: 0 },
-                      visible: {
-                        opacity: 1,
-                        transition: { staggerChildren: 0.2 },
-                      },
-                    }}
-                    className="lg:overflow-hidden lg:mb-12 inline-block z-50"
-                  >
-                    <motion.div variants={childVariants}>
-                      <h3>Hello! I'm Tanvir,</h3>
-                    </motion.div>
-                    <motion.div variants={childVariants}>
-                      <h1 className="lg:text-7xl text-2xl font-HubotSansBlack tracking-wider my-8">
-                        Web Developer.
-                      </h1>
-                    </motion.div>
-                    <div className="mt-7 space-y-3 pr-3 max-w-xl">
-                      <motion.p variants={childVariants}>
-                        I love building tools that are user-friendly, simple and
-                        delightful and focused on javascript language 💘
-                      </motion.p>
-                      <motion.p
-                        variants={childVariants}
-                        className="md:block hidden"
-                      >
-                        I have been doing frontend development almost 2 years
-                        years.{" "}
-                        <span title="And" alt="and">
-                          그리고
-                        </span>
-                        , I have done many projects that focuses on MERN stack.
-                        I'm a big extreme{" "}
-                        <span className="font-bold">javascript 🤌</span>{" "}
-                        enthusiast, also in my liked tech list includes many
-                        programming languages i.e, Python 🐍
-                      </motion.p>
-                    </div>
-                  </motion.div>
-                  <div className="md:space-x-3 space-x-2 flex items-center md:items-start justify-center md:justify-start ">
-                    <div className="relative group transition-transform hover:translate-y-1">
-                      <button className="border bg-black dark:bg-slate-50 dark:hover:bg-slate-200 rounded-md md:py-2.5 py-2 md:px-5 px-2 dark:text-black text-white  uppercase tracking-wider z-30  text-sm md:text-base flex items-center justify-center">
-                        <span className="">
-                          {" "}
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="26"
-                            height="26"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="0.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            className="lucide lucide-atom"
-                          >
-                            <circle cx="12" cy="12" r="1" />
-                            <path d="M20.2 20.2c2.04-2.03.02-7.36-4.5-11.9-4.54-4.52-9.87-6.54-11.9-4.5-2.04 2.03-.02 7.36 4.5 11.9 4.54 4.52 9.87 6.54 11.9 4.5Z" />
-                            <path d="M15.7 15.7c4.52-4.54 6.54-9.87 4.5-11.9-2.03-2.04-7.36-.02-11.9 4.5-4.52 4.54-6.54 9.87-4.5 11.9 2.03 2.04 7.36.02 11.9-4.5Z" />
-                          </svg>{" "}
-                        </span>
-                        Resume Or Cv{" "}
-                      </button>
-
-                      <div className="h-0 group-hover:h-auto group-hover:pt-1 overflow-hidden absolute w-full duration-500">
-                        <div className="bg-gray-100 w-full rounded-md flex items-center justify-between p-0.5">
-                          <button className="border border-black/15 bg-black dark:bg-slate-50 dark:hover:bg-slate-200 rounded-md md:py-1.5 py-1 md:px-5 px-2 dark:text-black text-white  uppercase tracking-wider z-30 text-sm md:text-base">
-                            <a
-                              href="https://drive.google.com/file/d/1kFNHhnbpWtBVQTTyCuSiqJhygGNBgBGH/view?usp=share_link"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              Resume
-                            </a>
-                          </button>
-
-                          <button className="border border-black/15 bg-black dark:bg-slate-50 dark:hover:bg-slate-200 rounded-md md:py-1.5 py-1 md:px-5 px-2 dark:text-black text-white  uppercase tracking-wider z-30 text-sm md:text-base">
-                            <a
-                              href="https://drive.google.com/file/d/1FCZUsoSG9yqcd3Nu912hfReQMTCf5eUM/view"
-                              target="_blank"
-                              rel="noopener noreferrer"
-                            >
-                              CV
-                            </a>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                    {/* <ResumeOrCv
-                      closeModal={closeModal}
-                      openModal={openModal}
-                      isOpen={isOpen}
-                    /> */}
-                    <button className=" border border-slate-300 hover:bg-slate-100 dark:hover:bg-[#3a3a3a] rounded-md md:py-2.5 py-2 md:px-5 px-2 dark:text-white uppercase relative  text-sm md:text-base">
-                      <Link href="/blogs">Read blogs</Link>
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="z-20 md:block hidden md:order-2 order-1 border-2 p-1 dark:border-[#989898] border-[#d1d1d1] relative">
-              <div className="absolute -top-2 -left-2  border-b-2 border-r-2 w-2 h-2 dark:border-[#989898] border-[#121212]"></div>
-              <div className="absolute -bottom-2 -right-2  border-t-2 border-l-2 w-2 h-2 dark:border-[#989898] border-[#121212]"></div>
-              <div className="absolute -bottom-2 -left-2  border-t-2 border-r-2 w-2 h-2 dark:border-[#989898] border-[#121212]"></div>
-              <div className="absolute -bottom-2 -left-2  border-t-2 border-r-2 w-2 h-2 dark:border-[#989898] border-[#121212]"></div>
-              <div className="absolute -top-2 -right-2  border-b-2 border-l-2 w-2 h-2 dark:border-[#989898] border-[#121212]"></div>
-              <Image
-                src="/author/tanvir1017.png"
-                alt="Author image"
-                width={330}
-                height={100}
-                priority
-                className=""
-              />
-            </div>
-            <div className="md:hidden block md:order-2 order-1">
-              <Image
-                src="/author/author-mobile.webp"
-                alt="Author image"
-                width={200}
-                height={100}
-                priority
-                className="rounded-2xl"
-              />
-            </div>
-          </div>
+      <div className="px-3 m-auto max-w-6xl z-20 isolate w-full">
+        <div className="text-center dark:text-white text-[#121212]">
+          <motion.div
+            initial="initial"
+            animate="visible"
+            variants={{
+              initial: { opacity: 0 },
+              visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
+            }}
+            className="space-y-6 lg:mt-0 mt-12"
+          >
+            <motion.div variants={childVariants}>
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-slate-200/80 dark:bg-slate-600/40 px-3 py-1 text-sm text-slate-600 dark:text-slate-300">
+                <Sparkle /> Full Stack Developer
+              </span>
+            </motion.div>
+            <motion.h1
+              variants={childVariants}
+              className="font-HubotSansBlack tracking-normal text-4xl sm:text-5xl md:text-6xl lg:text-8xl  leading-tight max-w-7xl mx-auto"
+            >
+              <span className="block">
+                Ideas to{" "}
+                <i className="font-HubotSansItalic italic">interfaces</i>.
+              </span>
+              <span className="block">Then to the cloud.</span>
+            </motion.h1>
+            <motion.p
+              variants={childVariants}
+              className="text-slate-600 dark:text-slate-400 max-w-2xl mx-auto text-base md:text-2xl"
+            >
+              I build and ship web applications that users love and systems that
+              scale.
+            </motion.p>
+            <motion.div
+              variants={childVariants}
+              className="flex flex-wrap items-center justify-center gap-3"
+            >
+              <a
+                href="https://drive.google.com/file/d/1kFNHhnbpWtBVQTTyCuSiqJhygGNBgBGH/view?usp=share_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 border bg-black dark:bg-slate-50 dark:hover:bg-slate-200 rounded-md py-2.5 px-5 dark:text-black text-white uppercase tracking-wider text-sm md:text-base shadow-lg"
+              >
+                Download Resume →
+              </a>
+            </motion.div>
+            <motion.div
+              variants={childVariants}
+              className="flex flex-wrap items-center justify-center gap-3 pt-8"
+            >
+              <a
+                href="https://github.com/tanvir1017"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 rounded-full border border-slate-300 dark:border-slate-600 bg-slate-100/80 dark:bg-slate-800/80 px-4 py-2.5 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+                aria-label="GitHub"
+              >
+                <TbBrandGithub classname="text-xl" />
+                <span className="text-sm font-medium">GitHub</span>
+              </a>
+              <a
+                href="https://leetcode.com/u/tanvir1017"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 rounded-full border border-slate-300 dark:border-slate-600 bg-slate-100/80 dark:bg-slate-800/80 px-4 py-2.5 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+                aria-label="LeetCode"
+              >
+                <TbBrandLeetcode className="text-xl" />
+                <span className="text-sm font-medium">LeetCode</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/in/tanvir1017"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 rounded-full border border-slate-300 dark:border-slate-600 bg-slate-100/80 dark:bg-slate-800/80 px-4 py-2.5 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+                aria-label="LinkedIn"
+              >
+                <TbBrandLinkedin className="text-xl" />
+                <span className="text-sm font-medium">LinkedIn</span>
+              </a>
+              <a
+                href="mailto:developer.tanvirhossain@gmail.com"
+                className="flex items-center gap-2 rounded-full border border-slate-300 dark:border-slate-600 bg-slate-100/80 dark:bg-slate-800/80 px-4 py-2.5 text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors"
+                aria-label="Email"
+              >
+                <TbMail className="text-xl" />
+                <span className="text-sm font-medium">Email</span>
+              </a>
+            </motion.div>
+          </motion.div>
         </div>
       </div>
     </section>

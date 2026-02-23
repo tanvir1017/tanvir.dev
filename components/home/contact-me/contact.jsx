@@ -46,7 +46,10 @@ const ContactMe = () => {
     setIsOpen(true);
   }
   return (
-    <section className="md:container max-w-6xl mx-auto md:mt-44 mt-12 px-2">
+    <section
+      id="contact"
+      className="md:container max-w-6xl mx-auto md:mt-44 mt-12 px-2"
+    >
       <div className="sm:text-center text-left relative md:pb-28 pb-10">
         <div className="absolute inset-x-0 md:block hidden">
           <h2 className="stroke-text-light dark:stroke-text-dark  md:text-9xl  uppercase poppinsBlackItalic tracking-wider opacity-10 text-[#0605051a] inline-block font-HubotSansBlack">
