@@ -71,7 +71,7 @@ function NewHeadingSection() {
               className="flex flex-wrap items-center justify-center gap-3"
             >
               <a
-                href="https://drive.google.com/file/d/1kFNHhnbpWtBVQTTyCuSiqJhygGNBgBGH/view?usp=share_link"
+                href="https://drive.google.com/file/d/10bTcKyjRe99Eca1xVGK712kTN_y24SXc/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 border bg-black dark:bg-slate-50 dark:hover:bg-slate-200 rounded-md py-2.5 px-5 dark:text-black text-white uppercase tracking-wider text-sm md:text-base shadow-lg"
