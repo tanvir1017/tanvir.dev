@@ -84,20 +84,20 @@ export const DATA = {
       logoUrl: "/smt.png",
       start: "Jan 2024",
       end: "Nov 2025",
-      description: "",
-      // "Implemented the Bitcoin discreet log contract (DLC) protocol specifications as an open source Typescript SDK. Dockerized all microservices and setup production kubernetes cluster. Architected a data lake using AWS S3 and Athena for historical backtesting of bitcoin trading strategies. Built a mobile app using react native and typescript.",
+      description:
+        "As a team lead, I managed project delivery, gathered client requirements, and coordinated the team’s day-to-day work. I also built and maintained freelance client projects for global clients across rental platforms, yacht booking, quiz apps, e-commerce, CRM systems, and educational websites",
     },
     {
       company: "IRD Foundation - IRDF",
-      href: "https://shakileducation.com",
+      href: "https://irdfoundation.com",
       badges: [],
       location: "Dhaka, Bangladesh",
       title: "Full Stack Software Engineer",
       logoUrl: "/quranmazid.png",
       start: "Jan 2024",
       end: "Apr 2024",
-      description: "",
-      // "Implemented the Bitcoin discreet log contract (DLC) protocol specifications as an open source Typescript SDK. Dockerized all microservices and setup production kubernetes cluster. Architected a data lake using AWS S3 and Athena for historical backtesting of bitcoin trading strategies. Built a mobile app using react native and typescript.",
+      description:
+        "Started as an intern and progressed into a web developer role, eventually taking ownership of backend development for quranmazid.com.",
     },
   ],
   education: [
