@@ -1,12 +1,13 @@
 import Navbar from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
+import FlickeringGridWrapper from "@/components/ui/flickering-grid";
+import { NoiseTexture } from "@/components/ui/noise-texture";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 // @ts-ignore
-import FlickeringGridWrapper from "@/components/ui/flickering-grid";
 import "./globals.css";
 
 const geist = Geist({
@@ -73,8 +74,10 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class" defaultTheme="light">
           <TooltipProvider delayDuration={0}>
-            <div className="relative z-10 max-w-3xl mx-auto px-8 border border-x overflow-hidden">
-              <div className="relative z-10 max-w-3xl mx-auto py-12 pb-24 sm:py-24 px-6 border border-x overflow-hidden">
+            <div className="relative z-10 max-w-3xl mx-auto px-3 md:px-8 border border-x overflow-hidden">
+              <NoiseTexture />
+
+              <div className="relative z-10 max-w-3xl mx-auto py-12 pb-24 sm:py-24 px-6 border border-x overflow-hidden bg-background">
                 <FlickeringGridWrapper />
 
                 {children}

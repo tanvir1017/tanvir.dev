@@ -14,7 +14,9 @@ export function MediaContainer({
   className = "",
 }: MediaContainerProps) {
   return (
-    <div className={`ring-4 ring-muted w-full h-[300px] rounded-lg overflow-hidden flex items-center justify-center ${className}`}>
+    <div
+      className={`ring-4 ring-muted w-full h-75 rounded-lg overflow-hidden flex items-center justify-center ${className}`}
+    >
       {type === "image" ? (
         <img
           src={src}
@@ -31,4 +33,3 @@ export function MediaContainer({
     </div>
   );
 }
-
