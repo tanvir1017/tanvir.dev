@@ -46,4 +46,3 @@ export const mdxComponents = {
     );
   },
 } as const;
-

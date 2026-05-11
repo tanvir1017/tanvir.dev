@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { FlickeringGrid } from "@/components/magicui/flickering-grid";
+import { FlickeringGrid } from "@/components/framework-components/flickering-grid";
 import { DATA } from "@/data/resume";
+import Link from "next/link";
 
 export default function ContactSection() {
   return (
@@ -33,11 +33,9 @@ export default function ContactSection() {
           >
             with a direct question on twitter
           </Link>{" "}
-          and I&apos;ll respond whenever I can. I will ignore all
-          soliciting.
+          and I&apos;ll respond whenever I can. I will ignore all soliciting.
         </p>
       </div>
     </div>
   );
 }
-

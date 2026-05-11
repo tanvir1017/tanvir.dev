@@ -22,7 +22,7 @@ const posts = defineCollection({
             remarkPlugins: [remarkGfm, remarkCodeMeta],
         });
         return {
-        ...document,
+            ...document,
             mdx,
         };
     },

@@ -1,4 +1,4 @@
-import BlurFade from "@/components/magicui/blur-fade";
+import BlurFade from "@/components/framework-components/blur-fade";
 import { normalizePage, paginate } from "@/lib/pagination";
 import { allPosts } from "content-collections";
 import { ChevronRight } from "lucide-react";

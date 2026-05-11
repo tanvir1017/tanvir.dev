@@ -13,8 +13,7 @@ export const DATA = {
   url: "https://tanvircodes.com",
   location: "Dhaka, Bangladesh",
   locationLink: "https://www.google.com/maps/place/dhaka",
-  description:
-    "I build and ship web applications that users love and systems that scale.",
+  description: "Full Stack Developer | Typescript, React",
   summary:
     "I'm a full-stack software engineer focused on building scalable web applications and digital products from end to end. I studied Computer Science and have worked on both client projects and product-based teams. Over the years, I've built SaaS platforms, business websites, and custom software solutions using modern technologies. I'm passionate about exploring new tools, staying up to date with industry trends, and creating products that deliver real value to users and businesses.",
   avatarUrl: "/me.webp",
