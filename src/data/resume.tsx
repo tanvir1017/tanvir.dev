@@ -16,19 +16,19 @@ export const DATA = {
   description:
     "I build and ship web applications that users love and systems that scale.",
   summary:
-    "At the end of 2022, I quit my job as a software engineer to go fulltime into building and scaling my own SaaS businesses. In the past, [I pursued a double degree in computer science and business](/#education), [interned at big tech companies in Silicon Valley](https://www.youtube.com/watch?v=d-LJ2e5qKdE), and [competed in over 21 hackathons for fun](/#hackathons). I also had the pleasure of being a part of the first ever in-person cohort of buildspace called [buildspace sf1](https://buildspace.so/sf1).",
+    "I'm a full-stack software engineer focused on building scalable web applications and digital products from end to end. I studied Computer Science and have worked on both client projects and product-based teams. Over the years, I've built SaaS platforms, business websites, and custom software solutions using modern technologies. I'm passionate about exploring new tools, staying up to date with industry trends, and creating products that deliver real value to users and businesses.",
   avatarUrl: "/me.webp",
   skills: [
+    { name: "Typescript", icon: Typescript },
     { name: "React", icon: ReactLight },
     { name: "Next.js", icon: NextjsIconDark },
-    { name: "Typescript", icon: Typescript },
     { name: "Node.js", icon: Nodejs },
     { name: "Postgres", icon: Postgresql },
     { name: "Docker", icon: Docker },
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/blog", icon: NotebookIcon, label: "Blog" },
+    { href: "/", icon: NotebookIcon, label: "Blog" },
   ],
   contact: {
     email: "tanvir.swe.work@gmail.com",
@@ -102,163 +102,74 @@ export const DATA = {
   ],
   education: [
     {
-      school: "Buildspace",
-      href: "https://buildspace.so",
-      degree: "s3, s4, sf1, s5",
-      logoUrl: "/buildspace.jpg",
-      start: "2023",
-      end: "2024",
-    },
-    {
-      school: "University of Waterloo",
-      href: "https://uwaterloo.ca",
-      degree: "Bachelor's Degree of Computer Science (BCS)",
-      logoUrl: "/waterloo.png",
-      start: "2016",
-      end: "2021",
-    },
-    {
-      school: "Wilfrid Laurier University",
-      href: "https://wlu.ca",
-      degree: "Bachelor's Degree of Business Administration (BBA)",
-      logoUrl: "/laurier.png",
-      start: "2016",
-      end: "2021",
-    },
-    {
-      school: "International Baccalaureate",
-      href: "https://ibo.org",
-      degree: "IB Diploma",
-      logoUrl: "/ib.png",
-      start: "2012",
-      end: "2016",
+      school: "Dhaka Polytechnic Institute",
+      href: "https://dhaka.polytech.gov.bd/",
+      degree: "Diploma in Computer Technology",
+      logoUrl: "/dpi.jpeg",
+      start: "20219",
+      end: "2023",
     },
   ],
   projects: [
     {
-      title: "Chat Collect",
-      href: "https://chatcollect.com",
-      dates: "Jan 2024 - Feb 2024",
+      title: "Shakil Education Group",
+      href: "https://shakiledu.com",
+      dates: "Dec 2025 - Present",
       active: true,
       description:
-        "With the release of the [OpenAI GPT Store](https://openai.com/blog/introducing-the-gpt-store), I decided to build a SaaS which allows users to collect email addresses from their GPT users. This is a great way to build an audience and monetize your GPT API usage.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Stripe",
-        "Shadcn UI",
-        "Magic UI",
-      ],
+        "Build and maintain the Shakil Education Group Front-end, Backend and Complete CMS Management System for the Shakil Education Group",
+      technologies: ["TypeScript", "Next.js", "mySQL", "Prisma"],
       links: [
         {
           type: "Website",
-          href: "https://chatcollect.com",
+          href: "https://shakiledu.com",
           icon: <Icons.globe className="size-3" />,
         },
       ],
-      image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/chat-collect.mp4",
+      image: "/shakiledu.png",
+      video: "/shakiledu.mp4",
     },
     {
-      title: "Magic UI",
-      href: "https://magicui.design",
-      dates: "June 2023 - Present",
+      title: "Lead Management System",
+      href: "https://lead.shakiledu.com",
+      dates: "Dec 2025 - Present",
       active: true,
       description:
-        "Designed, developed and sold animated UI components for developers.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Stripe",
-        "Shadcn UI",
-        "Magic UI",
-      ],
+        "Build and maintain the Lead Management System for the Shakil Education Group",
+      technologies: ["TypeScript", "Next.js", "MongoDB", "Prisma"],
       links: [
         {
           type: "Website",
-          href: "https://magicui.design",
+          href: "https://lead.shakiledu.com",
           icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "Source",
-          href: "https://github.com/magicuidesign/magicui",
-          icon: <Icons.github className="size-3" />,
         },
       ],
       image: "",
-      video: "https://cdn.magicui.design/bento-grid.mp4",
+      video: "/lm.mp4",
     },
     {
-      title: "llm.report",
-      href: "https://llm.report",
-      dates: "April 2023 - September 2023",
+      title: "My Uni-Abroad",
+      href: "https://my-uniabroad.com",
+      dates: "Dec 2025 - Present",
       active: true,
       description:
-        "Developed an open-source logging and analytics platform for OpenAI: Log your ChatGPT API requests, analyze costs, and improve your prompts.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
-      ],
+        "Build and maintain the My Uni-Abroad Front-end, Backend and Complete CMS Management System for the My Uni-Abroad",
+      technologies: ["TypeScript", "Next.js", "MongoDB", "Prisma"],
       links: [
         {
           type: "Website",
-          href: "https://llm.report",
-          icon: <Icons.globe className="size-3" />,
-        },
-        {
-          type: "Source",
-          href: "https://github.com/dillionverma/llm.report",
-          icon: <Icons.github className="size-3" />,
-        },
-      ],
-      image: "",
-      video: "https://cdn.llm.report/openai-demo.mp4",
-    },
-    {
-      title: "Automatic Chat",
-      href: "https://automatic.chat",
-      dates: "April 2023 - March 2024",
-      active: true,
-      description:
-        "Developed an AI Customer Support Chatbot which automatically responds to customer support tickets using the latest GPT models.",
-      technologies: [
-        "Next.js",
-        "Typescript",
-        "PostgreSQL",
-        "Prisma",
-        "TailwindCSS",
-        "Shadcn UI",
-        "Magic UI",
-        "Stripe",
-        "Cloudflare Workers",
-      ],
-      links: [
-        {
-          type: "Website",
-          href: "https://automatic.chat",
+          href: "https://my-uniabroad.com",
           icon: <Icons.globe className="size-3" />,
         },
       ],
       image: "",
-      video:
-        "https://pub-83c5db439b40468498f97946200806f7.r2.dev/automatic-chat.mp4",
+      video: "/Uniabroad-intro.mp4",
     },
   ],
-  hackathons: [
+} as const;
+
+/* 
+hackathons: [
     {
       title: "Hack Western 5",
       dates: "November 23rd - 25th, 2018",
@@ -643,4 +554,5 @@ export const DATA = {
       ],
     },
   ],
-} as const;
+
+*/
