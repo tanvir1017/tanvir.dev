@@ -1,7 +1,5 @@
 import {
-  AnimatePresence,
-  AnimateSharedLayout,
-  motion as m,
+  motion as m
 } from "framer-motion";
 import { useState } from "react";
 import ProjectItem from "./project";
@@ -36,30 +34,30 @@ function ProjectsPage() {
             <span className={`font-caveatMedium`}>I&apos;ve done</span>{" "}
           </p>
         </m.div>
-        <AnimateSharedLayout type="crossfade">
-          <m.ul
-            className="card-list my-14"
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: false }}
-            transition={{ duration: 0.3 }}
-          >
-            {projectData.map((project, i) => {
-              return (
-                <ProjectItem
-                  expander={expander}
-                  key={i}
-                  project={project}
-                  layoutId={project.id}
-                />
-              );
-            })}
-          </m.ul>
-          <AnimatePresence>
-            {" "}
-            {expand && <ShowProject expander={expander} layoutId={layoutId} />}
-          </AnimatePresence>
-        </AnimateSharedLayout>
+        {/* <AnimateSharedLayout type="crossfade"> */}
+        <m.ul
+          className="card-list my-14"
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: false }}
+          transition={{ duration: 0.3 }}
+        >
+          {projectData.map((project, i) => {
+            return (
+              <ProjectItem
+                expander={expander}
+                key={i}
+                project={project}
+                layoutId={project.id}
+              />
+            );
+          })}
+        </m.ul>
+        {/* <AnimatePresence> */}
+        {" "}
+        {expand && <ShowProject expander={expander} layoutId={layoutId} />}
+        {/* </AnimatePresence> */}
+        {/* </AnimateSharedLayout> */}
       </div>
     </>
   );

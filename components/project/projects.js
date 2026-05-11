@@ -1,7 +1,6 @@
 import {
   AnimatePresence,
-  AnimateSharedLayout,
-  motion as m,
+  motion as m
 } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
@@ -44,39 +43,39 @@ function ProjectsList() {
             </span>{" "}
           </p>
         </m.div>
-        <AnimateSharedLayout type="crossfade">
-          <m.ul
-            className="card-list my-14"
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.3, delay: 0.3 }}
+        {/* <AnimateSharedLayout type="crossfade"> */}
+        <m.ul
+          className="card-list my-14"
+          initial={{ opacity: 0, y: 25 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.3, delay: 0.3 }}
+        >
+          {projectData.slice(0, 4).map((project, i) => {
+            return (
+              <ProjectItem
+                expander={expander}
+                key={i}
+                project={project}
+                layoutId={project.id}
+              />
+            );
+          })}
+        </m.ul>
+        <div className="inset-x-0 bottom-0 flex justify-center dark:bg-gradient-to-t  pt-[700px] pb-8 pointer-events-none dark:from-[#121212]  absolute">
+          <m.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            className={`relative -top-36 rounded-full backdrop-blur-0 focus:outline-none focus:ring-1    text-white px-6 flex shadow-lg items-center  pointer-events-auto py-2 ${Style.showMoreButton}`}
           >
-            {projectData.slice(0, 4).map((project, i) => {
-              return (
-                <ProjectItem
-                  expander={expander}
-                  key={i}
-                  project={project}
-                  layoutId={project.id}
-                />
-              );
-            })}
-          </m.ul>
-          <div className="inset-x-0 bottom-0 flex justify-center dark:bg-gradient-to-t  pt-[700px] pb-8 pointer-events-none dark:from-[#121212]  absolute">
-            <m.button
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-              className={`relative -top-36 rounded-full backdrop-blur-0 focus:outline-none focus:ring-1    text-white px-6 flex shadow-lg items-center  pointer-events-auto py-2 ${Style.showMoreButton}`}
-            >
-              <Link href="/projects">Show more</Link>
-            </m.button>
-          </div>
-          <AnimatePresence>
-            {" "}
-            {expand && <ShowProject expander={expander} layoutId={layoutId} />}
-          </AnimatePresence>
-        </AnimateSharedLayout>
+            <Link href="/projects">Show more</Link>
+          </m.button>
+        </div>
+        <AnimatePresence>
+          {" "}
+          {expand && <ShowProject expander={expander} layoutId={layoutId} />}
+        </AnimatePresence>
+        {/* </AnimateSharedLayout> */}
       </div>
     </>
   );
