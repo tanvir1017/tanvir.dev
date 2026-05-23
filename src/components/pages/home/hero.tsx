@@ -13,8 +13,16 @@ import React from "react";
 import BlurFadeText from "../../framework-components/blur-fade-text";
 
 const Hero = () => {
-  const [isAgeTxt, setIsAgeTxt] = React.useState(true);
+  const [showFullAge, setShowFullAge] = React.useState(false);
   const { ageText, years } = calculateYearWithDays("2002-10-17");
+
+  const ageLabel = showFullAge
+    ? ageText
+    : `${years} year${years !== 1 ? "s" : ""}`;
+
+  const handleAgeClick = () => {
+    setShowFullAge((currentValue) => !currentValue);
+  };
 
   return (
     <section id="hero">
@@ -44,10 +52,8 @@ const Hero = () => {
               {[
                 {
                   key: "age",
-                  element: isAgeTxt
-                    ? `${years} year${years !== 1 ? "s" : ""}`
-                    : ageText,
-                  onClick: () => setIsAgeTxt((prev) => !prev),
+                  element: ageLabel,
+                  onClick: handleAgeClick,
                 },
                 {
                   key: "location",

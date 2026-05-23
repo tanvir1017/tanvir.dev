@@ -49,11 +49,12 @@ export function calculateYearWithDays(
 
     const totalDays = Math.floor((current.getTime() - birth.getTime()) / (1000 * 60 * 60 * 24));
 
+
     return {
         years,
         months,
         days,
         totalDays,
-        ageText: `${years} year${years !== 1 ? "s" : ""}, ${days} day${days !== 1 ? "s" : ""}`,
+        ageText: `${years} year${years !== 1 ? "s" : ""}, ${months} month${months !== 1 ? "s" : ""}, ${days} day${days !== 1 ? "s" : ""}`,
     };
 }
