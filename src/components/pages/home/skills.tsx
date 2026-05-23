@@ -20,6 +20,7 @@ const Skills = () => {
             <BlurFade
               key={group.category}
               delay={BLUR_FADE_DELAY * 10 + groupIndex * 0.08}
+              className=""
             >
               <div className="grid grid-cols-5 space-x-2.5">
                 <div className="col-span-5 md:col-span-2">
@@ -27,7 +28,7 @@ const Skills = () => {
                     {formatCategory(group.category)}
                   </h3>
                 </div>
-                <div className="flex flex-wrap gap-2 col-span-5 md:col-span-3">
+                <div className="flex flex-wrap gap-2 col-span-5 md:col-span-3 ">
                   {group.items.map((skill, skillIndex) => (
                     <BlurFade
                       key={skill.name}
@@ -37,11 +38,11 @@ const Skills = () => {
                         skillIndex * 0.03
                       }
                     >
-                      <div className="flex h-7 w-fit items-center gap-2 rounded-lg border border-slate-700/70 bg-transparent px-4 text-sm text-slate-100 transition-colors hover:bg-slate-800/70 dark:border-slate-700/60 dark:text-slate-100">
+                      <div className="flex h-7 w-fit items-center gap-2 rounded-lg border border-slate-700/70 bg-transparent px-4 text-sm text-slate-100 transition-colors hover:bg-transparent dark:border-slate-700/60 dark:text-slate-100">
                         {"icon" in skill && (
-                          <skill.icon className="size-4 rounded overflow-hidden object-contain" />
+                          <skill.icon className="size-4 rounded overflow-hidden object-contain text-black dark:text-white" />
                         )}
-                        <span className="whitespace-nowrap font-medium">
+                        <span className="whitespace-nowrap font-medium dark:text-white! text-black!">
                           {skill.name}
                         </span>
                       </div>
