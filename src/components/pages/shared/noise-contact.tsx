@@ -1,5 +1,4 @@
 import { PopUpDialog } from "@/components/framework-components/dialog";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -23,28 +22,21 @@ export function NoiseTextures() {
           <CardDescription className="text-muted-foreground text-balance">
             Want to chat? Just shoot me a dm{" "}
             <Link
-              href={DATA.contact.social.X.url}
+              href={DATA.contact.social.email.url}
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-500 hover:underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 rounded-sm"
             >
-              with a direct question on twitter
+              with a direct question on mail
             </Link>{" "}
             and I&apos;ll respond whenever I can. I will ignore all soliciting.
           </CardDescription>
         </CardHeader>
         <CardContent className="relative z-10 space-y-4 pt-0">
-          <Button
-            className="group/button relative cursor-pointer overflow-hidden px-8 active:scale-98 rounded-lg border border-foreground/10 bg-foreground/10 text-background hover:bg-foreground/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-            type="button"
-            variant="secondary"
-          >
-            <PopUpDialog buttonText="Say Hello" />
-            {/* <NoiseTexture
-              noiseOpacity={15}
-              className="transition-all group-hover/button:opacity-100"
-            /> */}
-          </Button>
+          <PopUpDialog
+            buttonText="Say Hello"
+            buttonClassName="group/button relative cursor-pointer overflow-hidden px-8 active:scale-98 rounded-lg border border-foreground/10 bg-foreground/10 text-black! dark:text-white! hover:bg-foreground/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+          />
         </CardContent>
       </Card>
     </div>

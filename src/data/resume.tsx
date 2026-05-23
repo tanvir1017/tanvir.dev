@@ -1,9 +1,6 @@
 import { Icons } from "@/components/icons";
-import { Docker } from "@/components/ui/svgs/docker";
-import { NextjsIconDark } from "@/components/ui/svgs/nextjsIconDark";
 import { Nodejs } from "@/components/ui/svgs/nodejs";
 import { Postgresql } from "@/components/ui/svgs/postgresql";
-import { ReactLight } from "@/components/ui/svgs/reactLight";
 import { Typescript } from "@/components/ui/svgs/typescript";
 import { HomeIcon, NotebookIcon } from "lucide-react";
 
@@ -18,16 +15,90 @@ export const DATA = {
     "I'm a full-stack software engineer focused on building scalable web applications and digital products from end to end. I studied Computer Science and have worked on both client projects and product-based teams. Over the years, I've built SaaS platforms, business websites, and custom software solutions using modern technologies. I'm passionate about exploring new tools, staying up to date with industry trends, and creating products that deliver real value to users and businesses.",
   avatarUrl: "/me.webp",
   skills: [
-    { name: "Typescript", icon: Typescript },
-    { name: "React", icon: ReactLight },
-    { name: "Next.js", icon: NextjsIconDark },
-    { name: "Node.js", icon: Nodejs },
-    { name: "Postgres", icon: Postgresql },
-    { name: "Docker", icon: Docker },
+    {
+      category: "Languages",
+      items: [{ name: "TypeScript", icon: Typescript }],
+    },
+    {
+      category: "Frameworks",
+      items: [
+        { name: "React", icon: Icons.react },
+        { name: "Next.js", icon: Icons.nextjs },
+        { name: "Tanstack Start" },
+      ],
+    },
+    {
+      category: "CSS Preprocessors",
+      items: [{ name: "Tailwind CSS" }, { name: "shadcn/ui" }],
+    },
+    {
+      category: "Tools & Libraries",
+      items: [
+        { name: "TanStack Router" },
+        { name: "TanStack Query" },
+        // { name: "tRPC" },
+        { name: "Zod" },
+        // { name: "Effect-TS" },
+        // { name: "Vercel AI SDK" },
+        { name: "Vite" },
+        // { name: "Parcel" },
+        // { name: "WebPack" },
+        { name: "FramerMotion" },
+        // { name: "GSAP" },
+      ],
+    },
+    {
+      category: "Backend & Databases",
+      items: [
+        { name: "Node.js", icon: Nodejs },
+        { name: "MongoDB", icons: Icons.mongodb },
+        { name: "MySQL" },
+        // { name: "Convex" },
+        { name: "PostgreSQL", icon: Postgresql },
+        { name: "Prisma ORM" },
+        { name: "Drizzle ORM" },
+      ],
+    },
+    {
+      category: "Hosting",
+      items: [
+        { name: "Vercel" },
+        { name: "Railway" },
+        { name: "Render" },
+        { name: "Netlify" },
+        { name: "Hostinger" },
+        { name: "Digital Ocean" },
+      ],
+    },
+    {
+      category: "coder related",
+      items: [
+        { name: "VS Code" },
+        { name: "Cursor" },
+        { name: "Copilot" },
+        { name: "Git" },
+        { name: "Deep Seek" },
+        { name: "Claude" },
+        { name: "VO" },
+        { name: "etc.." },
+      ],
+    },
+    {
+      category: "designer related",
+      items: [{ name: "Figma", icon: Icons.figma }],
+    },
+
+    {
+      category: "Operating Systems",
+      items: [
+        { name: "Ubuntu", icon: Icons.ubuntu },
+        { name: "Arch Linux", icon: Icons.archlinx },
+      ],
+    },
   ],
   navbar: [
     { href: "/", icon: HomeIcon, label: "Home" },
-    { href: "/", icon: NotebookIcon, label: "Blog" },
+    { href: "/blog", icon: NotebookIcon, label: "Blog" },
   ],
   contact: {
     email: "tanvir.swe.work@gmail.com",
@@ -54,7 +125,7 @@ export const DATA = {
       },
       email: {
         name: "Send Email",
-        url: "#",
+        url: "mailto:tanvir.swe.work@gmail.com",
         icon: Icons.email,
         navbar: false,
       },
@@ -81,8 +152,8 @@ export const DATA = {
       location: "Dhaka, Bangladesh",
       title: "Software Engineer, Team Lead",
       logoUrl: "/smt.png",
-      start: "Jan 2024",
-      end: "Nov 2025",
+      start: "Apr 2024",
+      end: "Dec 2025",
       description:
         "As a team lead, I managed project delivery, gathered client requirements, and coordinated the team’s day-to-day work. I also built and maintained freelance client projects for global clients across rental platforms, yacht booking, quiz apps, e-commerce, CRM systems, and educational websites",
     },
@@ -105,7 +176,7 @@ export const DATA = {
       href: "https://dhaka.polytech.gov.bd/",
       degree: "Diploma in Computer Technology",
       logoUrl: "/dpi.jpeg",
-      start: "20219",
+      start: "2019",
       end: "2023",
     },
   ],
@@ -117,7 +188,15 @@ export const DATA = {
       active: true,
       description:
         "Build and maintain the Shakil Education Group Front-end, Backend and Complete CMS Management System for the Shakil Education Group",
-      technologies: ["TypeScript", "Next.js", "mySQL", "Prisma"],
+      technologies: [
+        "TypeScript",
+        "Next.js",
+        "mySQL",
+        "Prisma",
+        "redis",
+        "node.js",
+        "bullMQ",
+      ],
       links: [
         {
           type: "Website",
@@ -135,7 +214,16 @@ export const DATA = {
       active: true,
       description:
         "Build and maintain the Lead Management System for the Shakil Education Group",
-      technologies: ["TypeScript", "Next.js", "MongoDB", "Prisma"],
+      technologies: [
+        "TypeScript",
+        "Next.js",
+        "MongoDB",
+        "Prisma",
+        "redis",
+        "node.js",
+        "bullMQ",
+        "twilio/voip",
+      ],
       links: [
         {
           type: "Website",
@@ -153,7 +241,14 @@ export const DATA = {
       active: true,
       description:
         "Build and maintain the My Uni-Abroad Front-end, Backend and Complete CMS Management System for the My Uni-Abroad",
-      technologies: ["TypeScript", "Next.js", "MongoDB", "Prisma"],
+      technologies: [
+        "TypeScript",
+        "Next.js",
+        "MongoDB",
+        "Prisma",
+        "redis",
+        "node.js",
+      ],
       links: [
         {
           type: "Website",

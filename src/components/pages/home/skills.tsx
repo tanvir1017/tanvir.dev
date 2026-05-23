@@ -2,6 +2,12 @@ import { BLUR_FADE_DELAY } from "@/app/page";
 import BlurFade from "@/components/framework-components/blur-fade";
 import { DATA } from "@/data/resume";
 
+const formatCategory = (value: string) =>
+  value
+    .split(" ")
+    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .join(" ");
+
 const Skills = () => {
   return (
     <section id="skills">
@@ -9,16 +15,39 @@ const Skills = () => {
         <BlurFade delay={BLUR_FADE_DELAY * 9}>
           <h2 className="text-xl font-bold">Skills & Tools</h2>
         </BlurFade>
-        <div className="flex flex-wrap gap-2">
-          {DATA.skills.map((skill, id) => (
-            <BlurFade key={skill.name} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-              <div className="border bg-background border-border ring-2 ring-border/20 rounded-xl h-8 w-fit px-4 flex items-center gap-2">
-                {skill.icon && (
-                  <skill.icon className="size-4 rounded overflow-hidden object-contain" />
-                )}
-                <span className="text-foreground text-sm font-medium">
-                  {skill.name}
-                </span>
+        <div className="grid gap-x-10 gap-y-5 md:grid-cols-1 md:items-start">
+          {DATA.skills.map((group, groupIndex) => (
+            <BlurFade
+              key={group.category}
+              delay={BLUR_FADE_DELAY * 10 + groupIndex * 0.08}
+            >
+              <div className="grid grid-cols-5 space-x-2.5">
+                <div className="col-span-5 md:col-span-2">
+                  <h3 className="text-lg font-medium text-slate-400 dark:text-slate-500">
+                    {formatCategory(group.category)}
+                  </h3>
+                </div>
+                <div className="flex flex-wrap gap-2 col-span-5 md:col-span-3">
+                  {group.items.map((skill, skillIndex) => (
+                    <BlurFade
+                      key={skill.name}
+                      delay={
+                        BLUR_FADE_DELAY * 10 +
+                        groupIndex * 0.08 +
+                        skillIndex * 0.03
+                      }
+                    >
+                      <div className="flex h-7 w-fit items-center gap-2 rounded-lg border border-slate-700/70 bg-transparent px-4 text-sm text-slate-100 transition-colors hover:bg-slate-800/70 dark:border-slate-700/60 dark:text-slate-100">
+                        {"icon" in skill && (
+                          <skill.icon className="size-4 rounded overflow-hidden object-contain" />
+                        )}
+                        <span className="whitespace-nowrap font-medium">
+                          {skill.name}
+                        </span>
+                      </div>
+                    </BlurFade>
+                  ))}
+                </div>
               </div>
             </BlurFade>
           ))}

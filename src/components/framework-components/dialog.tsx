@@ -14,16 +14,15 @@ import BlurFade from "./blur-fade";
 
 export function PopUpDialog({
   buttonText = "Contact Card",
+  buttonClassName = "cursor-pointer bg-transparent hover:bg-transparent dark:text-white! border h-6 text-black! text-[11px] font-medium",
 }: {
   buttonText?: string;
+  buttonClassName?: string;
 }) {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button
-          size="sm"
-          className="cursor-pointer bg-transparent hover:bg-transparent text-white border h-6 "
-        >
+        <Button size="sm" className={buttonClassName}>
           <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse mr-2" />
           {buttonText}
         </Button>
