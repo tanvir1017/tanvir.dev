@@ -6,19 +6,26 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { DATA } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 // @ts-ignore
 import "./globals.css";
 
-const geist = Geist({
-  subsets: ["latin"],
+const geist = localFont({
+  src: [
+    {
+      path: "../../public/fonts/CabinetGrotesk-Medium.ttf",
+      weight: "400",
+    },
+    {
+      path: "../../public/fonts/ClashDisplay-Semibold.ttf",
+      weight: "600",
+    },
+  ],
   variable: "--font-sans",
-  weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+const geistMono = localFont({
+  src: "../../public/fonts/CabinetGrotesk-Medium.ttf",
   variable: "--font-mono",
 });
 

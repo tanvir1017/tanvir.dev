@@ -6,9 +6,10 @@ import { DATA } from "@/data/resume";
 import BlurFade from "@/components/framework-components/blur-fade";
 import { PopUpDialog } from "@/components/framework-components/dialog";
 import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { calculateYearWithDays } from "@/lib/year-calc";
-import { MapPin } from "lucide-react";
+import { FileText, MapPin } from "lucide-react";
 import React from "react";
 import BlurFadeText from "../../framework-components/blur-fade-text";
 
@@ -64,10 +65,6 @@ const Hero = () => {
                     </span>
                   ),
                 },
-                {
-                  key: "contact-card",
-                  element: <PopUpDialog />,
-                },
               ].map((badge, index) => (
                 <BlurFade
                   key={badge.key}
@@ -87,6 +84,24 @@ const Hero = () => {
                   </Badge>
                 </BlurFade>
               ))}
+              <BlurFade delay={BLUR_FADE_DELAY * 10 + 0.1}>
+                <Button
+                  asChild
+                  variant="outline"
+                  size="sm"
+                  className="h-6 gap-1 rounded-md px-2 text-[11px] font-medium"
+                >
+                  <a
+                    href="https://drive.google.com/file/d/10bTcKyjRe99Eca1xVGK712kTN_y24SXc/view"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <FileText className="size-3" />
+                    Resume
+                  </a>
+                </Button>
+              </BlurFade>
+              <PopUpDialog />
             </div>
           </div>
         </div>

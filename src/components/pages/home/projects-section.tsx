@@ -44,7 +44,7 @@ export default function ProjectsSection() {
                 className="h-full"
               >
                 <ProjectCard
-                  href={project.href}
+                  href={"href" in project ? project.href : undefined}
                   key={project.title}
                   title={project.title}
                   description={project.description}
@@ -52,6 +52,11 @@ export default function ProjectsSection() {
                   tags={project.technologies}
                   image={project.image}
                   video={project.video}
+                  comingSoonTitle={
+                    "comingSoonTitle" in project
+                      ? project.comingSoonTitle
+                      : undefined
+                  }
                   links={project.links}
                 />
               </BlurFade>

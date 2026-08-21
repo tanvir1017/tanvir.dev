@@ -1,9 +1,7 @@
 
 export * from "./csharp";
 export * from "./docker";
-export * from "./golang";
-export * from "./golangDark";
-export * from "./java";
+export * from "./elysia";
 export * from "./kubernetes";
 export * from "./mongodb.svg";
 export * from "./nextjsIconDark";
@@ -19,5 +17,4 @@ export * from "./reactLight";
 export * from "./reactWordmarkDark";
 export * from "./reactWordmarkLight";
 export * from "./typescript";
-
 

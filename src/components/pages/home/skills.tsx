@@ -1,6 +1,7 @@
 import { BLUR_FADE_DELAY } from "@/app/page";
 import BlurFade from "@/components/framework-components/blur-fade";
 import { DATA } from "@/data/resume";
+import Image from "next/image";
 
 const formatCategory = (value: string) =>
   value
@@ -39,9 +40,18 @@ const Skills = () => {
                       }
                     >
                       <div className="flex h-7 w-fit items-center gap-2 rounded-lg border border-slate-700/70 bg-transparent px-4 text-sm text-slate-100 transition-colors hover:bg-transparent dark:border-slate-700/60 dark:text-slate-100">
-                        {"icon" in skill && (
-                          <skill.icon className="size-4 rounded overflow-hidden object-contain text-black dark:text-white" />
-                        )}
+                        {"icon" in skill &&
+                          (typeof skill.icon === "string" ? (
+                            <Image
+                              width={16}
+                              height={16}
+                              src={skill.icon}
+                              alt=""
+                              className="size-4 rounded object-contain"
+                            />
+                          ) : (
+                            <skill.icon className="size-4 overflow-hidden rounded object-contain text-black dark:text-white" />
+                          ))}
                         <span className="whitespace-nowrap font-medium dark:text-white! text-black!">
                           {skill.name}
                         </span>

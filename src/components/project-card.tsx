@@ -34,6 +34,7 @@ interface Props {
   link?: string;
   image?: string;
   video?: string;
+  comingSoonTitle?: string;
   links?: readonly {
     icon: React.ReactNode;
     type: string;
@@ -51,6 +52,7 @@ export function ProjectCard({
   link,
   image,
   video,
+  comingSoonTitle,
   links,
   className,
 }: Props) {
@@ -68,7 +70,16 @@ export function ProjectCard({
           rel="noopener noreferrer"
           className="block"
         >
-          {video ? (
+          {comingSoonTitle ? (
+            <div className="relative flex h-44 items-center justify-center overflow-hidden bg-linear-to-br from-black via-slate-950 to-cyan-950 px-6">
+              <div className="absolute inset-4 rounded-2xl border border-white/20 bg-white/10 shadow-[inset_0_1px_0_rgba(255,255,255,0.3),0_12px_40px_rgba(15,23,42,0.35)] backdrop-blur-xl" />
+              <div className="absolute -left-8 top-8 size-32 rounded-full bg-cyan-300/20 blur-3xl" />
+              <div className="absolute -right-8 bottom-4 size-32 rounded-full bg-blue-500/20 blur-3xl" />
+              <span className="relative bg-linear-to-r from-white via-cyan-100 to-blue-200 bg-clip-text text-4xl font-semibold tracking-tight text-transparent drop-shadow-[0_2px_12px_rgba(125,211,252,0.35)] sm:text-5xl">
+                {comingSoonTitle}
+              </span>
+            </div>
+          ) : video ? (
             <video
               src={video}
               autoPlay
@@ -121,7 +132,12 @@ export function ProjectCard({
             <ArrowUpRight className="h-4 w-4" aria-hidden />
           </Link>
         </div>
-        <div className="text-xs flex-1 prose max-w-full text-pretty font-sans leading-relaxed text-muted-foreground dark:prose-invert">
+        <div
+          className={cn(
+            "text-xs flex-1 prose max-w-full text-pretty font-sans leading-relaxed text-muted-foreground dark:prose-invert",
+            comingSoonTitle && "select-none blur-sm",
+          )}
+        >
           <Markdown>{description}</Markdown>
         </div>
         {tags && tags.length > 0 && (

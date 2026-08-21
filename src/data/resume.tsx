@@ -1,4 +1,5 @@
 import { Icons } from "@/components/icons";
+import { Docker } from "@/components/ui/svgs/docker";
 import { Nodejs } from "@/components/ui/svgs/nodejs";
 import { Postgresql } from "@/components/ui/svgs/postgresql";
 import { Typescript } from "@/components/ui/svgs/typescript";
@@ -17,19 +18,30 @@ export const DATA = {
   skills: [
     {
       category: "Languages",
-      items: [{ name: "TypeScript", icon: Typescript }],
+      items: [
+        { name: "TypeScript", icon: Typescript },
+        { name: "JavaScript", icon: "/icons/JavaScript.svg" },
+        { name: "PHP", icon: "/icons/PHP.svg" },
+      ],
     },
     {
       category: "Frameworks",
       items: [
-        { name: "React", icon: Icons.react },
+        { name: "React", icon: "/icons/React.svg" },
         { name: "Next.js", icon: Icons.nextjs },
+        { name: "Vue.js", icon: "/icons/Vue.js.svg" },
+        { name: "Nuxt.js", icon: "/icons/Nuxt JS.svg" },
+        { name: "Remix" },
         { name: "Tanstack Start" },
       ],
     },
     {
       category: "CSS Preprocessors",
-      items: [{ name: "Tailwind CSS" }, { name: "shadcn/ui" }],
+      items: [
+        { name: "Tailwind CSS", icon: "/icons/Tailwind CSS.svg" },
+        { name: "shadcn/ui" },
+        { name: "Redux" },
+      ],
     },
     {
       category: "Tools & Libraries",
@@ -41,6 +53,10 @@ export const DATA = {
         // { name: "Effect-TS" },
         // { name: "Vercel AI SDK" },
         { name: "Vite" },
+        { name: "Docker", icon: Docker },
+        { name: "VS Code", icon: "/icons/Visual Studio Code (VS Code).svg" },
+        { name: "Cursor" },
+        { name: "Zed" },
         // { name: "Parcel" },
         // { name: "WebPack" },
         { name: "FramerMotion" },
@@ -48,15 +64,29 @@ export const DATA = {
       ],
     },
     {
-      category: "Backend & Databases",
+      category: "Backend",
       items: [
         { name: "Node.js", icon: Nodejs },
-        { name: "MongoDB", icons: Icons.mongodb },
-        { name: "MySQL" },
+        { name: "Express.js", icon: "/icons/Express.svg" },
+        { name: "Nest.js", icon: "/icons/Nest.js.svg" },
+        { name: "Laravel", icon: "/icons/Laravel.svg" },
+        { name: "Elysia.js", icon: "/icons/elysia.svg" },
+      ],
+    },
+    {
+      category: "Databases & ORM",
+      items: [
+        { name: "MongoDB", icon: "/icons/MongoDB.svg" },
+        { name: "MySQL", icon: "/icons/MySQL.svg" },
         // { name: "Convex" },
         { name: "PostgreSQL", icon: Postgresql },
+        { name: "Supabase", icon: "/icons/supabase-logo-icon.png" },
+        { name: "Neon" },
         { name: "Prisma ORM" },
         { name: "Drizzle ORM" },
+        { name: "TypeORM" },
+        { name: "Sequelize" },
+        { name: "Redis", icon: "/icons/Redis.svg" },
       ],
     },
     {
@@ -73,8 +103,7 @@ export const DATA = {
     {
       category: "coder related",
       items: [
-        { name: "VS Code" },
-        { name: "Cursor" },
+        { name: "Antigravity" },
         { name: "Copilot" },
         { name: "Git" },
         { name: "Deep Seek" },
@@ -258,6 +287,17 @@ export const DATA = {
       ],
       image: "",
       video: "/Uniabroad-intro.mp4",
+    },
+    {
+      title: "Coming Soon",
+      dates: "In development",
+      description:
+        "A focused product experience is taking shape behind the scenes. More details will be revealed soon.",
+      technologies: [],
+      links: [],
+      image: "",
+      video: "",
+      comingSoonTitle: "Prepify",
     },
   ],
 
